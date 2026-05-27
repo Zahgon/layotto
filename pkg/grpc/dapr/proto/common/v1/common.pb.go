@@ -12,7 +12,6 @@
 package common
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	proto "github.com/golang/protobuf/proto"
@@ -78,31 +77,29 @@ var (
 	}
 )
 
-func (x HTTPExtension_Verb) Enum() *HTTPExtension_Verb {
-	p := new(HTTPExtension_Verb)
-	*p = x
-	return p
-}
+func (x HTTPExtension_Verb) Enum() *HTTPExtension_Verb { _ = "STUB: not implemented"; return nil }
 
-func (x HTTPExtension_Verb) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
+func (x HTTPExtension_Verb) String() string { _ = "STUB: not implemented"; return "" }
 
 func (HTTPExtension_Verb) Descriptor() protoreflect.EnumDescriptor {
-	return file_dapr_proto_common_v1_common_proto_enumTypes[0].Descriptor()
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumDescriptor)
 }
 
 func (HTTPExtension_Verb) Type() protoreflect.EnumType {
-	return &file_dapr_proto_common_v1_common_proto_enumTypes[0]
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumType)
 }
 
 func (x HTTPExtension_Verb) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumNumber)
 }
 
 // Deprecated: Use HTTPExtension_Verb.Descriptor instead.
 func (HTTPExtension_Verb) EnumDescriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{0, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Enum describing the supported concurrency for state.
@@ -129,30 +126,31 @@ var (
 )
 
 func (x StateOptions_StateConcurrency) Enum() *StateOptions_StateConcurrency {
-	p := new(StateOptions_StateConcurrency)
-	*p = x
-	return p
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (x StateOptions_StateConcurrency) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
+func (x StateOptions_StateConcurrency) String() string { _ = "STUB: not implemented"; return "" }
 
 func (StateOptions_StateConcurrency) Descriptor() protoreflect.EnumDescriptor {
-	return file_dapr_proto_common_v1_common_proto_enumTypes[1].Descriptor()
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumDescriptor)
 }
 
 func (StateOptions_StateConcurrency) Type() protoreflect.EnumType {
-	return &file_dapr_proto_common_v1_common_proto_enumTypes[1]
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumType)
 }
 
 func (x StateOptions_StateConcurrency) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumNumber)
 }
 
 // Deprecated: Use StateOptions_StateConcurrency.Descriptor instead.
 func (StateOptions_StateConcurrency) EnumDescriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{5, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Enum describing the supported consistency for state.
@@ -179,30 +177,31 @@ var (
 )
 
 func (x StateOptions_StateConsistency) Enum() *StateOptions_StateConsistency {
-	p := new(StateOptions_StateConsistency)
-	*p = x
-	return p
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (x StateOptions_StateConsistency) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
+func (x StateOptions_StateConsistency) String() string { _ = "STUB: not implemented"; return "" }
 
 func (StateOptions_StateConsistency) Descriptor() protoreflect.EnumDescriptor {
-	return file_dapr_proto_common_v1_common_proto_enumTypes[2].Descriptor()
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumDescriptor)
 }
 
 func (StateOptions_StateConsistency) Type() protoreflect.EnumType {
-	return &file_dapr_proto_common_v1_common_proto_enumTypes[2]
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumType)
 }
 
 func (x StateOptions_StateConsistency) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumNumber)
 }
 
 // Deprecated: Use StateOptions_StateConsistency.Descriptor instead.
 func (StateOptions_StateConsistency) EnumDescriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{5, 1}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // HTTPExtension includes HTTP verb and querystring
@@ -223,51 +222,26 @@ type HTTPExtension struct {
 	Querystring string `protobuf:"bytes,2,opt,name=querystring,proto3" json:"querystring,omitempty"`
 }
 
-func (x *HTTPExtension) Reset() {
-	*x = HTTPExtension{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *HTTPExtension) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *HTTPExtension) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *HTTPExtension) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*HTTPExtension) ProtoMessage() {}
+func (*HTTPExtension) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *HTTPExtension) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use HTTPExtension.ProtoReflect.Descriptor instead.
-func (*HTTPExtension) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{0}
-}
+func (*HTTPExtension) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 func (x *HTTPExtension) GetVerb() HTTPExtension_Verb {
-	if x != nil {
-		return x.Verb
-	}
-	return HTTPExtension_NONE
+	_ = "STUB: not implemented"
+	return *new(HTTPExtension_Verb)
 }
 
-func (x *HTTPExtension) GetQuerystring() string {
-	if x != nil {
-		return x.Querystring
-	}
-	return ""
-}
+func (x *HTTPExtension) GetQuerystring() string { _ = "STUB: not implemented"; return "" }
 
 // InvokeRequest is the message to invoke a method with the data.
 // This message is used in InvokeService of Dapr gRPC Service and OnInvoke
@@ -294,65 +268,27 @@ type InvokeRequest struct {
 	HttpExtension *HTTPExtension `protobuf:"bytes,4,opt,name=http_extension,json=httpExtension,proto3" json:"http_extension,omitempty"`
 }
 
-func (x *InvokeRequest) Reset() {
-	*x = InvokeRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeRequest) ProtoMessage() {}
+func (*InvokeRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeRequest.ProtoReflect.Descriptor instead.
-func (*InvokeRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{1}
-}
+func (*InvokeRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *InvokeRequest) GetMethod() string {
-	if x != nil {
-		return x.Method
-	}
-	return ""
-}
+func (x *InvokeRequest) GetMethod() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InvokeRequest) GetData() *anypb.Any {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *InvokeRequest) GetData() *anypb.Any { _ = "STUB: not implemented"; return nil }
 
-func (x *InvokeRequest) GetContentType() string {
-	if x != nil {
-		return x.ContentType
-	}
-	return ""
-}
+func (x *InvokeRequest) GetContentType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InvokeRequest) GetHttpExtension() *HTTPExtension {
-	if x != nil {
-		return x.HttpExtension
-	}
-	return nil
-}
+func (x *InvokeRequest) GetHttpExtension() *HTTPExtension { _ = "STUB: not implemented"; return nil }
 
 // InvokeResponse is the response message inclduing data and its content type
 // from app callback.
@@ -369,51 +305,23 @@ type InvokeResponse struct {
 	ContentType string `protobuf:"bytes,2,opt,name=content_type,json=contentType,proto3" json:"content_type,omitempty"`
 }
 
-func (x *InvokeResponse) Reset() {
-	*x = InvokeResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeResponse) ProtoMessage() {}
+func (*InvokeResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeResponse.ProtoReflect.Descriptor instead.
-func (*InvokeResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{2}
-}
+func (*InvokeResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *InvokeResponse) GetData() *anypb.Any {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *InvokeResponse) GetData() *anypb.Any { _ = "STUB: not implemented"; return nil }
 
-func (x *InvokeResponse) GetContentType() string {
-	if x != nil {
-		return x.ContentType
-	}
-	return ""
-}
+func (x *InvokeResponse) GetContentType() string { _ = "STUB: not implemented"; return "" }
 
 // StateItem represents state key, value, and additional options to save state.
 type StateItem struct {
@@ -434,72 +342,29 @@ type StateItem struct {
 	Options *StateOptions `protobuf:"bytes,5,opt,name=options,proto3" json:"options,omitempty"`
 }
 
-func (x *StateItem) Reset() {
-	*x = StateItem{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *StateItem) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *StateItem) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *StateItem) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*StateItem) ProtoMessage() {}
+func (*StateItem) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *StateItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use StateItem.ProtoReflect.Descriptor instead.
-func (*StateItem) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{3}
-}
+func (*StateItem) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *StateItem) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *StateItem) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *StateItem) GetValue() []byte {
-	if x != nil {
-		return x.Value
-	}
-	return nil
-}
+func (x *StateItem) GetValue() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *StateItem) GetEtag() *Etag {
-	if x != nil {
-		return x.Etag
-	}
-	return nil
-}
+func (x *StateItem) GetEtag() *Etag { _ = "STUB: not implemented"; return nil }
 
-func (x *StateItem) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *StateItem) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (x *StateItem) GetOptions() *StateOptions {
-	if x != nil {
-		return x.Options
-	}
-	return nil
-}
+func (x *StateItem) GetOptions() *StateOptions { _ = "STUB: not implemented"; return nil }
 
 // Etag represents a state item version
 type Etag struct {
@@ -511,44 +376,21 @@ type Etag struct {
 	Value string `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
 }
 
-func (x *Etag) Reset() {
-	*x = Etag{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Etag) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Etag) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Etag) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Etag) ProtoMessage() {}
+func (*Etag) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Etag) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Etag.ProtoReflect.Descriptor instead.
-func (*Etag) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{4}
-}
+func (*Etag) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Etag) GetValue() string {
-	if x != nil {
-		return x.Value
-	}
-	return ""
-}
+func (x *Etag) GetValue() string { _ = "STUB: not implemented"; return "" }
 
 // StateOptions configures concurrency and consistency for state operations
 type StateOptions struct {
@@ -560,50 +402,28 @@ type StateOptions struct {
 	Consistency StateOptions_StateConsistency `protobuf:"varint,2,opt,name=consistency,proto3,enum=dapr.proto.common.v1.StateOptions_StateConsistency" json:"consistency,omitempty"`
 }
 
-func (x *StateOptions) Reset() {
-	*x = StateOptions{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *StateOptions) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *StateOptions) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *StateOptions) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*StateOptions) ProtoMessage() {}
+func (*StateOptions) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *StateOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use StateOptions.ProtoReflect.Descriptor instead.
-func (*StateOptions) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{5}
-}
+func (*StateOptions) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 func (x *StateOptions) GetConcurrency() StateOptions_StateConcurrency {
-	if x != nil {
-		return x.Concurrency
-	}
-	return StateOptions_CONCURRENCY_UNSPECIFIED
+	_ = "STUB: not implemented"
+	return *new(StateOptions_StateConcurrency)
 }
 
 func (x *StateOptions) GetConsistency() StateOptions_StateConsistency {
-	if x != nil {
-		return x.Consistency
-	}
-	return StateOptions_CONSISTENCY_UNSPECIFIED
+	_ = "STUB: not implemented"
+	return *new(StateOptions_StateConsistency)
 }
 
 // ConfigurationItem represents all the configuration with its name(key).
@@ -622,65 +442,27 @@ type ConfigurationItem struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ConfigurationItem) Reset() {
-	*x = ConfigurationItem{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_common_v1_common_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ConfigurationItem) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ConfigurationItem) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ConfigurationItem) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ConfigurationItem) ProtoMessage() {}
+func (*ConfigurationItem) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ConfigurationItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_common_v1_common_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ConfigurationItem.ProtoReflect.Descriptor instead.
-func (*ConfigurationItem) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_common_v1_common_proto_rawDescGZIP(), []int{6}
-}
+func (*ConfigurationItem) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ConfigurationItem) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *ConfigurationItem) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConfigurationItem) GetValue() string {
-	if x != nil {
-		return x.Value
-	}
-	return ""
-}
+func (x *ConfigurationItem) GetValue() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConfigurationItem) GetVersion() string {
-	if x != nil {
-		return x.Version
-	}
-	return ""
-}
+func (x *ConfigurationItem) GetVersion() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ConfigurationItem) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *ConfigurationItem) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 var File_dapr_proto_common_v1_common_proto protoreflect.FileDescriptor
 
@@ -798,10 +580,8 @@ var (
 )
 
 func file_dapr_proto_common_v1_common_proto_rawDescGZIP() []byte {
-	file_dapr_proto_common_v1_common_proto_rawDescOnce.Do(func() {
-		file_dapr_proto_common_v1_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_dapr_proto_common_v1_common_proto_rawDescData)
-	})
-	return file_dapr_proto_common_v1_common_proto_rawDescData
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var file_dapr_proto_common_v1_common_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
@@ -839,114 +619,5 @@ var file_dapr_proto_common_v1_common_proto_depIdxs = []int32{
 	0,  // [0:10] is the sub-list for field type_name
 }
 
-func init() { file_dapr_proto_common_v1_common_proto_init() }
-func file_dapr_proto_common_v1_common_proto_init() {
-	if File_dapr_proto_common_v1_common_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_dapr_proto_common_v1_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HTTPExtension); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_common_v1_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_common_v1_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_common_v1_common_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StateItem); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_common_v1_common_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Etag); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_common_v1_common_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*StateOptions); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_common_v1_common_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ConfigurationItem); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_dapr_proto_common_v1_common_proto_rawDesc,
-			NumEnums:      3,
-			NumMessages:   9,
-			NumExtensions: 0,
-			NumServices:   0,
-		},
-		GoTypes:           file_dapr_proto_common_v1_common_proto_goTypes,
-		DependencyIndexes: file_dapr_proto_common_v1_common_proto_depIdxs,
-		EnumInfos:         file_dapr_proto_common_v1_common_proto_enumTypes,
-		MessageInfos:      file_dapr_proto_common_v1_common_proto_msgTypes,
-	}.Build()
-	File_dapr_proto_common_v1_common_proto = out.File
-	file_dapr_proto_common_v1_common_proto_rawDesc = nil
-	file_dapr_proto_common_v1_common_proto_goTypes = nil
-	file_dapr_proto_common_v1_common_proto_depIdxs = nil
-}
+func init()                                        { file_dapr_proto_common_v1_common_proto_init() }
+func file_dapr_proto_common_v1_common_proto_init() { _ = "STUB: not implemented"; return }

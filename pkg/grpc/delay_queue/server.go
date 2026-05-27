@@ -17,38 +17,21 @@ package delay_queue
 
 import (
 	"context"
-	"fmt"
-
-	"github.com/jinzhu/copier"
-	"mosn.io/pkg/log"
 
 	delay_queue "mosn.io/layotto/components/delay_queue"
 	delay_queue1 "mosn.io/layotto/spec/proto/extension/v1/delay_queue"
 
 	rawGRPC "google.golang.org/grpc"
 
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
-
 	grpc_api "mosn.io/layotto/pkg/grpc"
 )
 
 func NewAPI(ac *grpc_api.ApplicationContext) grpc_api.GrpcAPI {
-	result := &server{
-		appId:      ac.AppId,
-		components: make(map[string]delay_queue.DelayQueue),
-	}
-
-	for k, v := range ac.PubSubs {
-		comp, ok := v.(delay_queue.DelayQueue)
-		if !ok {
-			continue
-		}
-		// put it in the components map
-		result.components[k] = comp
-	}
-	return result
+	_ = "STUB: not implemented"
+	return *new(grpc_api.GrpcAPI)
 }
+
+// put it in the components map
 
 type server struct {
 	appId      string
@@ -56,41 +39,25 @@ type server struct {
 }
 
 func (s *server) PublishDelayMessage(ctx context.Context, in *delay_queue1.DelayMessageRequest) (*delay_queue1.DelayMessageResponse, error) {
+	_ = "STUB: not implemented"
 	// find the component
-	comp := s.components[in.ComponentName]
-	if comp == nil {
-		return nil, invalidArgumentError("PublishDelayMessage", grpc_api.ErrComponentNotFound, "delay_queue", in.ComponentName)
-	}
-
-	// convert request
-	req := &delay_queue.DelayMessageRequest{}
-	err := copier.CopyWithOption(req, in, copier.Option{IgnoreEmpty: true, DeepCopy: true, Converters: []copier.TypeConverter{}})
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, "Error when converting the request: %s", err.Error())
-	}
-
-	// delegate to the component
-	resp, err := comp.PublishDelayMessage(ctx, req)
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, err.Error())
-	}
-
-	// convert response
-	out := &delay_queue1.DelayMessageResponse{MessageId: resp.MessageId}
-	return out, nil
+	return nil, nil
 }
+
+// convert request
+
+// delegate to the component
+
+// convert response
 
 func invalidArgumentError(method string, format string, a ...interface{}) error {
-	err := status.Errorf(codes.InvalidArgument, format, a...)
-	log.DefaultLogger.Errorf(fmt.Sprintf("%s fail: %+v", method, err))
-	return err
-}
-
-func (s *server) Init(conn *rawGRPC.ClientConn) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
+func (s *server) Init(conn *rawGRPC.ClientConn) error { _ = "STUB: not implemented"; return nil }
+
 func (s *server) Register(rawGrpcServer *rawGRPC.Server) error {
-	delay_queue1.RegisterDelayQueueServer(rawGrpcServer, s)
+	_ = "STUB: not implemented"
 	return nil
 }

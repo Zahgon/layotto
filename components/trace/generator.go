@@ -35,14 +35,6 @@ type Generator interface {
 	GetParentSpanId(ctx context.Context) string
 }
 
-func RegisterGenerator(name string, ge Generator) {
-	generators.Store(name, ge)
-}
+func RegisterGenerator(name string, ge Generator) { _ = "STUB: not implemented"; return }
 
-func GetGenerator(name string) Generator {
-	g, ok := generators.Load(name)
-	if ok {
-		return g.(Generator)
-	}
-	return nil
-}
+func GetGenerator(name string) Generator { _ = "STUB: not implemented"; return *new(Generator) }

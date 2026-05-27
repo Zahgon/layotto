@@ -41,25 +41,21 @@ type extensionComponentFactorys struct {
 }
 
 func WithCryptionServiceFactory(cryption ...*cryption.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.cryption = append(o.services.cryption, cryption...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithEmailServiceFactory(email ...*email.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.email = append(o.services.email, email...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithPhoneCallServiceFactory(phone ...*phone.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.phone = append(o.services.phone, phone...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithSmsServiceFactory(sms ...*sms.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.sms = append(o.services.sms, sms...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }

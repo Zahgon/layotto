@@ -17,12 +17,7 @@
 package wasm
 
 import (
-	"encoding/json"
-	"errors"
-	"runtime"
-
 	v2 "mosn.io/mosn/pkg/config/v2"
-	"mosn.io/mosn/pkg/log"
 )
 
 type filterConfigItem struct {
@@ -36,86 +31,23 @@ type filterConfigItem struct {
 
 // Parse filterConfigItem
 func parseFilterConfigItem(cfg map[string]interface{}) (*filterConfigItem, error) {
-	config := filterConfigItem{
-		UserData:      make(map[string]string),
-		RootContextID: 1, // default value is 1
-	}
-
-	data, err := json.Marshal(cfg)
-	if err != nil {
-		log.DefaultLogger.Errorf("[proxywasm][config] fail to marshal filter config, err: %v", err)
-		return nil, err
-	}
-
-	if err = json.Unmarshal(data, &config); err != nil {
-		log.DefaultLogger.Errorf("[proxywasm][config] fail to unmarshal filter config, err: %v", err)
-		return nil, err
-	}
-
-	if err = checkVmConfig(&config); err != nil {
-		log.DefaultLogger.Errorf("[proxywasm][config] fail to check vm config, err: %v", err)
-		return nil, err
-	}
-
-	if err = parseUserData(data, &config); err != nil {
-		log.DefaultLogger.Errorf("[proxywasm][config] fail to parse user data, err: %v", err)
-		return nil, err
-	}
-
-	return &config, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// default value is 1
 
 // Check VMconfig of filterConfigItem
-func checkVmConfig(config *filterConfigItem) error {
-	if config.FromWasmPlugin != "" {
-		config.VmConfig = nil
-		config.InstanceNum = 0
-	} else {
-		if config.VmConfig == nil {
-			log.DefaultLogger.Errorf("[proxywasm][config] checkVmConfig fail, nil vm config")
-			return errors.New("nil vm config")
-		}
-
-		if config.InstanceNum <= 0 {
-			config.InstanceNum = runtime.NumCPU()
-		}
-	}
-
-	return nil
-}
+func checkVmConfig(config *filterConfigItem) error { _ = "STUB: not implemented"; return nil }
 
 // Parse user data
 func parseUserData(rawConfigBytes []byte, config *filterConfigItem) error {
-	if len(rawConfigBytes) == 0 || config == nil {
-		log.DefaultLogger.Errorf("[proxywasm][config] fail to parse user data, invalid param, raw: %v, config: %v",
-			string(rawConfigBytes), config)
-		return errors.New("invalid param")
-	}
-
-	m := make(map[string]interface{})
-
-	// check rawConfigBytes
-	if err := json.Unmarshal(rawConfigBytes, &m); err != nil {
-		log.DefaultLogger.Errorf("[proxywasm][config] fail to unmarshal user data, err: %v", err)
-		return err
-	}
-
-	// delete all pairs that value type is not string
-	delete(m, "from_wasm_plugin")
-
-	for k, v := range m {
-		if _, ok := v.(string); !ok {
-			delete(m, k)
-		}
-	}
-
-	// add into config
-	if len(m) > 0 {
-		config.UserData = make(map[string]string, len(m))
-		for k, v := range m {
-			config.UserData[k] = v.(string)
-		}
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// check rawConfigBytes
+
+// delete all pairs that value type is not string
+
+// add into config

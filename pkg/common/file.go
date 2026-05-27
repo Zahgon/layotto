@@ -18,25 +18,12 @@ package common
 
 import (
 	"io/fs"
-	"os"
-	"path/filepath"
 )
 
-func GetFileSize(f string) int64 {
-	fi, err := os.Stat(f)
-	if err == nil {
-		return fi.Size()
-	}
-
-	return -1
-}
+func GetFileSize(f string) int64 { _ = "STUB: not implemented"; return 0 }
 
 // IsSocket returns if the given file is a unix socket.
-func IsSocket(f fs.FileInfo) bool {
-	return f.Mode()&fs.ModeSocket != 0
-}
+func IsSocket(f fs.FileInfo) bool { _ = "STUB: not implemented"; return false }
 
 // RemoveExt removes file extension
-func RemoveExt(fileName string) string {
-	return fileName[:len(fileName)-len(filepath.Ext(fileName))]
-}
+func RemoveExt(fileName string) string { _ = "STUB: not implemented"; return "" }

@@ -19,11 +19,7 @@ package persistence
 import (
 	"math/rand"
 	"sync"
-	"time"
 
-	"mosn.io/pkg/utils"
-
-	"mosn.io/layotto/pkg/common"
 	"mosn.io/layotto/pkg/filter/network/tcpcopy/model"
 )
 
@@ -37,35 +33,16 @@ type WorkGoroutine struct {
 	tasks *sync.Map
 }
 
-func NewWorkGoroutine() *WorkGoroutine {
-	worker := &WorkGoroutine{
-		tasks: new(sync.Map),
-	}
-	return worker
-}
+func NewWorkGoroutine() *WorkGoroutine { _ = "STUB: not implemented"; return nil }
 
 func (g *WorkGoroutine) AddTask(key string, data *model.DumpUploadDynamicConfig) {
-	g.tasks.Store(key, data)
+	_ = "STUB: not implemented"
+	return
 }
 
-func (g *WorkGoroutine) Start() {
-	utils.GoWithRecover(func() {
-		tick := time.NewTicker(500 * time.Millisecond)
-		<-tick.C
-		g.work()
-	}, func(r interface{}) {
-		g.Start()
-	})
-}
+func (g *WorkGoroutine) Start() { _ = "STUB: not implemented"; return }
 
-func (g *WorkGoroutine) work() {
-	g.tasks.Range(func(key, value interface{}) bool {
-		data := value.(*model.DumpUploadDynamicConfig)
-		persistence(data)
-		g.tasks.Delete(key)
-		return true
-	})
-}
+func (g *WorkGoroutine) work() { _ = "STUB: not implemented"; return }
 
 type DefaultWorkPool struct {
 	size           int64
@@ -74,39 +51,13 @@ type DefaultWorkPool struct {
 	lock           *sync.Mutex
 }
 
-func NewDefaultWorkPool(size int64) *DefaultWorkPool {
-	workPool := &DefaultWorkPool{
-		size:           size,
-		workers:        new(sync.Map),
-		randomInstance: rand.New(rand.NewSource(time.Now().UnixNano())),
-		lock:           new(sync.Mutex),
-	}
-	return workPool
-}
+func NewDefaultWorkPool(size int64) *DefaultWorkPool { _ = "STUB: not implemented"; return nil }
 
-func GetDumpWorkPoolInstance() *DefaultWorkPool {
-	return dumpWorkPoolInstance
-}
+func GetDumpWorkPoolInstance() *DefaultWorkPool { _ = "STUB: not implemented"; return nil }
 
-func (w *DefaultWorkPool) random() int64 {
-	w.lock.Lock()
-	defer w.lock.Unlock()
-	return w.randomInstance.Int63n(w.size)
-}
+func (w *DefaultWorkPool) random() int64 { _ = "STUB: not implemented"; return 0 }
 
 func (w *DefaultWorkPool) Schedule(data *model.DumpUploadDynamicConfig) {
-	index := w.random()
-	key := common.CalculateMd5(string(data.BusinessType)) + common.CalculateMd5ForBytes(data.Binary_flow_data)
-	if value, ok := w.workers.Load(index); ok {
-		worker := value.(*WorkGoroutine)
-		worker.AddTask(key, data)
-	} else {
-		worker := NewWorkGoroutine()
-		worker.AddTask(key, data)
-		if _, ok := w.workers.LoadOrStore(index, worker); !ok {
-			worker.Start()
-		} else {
-			worker.AddTask(key, data)
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }

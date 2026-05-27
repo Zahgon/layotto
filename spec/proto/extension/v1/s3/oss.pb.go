@@ -11,7 +11,6 @@
 package s3
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -92,205 +91,70 @@ type GetObjectInput struct {
 	SignedUrl string `protobuf:"bytes,24,opt,name=signed_url,json=signedUrl,proto3" json:"signed_url,omitempty"`
 }
 
-func (x *GetObjectInput) Reset() {
-	*x = GetObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetObjectInput) ProtoMessage() {}
+func (*GetObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetObjectInput.ProtoReflect.Descriptor instead.
-func (*GetObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{0}
-}
+func (*GetObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *GetObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *GetObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *GetObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
-	return ""
-}
+func (x *GetObjectInput) GetExpectedBucketOwner() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetIfMatch() string {
-	if x != nil {
-		return x.IfMatch
-	}
-	return ""
-}
+func (x *GetObjectInput) GetIfMatch() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetIfModifiedSince() int64 {
-	if x != nil {
-		return x.IfModifiedSince
-	}
-	return 0
-}
+func (x *GetObjectInput) GetIfModifiedSince() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectInput) GetIfNoneMatch() string {
-	if x != nil {
-		return x.IfNoneMatch
-	}
-	return ""
-}
+func (x *GetObjectInput) GetIfNoneMatch() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetIfUnmodifiedSince() int64 {
-	if x != nil {
-		return x.IfUnmodifiedSince
-	}
-	return 0
-}
+func (x *GetObjectInput) GetIfUnmodifiedSince() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectInput) GetPartNumber() int64 {
-	if x != nil {
-		return x.PartNumber
-	}
-	return 0
-}
+func (x *GetObjectInput) GetPartNumber() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectInput) GetStart() int64 {
-	if x != nil {
-		return x.Start
-	}
-	return 0
-}
+func (x *GetObjectInput) GetStart() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectInput) GetEnd() int64 {
-	if x != nil {
-		return x.End
-	}
-	return 0
-}
+func (x *GetObjectInput) GetEnd() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *GetObjectInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetResponseCacheControl() string {
-	if x != nil {
-		return x.ResponseCacheControl
-	}
-	return ""
-}
+func (x *GetObjectInput) GetResponseCacheControl() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetObjectInput) GetResponseContentDisposition() string {
-	if x != nil {
-		return x.ResponseContentDisposition
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *GetObjectInput) GetResponseContentEncoding() string {
-	if x != nil {
-		return x.ResponseContentEncoding
-	}
-	return ""
-}
+func (x *GetObjectInput) GetResponseContentEncoding() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetResponseContentLanguage() string {
-	if x != nil {
-		return x.ResponseContentLanguage
-	}
-	return ""
-}
+func (x *GetObjectInput) GetResponseContentLanguage() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetResponseContentType() string {
-	if x != nil {
-		return x.ResponseContentType
-	}
-	return ""
-}
+func (x *GetObjectInput) GetResponseContentType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetResponseExpires() string {
-	if x != nil {
-		return x.ResponseExpires
-	}
-	return ""
-}
+func (x *GetObjectInput) GetResponseExpires() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
-	return ""
-}
+func (x *GetObjectInput) GetSseCustomerAlgorithm() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetSseCustomerKey() string {
-	if x != nil {
-		return x.SseCustomerKey
-	}
-	return ""
-}
+func (x *GetObjectInput) GetSseCustomerKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
-	return ""
-}
+func (x *GetObjectInput) GetSseCustomerKeyMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *GetObjectInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetAcceptEncoding() string {
-	if x != nil {
-		return x.AcceptEncoding
-	}
-	return ""
-}
+func (x *GetObjectInput) GetAcceptEncoding() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectInput) GetSignedUrl() string {
-	if x != nil {
-		return x.SignedUrl
-	}
-	return ""
-}
+func (x *GetObjectInput) GetSignedUrl() string { _ = "STUB: not implemented"; return "" }
 
 // GetObjectOutput
 type GetObjectOutput struct {
@@ -346,163 +210,55 @@ type GetObjectOutput struct {
 	Metadata map[string]string `protobuf:"bytes,18,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetObjectOutput) Reset() {
-	*x = GetObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetObjectOutput) ProtoMessage() {}
+func (*GetObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetObjectOutput.ProtoReflect.Descriptor instead.
-func (*GetObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{1}
-}
+func (*GetObjectOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *GetObjectOutput) GetBody() []byte {
-	if x != nil {
-		return x.Body
-	}
-	return nil
-}
+func (x *GetObjectOutput) GetBody() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *GetObjectOutput) GetCacheControl() string {
-	if x != nil {
-		return x.CacheControl
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetCacheControl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetContentDisposition() string {
-	if x != nil {
-		return x.ContentDisposition
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetContentDisposition() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetContentEncoding() string {
-	if x != nil {
-		return x.ContentEncoding
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetContentEncoding() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetContentLanguage() string {
-	if x != nil {
-		return x.ContentLanguage
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetContentLanguage() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetContentLength() int64 {
-	if x != nil {
-		return x.ContentLength
-	}
-	return 0
-}
+func (x *GetObjectOutput) GetContentLength() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectOutput) GetContentRange() string {
-	if x != nil {
-		return x.ContentRange
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetContentRange() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetContentType() string {
-	if x != nil {
-		return x.ContentType
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetContentType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetDeleteMarker() bool {
-	if x != nil {
-		return x.DeleteMarker
-	}
-	return false
-}
+func (x *GetObjectOutput) GetDeleteMarker() bool { _ = "STUB: not implemented"; return false }
 
-func (x *GetObjectOutput) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetExpiration() string {
-	if x != nil {
-		return x.Expiration
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetExpiration() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetExpires() string {
-	if x != nil {
-		return x.Expires
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetExpires() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *GetObjectOutput) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetTagCount() int64 {
-	if x != nil {
-		return x.TagCount
-	}
-	return 0
-}
+func (x *GetObjectOutput) GetTagCount() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectOutput) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *GetObjectOutput) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectOutput) GetPartsCount() int64 {
-	if x != nil {
-		return x.PartsCount
-	}
-	return 0
-}
+func (x *GetObjectOutput) GetPartsCount() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *GetObjectOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *GetObjectOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // PutObjectInput
 type PutObjectInput struct {
@@ -557,149 +313,51 @@ type PutObjectInput struct {
 	ContentLength int64 `protobuf:"varint,16,opt,name=content_length,json=contentLength,proto3" json:"content_length,omitempty"`
 }
 
-func (x *PutObjectInput) Reset() {
-	*x = PutObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PutObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PutObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PutObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PutObjectInput) ProtoMessage() {}
+func (*PutObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PutObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PutObjectInput.ProtoReflect.Descriptor instead.
-func (*PutObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{2}
-}
+func (*PutObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *PutObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *PutObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetBody() []byte {
-	if x != nil {
-		return x.Body
-	}
-	return nil
-}
+func (x *PutObjectInput) GetBody() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *PutObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *PutObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *PutObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetAcl() string {
-	if x != nil {
-		return x.Acl
-	}
-	return ""
-}
+func (x *PutObjectInput) GetAcl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
-	return false
-}
+func (x *PutObjectInput) GetBucketKeyEnabled() bool { _ = "STUB: not implemented"; return false }
 
-func (x *PutObjectInput) GetCacheControl() string {
-	if x != nil {
-		return x.CacheControl
-	}
-	return ""
-}
+func (x *PutObjectInput) GetCacheControl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetContentDisposition() string {
-	if x != nil {
-		return x.ContentDisposition
-	}
-	return ""
-}
+func (x *PutObjectInput) GetContentDisposition() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetContentEncoding() string {
-	if x != nil {
-		return x.ContentEncoding
-	}
-	return ""
-}
+func (x *PutObjectInput) GetContentEncoding() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetExpires() int64 {
-	if x != nil {
-		return x.Expires
-	}
-	return 0
-}
+func (x *PutObjectInput) GetExpires() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *PutObjectInput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
-	return ""
-}
+func (x *PutObjectInput) GetServerSideEncryption() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetSignedUrl() string {
-	if x != nil {
-		return x.SignedUrl
-	}
-	return ""
-}
+func (x *PutObjectInput) GetSignedUrl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetMeta() map[string]string {
-	if x != nil {
-		return x.Meta
-	}
-	return nil
-}
+func (x *PutObjectInput) GetMeta() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (x *PutObjectInput) GetTagging() map[string]string {
-	if x != nil {
-		return x.Tagging
-	}
-	return nil
-}
+func (x *PutObjectInput) GetTagging() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (x *PutObjectInput) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *PutObjectInput) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectInput) GetContentLength() int64 {
-	if x != nil {
-		return x.ContentLength
-	}
-	return 0
-}
+func (x *PutObjectInput) GetContentLength() int64 { _ = "STUB: not implemented"; return 0 }
 
 // PutObjectOutput
 type PutObjectOutput struct {
@@ -722,79 +380,31 @@ type PutObjectOutput struct {
 	Metadata map[string]string `protobuf:"bytes,6,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *PutObjectOutput) Reset() {
-	*x = PutObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PutObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PutObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PutObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PutObjectOutput) ProtoMessage() {}
+func (*PutObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PutObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PutObjectOutput.ProtoReflect.Descriptor instead.
-func (*PutObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{3}
-}
+func (*PutObjectOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *PutObjectOutput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
-	return false
-}
+func (x *PutObjectOutput) GetBucketKeyEnabled() bool { _ = "STUB: not implemented"; return false }
 
-func (x *PutObjectOutput) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *PutObjectOutput) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectOutput) GetExpiration() string {
-	if x != nil {
-		return x.Expiration
-	}
-	return ""
-}
+func (x *PutObjectOutput) GetExpiration() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *PutObjectOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *PutObjectOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *PutObjectOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // DeleteObjectInput
 type DeleteObjectInput struct {
@@ -816,72 +426,29 @@ type DeleteObjectInput struct {
 	VersionId string `protobuf:"bytes,5,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *DeleteObjectInput) Reset() {
-	*x = DeleteObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteObjectInput) ProtoMessage() {}
+func (*DeleteObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteObjectInput.ProtoReflect.Descriptor instead.
-func (*DeleteObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{4}
-}
+func (*DeleteObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DeleteObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *DeleteObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *DeleteObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *DeleteObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *DeleteObjectInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *DeleteObjectInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // DeleteObjectOutput
 type DeleteObjectOutput struct {
@@ -902,65 +469,27 @@ type DeleteObjectOutput struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *DeleteObjectOutput) Reset() {
-	*x = DeleteObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteObjectOutput) ProtoMessage() {}
+func (*DeleteObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteObjectOutput.ProtoReflect.Descriptor instead.
-func (*DeleteObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{5}
-}
+func (*DeleteObjectOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DeleteObjectOutput) GetDeleteMarker() bool {
-	if x != nil {
-		return x.DeleteMarker
-	}
-	return false
-}
+func (x *DeleteObjectOutput) GetDeleteMarker() bool { _ = "STUB: not implemented"; return false }
 
-func (x *DeleteObjectOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *DeleteObjectOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *DeleteObjectOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *DeleteObjectOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // PutObjectTaggingInput
 type PutObjectTaggingInput struct {
@@ -982,72 +511,32 @@ type PutObjectTaggingInput struct {
 	VersionId string `protobuf:"bytes,5,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *PutObjectTaggingInput) Reset() {
-	*x = PutObjectTaggingInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PutObjectTaggingInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PutObjectTaggingInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PutObjectTaggingInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PutObjectTaggingInput) ProtoMessage() {}
+func (*PutObjectTaggingInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PutObjectTaggingInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PutObjectTaggingInput.ProtoReflect.Descriptor instead.
 func (*PutObjectTaggingInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *PutObjectTaggingInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *PutObjectTaggingInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectTaggingInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *PutObjectTaggingInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectTaggingInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *PutObjectTaggingInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectTaggingInput) GetTags() map[string]string {
-	if x != nil {
-		return x.Tags
-	}
-	return nil
-}
+func (x *PutObjectTaggingInput) GetTags() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (x *PutObjectTaggingInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *PutObjectTaggingInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // PutObjectTaggingOutput
 type PutObjectTaggingOutput struct {
@@ -1061,49 +550,27 @@ type PutObjectTaggingOutput struct {
 	ResultMetadata map[string]string `protobuf:"bytes,2,rep,name=result_metadata,json=resultMetadata,proto3" json:"result_metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *PutObjectTaggingOutput) Reset() {
-	*x = PutObjectTaggingOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PutObjectTaggingOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PutObjectTaggingOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PutObjectTaggingOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PutObjectTaggingOutput) ProtoMessage() {}
+func (*PutObjectTaggingOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PutObjectTaggingOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PutObjectTaggingOutput.ProtoReflect.Descriptor instead.
 func (*PutObjectTaggingOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{7}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *PutObjectTaggingOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *PutObjectTaggingOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *PutObjectTaggingOutput) GetResultMetadata() map[string]string {
-	if x != nil {
-		return x.ResultMetadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1128,70 +595,33 @@ type DeleteObjectTaggingInput struct {
 	ExpectedBucketOwner string `protobuf:"bytes,5,opt,name=expected_bucket_owner,json=expectedBucketOwner,proto3" json:"expected_bucket_owner,omitempty"`
 }
 
-func (x *DeleteObjectTaggingInput) Reset() {
-	*x = DeleteObjectTaggingInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteObjectTaggingInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteObjectTaggingInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteObjectTaggingInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteObjectTaggingInput) ProtoMessage() {}
+func (*DeleteObjectTaggingInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteObjectTaggingInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteObjectTaggingInput.ProtoReflect.Descriptor instead.
 func (*DeleteObjectTaggingInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{8}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *DeleteObjectTaggingInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *DeleteObjectTaggingInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectTaggingInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *DeleteObjectTaggingInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectTaggingInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *DeleteObjectTaggingInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectTaggingInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *DeleteObjectTaggingInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *DeleteObjectTaggingInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
@@ -1207,49 +637,27 @@ type DeleteObjectTaggingOutput struct {
 	ResultMetadata map[string]string `protobuf:"bytes,2,rep,name=result_metadata,json=resultMetadata,proto3" json:"result_metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *DeleteObjectTaggingOutput) Reset() {
-	*x = DeleteObjectTaggingOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteObjectTaggingOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteObjectTaggingOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteObjectTaggingOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteObjectTaggingOutput) ProtoMessage() {}
+func (*DeleteObjectTaggingOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteObjectTaggingOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteObjectTaggingOutput.ProtoReflect.Descriptor instead.
 func (*DeleteObjectTaggingOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{9}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *DeleteObjectTaggingOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *DeleteObjectTaggingOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *DeleteObjectTaggingOutput) GetResultMetadata() map[string]string {
-	if x != nil {
-		return x.ResultMetadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1277,79 +685,37 @@ type GetObjectTaggingInput struct {
 	RequestPayer string `protobuf:"bytes,6,opt,name=request_payer,json=requestPayer,proto3" json:"request_payer,omitempty"`
 }
 
-func (x *GetObjectTaggingInput) Reset() {
-	*x = GetObjectTaggingInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetObjectTaggingInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetObjectTaggingInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetObjectTaggingInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetObjectTaggingInput) ProtoMessage() {}
+func (*GetObjectTaggingInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetObjectTaggingInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetObjectTaggingInput.ProtoReflect.Descriptor instead.
 func (*GetObjectTaggingInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{10}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetObjectTaggingInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetObjectTaggingInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectTaggingInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *GetObjectTaggingInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectTaggingInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *GetObjectTaggingInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectTaggingInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *GetObjectTaggingInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetObjectTaggingInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *GetObjectTaggingInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *GetObjectTaggingInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
 // GetObjectTaggingOutput
 type GetObjectTaggingOutput struct {
@@ -1366,56 +732,29 @@ type GetObjectTaggingOutput struct {
 	ResultMetadata map[string]string `protobuf:"bytes,3,rep,name=result_metadata,json=resultMetadata,proto3" json:"result_metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetObjectTaggingOutput) Reset() {
-	*x = GetObjectTaggingOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetObjectTaggingOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetObjectTaggingOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetObjectTaggingOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetObjectTaggingOutput) ProtoMessage() {}
+func (*GetObjectTaggingOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetObjectTaggingOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetObjectTaggingOutput.ProtoReflect.Descriptor instead.
 func (*GetObjectTaggingOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{11}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetObjectTaggingOutput) GetTags() map[string]string {
-	if x != nil {
-		return x.Tags
-	}
-	return nil
-}
+func (x *GetObjectTaggingOutput) GetTags() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (x *GetObjectTaggingOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *GetObjectTaggingOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetObjectTaggingOutput) GetResultMetadata() map[string]string {
-	if x != nil {
-		return x.ResultMetadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1433,58 +772,25 @@ type CopySource struct {
 	CopySourceVersionId string `protobuf:"bytes,3,opt,name=copy_source_version_id,json=copySourceVersionId,proto3" json:"copy_source_version_id,omitempty"`
 }
 
-func (x *CopySource) Reset() {
-	*x = CopySource{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CopySource) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CopySource) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CopySource) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CopySource) ProtoMessage() {}
+func (*CopySource) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CopySource) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CopySource.ProtoReflect.Descriptor instead.
-func (*CopySource) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{12}
-}
+func (*CopySource) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CopySource) GetCopySourceBucket() string {
-	if x != nil {
-		return x.CopySourceBucket
-	}
-	return ""
-}
+func (x *CopySource) GetCopySourceBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopySource) GetCopySourceKey() string {
-	if x != nil {
-		return x.CopySourceKey
-	}
-	return ""
-}
+func (x *CopySource) GetCopySourceKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopySource) GetCopySourceVersionId() string {
-	if x != nil {
-		return x.CopySourceVersionId
-	}
-	return ""
-}
+func (x *CopySource) GetCopySourceVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // CopyObjectInput
 type CopyObjectInput struct {
@@ -1514,93 +820,35 @@ type CopyObjectInput struct {
 	Metadata map[string]string `protobuf:"bytes,8,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *CopyObjectInput) Reset() {
-	*x = CopyObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CopyObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CopyObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CopyObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CopyObjectInput) ProtoMessage() {}
+func (*CopyObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CopyObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CopyObjectInput.ProtoReflect.Descriptor instead.
-func (*CopyObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{13}
-}
+func (*CopyObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CopyObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *CopyObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *CopyObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *CopyObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectInput) GetCopySource() *CopySource {
-	if x != nil {
-		return x.CopySource
-	}
-	return nil
-}
+func (x *CopyObjectInput) GetCopySource() *CopySource { _ = "STUB: not implemented"; return nil }
 
-func (x *CopyObjectInput) GetTagging() map[string]string {
-	if x != nil {
-		return x.Tagging
-	}
-	return nil
-}
+func (x *CopyObjectInput) GetTagging() map[string]string { _ = "STUB: not implemented"; return nil }
 
-func (x *CopyObjectInput) GetExpires() int64 {
-	if x != nil {
-		return x.Expires
-	}
-	return 0
-}
+func (x *CopyObjectInput) GetExpires() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *CopyObjectInput) GetMetadataDirective() string {
-	if x != nil {
-		return x.MetadataDirective
-	}
-	return ""
-}
+func (x *CopyObjectInput) GetMetadataDirective() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectInput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *CopyObjectInput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // CopyObjectResult
 type CopyObjectResult struct {
@@ -1615,51 +863,23 @@ type CopyObjectResult struct {
 	LastModified int64 `protobuf:"varint,2,opt,name=last_modified,json=lastModified,proto3" json:"last_modified,omitempty"`
 }
 
-func (x *CopyObjectResult) Reset() {
-	*x = CopyObjectResult{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CopyObjectResult) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CopyObjectResult) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CopyObjectResult) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CopyObjectResult) ProtoMessage() {}
+func (*CopyObjectResult) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CopyObjectResult) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CopyObjectResult.ProtoReflect.Descriptor instead.
-func (*CopyObjectResult) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{14}
-}
+func (*CopyObjectResult) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CopyObjectResult) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *CopyObjectResult) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectResult) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *CopyObjectResult) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
 // CopyObjectOutput
 type CopyObjectOutput struct {
@@ -1677,65 +897,30 @@ type CopyObjectOutput struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *CopyObjectOutput) Reset() {
-	*x = CopyObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CopyObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CopyObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CopyObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CopyObjectOutput) ProtoMessage() {}
+func (*CopyObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CopyObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CopyObjectOutput.ProtoReflect.Descriptor instead.
-func (*CopyObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{15}
-}
+func (*CopyObjectOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 func (x *CopyObjectOutput) GetCopyObjectResult() *CopyObjectResult {
-	if x != nil {
-		return x.CopyObjectResult
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *CopyObjectOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *CopyObjectOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectOutput) GetExpiration() string {
-	if x != nil {
-		return x.Expiration
-	}
-	return ""
-}
+func (x *CopyObjectOutput) GetExpiration() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyObjectOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *CopyObjectOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // Delete
 type Delete struct {
@@ -1750,51 +935,23 @@ type Delete struct {
 	Quiet bool `protobuf:"varint,2,opt,name=quiet,proto3" json:"quiet,omitempty"`
 }
 
-func (x *Delete) Reset() {
-	*x = Delete{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Delete) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Delete) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Delete) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Delete) ProtoMessage() {}
+func (*Delete) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Delete) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Delete.ProtoReflect.Descriptor instead.
-func (*Delete) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{16}
-}
+func (*Delete) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Delete) GetObjects() []*ObjectIdentifier {
-	if x != nil {
-		return x.Objects
-	}
-	return nil
-}
+func (x *Delete) GetObjects() []*ObjectIdentifier { _ = "STUB: not implemented"; return nil }
 
-func (x *Delete) GetQuiet() bool {
-	if x != nil {
-		return x.Quiet
-	}
-	return false
-}
+func (x *Delete) GetQuiet() bool { _ = "STUB: not implemented"; return false }
 
 // ObjectIdentifier
 type ObjectIdentifier struct {
@@ -1809,51 +966,23 @@ type ObjectIdentifier struct {
 	VersionId string `protobuf:"bytes,2,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *ObjectIdentifier) Reset() {
-	*x = ObjectIdentifier{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ObjectIdentifier) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ObjectIdentifier) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ObjectIdentifier) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ObjectIdentifier) ProtoMessage() {}
+func (*ObjectIdentifier) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ObjectIdentifier) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ObjectIdentifier.ProtoReflect.Descriptor instead.
-func (*ObjectIdentifier) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{17}
-}
+func (*ObjectIdentifier) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ObjectIdentifier) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *ObjectIdentifier) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ObjectIdentifier) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *ObjectIdentifier) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // DeleteObjectsInput
 type DeleteObjectsInput struct {
@@ -1872,65 +1001,27 @@ type DeleteObjectsInput struct {
 	RequestPayer string `protobuf:"bytes,4,opt,name=request_payer,json=requestPayer,proto3" json:"request_payer,omitempty"`
 }
 
-func (x *DeleteObjectsInput) Reset() {
-	*x = DeleteObjectsInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[18]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteObjectsInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteObjectsInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteObjectsInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteObjectsInput) ProtoMessage() {}
+func (*DeleteObjectsInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteObjectsInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[18]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteObjectsInput.ProtoReflect.Descriptor instead.
-func (*DeleteObjectsInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{18}
-}
+func (*DeleteObjectsInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DeleteObjectsInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *DeleteObjectsInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectsInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *DeleteObjectsInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteObjectsInput) GetDelete() *Delete {
-	if x != nil {
-		return x.Delete
-	}
-	return nil
-}
+func (x *DeleteObjectsInput) GetDelete() *Delete { _ = "STUB: not implemented"; return nil }
 
-func (x *DeleteObjectsInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *DeleteObjectsInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
 // DeletedObject
 type DeletedObject struct {
@@ -1952,65 +1043,27 @@ type DeletedObject struct {
 	VersionId string `protobuf:"bytes,4,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *DeletedObject) Reset() {
-	*x = DeletedObject{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeletedObject) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeletedObject) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeletedObject) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeletedObject) ProtoMessage() {}
+func (*DeletedObject) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeletedObject) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeletedObject.ProtoReflect.Descriptor instead.
-func (*DeletedObject) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{19}
-}
+func (*DeletedObject) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DeletedObject) GetDeleteMarker() bool {
-	if x != nil {
-		return x.DeleteMarker
-	}
-	return false
-}
+func (x *DeletedObject) GetDeleteMarker() bool { _ = "STUB: not implemented"; return false }
 
-func (x *DeletedObject) GetDeleteMarkerVersionId() string {
-	if x != nil {
-		return x.DeleteMarkerVersionId
-	}
-	return ""
-}
+func (x *DeletedObject) GetDeleteMarkerVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeletedObject) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *DeletedObject) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeletedObject) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *DeletedObject) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // DeleteObjectsOutput
 type DeleteObjectsOutput struct {
@@ -2024,49 +1077,27 @@ type DeleteObjectsOutput struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *DeleteObjectsOutput) Reset() {
-	*x = DeleteObjectsOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteObjectsOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteObjectsOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteObjectsOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteObjectsOutput) ProtoMessage() {}
+func (*DeleteObjectsOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteObjectsOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteObjectsOutput.ProtoReflect.Descriptor instead.
 func (*DeleteObjectsOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{20}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *DeleteObjectsOutput) GetDeleted() []*DeletedObject {
-	if x != nil {
-		return x.Deleted
-	}
-	return nil
-}
+func (x *DeleteObjectsOutput) GetDeleted() []*DeletedObject { _ = "STUB: not implemented"; return nil }
 
 func (x *DeleteObjectsOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2109,107 +1140,39 @@ type ListObjectsInput struct {
 	FetchOwner bool `protobuf:"varint,10,opt,name=fetch_owner,json=fetchOwner,proto3" json:"fetch_owner,omitempty"`
 }
 
-func (x *ListObjectsInput) Reset() {
-	*x = ListObjectsInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListObjectsInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListObjectsInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListObjectsInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListObjectsInput) ProtoMessage() {}
+func (*ListObjectsInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListObjectsInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListObjectsInput.ProtoReflect.Descriptor instead.
-func (*ListObjectsInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{21}
-}
+func (*ListObjectsInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ListObjectsInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetDelimiter() string {
-	if x != nil {
-		return x.Delimiter
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetEncodingType() string {
-	if x != nil {
-		return x.EncodingType
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetEncodingType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetExpectedBucketOwner() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetMarker() string {
-	if x != nil {
-		return x.Marker
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetMaxKeys() int32 {
-	if x != nil {
-		return x.MaxKeys
-	}
-	return 0
-}
+func (x *ListObjectsInput) GetMaxKeys() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListObjectsInput) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *ListObjectsInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsInput) GetFetchOwner() bool {
-	if x != nil {
-		return x.FetchOwner
-	}
-	return false
-}
+func (x *ListObjectsInput) GetFetchOwner() bool { _ = "STUB: not implemented"; return false }
 
 // ListObjectsOutput
 type ListObjectsOutput struct {
@@ -2249,114 +1212,41 @@ type ListObjectsOutput struct {
 	Metadata map[string]string `protobuf:"bytes,11,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ListObjectsOutput) Reset() {
-	*x = ListObjectsOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[22]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListObjectsOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListObjectsOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListObjectsOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListObjectsOutput) ProtoMessage() {}
+func (*ListObjectsOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListObjectsOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[22]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListObjectsOutput.ProtoReflect.Descriptor instead.
-func (*ListObjectsOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{22}
-}
+func (*ListObjectsOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ListObjectsOutput) GetCommonPrefixes() []string {
-	if x != nil {
-		return x.CommonPrefixes
-	}
-	return nil
-}
+func (x *ListObjectsOutput) GetCommonPrefixes() []string { _ = "STUB: not implemented"; return nil }
 
-func (x *ListObjectsOutput) GetContents() []*Object {
-	if x != nil {
-		return x.Contents
-	}
-	return nil
-}
+func (x *ListObjectsOutput) GetContents() []*Object { _ = "STUB: not implemented"; return nil }
 
-func (x *ListObjectsOutput) GetDelimiter() string {
-	if x != nil {
-		return x.Delimiter
-	}
-	return ""
-}
+func (x *ListObjectsOutput) GetDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsOutput) GetEncodingType() string {
-	if x != nil {
-		return x.EncodingType
-	}
-	return ""
-}
+func (x *ListObjectsOutput) GetEncodingType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsOutput) GetIsTruncated() bool {
-	if x != nil {
-		return x.IsTruncated
-	}
-	return false
-}
+func (x *ListObjectsOutput) GetIsTruncated() bool { _ = "STUB: not implemented"; return false }
 
-func (x *ListObjectsOutput) GetMarker() string {
-	if x != nil {
-		return x.Marker
-	}
-	return ""
-}
+func (x *ListObjectsOutput) GetMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsOutput) GetMaxKeys() int32 {
-	if x != nil {
-		return x.MaxKeys
-	}
-	return 0
-}
+func (x *ListObjectsOutput) GetMaxKeys() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListObjectsOutput) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *ListObjectsOutput) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsOutput) GetNextMarker() string {
-	if x != nil {
-		return x.NextMarker
-	}
-	return ""
-}
+func (x *ListObjectsOutput) GetNextMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsOutput) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *ListObjectsOutput) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectsOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *ListObjectsOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // Owner
 type Owner struct {
@@ -2370,51 +1260,23 @@ type Owner struct {
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *Owner) Reset() {
-	*x = Owner{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[23]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Owner) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Owner) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Owner) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Owner) ProtoMessage() {}
+func (*Owner) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Owner) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[23]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Owner.ProtoReflect.Descriptor instead.
-func (*Owner) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{23}
-}
+func (*Owner) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Owner) GetDisplayName() string {
-	if x != nil {
-		return x.DisplayName
-	}
-	return ""
-}
+func (x *Owner) GetDisplayName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Owner) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *Owner) GetId() string { _ = "STUB: not implemented"; return "" }
 
 // Object
 type Object struct {
@@ -2439,86 +1301,33 @@ type Object struct {
 	Type string `protobuf:"bytes,7,opt,name=type,proto3" json:"type,omitempty"`
 }
 
-func (x *Object) Reset() {
-	*x = Object{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[24]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Object) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Object) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Object) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Object) ProtoMessage() {}
+func (*Object) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Object) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[24]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Object.ProtoReflect.Descriptor instead.
-func (*Object) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{24}
-}
+func (*Object) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Object) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *Object) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Object) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *Object) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Object) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *Object) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *Object) GetOwner() *Owner {
-	if x != nil {
-		return x.Owner
-	}
-	return nil
-}
+func (x *Object) GetOwner() *Owner { _ = "STUB: not implemented"; return nil }
 
-func (x *Object) GetSize() int64 {
-	if x != nil {
-		return x.Size
-	}
-	return 0
-}
+func (x *Object) GetSize() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *Object) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *Object) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Object) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
+func (x *Object) GetType() string { _ = "STUB: not implemented"; return "" }
 
 // GetObjectCannedAclInput
 type GetObjectCannedAclInput struct {
@@ -2538,65 +1347,30 @@ type GetObjectCannedAclInput struct {
 	VersionId string `protobuf:"bytes,4,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *GetObjectCannedAclInput) Reset() {
-	*x = GetObjectCannedAclInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[25]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetObjectCannedAclInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetObjectCannedAclInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetObjectCannedAclInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetObjectCannedAclInput) ProtoMessage() {}
+func (*GetObjectCannedAclInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetObjectCannedAclInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[25]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetObjectCannedAclInput.ProtoReflect.Descriptor instead.
 func (*GetObjectCannedAclInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{25}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetObjectCannedAclInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetObjectCannedAclInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectCannedAclInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *GetObjectCannedAclInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectCannedAclInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *GetObjectCannedAclInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectCannedAclInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *GetObjectCannedAclInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // GetObjectCannedAclOutput
 type GetObjectCannedAclOutput struct {
@@ -2615,63 +1389,31 @@ type GetObjectCannedAclOutput struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetObjectCannedAclOutput) Reset() {
-	*x = GetObjectCannedAclOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[26]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetObjectCannedAclOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetObjectCannedAclOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetObjectCannedAclOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetObjectCannedAclOutput) ProtoMessage() {}
+func (*GetObjectCannedAclOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetObjectCannedAclOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[26]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetObjectCannedAclOutput.ProtoReflect.Descriptor instead.
 func (*GetObjectCannedAclOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{26}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetObjectCannedAclOutput) GetCannedAcl() string {
-	if x != nil {
-		return x.CannedAcl
-	}
-	return ""
-}
+func (x *GetObjectCannedAclOutput) GetCannedAcl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetObjectCannedAclOutput) GetOwner() *Owner {
-	if x != nil {
-		return x.Owner
-	}
-	return nil
-}
+func (x *GetObjectCannedAclOutput) GetOwner() *Owner { _ = "STUB: not implemented"; return nil }
 
-func (x *GetObjectCannedAclOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *GetObjectCannedAclOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetObjectCannedAclOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2695,72 +1437,32 @@ type PutObjectCannedAclInput struct {
 	VersionId string `protobuf:"bytes,5,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *PutObjectCannedAclInput) Reset() {
-	*x = PutObjectCannedAclInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[27]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PutObjectCannedAclInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PutObjectCannedAclInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PutObjectCannedAclInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PutObjectCannedAclInput) ProtoMessage() {}
+func (*PutObjectCannedAclInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PutObjectCannedAclInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[27]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PutObjectCannedAclInput.ProtoReflect.Descriptor instead.
 func (*PutObjectCannedAclInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{27}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *PutObjectCannedAclInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *PutObjectCannedAclInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectCannedAclInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *PutObjectCannedAclInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectCannedAclInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *PutObjectCannedAclInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectCannedAclInput) GetAcl() string {
-	if x != nil {
-		return x.Acl
-	}
-	return ""
-}
+func (x *PutObjectCannedAclInput) GetAcl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PutObjectCannedAclInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *PutObjectCannedAclInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // PutObjectCannedAclOutput
 type PutObjectCannedAclOutput struct {
@@ -2774,49 +1476,27 @@ type PutObjectCannedAclOutput struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *PutObjectCannedAclOutput) Reset() {
-	*x = PutObjectCannedAclOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[28]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PutObjectCannedAclOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PutObjectCannedAclOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PutObjectCannedAclOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PutObjectCannedAclOutput) ProtoMessage() {}
+func (*PutObjectCannedAclOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PutObjectCannedAclOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[28]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PutObjectCannedAclOutput.ProtoReflect.Descriptor instead.
 func (*PutObjectCannedAclOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{28}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *PutObjectCannedAclOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *PutObjectCannedAclOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
 func (x *PutObjectCannedAclOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2831,44 +1511,24 @@ type GlacierJobParameters struct {
 	Tier string `protobuf:"bytes,1,opt,name=tier,proto3" json:"tier,omitempty"`
 }
 
-func (x *GlacierJobParameters) Reset() {
-	*x = GlacierJobParameters{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[29]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GlacierJobParameters) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GlacierJobParameters) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GlacierJobParameters) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GlacierJobParameters) ProtoMessage() {}
+func (*GlacierJobParameters) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GlacierJobParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[29]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GlacierJobParameters.ProtoReflect.Descriptor instead.
 func (*GlacierJobParameters) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{29}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GlacierJobParameters) GetTier() string {
-	if x != nil {
-		return x.Tier
-	}
-	return ""
-}
+func (x *GlacierJobParameters) GetTier() string { _ = "STUB: not implemented"; return "" }
 
 // OutPutLocation
 type OutputLocation struct {
@@ -2884,51 +1544,23 @@ type OutputLocation struct {
 	Prefix string `protobuf:"bytes,2,opt,name=prefix,proto3" json:"prefix,omitempty"`
 }
 
-func (x *OutputLocation) Reset() {
-	*x = OutputLocation{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[30]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *OutputLocation) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *OutputLocation) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *OutputLocation) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*OutputLocation) ProtoMessage() {}
+func (*OutputLocation) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *OutputLocation) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[30]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use OutputLocation.ProtoReflect.Descriptor instead.
-func (*OutputLocation) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{30}
-}
+func (*OutputLocation) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *OutputLocation) GetBucketName() string {
-	if x != nil {
-		return x.BucketName
-	}
-	return ""
-}
+func (x *OutputLocation) GetBucketName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *OutputLocation) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *OutputLocation) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
 // CSVInput
 type CSVInput struct {
@@ -2973,86 +1605,33 @@ type CSVInput struct {
 	RecordDelimiter string `protobuf:"bytes,7,opt,name=record_delimiter,json=recordDelimiter,proto3" json:"record_delimiter,omitempty"`
 }
 
-func (x *CSVInput) Reset() {
-	*x = CSVInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[31]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CSVInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CSVInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CSVInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CSVInput) ProtoMessage() {}
+func (*CSVInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CSVInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[31]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CSVInput.ProtoReflect.Descriptor instead.
-func (*CSVInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{31}
-}
+func (*CSVInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CSVInput) GetAllowQuotedRecordDelimiter() bool {
-	if x != nil {
-		return x.AllowQuotedRecordDelimiter
-	}
-	return false
-}
+func (x *CSVInput) GetAllowQuotedRecordDelimiter() bool { _ = "STUB: not implemented"; return false }
 
-func (x *CSVInput) GetComments() string {
-	if x != nil {
-		return x.Comments
-	}
-	return ""
-}
+func (x *CSVInput) GetComments() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVInput) GetFieldDelimiter() string {
-	if x != nil {
-		return x.FieldDelimiter
-	}
-	return ""
-}
+func (x *CSVInput) GetFieldDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVInput) GetFileHeaderInfo() string {
-	if x != nil {
-		return x.FileHeaderInfo
-	}
-	return ""
-}
+func (x *CSVInput) GetFileHeaderInfo() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVInput) GetQuoteCharacter() string {
-	if x != nil {
-		return x.QuoteCharacter
-	}
-	return ""
-}
+func (x *CSVInput) GetQuoteCharacter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVInput) GetQuoteEscapeCharacter() string {
-	if x != nil {
-		return x.QuoteEscapeCharacter
-	}
-	return ""
-}
+func (x *CSVInput) GetQuoteEscapeCharacter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVInput) GetRecordDelimiter() string {
-	if x != nil {
-		return x.RecordDelimiter
-	}
-	return ""
-}
+func (x *CSVInput) GetRecordDelimiter() string { _ = "STUB: not implemented"; return "" }
 
 // InputSerialization
 type InputSerialization struct {
@@ -3069,58 +1648,25 @@ type InputSerialization struct {
 	Json string `protobuf:"bytes,3,opt,name=json,proto3" json:"json,omitempty"`
 }
 
-func (x *InputSerialization) Reset() {
-	*x = InputSerialization{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[32]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InputSerialization) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InputSerialization) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InputSerialization) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InputSerialization) ProtoMessage() {}
+func (*InputSerialization) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InputSerialization) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[32]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InputSerialization.ProtoReflect.Descriptor instead.
-func (*InputSerialization) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{32}
-}
+func (*InputSerialization) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *InputSerialization) GetCsv() *CSVInput {
-	if x != nil {
-		return x.Csv
-	}
-	return nil
-}
+func (x *InputSerialization) GetCsv() *CSVInput { _ = "STUB: not implemented"; return nil }
 
-func (x *InputSerialization) GetCompressionType() string {
-	if x != nil {
-		return x.CompressionType
-	}
-	return ""
-}
+func (x *InputSerialization) GetCompressionType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InputSerialization) GetJson() string {
-	if x != nil {
-		return x.Json
-	}
-	return ""
-}
+func (x *InputSerialization) GetJson() string { _ = "STUB: not implemented"; return "" }
 
 // CSVOutput
 type CSVOutput struct {
@@ -3151,72 +1697,29 @@ type CSVOutput struct {
 	RecordDelimiter string `protobuf:"bytes,5,opt,name=record_delimiter,json=recordDelimiter,proto3" json:"record_delimiter,omitempty"`
 }
 
-func (x *CSVOutput) Reset() {
-	*x = CSVOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[33]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CSVOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CSVOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CSVOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CSVOutput) ProtoMessage() {}
+func (*CSVOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CSVOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[33]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CSVOutput.ProtoReflect.Descriptor instead.
-func (*CSVOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{33}
-}
+func (*CSVOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CSVOutput) GetFieldDelimiter() string {
-	if x != nil {
-		return x.FieldDelimiter
-	}
-	return ""
-}
+func (x *CSVOutput) GetFieldDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVOutput) GetQuoteCharacter() string {
-	if x != nil {
-		return x.QuoteCharacter
-	}
-	return ""
-}
+func (x *CSVOutput) GetQuoteCharacter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVOutput) GetQuoteEscapeCharacter() string {
-	if x != nil {
-		return x.QuoteEscapeCharacter
-	}
-	return ""
-}
+func (x *CSVOutput) GetQuoteEscapeCharacter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVOutput) GetQuoteFields() string {
-	if x != nil {
-		return x.QuoteFields
-	}
-	return ""
-}
+func (x *CSVOutput) GetQuoteFields() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CSVOutput) GetRecordDelimiter() string {
-	if x != nil {
-		return x.RecordDelimiter
-	}
-	return ""
-}
+func (x *CSVOutput) GetRecordDelimiter() string { _ = "STUB: not implemented"; return "" }
 
 // OutputSerialization
 type OutputSerialization struct {
@@ -3230,51 +1733,26 @@ type OutputSerialization struct {
 	Json string `protobuf:"bytes,2,opt,name=json,proto3" json:"json,omitempty"`
 }
 
-func (x *OutputSerialization) Reset() {
-	*x = OutputSerialization{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[34]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *OutputSerialization) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *OutputSerialization) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *OutputSerialization) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*OutputSerialization) ProtoMessage() {}
+func (*OutputSerialization) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *OutputSerialization) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[34]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use OutputSerialization.ProtoReflect.Descriptor instead.
 func (*OutputSerialization) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{34}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *OutputSerialization) GetCsv() *CSVOutput {
-	if x != nil {
-		return x.Csv
-	}
-	return nil
-}
+func (x *OutputSerialization) GetCsv() *CSVOutput { _ = "STUB: not implemented"; return nil }
 
-func (x *OutputSerialization) GetJson() string {
-	if x != nil {
-		return x.Json
-	}
-	return ""
-}
+func (x *OutputSerialization) GetJson() string { _ = "STUB: not implemented"; return "" }
 
 // SelectParameters
 type SelectParameters struct {
@@ -3296,63 +1774,31 @@ type SelectParameters struct {
 	OutputSerialization *OutputSerialization `protobuf:"bytes,4,opt,name=output_serialization,json=outputSerialization,proto3" json:"output_serialization,omitempty"`
 }
 
-func (x *SelectParameters) Reset() {
-	*x = SelectParameters{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[35]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SelectParameters) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SelectParameters) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SelectParameters) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SelectParameters) ProtoMessage() {}
+func (*SelectParameters) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SelectParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[35]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SelectParameters.ProtoReflect.Descriptor instead.
-func (*SelectParameters) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{35}
-}
+func (*SelectParameters) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SelectParameters) GetExpression() string {
-	if x != nil {
-		return x.Expression
-	}
-	return ""
-}
+func (x *SelectParameters) GetExpression() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SelectParameters) GetExpressionType() string {
-	if x != nil {
-		return x.ExpressionType
-	}
-	return ""
-}
+func (x *SelectParameters) GetExpressionType() string { _ = "STUB: not implemented"; return "" }
 
 func (x *SelectParameters) GetInputSerialization() *InputSerialization {
-	if x != nil {
-		return x.InputSerialization
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *SelectParameters) GetOutputSerialization() *OutputSerialization {
-	if x != nil {
-		return x.OutputSerialization
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -3378,86 +1824,39 @@ type RestoreRequest struct {
 	Type string `protobuf:"bytes,7,opt,name=type,proto3" json:"type,omitempty"`
 }
 
-func (x *RestoreRequest) Reset() {
-	*x = RestoreRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[36]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *RestoreRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *RestoreRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *RestoreRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*RestoreRequest) ProtoMessage() {}
+func (*RestoreRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *RestoreRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[36]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use RestoreRequest.ProtoReflect.Descriptor instead.
-func (*RestoreRequest) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{36}
-}
+func (*RestoreRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *RestoreRequest) GetDays() int32 {
-	if x != nil {
-		return x.Days
-	}
-	return 0
-}
+func (x *RestoreRequest) GetDays() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *RestoreRequest) GetDescription() string {
-	if x != nil {
-		return x.Description
-	}
-	return ""
-}
+func (x *RestoreRequest) GetDescription() string { _ = "STUB: not implemented"; return "" }
 
 func (x *RestoreRequest) GetGlacierJobParameters() *GlacierJobParameters {
-	if x != nil {
-		return x.GlacierJobParameters
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *RestoreRequest) GetOutputLocation() *OutputLocation {
-	if x != nil {
-		return x.OutputLocation
-	}
-	return nil
-}
+func (x *RestoreRequest) GetOutputLocation() *OutputLocation { _ = "STUB: not implemented"; return nil }
 
 func (x *RestoreRequest) GetSelectParameters() *SelectParameters {
-	if x != nil {
-		return x.SelectParameters
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *RestoreRequest) GetTier() string {
-	if x != nil {
-		return x.Tier
-	}
-	return ""
-}
+func (x *RestoreRequest) GetTier() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RestoreRequest) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
+func (x *RestoreRequest) GetType() string { _ = "STUB: not implemented"; return "" }
 
 // RestoreObjectInput
 type RestoreObjectInput struct {
@@ -3479,72 +1878,32 @@ type RestoreObjectInput struct {
 	VersionId string `protobuf:"bytes,5,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *RestoreObjectInput) Reset() {
-	*x = RestoreObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[37]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *RestoreObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *RestoreObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *RestoreObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*RestoreObjectInput) ProtoMessage() {}
+func (*RestoreObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *RestoreObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[37]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use RestoreObjectInput.ProtoReflect.Descriptor instead.
-func (*RestoreObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{37}
-}
+func (*RestoreObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *RestoreObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *RestoreObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RestoreObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *RestoreObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RestoreObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *RestoreObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
 func (x *RestoreObjectInput) GetRestoreRequest() *RestoreRequest {
-	if x != nil {
-		return x.RestoreRequest
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *RestoreObjectInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *RestoreObjectInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // RestoreObjectOutput
 type RestoreObjectOutput struct {
@@ -3562,56 +1921,29 @@ type RestoreObjectOutput struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *RestoreObjectOutput) Reset() {
-	*x = RestoreObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[38]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *RestoreObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *RestoreObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *RestoreObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*RestoreObjectOutput) ProtoMessage() {}
+func (*RestoreObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *RestoreObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[38]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use RestoreObjectOutput.ProtoReflect.Descriptor instead.
 func (*RestoreObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{38}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *RestoreObjectOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *RestoreObjectOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RestoreObjectOutput) GetRestoreOutputPath() string {
-	if x != nil {
-		return x.RestoreOutputPath
-	}
-	return ""
-}
+func (x *RestoreObjectOutput) GetRestoreOutputPath() string { _ = "STUB: not implemented"; return "" }
 
 func (x *RestoreObjectOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -3700,245 +2032,134 @@ type CreateMultipartUploadInput struct {
 	WebsiteRedirectLocation string `protobuf:"bytes,30,opt,name=website_redirect_location,json=websiteRedirectLocation,proto3" json:"website_redirect_location,omitempty"`
 }
 
-func (x *CreateMultipartUploadInput) Reset() {
-	*x = CreateMultipartUploadInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[39]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CreateMultipartUploadInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CreateMultipartUploadInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CreateMultipartUploadInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CreateMultipartUploadInput) ProtoMessage() {}
+func (*CreateMultipartUploadInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CreateMultipartUploadInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[39]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CreateMultipartUploadInput.ProtoReflect.Descriptor instead.
 func (*CreateMultipartUploadInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{39}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *CreateMultipartUploadInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CreateMultipartUploadInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CreateMultipartUploadInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CreateMultipartUploadInput) GetAcl() string {
-	if x != nil {
-		return x.Acl
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetAcl() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
+	_ = "STUB: not implemented"
 	return false
 }
 
-func (x *CreateMultipartUploadInput) GetCacheControl() string {
-	if x != nil {
-		return x.CacheControl
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetCacheControl() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetContentDisposition() string {
-	if x != nil {
-		return x.ContentDisposition
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetContentEncoding() string {
-	if x != nil {
-		return x.ContentEncoding
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetContentLanguage() string {
-	if x != nil {
-		return x.ContentLanguage
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadInput) GetContentType() string {
-	if x != nil {
-		return x.ContentType
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetContentType() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadInput) GetExpires() int64 {
-	if x != nil {
-		return x.Expires
-	}
-	return 0
-}
+func (x *CreateMultipartUploadInput) GetExpires() int64 { _ = "STUB: not implemented"; return 0 }
 
 func (x *CreateMultipartUploadInput) GetGrantFullControl() string {
-	if x != nil {
-		return x.GrantFullControl
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadInput) GetGrantRead() string {
-	if x != nil {
-		return x.GrantRead
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetGrantRead() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CreateMultipartUploadInput) GetGrantReadAcp() string {
-	if x != nil {
-		return x.GrantReadAcp
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetGrantReadAcp() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetGrantWriteAcp() string {
-	if x != nil {
-		return x.GrantWriteAcp
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetMetaData() map[string]string {
-	if x != nil {
-		return x.MetaData
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *CreateMultipartUploadInput) GetObjectLockLegalHoldStatus() string {
-	if x != nil {
-		return x.ObjectLockLegalHoldStatus
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetObjectLockMode() string {
-	if x != nil {
-		return x.ObjectLockMode
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetObjectLockRetainUntilDate() int64 {
-	if x != nil {
-		return x.ObjectLockRetainUntilDate
-	}
+	_ = "STUB: not implemented"
 	return 0
 }
 
-func (x *CreateMultipartUploadInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetSseCustomerKey() string {
-	if x != nil {
-		return x.SseCustomerKey
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadInput) GetSseKmsEncryptionContext() string {
-	if x != nil {
-		return x.SseKmsEncryptionContext
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadInput) GetSseKmsKeyId() string {
-	if x != nil {
-		return x.SseKmsKeyId
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetSseKmsKeyId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadInput) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *CreateMultipartUploadInput) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadInput) GetTagging() map[string]string {
-	if x != nil {
-		return x.Tagging
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *CreateMultipartUploadInput) GetWebsiteRedirectLocation() string {
-	if x != nil {
-		return x.WebsiteRedirectLocation
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
@@ -3991,126 +2212,67 @@ type CreateMultipartUploadOutput struct {
 	Metadata map[string]string `protobuf:"bytes,13,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *CreateMultipartUploadOutput) Reset() {
-	*x = CreateMultipartUploadOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[40]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CreateMultipartUploadOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CreateMultipartUploadOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CreateMultipartUploadOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CreateMultipartUploadOutput) ProtoMessage() {}
+func (*CreateMultipartUploadOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CreateMultipartUploadOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[40]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CreateMultipartUploadOutput.ProtoReflect.Descriptor instead.
 func (*CreateMultipartUploadOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{40}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *CreateMultipartUploadOutput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *CreateMultipartUploadOutput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CreateMultipartUploadOutput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *CreateMultipartUploadOutput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CreateMultipartUploadOutput) GetAbortDate() int64 {
-	if x != nil {
-		return x.AbortDate
-	}
-	return 0
-}
+func (x *CreateMultipartUploadOutput) GetAbortDate() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *CreateMultipartUploadOutput) GetAbortRuleId() string {
-	if x != nil {
-		return x.AbortRuleId
-	}
-	return ""
-}
+func (x *CreateMultipartUploadOutput) GetAbortRuleId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadOutput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
+	_ = "STUB: not implemented"
 	return false
 }
 
 func (x *CreateMultipartUploadOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadOutput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadOutput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CreateMultipartUploadOutput) GetSseKmsEncryptionContext() string {
-	if x != nil {
-		return x.SseKmsEncryptionContext
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadOutput) GetSseKmsKeyId() string {
-	if x != nil {
-		return x.SseKmsKeyId
-	}
-	return ""
-}
+func (x *CreateMultipartUploadOutput) GetSseKmsKeyId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadOutput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CreateMultipartUploadOutput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *CreateMultipartUploadOutput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CreateMultipartUploadOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -4155,128 +2317,45 @@ type UploadPartInput struct {
 	UploadId string `protobuf:"bytes,13,opt,name=upload_id,json=uploadId,proto3" json:"upload_id,omitempty"`
 }
 
-func (x *UploadPartInput) Reset() {
-	*x = UploadPartInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[41]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UploadPartInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UploadPartInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UploadPartInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UploadPartInput) ProtoMessage() {}
+func (*UploadPartInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UploadPartInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[41]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UploadPartInput.ProtoReflect.Descriptor instead.
-func (*UploadPartInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{41}
-}
+func (*UploadPartInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *UploadPartInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *UploadPartInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *UploadPartInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *UploadPartInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetBody() []byte {
-	if x != nil {
-		return x.Body
-	}
-	return nil
-}
+func (x *UploadPartInput) GetBody() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *UploadPartInput) GetContentLength() int64 {
-	if x != nil {
-		return x.ContentLength
-	}
-	return 0
-}
+func (x *UploadPartInput) GetContentLength() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *UploadPartInput) GetContentMd5() string {
-	if x != nil {
-		return x.ContentMd5
-	}
-	return ""
-}
+func (x *UploadPartInput) GetContentMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
-	return ""
-}
+func (x *UploadPartInput) GetExpectedBucketOwner() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetPartNumber() int32 {
-	if x != nil {
-		return x.PartNumber
-	}
-	return 0
-}
+func (x *UploadPartInput) GetPartNumber() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *UploadPartInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *UploadPartInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
-	return ""
-}
+func (x *UploadPartInput) GetSseCustomerAlgorithm() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetSseCustomerKey() string {
-	if x != nil {
-		return x.SseCustomerKey
-	}
-	return ""
-}
+func (x *UploadPartInput) GetSseCustomerKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
-	return ""
-}
+func (x *UploadPartInput) GetSseCustomerKeyMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartInput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *UploadPartInput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
 // UploadPartOutput
 type UploadPartOutput struct {
@@ -4306,93 +2385,35 @@ type UploadPartOutput struct {
 	Metadata map[string]string `protobuf:"bytes,8,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *UploadPartOutput) Reset() {
-	*x = UploadPartOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[42]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UploadPartOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UploadPartOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UploadPartOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UploadPartOutput) ProtoMessage() {}
+func (*UploadPartOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UploadPartOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[42]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UploadPartOutput.ProtoReflect.Descriptor instead.
-func (*UploadPartOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{42}
-}
+func (*UploadPartOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *UploadPartOutput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
-	return false
-}
+func (x *UploadPartOutput) GetBucketKeyEnabled() bool { _ = "STUB: not implemented"; return false }
 
-func (x *UploadPartOutput) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *UploadPartOutput) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *UploadPartOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartOutput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
-	return ""
-}
+func (x *UploadPartOutput) GetSseCustomerAlgorithm() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartOutput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
-	return ""
-}
+func (x *UploadPartOutput) GetSseCustomerKeyMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartOutput) GetSseKmsKeyId() string {
-	if x != nil {
-		return x.SseKmsKeyId
-	}
-	return ""
-}
+func (x *UploadPartOutput) GetSseKmsKeyId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartOutput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
-	return ""
-}
+func (x *UploadPartOutput) GetServerSideEncryption() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *UploadPartOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // UploadPartCopyInput
 type UploadPartCopyInput struct {
@@ -4422,93 +2443,38 @@ type UploadPartCopyInput struct {
 	PartSize int64 `protobuf:"varint,8,opt,name=part_size,json=partSize,proto3" json:"part_size,omitempty"`
 }
 
-func (x *UploadPartCopyInput) Reset() {
-	*x = UploadPartCopyInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[43]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UploadPartCopyInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UploadPartCopyInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UploadPartCopyInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UploadPartCopyInput) ProtoMessage() {}
+func (*UploadPartCopyInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UploadPartCopyInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[43]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UploadPartCopyInput.ProtoReflect.Descriptor instead.
 func (*UploadPartCopyInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{43}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *UploadPartCopyInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *UploadPartCopyInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartCopyInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *UploadPartCopyInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartCopyInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *UploadPartCopyInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartCopyInput) GetCopySource() *CopySource {
-	if x != nil {
-		return x.CopySource
-	}
-	return nil
-}
+func (x *UploadPartCopyInput) GetCopySource() *CopySource { _ = "STUB: not implemented"; return nil }
 
-func (x *UploadPartCopyInput) GetPartNumber() int32 {
-	if x != nil {
-		return x.PartNumber
-	}
-	return 0
-}
+func (x *UploadPartCopyInput) GetPartNumber() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *UploadPartCopyInput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *UploadPartCopyInput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartCopyInput) GetStartPosition() int64 {
-	if x != nil {
-		return x.StartPosition
-	}
-	return 0
-}
+func (x *UploadPartCopyInput) GetStartPosition() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *UploadPartCopyInput) GetPartSize() int64 {
-	if x != nil {
-		return x.PartSize
-	}
-	return 0
-}
+func (x *UploadPartCopyInput) GetPartSize() int64 { _ = "STUB: not implemented"; return 0 }
 
 // CopyPartResult
 type CopyPartResult struct {
@@ -4522,51 +2488,23 @@ type CopyPartResult struct {
 	LastModified int64 `protobuf:"varint,2,opt,name=last_modified,json=lastModified,proto3" json:"last_modified,omitempty"`
 }
 
-func (x *CopyPartResult) Reset() {
-	*x = CopyPartResult{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[44]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CopyPartResult) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CopyPartResult) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CopyPartResult) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CopyPartResult) ProtoMessage() {}
+func (*CopyPartResult) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CopyPartResult) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[44]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CopyPartResult.ProtoReflect.Descriptor instead.
-func (*CopyPartResult) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{44}
-}
+func (*CopyPartResult) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CopyPartResult) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *CopyPartResult) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CopyPartResult) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *CopyPartResult) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
 // UploadPartCopyOutput
 type UploadPartCopyOutput struct {
@@ -4603,98 +2541,53 @@ type UploadPartCopyOutput struct {
 	Metadata map[string]string `protobuf:"bytes,9,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *UploadPartCopyOutput) Reset() {
-	*x = UploadPartCopyOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[45]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UploadPartCopyOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UploadPartCopyOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UploadPartCopyOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UploadPartCopyOutput) ProtoMessage() {}
+func (*UploadPartCopyOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UploadPartCopyOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[45]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UploadPartCopyOutput.ProtoReflect.Descriptor instead.
 func (*UploadPartCopyOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{45}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *UploadPartCopyOutput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
-	return false
-}
+func (x *UploadPartCopyOutput) GetBucketKeyEnabled() bool { _ = "STUB: not implemented"; return false }
 
 func (x *UploadPartCopyOutput) GetCopyPartResult() *CopyPartResult {
-	if x != nil {
-		return x.CopyPartResult
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *UploadPartCopyOutput) GetCopySourceVersionId() string {
-	if x != nil {
-		return x.CopySourceVersionId
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *UploadPartCopyOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
-	return ""
-}
+func (x *UploadPartCopyOutput) GetRequestCharged() string { _ = "STUB: not implemented"; return "" }
 
 func (x *UploadPartCopyOutput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *UploadPartCopyOutput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
-	return ""
-}
+func (x *UploadPartCopyOutput) GetSseCustomerKeyMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UploadPartCopyOutput) GetSseKmsKeyId() string {
-	if x != nil {
-		return x.SseKmsKeyId
-	}
-	return ""
-}
+func (x *UploadPartCopyOutput) GetSseKmsKeyId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *UploadPartCopyOutput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *UploadPartCopyOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -4711,51 +2604,23 @@ type CompletedPart struct {
 	PartNumber int32 `protobuf:"varint,2,opt,name=part_number,json=partNumber,proto3" json:"part_number,omitempty"`
 }
 
-func (x *CompletedPart) Reset() {
-	*x = CompletedPart{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[46]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CompletedPart) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CompletedPart) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CompletedPart) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CompletedPart) ProtoMessage() {}
+func (*CompletedPart) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CompletedPart) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[46]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CompletedPart.ProtoReflect.Descriptor instead.
-func (*CompletedPart) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{46}
-}
+func (*CompletedPart) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *CompletedPart) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *CompletedPart) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CompletedPart) GetPartNumber() int32 {
-	if x != nil {
-		return x.PartNumber
-	}
-	return 0
-}
+func (x *CompletedPart) GetPartNumber() int32 { _ = "STUB: not implemented"; return 0 }
 
 // CompletedMultipartUpload
 type CompletedMultipartUpload struct {
@@ -4767,42 +2632,25 @@ type CompletedMultipartUpload struct {
 	Parts []*CompletedPart `protobuf:"bytes,1,rep,name=parts,proto3" json:"parts,omitempty"`
 }
 
-func (x *CompletedMultipartUpload) Reset() {
-	*x = CompletedMultipartUpload{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[47]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CompletedMultipartUpload) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CompletedMultipartUpload) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CompletedMultipartUpload) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CompletedMultipartUpload) ProtoMessage() {}
+func (*CompletedMultipartUpload) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CompletedMultipartUpload) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[47]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CompletedMultipartUpload.ProtoReflect.Descriptor instead.
 func (*CompletedMultipartUpload) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{47}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *CompletedMultipartUpload) GetParts() []*CompletedPart {
-	if x != nil {
-		return x.Parts
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -4831,84 +2679,43 @@ type CompleteMultipartUploadInput struct {
 	MultipartUpload *CompletedMultipartUpload `protobuf:"bytes,7,opt,name=multipart_upload,json=multipartUpload,proto3" json:"multipart_upload,omitempty"`
 }
 
-func (x *CompleteMultipartUploadInput) Reset() {
-	*x = CompleteMultipartUploadInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[48]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CompleteMultipartUploadInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CompleteMultipartUploadInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CompleteMultipartUploadInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CompleteMultipartUploadInput) ProtoMessage() {}
+func (*CompleteMultipartUploadInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CompleteMultipartUploadInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[48]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CompleteMultipartUploadInput.ProtoReflect.Descriptor instead.
 func (*CompleteMultipartUploadInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{48}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *CompleteMultipartUploadInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CompleteMultipartUploadInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CompleteMultipartUploadInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CompleteMultipartUploadInput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadInput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CompleteMultipartUploadInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CompleteMultipartUploadInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CompleteMultipartUploadInput) GetMultipartUpload() *CompletedMultipartUpload {
-	if x != nil {
-		return x.MultipartUpload
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -4951,112 +2758,60 @@ type CompleteMultipartUploadOutput struct {
 	Metadata map[string]string `protobuf:"bytes,11,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *CompleteMultipartUploadOutput) Reset() {
-	*x = CompleteMultipartUploadOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[49]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *CompleteMultipartUploadOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *CompleteMultipartUploadOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *CompleteMultipartUploadOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*CompleteMultipartUploadOutput) ProtoMessage() {}
+func (*CompleteMultipartUploadOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *CompleteMultipartUploadOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[49]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use CompleteMultipartUploadOutput.ProtoReflect.Descriptor instead.
 func (*CompleteMultipartUploadOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{49}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *CompleteMultipartUploadOutput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadOutput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *CompleteMultipartUploadOutput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadOutput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CompleteMultipartUploadOutput) GetBucketKeyEnabled() bool {
-	if x != nil {
-		return x.BucketKeyEnabled
-	}
+	_ = "STUB: not implemented"
 	return false
 }
 
-func (x *CompleteMultipartUploadOutput) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadOutput) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CompleteMultipartUploadOutput) GetExpiration() string {
-	if x != nil {
-		return x.Expiration
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CompleteMultipartUploadOutput) GetLocation() string {
-	if x != nil {
-		return x.Location
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadOutput) GetLocation() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CompleteMultipartUploadOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CompleteMultipartUploadOutput) GetSseKmsKeyId() string {
-	if x != nil {
-		return x.SseKmsKeyId
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *CompleteMultipartUploadOutput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *CompleteMultipartUploadOutput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *CompleteMultipartUploadOutput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *CompleteMultipartUploadOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -5083,79 +2838,37 @@ type AbortMultipartUploadInput struct {
 	UploadId string `protobuf:"bytes,6,opt,name=upload_id,json=uploadId,proto3" json:"upload_id,omitempty"`
 }
 
-func (x *AbortMultipartUploadInput) Reset() {
-	*x = AbortMultipartUploadInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[50]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *AbortMultipartUploadInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *AbortMultipartUploadInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *AbortMultipartUploadInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*AbortMultipartUploadInput) ProtoMessage() {}
+func (*AbortMultipartUploadInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *AbortMultipartUploadInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[50]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use AbortMultipartUploadInput.ProtoReflect.Descriptor instead.
 func (*AbortMultipartUploadInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{50}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *AbortMultipartUploadInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *AbortMultipartUploadInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AbortMultipartUploadInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *AbortMultipartUploadInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AbortMultipartUploadInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *AbortMultipartUploadInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
 func (x *AbortMultipartUploadInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *AbortMultipartUploadInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *AbortMultipartUploadInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AbortMultipartUploadInput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *AbortMultipartUploadInput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
 // AbortMultipartUploadOutput
 type AbortMultipartUploadOutput struct {
@@ -5169,49 +2882,30 @@ type AbortMultipartUploadOutput struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *AbortMultipartUploadOutput) Reset() {
-	*x = AbortMultipartUploadOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[51]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *AbortMultipartUploadOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *AbortMultipartUploadOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *AbortMultipartUploadOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*AbortMultipartUploadOutput) ProtoMessage() {}
+func (*AbortMultipartUploadOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *AbortMultipartUploadOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[51]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use AbortMultipartUploadOutput.ProtoReflect.Descriptor instead.
 func (*AbortMultipartUploadOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{51}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *AbortMultipartUploadOutput) GetRequestCharged() string {
-	if x != nil {
-		return x.RequestCharged
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *AbortMultipartUploadOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -5262,98 +2956,44 @@ type ListMultipartUploadsInput struct {
 	UploadIdMarker string `protobuf:"bytes,9,opt,name=upload_id_marker,json=uploadIdMarker,proto3" json:"upload_id_marker,omitempty"`
 }
 
-func (x *ListMultipartUploadsInput) Reset() {
-	*x = ListMultipartUploadsInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[52]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListMultipartUploadsInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListMultipartUploadsInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListMultipartUploadsInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListMultipartUploadsInput) ProtoMessage() {}
+func (*ListMultipartUploadsInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListMultipartUploadsInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[52]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListMultipartUploadsInput.ProtoReflect.Descriptor instead.
 func (*ListMultipartUploadsInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{52}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *ListMultipartUploadsInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *ListMultipartUploadsInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *ListMultipartUploadsInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsInput) GetDelimiter() string {
-	if x != nil {
-		return x.Delimiter
-	}
-	return ""
-}
+func (x *ListMultipartUploadsInput) GetDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsInput) GetEncodingType() string {
-	if x != nil {
-		return x.EncodingType
-	}
-	return ""
-}
+func (x *ListMultipartUploadsInput) GetEncodingType() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListMultipartUploadsInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *ListMultipartUploadsInput) GetKeyMarker() string {
-	if x != nil {
-		return x.KeyMarker
-	}
-	return ""
-}
+func (x *ListMultipartUploadsInput) GetKeyMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsInput) GetMaxUploads() int64 {
-	if x != nil {
-		return x.MaxUploads
-	}
-	return 0
-}
+func (x *ListMultipartUploadsInput) GetMaxUploads() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListMultipartUploadsInput) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *ListMultipartUploadsInput) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListMultipartUploadsInput) GetUploadIdMarker() string {
-	if x != nil {
-		return x.UploadIdMarker
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
@@ -5369,51 +3009,23 @@ type Initiator struct {
 	Id string `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *Initiator) Reset() {
-	*x = Initiator{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[53]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Initiator) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Initiator) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Initiator) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Initiator) ProtoMessage() {}
+func (*Initiator) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Initiator) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[53]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Initiator.ProtoReflect.Descriptor instead.
-func (*Initiator) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{53}
-}
+func (*Initiator) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Initiator) GetDisplayName() string {
-	if x != nil {
-		return x.DisplayName
-	}
-	return ""
-}
+func (x *Initiator) GetDisplayName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Initiator) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *Initiator) GetId() string { _ = "STUB: not implemented"; return "" }
 
 // MultipartUpload
 type MultipartUpload struct {
@@ -5436,79 +3048,31 @@ type MultipartUpload struct {
 	UploadId string `protobuf:"bytes,6,opt,name=upload_id,json=uploadId,proto3" json:"upload_id,omitempty"`
 }
 
-func (x *MultipartUpload) Reset() {
-	*x = MultipartUpload{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[54]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *MultipartUpload) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *MultipartUpload) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *MultipartUpload) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*MultipartUpload) ProtoMessage() {}
+func (*MultipartUpload) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *MultipartUpload) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[54]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use MultipartUpload.ProtoReflect.Descriptor instead.
-func (*MultipartUpload) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{54}
-}
+func (*MultipartUpload) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *MultipartUpload) GetInitiated() int64 {
-	if x != nil {
-		return x.Initiated
-	}
-	return 0
-}
+func (x *MultipartUpload) GetInitiated() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *MultipartUpload) GetInitiator() *Initiator {
-	if x != nil {
-		return x.Initiator
-	}
-	return nil
-}
+func (x *MultipartUpload) GetInitiator() *Initiator { _ = "STUB: not implemented"; return nil }
 
-func (x *MultipartUpload) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *MultipartUpload) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *MultipartUpload) GetOwner() *Owner {
-	if x != nil {
-		return x.Owner
-	}
-	return nil
-}
+func (x *MultipartUpload) GetOwner() *Owner { _ = "STUB: not implemented"; return nil }
 
-func (x *MultipartUpload) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *MultipartUpload) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
-func (x *MultipartUpload) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *MultipartUpload) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
 // ListMultipartUploadsOutput
 type ListMultipartUploadsOutput struct {
@@ -5555,126 +3119,64 @@ type ListMultipartUploadsOutput struct {
 	Metadata map[string]string `protobuf:"bytes,13,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ListMultipartUploadsOutput) Reset() {
-	*x = ListMultipartUploadsOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[55]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListMultipartUploadsOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListMultipartUploadsOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListMultipartUploadsOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListMultipartUploadsOutput) ProtoMessage() {}
+func (*ListMultipartUploadsOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListMultipartUploadsOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[55]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListMultipartUploadsOutput.ProtoReflect.Descriptor instead.
 func (*ListMultipartUploadsOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{55}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *ListMultipartUploadsOutput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *ListMultipartUploadsOutput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListMultipartUploadsOutput) GetCommonPrefixes() []string {
-	if x != nil {
-		return x.CommonPrefixes
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *ListMultipartUploadsOutput) GetDelimiter() string {
-	if x != nil {
-		return x.Delimiter
-	}
-	return ""
-}
+func (x *ListMultipartUploadsOutput) GetDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsOutput) GetEncodingType() string {
-	if x != nil {
-		return x.EncodingType
-	}
-	return ""
-}
+func (x *ListMultipartUploadsOutput) GetEncodingType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsOutput) GetIsTruncated() bool {
-	if x != nil {
-		return x.IsTruncated
-	}
-	return false
-}
+func (x *ListMultipartUploadsOutput) GetIsTruncated() bool { _ = "STUB: not implemented"; return false }
 
-func (x *ListMultipartUploadsOutput) GetKeyMarker() string {
-	if x != nil {
-		return x.KeyMarker
-	}
-	return ""
-}
+func (x *ListMultipartUploadsOutput) GetKeyMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListMultipartUploadsOutput) GetMaxUploads() int32 {
-	if x != nil {
-		return x.MaxUploads
-	}
-	return 0
-}
+func (x *ListMultipartUploadsOutput) GetMaxUploads() int32 { _ = "STUB: not implemented"; return 0 }
 
 func (x *ListMultipartUploadsOutput) GetNextKeyMarker() string {
-	if x != nil {
-		return x.NextKeyMarker
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *ListMultipartUploadsOutput) GetNextUploadIdMarker() string {
-	if x != nil {
-		return x.NextUploadIdMarker
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *ListMultipartUploadsOutput) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *ListMultipartUploadsOutput) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListMultipartUploadsOutput) GetUploadIdMarker() string {
-	if x != nil {
-		return x.UploadIdMarker
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *ListMultipartUploadsOutput) GetUploads() []*MultipartUpload {
-	if x != nil {
-		return x.Uploads
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *ListMultipartUploadsOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -5718,100 +3220,43 @@ type ListObjectVersionsInput struct {
 	VersionIdMarker string `protobuf:"bytes,9,opt,name=version_id_marker,json=versionIdMarker,proto3" json:"version_id_marker,omitempty"`
 }
 
-func (x *ListObjectVersionsInput) Reset() {
-	*x = ListObjectVersionsInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[56]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListObjectVersionsInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListObjectVersionsInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListObjectVersionsInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListObjectVersionsInput) ProtoMessage() {}
+func (*ListObjectVersionsInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListObjectVersionsInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[56]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListObjectVersionsInput.ProtoReflect.Descriptor instead.
 func (*ListObjectVersionsInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{56}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *ListObjectVersionsInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsInput) GetDelimiter() string {
-	if x != nil {
-		return x.Delimiter
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsInput) GetEncodingType() string {
-	if x != nil {
-		return x.EncodingType
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetEncodingType() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListObjectVersionsInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *ListObjectVersionsInput) GetKeyMarker() string {
-	if x != nil {
-		return x.KeyMarker
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetKeyMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsInput) GetMaxKeys() int64 {
-	if x != nil {
-		return x.MaxKeys
-	}
-	return 0
-}
+func (x *ListObjectVersionsInput) GetMaxKeys() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListObjectVersionsInput) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsInput) GetVersionIdMarker() string {
-	if x != nil {
-		return x.VersionIdMarker
-	}
-	return ""
-}
+func (x *ListObjectVersionsInput) GetVersionIdMarker() string { _ = "STUB: not implemented"; return "" }
 
 // DeleteMarkerEntry
 type DeleteMarkerEntry struct {
@@ -5833,72 +3278,29 @@ type DeleteMarkerEntry struct {
 	VersionId string `protobuf:"bytes,5,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *DeleteMarkerEntry) Reset() {
-	*x = DeleteMarkerEntry{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[57]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteMarkerEntry) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteMarkerEntry) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteMarkerEntry) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteMarkerEntry) ProtoMessage() {}
+func (*DeleteMarkerEntry) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteMarkerEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[57]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteMarkerEntry.ProtoReflect.Descriptor instead.
-func (*DeleteMarkerEntry) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{57}
-}
+func (*DeleteMarkerEntry) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DeleteMarkerEntry) GetIsLatest() bool {
-	if x != nil {
-		return x.IsLatest
-	}
-	return false
-}
+func (x *DeleteMarkerEntry) GetIsLatest() bool { _ = "STUB: not implemented"; return false }
 
-func (x *DeleteMarkerEntry) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *DeleteMarkerEntry) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteMarkerEntry) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *DeleteMarkerEntry) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *DeleteMarkerEntry) GetOwner() *Owner {
-	if x != nil {
-		return x.Owner
-	}
-	return nil
-}
+func (x *DeleteMarkerEntry) GetOwner() *Owner { _ = "STUB: not implemented"; return nil }
 
-func (x *DeleteMarkerEntry) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *DeleteMarkerEntry) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // ObjectVersion
 type ObjectVersion struct {
@@ -5926,93 +3328,35 @@ type ObjectVersion struct {
 	VersionId string `protobuf:"bytes,8,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *ObjectVersion) Reset() {
-	*x = ObjectVersion{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[58]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ObjectVersion) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ObjectVersion) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ObjectVersion) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ObjectVersion) ProtoMessage() {}
+func (*ObjectVersion) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ObjectVersion) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[58]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ObjectVersion.ProtoReflect.Descriptor instead.
-func (*ObjectVersion) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{58}
-}
+func (*ObjectVersion) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ObjectVersion) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *ObjectVersion) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ObjectVersion) GetIsLatest() bool {
-	if x != nil {
-		return x.IsLatest
-	}
-	return false
-}
+func (x *ObjectVersion) GetIsLatest() bool { _ = "STUB: not implemented"; return false }
 
-func (x *ObjectVersion) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *ObjectVersion) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ObjectVersion) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *ObjectVersion) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ObjectVersion) GetOwner() *Owner {
-	if x != nil {
-		return x.Owner
-	}
-	return nil
-}
+func (x *ObjectVersion) GetOwner() *Owner { _ = "STUB: not implemented"; return nil }
 
-func (x *ObjectVersion) GetSize() int64 {
-	if x != nil {
-		return x.Size
-	}
-	return 0
-}
+func (x *ObjectVersion) GetSize() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ObjectVersion) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *ObjectVersion) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ObjectVersion) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *ObjectVersion) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // ListObjectVersionsOutput
 type ListObjectVersionsOutput struct {
@@ -6055,133 +3399,66 @@ type ListObjectVersionsOutput struct {
 	Metadata map[string]string `protobuf:"bytes,14,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ListObjectVersionsOutput) Reset() {
-	*x = ListObjectVersionsOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[59]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListObjectVersionsOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListObjectVersionsOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListObjectVersionsOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListObjectVersionsOutput) ProtoMessage() {}
+func (*ListObjectVersionsOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListObjectVersionsOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[59]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListObjectVersionsOutput.ProtoReflect.Descriptor instead.
 func (*ListObjectVersionsOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{59}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *ListObjectVersionsOutput) GetCommonPrefixes() []string {
-	if x != nil {
-		return x.CommonPrefixes
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *ListObjectVersionsOutput) GetDeleteMarkers() []*DeleteMarkerEntry {
-	if x != nil {
-		return x.DeleteMarkers
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *ListObjectVersionsOutput) GetDelimiter() string {
-	if x != nil {
-		return x.Delimiter
-	}
-	return ""
-}
+func (x *ListObjectVersionsOutput) GetDelimiter() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsOutput) GetEncodingType() string {
-	if x != nil {
-		return x.EncodingType
-	}
-	return ""
-}
+func (x *ListObjectVersionsOutput) GetEncodingType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsOutput) GetIsTruncated() bool {
-	if x != nil {
-		return x.IsTruncated
-	}
-	return false
-}
+func (x *ListObjectVersionsOutput) GetIsTruncated() bool { _ = "STUB: not implemented"; return false }
 
-func (x *ListObjectVersionsOutput) GetKeyMarker() string {
-	if x != nil {
-		return x.KeyMarker
-	}
-	return ""
-}
+func (x *ListObjectVersionsOutput) GetKeyMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsOutput) GetMaxKeys() int64 {
-	if x != nil {
-		return x.MaxKeys
-	}
-	return 0
-}
+func (x *ListObjectVersionsOutput) GetMaxKeys() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListObjectVersionsOutput) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *ListObjectVersionsOutput) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListObjectVersionsOutput) GetNextKeyMarker() string {
-	if x != nil {
-		return x.NextKeyMarker
-	}
-	return ""
-}
+func (x *ListObjectVersionsOutput) GetNextKeyMarker() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListObjectVersionsOutput) GetNextVersionIdMarker() string {
-	if x != nil {
-		return x.NextVersionIdMarker
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *ListObjectVersionsOutput) GetPrefix() string {
-	if x != nil {
-		return x.Prefix
-	}
-	return ""
-}
+func (x *ListObjectVersionsOutput) GetPrefix() string { _ = "STUB: not implemented"; return "" }
 
 func (x *ListObjectVersionsOutput) GetVersionIdMarker() string {
-	if x != nil {
-		return x.VersionIdMarker
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *ListObjectVersionsOutput) GetVersions() []*ObjectVersion {
-	if x != nil {
-		return x.Versions
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *ListObjectVersionsOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -6235,149 +3512,51 @@ type HeadObjectInput struct {
 	WithDetails bool `protobuf:"varint,16,opt,name=with_details,json=withDetails,proto3" json:"with_details,omitempty"`
 }
 
-func (x *HeadObjectInput) Reset() {
-	*x = HeadObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[60]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *HeadObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *HeadObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *HeadObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*HeadObjectInput) ProtoMessage() {}
+func (*HeadObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *HeadObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[60]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use HeadObjectInput.ProtoReflect.Descriptor instead.
-func (*HeadObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{60}
-}
+func (*HeadObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *HeadObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetChecksumMode() string {
-	if x != nil {
-		return x.ChecksumMode
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetChecksumMode() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetExpectedBucketOwner() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetIfMatch() string {
-	if x != nil {
-		return x.IfMatch
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetIfMatch() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetIfModifiedSince() int64 {
-	if x != nil {
-		return x.IfModifiedSince
-	}
-	return 0
-}
+func (x *HeadObjectInput) GetIfModifiedSince() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *HeadObjectInput) GetIfNoneMatch() string {
-	if x != nil {
-		return x.IfNoneMatch
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetIfNoneMatch() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetIfUnmodifiedSince() int64 {
-	if x != nil {
-		return x.IfUnmodifiedSince
-	}
-	return 0
-}
+func (x *HeadObjectInput) GetIfUnmodifiedSince() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *HeadObjectInput) GetPartNumber() int32 {
-	if x != nil {
-		return x.PartNumber
-	}
-	return 0
-}
+func (x *HeadObjectInput) GetPartNumber() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (x *HeadObjectInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetSseCustomerAlgorithm() string {
-	if x != nil {
-		return x.SseCustomerAlgorithm
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetSseCustomerAlgorithm() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetSseCustomerKey() string {
-	if x != nil {
-		return x.SseCustomerKey
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetSseCustomerKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetSseCustomerKeyMd5() string {
-	if x != nil {
-		return x.SseCustomerKeyMd5
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetSseCustomerKeyMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *HeadObjectInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HeadObjectInput) GetWithDetails() bool {
-	if x != nil {
-		return x.WithDetails
-	}
-	return false
-}
+func (x *HeadObjectInput) GetWithDetails() bool { _ = "STUB: not implemented"; return false }
 
 // HeadObjectOutput
 type HeadObjectOutput struct {
@@ -6389,42 +3568,22 @@ type HeadObjectOutput struct {
 	ResultMetadata map[string]string `protobuf:"bytes,1,rep,name=result_metadata,json=resultMetadata,proto3" json:"result_metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *HeadObjectOutput) Reset() {
-	*x = HeadObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[61]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *HeadObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *HeadObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *HeadObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*HeadObjectOutput) ProtoMessage() {}
+func (*HeadObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *HeadObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[61]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use HeadObjectOutput.ProtoReflect.Descriptor instead.
-func (*HeadObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{61}
-}
+func (*HeadObjectOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 func (x *HeadObjectOutput) GetResultMetadata() map[string]string {
-	if x != nil {
-		return x.ResultMetadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -6446,65 +3605,27 @@ type IsObjectExistInput struct {
 	VersionId string `protobuf:"bytes,4,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
 }
 
-func (x *IsObjectExistInput) Reset() {
-	*x = IsObjectExistInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[62]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *IsObjectExistInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *IsObjectExistInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *IsObjectExistInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*IsObjectExistInput) ProtoMessage() {}
+func (*IsObjectExistInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *IsObjectExistInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[62]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use IsObjectExistInput.ProtoReflect.Descriptor instead.
-func (*IsObjectExistInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{62}
-}
+func (*IsObjectExistInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *IsObjectExistInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *IsObjectExistInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *IsObjectExistInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *IsObjectExistInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *IsObjectExistInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *IsObjectExistInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *IsObjectExistInput) GetVersionId() string {
-	if x != nil {
-		return x.VersionId
-	}
-	return ""
-}
+func (x *IsObjectExistInput) GetVersionId() string { _ = "STUB: not implemented"; return "" }
 
 // IsObjectExistOutput
 type IsObjectExistOutput struct {
@@ -6518,49 +3639,27 @@ type IsObjectExistOutput struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *IsObjectExistOutput) Reset() {
-	*x = IsObjectExistOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[63]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *IsObjectExistOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *IsObjectExistOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *IsObjectExistOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*IsObjectExistOutput) ProtoMessage() {}
+func (*IsObjectExistOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *IsObjectExistOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[63]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use IsObjectExistOutput.ProtoReflect.Descriptor instead.
 func (*IsObjectExistOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{63}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *IsObjectExistOutput) GetFileExist() bool {
-	if x != nil {
-		return x.FileExist
-	}
-	return false
-}
+func (x *IsObjectExistOutput) GetFileExist() bool { _ = "STUB: not implemented"; return false }
 
 func (x *IsObjectExistOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -6584,72 +3683,29 @@ type SignURLInput struct {
 	ExpiredInSec int64 `protobuf:"varint,5,opt,name=expired_in_sec,json=expiredInSec,proto3" json:"expired_in_sec,omitempty"`
 }
 
-func (x *SignURLInput) Reset() {
-	*x = SignURLInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[64]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SignURLInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SignURLInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SignURLInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SignURLInput) ProtoMessage() {}
+func (*SignURLInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SignURLInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[64]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SignURLInput.ProtoReflect.Descriptor instead.
-func (*SignURLInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{64}
-}
+func (*SignURLInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SignURLInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *SignURLInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SignURLInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *SignURLInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SignURLInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *SignURLInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SignURLInput) GetMethod() string {
-	if x != nil {
-		return x.Method
-	}
-	return ""
-}
+func (x *SignURLInput) GetMethod() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SignURLInput) GetExpiredInSec() int64 {
-	if x != nil {
-		return x.ExpiredInSec
-	}
-	return 0
-}
+func (x *SignURLInput) GetExpiredInSec() int64 { _ = "STUB: not implemented"; return 0 }
 
 // SignURLOutput
 type SignURLOutput struct {
@@ -6661,44 +3717,21 @@ type SignURLOutput struct {
 	SignedUrl string `protobuf:"bytes,1,opt,name=signed_url,json=signedUrl,proto3" json:"signed_url,omitempty"`
 }
 
-func (x *SignURLOutput) Reset() {
-	*x = SignURLOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[65]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SignURLOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SignURLOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SignURLOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SignURLOutput) ProtoMessage() {}
+func (*SignURLOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SignURLOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[65]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SignURLOutput.ProtoReflect.Descriptor instead.
-func (*SignURLOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{65}
-}
+func (*SignURLOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SignURLOutput) GetSignedUrl() string {
-	if x != nil {
-		return x.SignedUrl
-	}
-	return ""
-}
+func (x *SignURLOutput) GetSignedUrl() string { _ = "STUB: not implemented"; return "" }
 
 // UpdateBandwidthRateLimitInput
 type UpdateBandwidthRateLimitInput struct {
@@ -6714,56 +3747,32 @@ type UpdateBandwidthRateLimitInput struct {
 	GatewayResourceName string `protobuf:"bytes,3,opt,name=gateway_resource_name,json=gatewayResourceName,proto3" json:"gateway_resource_name,omitempty"`
 }
 
-func (x *UpdateBandwidthRateLimitInput) Reset() {
-	*x = UpdateBandwidthRateLimitInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[66]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UpdateBandwidthRateLimitInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UpdateBandwidthRateLimitInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UpdateBandwidthRateLimitInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UpdateBandwidthRateLimitInput) ProtoMessage() {}
+func (*UpdateBandwidthRateLimitInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UpdateBandwidthRateLimitInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[66]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UpdateBandwidthRateLimitInput.ProtoReflect.Descriptor instead.
 func (*UpdateBandwidthRateLimitInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{66}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *UpdateBandwidthRateLimitInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *UpdateBandwidthRateLimitInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
 func (x *UpdateBandwidthRateLimitInput) GetAverageRateLimitInBitsPerSec() int64 {
-	if x != nil {
-		return x.AverageRateLimitInBitsPerSec
-	}
+	_ = "STUB: not implemented"
 	return 0
 }
 
 func (x *UpdateBandwidthRateLimitInput) GetGatewayResourceName() string {
-	if x != nil {
-		return x.GatewayResourceName
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
@@ -6809,142 +3818,49 @@ type AppendObjectInput struct {
 	Tags map[string]string `protobuf:"bytes,15,rep,name=tags,proto3" json:"tags,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *AppendObjectInput) Reset() {
-	*x = AppendObjectInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[67]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *AppendObjectInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *AppendObjectInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *AppendObjectInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*AppendObjectInput) ProtoMessage() {}
+func (*AppendObjectInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *AppendObjectInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[67]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use AppendObjectInput.ProtoReflect.Descriptor instead.
-func (*AppendObjectInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{67}
-}
+func (*AppendObjectInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *AppendObjectInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetBody() []byte {
-	if x != nil {
-		return x.Body
-	}
-	return nil
-}
+func (x *AppendObjectInput) GetBody() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *AppendObjectInput) GetPosition() int64 {
-	if x != nil {
-		return x.Position
-	}
-	return 0
-}
+func (x *AppendObjectInput) GetPosition() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *AppendObjectInput) GetAcl() string {
-	if x != nil {
-		return x.Acl
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetAcl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetCacheControl() string {
-	if x != nil {
-		return x.CacheControl
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetCacheControl() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetContentDisposition() string {
-	if x != nil {
-		return x.ContentDisposition
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetContentDisposition() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetContentEncoding() string {
-	if x != nil {
-		return x.ContentEncoding
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetContentEncoding() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetContentMd5() string {
-	if x != nil {
-		return x.ContentMd5
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetContentMd5() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetExpires() int64 {
-	if x != nil {
-		return x.Expires
-	}
-	return 0
-}
+func (x *AppendObjectInput) GetExpires() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *AppendObjectInput) GetStorageClass() string {
-	if x != nil {
-		return x.StorageClass
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetStorageClass() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetServerSideEncryption() string {
-	if x != nil {
-		return x.ServerSideEncryption
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetServerSideEncryption() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetMeta() string {
-	if x != nil {
-		return x.Meta
-	}
-	return ""
-}
+func (x *AppendObjectInput) GetMeta() string { _ = "STUB: not implemented"; return "" }
 
-func (x *AppendObjectInput) GetTags() map[string]string {
-	if x != nil {
-		return x.Tags
-	}
-	return nil
-}
+func (x *AppendObjectInput) GetTags() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // AppendObjectOutput
 type AppendObjectOutput struct {
@@ -6958,51 +3874,23 @@ type AppendObjectOutput struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *AppendObjectOutput) Reset() {
-	*x = AppendObjectOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[68]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *AppendObjectOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *AppendObjectOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *AppendObjectOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*AppendObjectOutput) ProtoMessage() {}
+func (*AppendObjectOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *AppendObjectOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[68]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use AppendObjectOutput.ProtoReflect.Descriptor instead.
-func (*AppendObjectOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{68}
-}
+func (*AppendObjectOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *AppendObjectOutput) GetAppendPosition() int64 {
-	if x != nil {
-		return x.AppendPosition
-	}
-	return 0
-}
+func (x *AppendObjectOutput) GetAppendPosition() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *AppendObjectOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *AppendObjectOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // ListPartsInput
 type ListPartsInput struct {
@@ -7031,93 +3919,35 @@ type ListPartsInput struct {
 	UploadId string `protobuf:"bytes,8,opt,name=upload_id,json=uploadId,proto3" json:"upload_id,omitempty"`
 }
 
-func (x *ListPartsInput) Reset() {
-	*x = ListPartsInput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[69]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListPartsInput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListPartsInput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListPartsInput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListPartsInput) ProtoMessage() {}
+func (*ListPartsInput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListPartsInput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[69]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListPartsInput.ProtoReflect.Descriptor instead.
-func (*ListPartsInput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{69}
-}
+func (*ListPartsInput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ListPartsInput) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *ListPartsInput) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsInput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *ListPartsInput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsInput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *ListPartsInput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsInput) GetExpectedBucketOwner() string {
-	if x != nil {
-		return x.ExpectedBucketOwner
-	}
-	return ""
-}
+func (x *ListPartsInput) GetExpectedBucketOwner() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsInput) GetMaxParts() int64 {
-	if x != nil {
-		return x.MaxParts
-	}
-	return 0
-}
+func (x *ListPartsInput) GetMaxParts() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListPartsInput) GetPartNumberMarker() int64 {
-	if x != nil {
-		return x.PartNumberMarker
-	}
-	return 0
-}
+func (x *ListPartsInput) GetPartNumberMarker() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListPartsInput) GetRequestPayer() string {
-	if x != nil {
-		return x.RequestPayer
-	}
-	return ""
-}
+func (x *ListPartsInput) GetRequestPayer() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsInput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *ListPartsInput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
 // Part
 type Part struct {
@@ -7135,65 +3965,27 @@ type Part struct {
 	Size int64 `protobuf:"varint,4,opt,name=size,proto3" json:"size,omitempty"`
 }
 
-func (x *Part) Reset() {
-	*x = Part{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[70]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Part) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Part) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Part) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Part) ProtoMessage() {}
+func (*Part) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Part) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[70]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Part.ProtoReflect.Descriptor instead.
-func (*Part) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{70}
-}
+func (*Part) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Part) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *Part) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Part) GetLastModified() int64 {
-	if x != nil {
-		return x.LastModified
-	}
-	return 0
-}
+func (x *Part) GetLastModified() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *Part) GetPartNumber() int64 {
-	if x != nil {
-		return x.PartNumber
-	}
-	return 0
-}
+func (x *Part) GetPartNumber() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *Part) GetSize() int64 {
-	if x != nil {
-		return x.Size
-	}
-	return 0
-}
+func (x *Part) GetSize() int64 { _ = "STUB: not implemented"; return 0 }
 
 // ListPartsOutput
 type ListPartsOutput struct {
@@ -7226,93 +4018,35 @@ type ListPartsOutput struct {
 	Metadata map[string]string `protobuf:"bytes,8,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ListPartsOutput) Reset() {
-	*x = ListPartsOutput{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_oss_proto_msgTypes[71]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListPartsOutput) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListPartsOutput) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListPartsOutput) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListPartsOutput) ProtoMessage() {}
+func (*ListPartsOutput) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListPartsOutput) ProtoReflect() protoreflect.Message {
-	mi := &file_oss_proto_msgTypes[71]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListPartsOutput.ProtoReflect.Descriptor instead.
-func (*ListPartsOutput) Descriptor() ([]byte, []int) {
-	return file_oss_proto_rawDescGZIP(), []int{71}
-}
+func (*ListPartsOutput) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ListPartsOutput) GetBucket() string {
-	if x != nil {
-		return x.Bucket
-	}
-	return ""
-}
+func (x *ListPartsOutput) GetBucket() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsOutput) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *ListPartsOutput) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsOutput) GetUploadId() string {
-	if x != nil {
-		return x.UploadId
-	}
-	return ""
-}
+func (x *ListPartsOutput) GetUploadId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsOutput) GetNextPartNumberMarker() string {
-	if x != nil {
-		return x.NextPartNumberMarker
-	}
-	return ""
-}
+func (x *ListPartsOutput) GetNextPartNumberMarker() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ListPartsOutput) GetMaxParts() int64 {
-	if x != nil {
-		return x.MaxParts
-	}
-	return 0
-}
+func (x *ListPartsOutput) GetMaxParts() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (x *ListPartsOutput) GetIsTruncated() bool {
-	if x != nil {
-		return x.IsTruncated
-	}
-	return false
-}
+func (x *ListPartsOutput) GetIsTruncated() bool { _ = "STUB: not implemented"; return false }
 
-func (x *ListPartsOutput) GetParts() []*Part {
-	if x != nil {
-		return x.Parts
-	}
-	return nil
-}
+func (x *ListPartsOutput) GetParts() []*Part { _ = "STUB: not implemented"; return nil }
 
-func (x *ListPartsOutput) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *ListPartsOutput) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 var File_oss_proto protoreflect.FileDescriptor
 
@@ -8924,12 +5658,7 @@ var (
 	file_oss_proto_rawDescData = file_oss_proto_rawDesc
 )
 
-func file_oss_proto_rawDescGZIP() []byte {
-	file_oss_proto_rawDescOnce.Do(func() {
-		file_oss_proto_rawDescData = protoimpl.X.CompressGZIP(file_oss_proto_rawDescData)
-	})
-	return file_oss_proto_rawDescData
-}
+func file_oss_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_oss_proto_msgTypes = make([]protoimpl.MessageInfo, 104)
 var file_oss_proto_goTypes = []interface{}{
@@ -9159,893 +5888,5 @@ var file_oss_proto_depIdxs = []int32{
 	0,   // [0:60] is the sub-list for field type_name
 }
 
-func init() { file_oss_proto_init() }
-func file_oss_proto_init() {
-	if File_oss_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_oss_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PutObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PutObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PutObjectTaggingInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PutObjectTaggingOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteObjectTaggingInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteObjectTaggingOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetObjectTaggingInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetObjectTaggingOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CopySource); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CopyObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CopyObjectResult); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CopyObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Delete); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ObjectIdentifier); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteObjectsInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeletedObject); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteObjectsOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListObjectsInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListObjectsOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Owner); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Object); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetObjectCannedAclInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetObjectCannedAclOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PutObjectCannedAclInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PutObjectCannedAclOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GlacierJobParameters); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OutputLocation); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CSVInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InputSerialization); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CSVOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OutputSerialization); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SelectParameters); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RestoreRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RestoreObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RestoreObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMultipartUploadInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateMultipartUploadOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UploadPartInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UploadPartOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UploadPartCopyInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CopyPartResult); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UploadPartCopyOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CompletedPart); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CompletedMultipartUpload); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CompleteMultipartUploadInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CompleteMultipartUploadOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AbortMultipartUploadInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AbortMultipartUploadOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListMultipartUploadsInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Initiator); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MultipartUpload); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListMultipartUploadsOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListObjectVersionsInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteMarkerEntry); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ObjectVersion); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListObjectVersionsOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HeadObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HeadObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[62].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IsObjectExistInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[63].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*IsObjectExistOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[64].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SignURLInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[65].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SignURLOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[66].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateBandwidthRateLimitInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[67].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppendObjectInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[68].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AppendObjectOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[69].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPartsInput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[70].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Part); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_oss_proto_msgTypes[71].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPartsOutput); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_oss_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   104,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_oss_proto_goTypes,
-		DependencyIndexes: file_oss_proto_depIdxs,
-		MessageInfos:      file_oss_proto_msgTypes,
-	}.Build()
-	File_oss_proto = out.File
-	file_oss_proto_rawDesc = nil
-	file_oss_proto_goTypes = nil
-	file_oss_proto_depIdxs = nil
-}
+func init()                { file_oss_proto_init() }
+func file_oss_proto_init() { _ = "STUB: not implemented"; return }

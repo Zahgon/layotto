@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -33,16 +31,13 @@ type lifecycleClient struct {
 }
 
 func NewLifecycleClient(cc grpc.ClientConnInterface) LifecycleClient {
-	return &lifecycleClient{cc}
+	_ = "STUB: not implemented"
+	return *new(LifecycleClient)
 }
 
 func (c *lifecycleClient) ApplyConfiguration(ctx context.Context, in *DynamicConfiguration, opts ...grpc.CallOption) (*ApplyConfigurationResponse, error) {
-	out := new(ApplyConfigurationResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Lifecycle/ApplyConfiguration", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // LifecycleServer is the server API for Lifecycle service.
@@ -59,7 +54,8 @@ type UnimplementedLifecycleServer struct {
 }
 
 func (UnimplementedLifecycleServer) ApplyConfiguration(context.Context, *DynamicConfiguration) (*ApplyConfigurationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ApplyConfiguration not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeLifecycleServer may be embedded to opt out of forward compatibility for this service.
@@ -70,25 +66,13 @@ type UnsafeLifecycleServer interface {
 }
 
 func RegisterLifecycleServer(s grpc.ServiceRegistrar, srv LifecycleServer) {
-	s.RegisterService(&Lifecycle_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _Lifecycle_ApplyConfiguration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DynamicConfiguration)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LifecycleServer).ApplyConfiguration(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Lifecycle/ApplyConfiguration",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LifecycleServer).ApplyConfiguration(ctx, req.(*DynamicConfiguration))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Lifecycle_ServiceDesc is the grpc.ServiceDesc for Lifecycle service.

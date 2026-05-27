@@ -16,8 +16,6 @@
 
 package http
 
-import "strings"
-
 // PathResolver is a util to extract elements in http path.
 type PathResolver struct {
 	// e.g. /a/b/c/d
@@ -26,38 +24,20 @@ type PathResolver struct {
 	unresolved string
 }
 
-func NewPathResolver(path string) *PathResolver {
-	return &PathResolver{
-		rawPath:    path,
-		unresolved: path,
-	}
-}
+func NewPathResolver(path string) *PathResolver { _ = "STUB: not implemented"; return nil }
 
-func (p *PathResolver) HasNext() bool {
-	path := p.UnresolvedPath()
-	return path != "" && path != "/" && path != "\\"
-}
+func (p *PathResolver) HasNext() bool { _ = "STUB: not implemented"; return false }
 
-func (p *PathResolver) Next() string {
-	if !p.HasNext() {
-		return ""
-	}
-	// /a/b/c
-	// remove first /
-	path := p.UnresolvedPath()[1:]
-	// a/b/c
-	// find first /
-	idx := strings.Index(path, "/")
-	if idx < 0 {
-		idx = len(path)
-	}
-	// a
-	tmp := path[:idx]
-	// /b/c
-	p.unresolved = path[idx:]
-	return tmp
-}
+func (p *PathResolver) Next() string { _ = "STUB: not implemented"; return "" }
 
-func (p *PathResolver) UnresolvedPath() string {
-	return p.unresolved
-}
+// /a/b/c
+// remove first /
+
+// a/b/c
+// find first /
+
+// a
+
+// /b/c
+
+func (p *PathResolver) UnresolvedPath() string { _ = "STUB: not implemented"; return "" }

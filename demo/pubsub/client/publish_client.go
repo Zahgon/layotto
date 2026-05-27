@@ -17,9 +17,7 @@
 package main
 
 import (
-	"context"
 	"flag"
-	"fmt"
 
 	client "github.com/layotto/go-sdk/client"
 )
@@ -47,11 +45,6 @@ func main() {
 }
 
 func testPublish(cli client.Client, topic string, value string) error {
-	data := []byte(value)
-	err := cli.PublishEvent(context.Background(), storeName, topic, data)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("Published a new event.Topic: %s ,Data: %s \n", topic, data)
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }

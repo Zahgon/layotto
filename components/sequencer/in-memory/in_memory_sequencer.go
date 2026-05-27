@@ -19,8 +19,6 @@ package in_memory
 import (
 	"sync"
 
-	"go.uber.org/atomic"
-
 	"mosn.io/layotto/components/pkg/actuators"
 	"mosn.io/layotto/components/sequencer"
 )
@@ -42,46 +40,21 @@ type InMemorySequencer struct {
 	data *sync.Map
 }
 
-func registerActuator() {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-}
+func registerActuator() { _ = "STUB: not implemented"; return }
 
-func NewInMemorySequencer() *InMemorySequencer {
-	registerActuator()
-	return &InMemorySequencer{
-		data: &sync.Map{},
-	}
-}
+func NewInMemorySequencer() *InMemorySequencer { _ = "STUB: not implemented"; return nil }
 
 func (s *InMemorySequencer) Init(_ sequencer.Configuration) error {
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (s *InMemorySequencer) GetNextId(req *sequencer.GetNextIdRequest) (*sequencer.GetNextIdResponse, error) {
-	seed, ok := s.data.Load(req.Key)
-	if !ok {
-		seed, _ = s.data.LoadOrStore(req.Key, &atomic.Int64{})
-	}
-
-	nextId := seed.(*atomic.Int64).Inc()
-	return &sequencer.GetNextIdResponse{NextId: nextId}, nil
-
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (s *InMemorySequencer) GetSegment(req *sequencer.GetSegmentRequest) (bool, *sequencer.GetSegmentResponse, error) {
-	seed, ok := s.data.Load(req.Key)
-	if !ok {
-		seed, _ = s.data.LoadOrStore(req.Key, &atomic.Int64{})
-	}
-
-	res := seed.(*atomic.Int64).Add(int64(req.Size))
-	return true, &sequencer.GetSegmentResponse{
-		From: res - int64(req.Size) + 1,
-		To:   res,
-	}, nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }

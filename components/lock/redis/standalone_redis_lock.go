@@ -15,8 +15,6 @@ package redis
 
 import (
 	"context"
-	"fmt"
-	"time"
 
 	"github.com/go-redis/redis/v8"
 
@@ -45,125 +43,62 @@ type StandaloneRedisLock struct {
 }
 
 // NewStandaloneRedisLock returns a new redis lock store
-func NewStandaloneRedisLock() *StandaloneRedisLock {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator("lock-redis-standalone", indicators)
-	})
-	s := &StandaloneRedisLock{
-		features: make([]lock.Feature, 0),
-		logger:   logger.NewLayottoLogger("lock/standalone_redis"),
-	}
-	logger.RegisterComponentLoggerListener("lock/standalone_redis", s)
-
-	return s
-}
+func NewStandaloneRedisLock() *StandaloneRedisLock { _ = "STUB: not implemented"; return nil }
 
 func (p *StandaloneRedisLock) OnLogLevelChanged(outputLevel logger.LogLevel) {
-	p.logger.SetLogLevel(outputLevel)
+	_ = "STUB: not implemented"
+	return
 }
 
 // Init StandaloneRedisLock
 func (p *StandaloneRedisLock) Init(metadata lock.Metadata) error {
+	_ = "STUB: not implemented"
 	// 1. parse config
-	m, err := utils.ParseRedisMetadata(metadata.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	p.metadata = m
-	// 2. construct client
-	p.client = utils.NewRedisClient(m)
-	p.ctx, p.cancel = context.WithCancel(context.Background())
-	// 3. connect to redis
-	if _, err = p.client.Ping(p.ctx).Result(); err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return fmt.Errorf("[standaloneRedisLock]: error connecting to redis at %s: %s", m.Host, err)
-	}
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	return err
+	return nil
 }
+
+// 2. construct client
+
+// 3. connect to redis
 
 // Features is to get StandaloneRedisLock's features
 func (p *StandaloneRedisLock) Features() []lock.Feature {
-	return p.features
+	_ = "STUB: not implemented"
+
+	// LockKeepAlive try to renewal lease
+	return nil
 }
 
-// LockKeepAlive try to renewal lease
 func (p *StandaloneRedisLock) LockKeepAlive(ctx context.Context, request *lock.LockKeepAliveRequest) (*lock.LockKeepAliveResponse, error) {
+	_ = "STUB: not implemented"
 	//TODO: implemnt function
 	return nil, nil
 }
 
 // Node tries to acquire a redis lock
 func (p *StandaloneRedisLock) TryLock(ctx context.Context, req *lock.TryLockRequest) (*lock.TryLockResponse, error) {
+	_ = "STUB: not implemented"
 	// 1.Setting redis expiration time
-	nx := p.client.SetNX(p.ctx, req.ResourceId, req.LockOwner, time.Second*time.Duration(req.Expire))
-	if nx == nil {
-		return &lock.TryLockResponse{}, fmt.Errorf("[standaloneRedisLock]: SetNX returned nil.ResourceId: %s", req.ResourceId)
-	}
-	// 2. check error
-	err := nx.Err()
-	if err != nil {
-		return &lock.TryLockResponse{}, err
-	}
-
-	return &lock.TryLockResponse{
-		Success: nx.Val(),
-	}, nil
+	return nil, nil
 }
+
+// 2. check error
 
 const unlockScript = "local v = redis.call(\"get\",KEYS[1]); if v==false then return -1 end; if v~=ARGV[1] then return -2 else return redis.call(\"del\",KEYS[1]) end"
 
 // Node tries to release a redis lock
 func (p *StandaloneRedisLock) Unlock(ctx context.Context, req *lock.UnlockRequest) (*lock.UnlockResponse, error) {
+	_ = "STUB: not implemented"
 	// 1. delegate to client.eval lua script
-	eval := p.client.Eval(p.ctx, unlockScript, []string{req.ResourceId}, req.LockOwner)
-	// 2. check error
-	if eval == nil {
-		return newInternalErrorUnlockResponse(), fmt.Errorf("[standaloneRedisLock]: Eval unlock script returned nil.ResourceId: %s", req.ResourceId)
-	}
-	err := eval.Err()
-	if err != nil {
-		return newInternalErrorUnlockResponse(), err
-	}
-	// 3. parse result
-	i, err := eval.Int()
-	status := lock.INTERNAL_ERROR
-	if err != nil {
-		return &lock.UnlockResponse{
-			Status: status,
-		}, err
-	}
-	if i >= 0 {
-		status = lock.SUCCESS
-	} else if i == -1 {
-		status = lock.LOCK_UNEXIST
-	} else if i == -2 {
-		status = lock.LOCK_BELONG_TO_OTHERS
-	}
-	return &lock.UnlockResponse{
-		Status: status,
-	}, nil
+	return nil, nil
 }
+
+// 2. check error
+
+// 3. parse result
 
 // newInternalErrorUnlockResponse is to return lock release error
-func newInternalErrorUnlockResponse() *lock.UnlockResponse {
-	return &lock.UnlockResponse{
-		Status: lock.INTERNAL_ERROR,
-	}
-}
+func newInternalErrorUnlockResponse() *lock.UnlockResponse { _ = "STUB: not implemented"; return nil }
 
 // Close shuts down the client's redis connections.
-func (p *StandaloneRedisLock) Close() error {
-	if p.cancel != nil {
-		p.cancel()
-	}
-	if p.client != nil {
-		return p.client.Close()
-	}
-	return nil
-}
+func (p *StandaloneRedisLock) Close() error { _ = "STUB: not implemented"; return nil }

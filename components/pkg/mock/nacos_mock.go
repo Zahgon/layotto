@@ -17,8 +17,6 @@
 package mock
 
 import (
-	reflect "reflect"
-
 	gomock "github.com/golang/mock/gomock"
 	model "github.com/nacos-group/nacos-sdk-go/v2/model"
 	vo "github.com/nacos-group/nacos-sdk-go/v2/vo"
@@ -37,112 +35,94 @@ type MockNacosConfigClientMockRecorder struct {
 
 // NewMockNacosConfigClient creates a new mock instance.
 func NewMockNacosConfigClient(ctrl *gomock.Controller) *MockNacosConfigClient {
-	mock := &MockNacosConfigClient{ctrl: ctrl}
-	mock.recorder = &MockNacosConfigClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockNacosConfigClient) EXPECT() *MockNacosConfigClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CancelListenConfig mocks base method.
+	return nil
 }
 
-// CancelListenConfig mocks base method.
 func (m *MockNacosConfigClient) CancelListenConfig(params vo.ConfigParam) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CancelListenConfig", params)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CancelListenConfig indicates an expected call of CancelListenConfig.
 func (mr *MockNacosConfigClientMockRecorder) CancelListenConfig(params interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CancelListenConfig", reflect.TypeOf((*MockNacosConfigClient)(nil).CancelListenConfig), params)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseClient mocks base method.
-func (m *MockNacosConfigClient) CloseClient() {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "CloseClient")
-}
+func (m *MockNacosConfigClient) CloseClient() { _ = "STUB: not implemented"; return }
 
 // CloseClient indicates an expected call of CloseClient.
 func (mr *MockNacosConfigClientMockRecorder) CloseClient() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseClient", reflect.TypeOf((*MockNacosConfigClient)(nil).CloseClient))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteConfig mocks base method.
 func (m *MockNacosConfigClient) DeleteConfig(param vo.ConfigParam) (bool, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteConfig", param)
-	ret0, _ := ret[0].(bool)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return false, nil
 }
 
 // DeleteConfig indicates an expected call of DeleteConfig.
 func (mr *MockNacosConfigClientMockRecorder) DeleteConfig(param interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteConfig", reflect.TypeOf((*MockNacosConfigClient)(nil).DeleteConfig), param)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetConfig mocks base method.
 func (m *MockNacosConfigClient) GetConfig(param vo.ConfigParam) (string, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetConfig", param)
-	ret0, _ := ret[0].(string)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 // GetConfig indicates an expected call of GetConfig.
 func (mr *MockNacosConfigClientMockRecorder) GetConfig(param interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetConfig", reflect.TypeOf((*MockNacosConfigClient)(nil).GetConfig), param)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListenConfig mocks base method.
 func (m *MockNacosConfigClient) ListenConfig(params vo.ConfigParam) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListenConfig", params)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListenConfig indicates an expected call of ListenConfig.
 func (mr *MockNacosConfigClientMockRecorder) ListenConfig(params interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListenConfig", reflect.TypeOf((*MockNacosConfigClient)(nil).ListenConfig), params)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PublishConfig mocks base method.
 func (m *MockNacosConfigClient) PublishConfig(param vo.ConfigParam) (bool, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PublishConfig", param)
-	ret0, _ := ret[0].(bool)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return false, nil
 }
 
 // PublishConfig indicates an expected call of PublishConfig.
 func (mr *MockNacosConfigClientMockRecorder) PublishConfig(param interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PublishConfig", reflect.TypeOf((*MockNacosConfigClient)(nil).PublishConfig), param)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SearchConfig mocks base method.
 func (m *MockNacosConfigClient) SearchConfig(param vo.SearchConfigParam) (*model.ConfigPage, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SearchConfig", param)
-	ret0, _ := ret[0].(*model.ConfigPage)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SearchConfig indicates an expected call of SearchConfig.
 func (mr *MockNacosConfigClientMockRecorder) SearchConfig(param interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SearchConfig", reflect.TypeOf((*MockNacosConfigClient)(nil).SearchConfig), param)
+	_ = "STUB: not implemented"
+	return nil
 }

@@ -26,10 +26,8 @@ type OutputBindingFactory struct {
 }
 
 func NewOutputBindingFactory(compType string, f func() bindings.OutputBinding) *OutputBindingFactory {
-	return &OutputBindingFactory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type InputBindingFactory struct {
@@ -38,8 +36,6 @@ type InputBindingFactory struct {
 }
 
 func NewInputBindingFactory(compType string, f func() bindings.InputBinding) *InputBindingFactory {
-	return &InputBindingFactory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

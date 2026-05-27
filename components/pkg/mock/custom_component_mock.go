@@ -25,23 +25,23 @@ type CustomComponentMock struct {
 }
 
 func NewCustomComponentMock() custom.Component {
-	return &CustomComponentMock{}
+	_ = "STUB: not implemented"
+	return *new(custom.Component)
 }
 
-func (c *CustomComponentMock) InitTimes() int {
-	return c.initTimes
-}
+func (c *CustomComponentMock) InitTimes() int { _ = "STUB: not implemented"; return 0 }
 
 func (c *CustomComponentMock) Initialize(ctx context.Context, config custom.Config) error {
-	c.ctx = ctx
-	c.config = &config
-	c.initTimes++
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (c *CustomComponentMock) GetReceivedConfig() *custom.Config {
-	return c.config
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (c *CustomComponentMock) GetReceivedCtx() context.Context {
-	return c.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }

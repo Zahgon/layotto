@@ -20,9 +20,6 @@ import (
 	"context"
 
 	rawGRPC "google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
-	"mosn.io/pkg/log"
 
 	"mosn.io/layotto/components/pkg/common"
 	"mosn.io/layotto/pkg/runtime/lifecycle"
@@ -33,9 +30,8 @@ import (
 )
 
 func NewLifecycleAPI(ac *grpc_api.ApplicationContext) grpc.GrpcAPI {
-	return &server{
-		components: ac.DynamicComponents,
-	}
+	_ = "STUB: not implemented"
+	return *new(grpc.GrpcAPI)
 }
 
 // server implements runtimev1pb.LifecycleServer
@@ -44,44 +40,23 @@ type server struct {
 }
 
 func (s *server) ApplyConfiguration(ctx context.Context, in *runtimev1pb.DynamicConfiguration) (*runtimev1pb.ApplyConfigurationResponse, error) {
+	_ = "STUB: not implemented"
 	// 1. validate parameters
-	if in.ComponentConfig == nil || in.ComponentConfig.Kind == "" {
-		return &runtimev1pb.ApplyConfigurationResponse{}, invalidArgumentError(grpc_api.ErrNoField, "kind")
-	}
-	kind := in.ComponentConfig.Kind
-	name := in.ComponentConfig.Name
-	if name == "" {
-		return &runtimev1pb.ApplyConfigurationResponse{}, invalidArgumentError(grpc_api.ErrNoField, "name")
-	}
-	if len(in.ComponentConfig.Metadata) == 0 {
-		return &runtimev1pb.ApplyConfigurationResponse{}, invalidArgumentError(grpc_api.ErrNoField, "metadata")
-	}
-	// 2. find the component
-	key := lifecycle.ComponentKey{
-		Kind: kind,
-		Name: name,
-	}
-	holder, ok := s.components[key]
-	if !ok {
-		return &runtimev1pb.ApplyConfigurationResponse{}, invalidArgumentError(grpc_api.ErrComponentNotFound, kind, name)
-	}
-
-	// 3. delegate to the components
-	err := holder.ApplyConfig(ctx, in.GetComponentConfig().Metadata)
-	return &runtimev1pb.ApplyConfigurationResponse{}, err
+	return nil, nil
 }
+
+// 2. find the component
+
+// 3. delegate to the components
 
 func invalidArgumentError(format string, a ...interface{}) error {
-	err := status.Errorf(codes.InvalidArgument, format, a...)
-	log.DefaultLogger.Errorf("ApplyConfiguration fail: %+v", err)
-	return err
-}
-
-func (s *server) Init(conn *rawGRPC.ClientConn) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
+func (s *server) Init(conn *rawGRPC.ClientConn) error { _ = "STUB: not implemented"; return nil }
+
 func (s *server) Register(rawGrpcServer *rawGRPC.Server) error {
-	runtimev1pb.RegisterLifecycleServer(rawGrpcServer, s)
+	_ = "STUB: not implemented"
 	return nil
 }

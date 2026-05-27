@@ -7,7 +7,6 @@
 package sms
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -43,77 +42,41 @@ type SendSmsWithTemplateRequest struct {
 	Metadata map[string]string `protobuf:"bytes,6,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *SendSmsWithTemplateRequest) Reset() {
-	*x = SendSmsWithTemplateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_sms_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendSmsWithTemplateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendSmsWithTemplateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendSmsWithTemplateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendSmsWithTemplateRequest) ProtoMessage() {}
+func (*SendSmsWithTemplateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendSmsWithTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sms_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendSmsWithTemplateRequest.ProtoReflect.Descriptor instead.
 func (*SendSmsWithTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_sms_proto_rawDescGZIP(), []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *SendSmsWithTemplateRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *SendSmsWithTemplateRequest) GetPhoneNumbers() []string {
-	if x != nil {
-		return x.PhoneNumbers
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *SendSmsWithTemplateRequest) GetTemplate() *Template {
-	if x != nil {
-		return x.Template
-	}
-	return nil
-}
+func (x *SendSmsWithTemplateRequest) GetTemplate() *Template { _ = "STUB: not implemented"; return nil }
 
-func (x *SendSmsWithTemplateRequest) GetSignName() string {
-	if x != nil {
-		return x.SignName
-	}
-	return ""
-}
+func (x *SendSmsWithTemplateRequest) GetSignName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SendSmsWithTemplateRequest) GetSenderId() string {
-	if x != nil {
-		return x.SenderId
-	}
-	return ""
-}
+func (x *SendSmsWithTemplateRequest) GetSenderId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *SendSmsWithTemplateRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -129,51 +92,23 @@ type Template struct {
 	TemplateParams map[string]string `protobuf:"bytes,2,rep,name=template_params,json=templateParams,proto3" json:"template_params,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *Template) Reset() {
-	*x = Template{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_sms_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Template) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Template) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Template) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Template) ProtoMessage() {}
+func (*Template) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Template) ProtoReflect() protoreflect.Message {
-	mi := &file_sms_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Template.ProtoReflect.Descriptor instead.
-func (*Template) Descriptor() ([]byte, []int) {
-	return file_sms_proto_rawDescGZIP(), []int{1}
-}
+func (*Template) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Template) GetTemplateId() string {
-	if x != nil {
-		return x.TemplateId
-	}
-	return ""
-}
+func (x *Template) GetTemplateId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *Template) GetTemplateParams() map[string]string {
-	if x != nil {
-		return x.TemplateParams
-	}
-	return nil
-}
+func (x *Template) GetTemplateParams() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // SendSmsResponse is the response of the `SendSms` method.
 type SendSmsWithTemplateResponse struct {
@@ -187,49 +122,27 @@ type SendSmsWithTemplateResponse struct {
 	Results []*SendStatus `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty"`
 }
 
-func (x *SendSmsWithTemplateResponse) Reset() {
-	*x = SendSmsWithTemplateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_sms_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendSmsWithTemplateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendSmsWithTemplateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendSmsWithTemplateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendSmsWithTemplateResponse) ProtoMessage() {}
+func (*SendSmsWithTemplateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendSmsWithTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sms_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendSmsWithTemplateResponse.ProtoReflect.Descriptor instead.
 func (*SendSmsWithTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_sms_proto_rawDescGZIP(), []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *SendSmsWithTemplateResponse) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
+func (x *SendSmsWithTemplateResponse) GetRequestId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *SendSmsWithTemplateResponse) GetResults() []*SendStatus {
-	if x != nil {
-		return x.Results
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -249,58 +162,25 @@ type SendStatus struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *SendStatus) Reset() {
-	*x = SendStatus{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_sms_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendStatus) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendStatus) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendStatus) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendStatus) ProtoMessage() {}
+func (*SendStatus) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_sms_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendStatus.ProtoReflect.Descriptor instead.
-func (*SendStatus) Descriptor() ([]byte, []int) {
-	return file_sms_proto_rawDescGZIP(), []int{3}
-}
+func (*SendStatus) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SendStatus) GetCode() string {
-	if x != nil {
-		return x.Code
-	}
-	return ""
-}
+func (x *SendStatus) GetCode() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SendStatus) GetMessage() string {
-	if x != nil {
-		return x.Message
-	}
-	return ""
-}
+func (x *SendStatus) GetMessage() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SendStatus) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *SendStatus) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 var File_sms_proto protoreflect.FileDescriptor
 
@@ -387,12 +267,7 @@ var (
 	file_sms_proto_rawDescData = file_sms_proto_rawDesc
 )
 
-func file_sms_proto_rawDescGZIP() []byte {
-	file_sms_proto_rawDescOnce.Do(func() {
-		file_sms_proto_rawDescData = protoimpl.X.CompressGZIP(file_sms_proto_rawDescData)
-	})
-	return file_sms_proto_rawDescData
-}
+func file_sms_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_sms_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_sms_proto_goTypes = []interface{}{
@@ -419,77 +294,5 @@ var file_sms_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_sms_proto_init() }
-func file_sms_proto_init() {
-	if File_sms_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_sms_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendSmsWithTemplateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_sms_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Template); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_sms_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendSmsWithTemplateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_sms_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendStatus); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_sms_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   7,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_sms_proto_goTypes,
-		DependencyIndexes: file_sms_proto_depIdxs,
-		MessageInfos:      file_sms_proto_msgTypes,
-	}.Build()
-	File_sms_proto = out.File
-	file_sms_proto_rawDesc = nil
-	file_sms_proto_goTypes = nil
-	file_sms_proto_depIdxs = nil
-}
+func init()                { file_sms_proto_init() }
+func file_sms_proto_init() { _ = "STUB: not implemented"; return }

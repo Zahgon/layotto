@@ -19,8 +19,6 @@
 package mock
 
 import (
-	reflect "reflect"
-
 	gomock "github.com/golang/mock/gomock"
 	api "github.com/hashicorp/consul/api"
 )
@@ -38,28 +36,24 @@ type MockConsulClientMockRecorder struct {
 
 // NewMockConsulClient creates a new mock instance.
 func NewMockConsulClient(ctrl *gomock.Controller) *MockConsulClient {
-	mock := &MockConsulClient{ctrl: ctrl}
-	mock.recorder = &MockConsulClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockConsulClient) EXPECT() *MockConsulClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Session mocks base method.
+	return nil
 }
 
-// Session mocks base method.
-func (m *MockConsulClient) Session() *api.Session {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Session")
-	ret0, _ := ret[0].(*api.Session)
-	return ret0
-}
+func (m *MockConsulClient) Session() *api.Session { _ = "STUB: not implemented"; return nil }
 
 // Session indicates an expected call of Session.
 func (mr *MockConsulClientMockRecorder) Session() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Session", reflect.TypeOf((*MockConsulClient)(nil).Session))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockConsulKV is a mock of ConsulKV interface.
@@ -74,47 +68,37 @@ type MockConsulKVMockRecorder struct {
 }
 
 // NewMockConsulKV creates a new mock instance.
-func NewMockConsulKV(ctrl *gomock.Controller) *MockConsulKV {
-	mock := &MockConsulKV{ctrl: ctrl}
-	mock.recorder = &MockConsulKVMockRecorder{mock}
-	return mock
-}
+func NewMockConsulKV(ctrl *gomock.Controller) *MockConsulKV { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockConsulKV) EXPECT() *MockConsulKVMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Acquire mocks base method.
+	return nil
 }
 
-// Acquire mocks base method.
 func (m *MockConsulKV) Acquire(p *api.KVPair, q *api.WriteOptions) (bool, *api.WriteMeta, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Acquire", p, q)
-	ret0, _ := ret[0].(bool)
-	ret1, _ := ret[1].(*api.WriteMeta)
-	ret2, _ := ret[2].(error)
-	return ret0, ret1, ret2
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 // Acquire indicates an expected call of Acquire.
 func (mr *MockConsulKVMockRecorder) Acquire(p, q interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Acquire", reflect.TypeOf((*MockConsulKV)(nil).Acquire), p, q)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Release mocks base method.
 func (m *MockConsulKV) Release(p *api.KVPair, q *api.WriteOptions) (bool, *api.WriteMeta, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Release", p, q)
-	ret0, _ := ret[0].(bool)
-	ret1, _ := ret[1].(*api.WriteMeta)
-	ret2, _ := ret[2].(error)
-	return ret0, ret1, ret2
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 // Release indicates an expected call of Release.
 func (mr *MockConsulKVMockRecorder) Release(p, q interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Release", reflect.TypeOf((*MockConsulKV)(nil).Release), p, q)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockSessionFactory is a mock of SessionFactory interface.
@@ -130,43 +114,37 @@ type MockSessionFactoryMockRecorder struct {
 
 // NewMockSessionFactory creates a new mock instance.
 func NewMockSessionFactory(ctrl *gomock.Controller) *MockSessionFactory {
-	mock := &MockSessionFactory{ctrl: ctrl}
-	mock.recorder = &MockSessionFactoryMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockSessionFactory) EXPECT() *MockSessionFactoryMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Create mocks base method.
+	return nil
 }
 
-// Create mocks base method.
 func (m *MockSessionFactory) Create(se *api.SessionEntry, q *api.WriteOptions) (string, *api.WriteMeta, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Create", se, q)
-	ret0, _ := ret[0].(string)
-	ret1, _ := ret[1].(*api.WriteMeta)
-	ret2, _ := ret[2].(error)
-	return ret0, ret1, ret2
+	_ = "STUB: not implemented"
+	return "", nil, nil
 }
 
 // Create indicates an expected call of Create.
 func (mr *MockSessionFactoryMockRecorder) Create(se, q interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockSessionFactory)(nil).Create), se, q)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Destroy mocks base method.
 func (m *MockSessionFactory) Destroy(id string, q *api.WriteOptions) (*api.WriteMeta, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Destroy", id, q)
-	ret0, _ := ret[0].(*api.WriteMeta)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Destroy indicates an expected call of Destroy.
 func (mr *MockSessionFactoryMockRecorder) Destroy(id, q interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Destroy", reflect.TypeOf((*MockSessionFactory)(nil).Destroy), id, q)
+	_ = "STUB: not implemented"
+	return nil
 }

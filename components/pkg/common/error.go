@@ -12,13 +12,6 @@
 // limitations under the License.
 package common
 
-import (
-	"fmt"
-
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
-)
-
 const (
 	TimeoutCode int = iota
 	UnavailebleCode
@@ -37,44 +30,17 @@ type commonError struct {
 	msg  string
 }
 
-func (le *commonError) Code() int {
-	return le.code
-}
+func (le *commonError) Code() int { _ = "STUB: not implemented"; return 0 }
 
-func (le *commonError) Msg() string {
-	return le.msg
-}
+func (le *commonError) Msg() string { _ = "STUB: not implemented"; return "" }
 
-func (le *commonError) Error() string {
-	return fmt.Sprintf("code %d, msg: %s", le.code, le.msg)
-}
+func (le *commonError) Error() string { _ = "STUB: not implemented"; return "" }
 
-func Error(code int, msg string) CommonError {
-	return &commonError{code: code, msg: msg}
-}
+func Error(code int, msg string) CommonError { _ = "STUB: not implemented"; return *new(CommonError) }
 
 func Errorf(code int, format string, a ...interface{}) CommonError {
-	return &commonError{code: code, msg: fmt.Sprintf(format, a...)}
+	_ = "STUB: not implemented"
+	return *new(CommonError)
 }
 
-func ToGrpcError(err error) error {
-	switch v := err.(type) {
-	case CommonError:
-		var code codes.Code
-		switch v.Code() {
-		case TimeoutCode:
-			code = codes.DeadlineExceeded
-		case UnavailebleCode:
-			code = codes.Unavailable
-		case InternalCode:
-			code = codes.Internal
-		case InvalidArgsCode:
-			code = codes.InvalidArgument
-		default:
-			code = codes.Unknown
-		}
-		return status.Error(code, v.Msg())
-	default:
-		return status.Error(codes.Unknown, err.Error())
-	}
-}
+func ToGrpcError(err error) error { _ = "STUB: not implemented"; return nil }

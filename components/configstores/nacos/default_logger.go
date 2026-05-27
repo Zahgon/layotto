@@ -32,39 +32,32 @@ type DefaultLogger struct {
 	logger log.Logger
 }
 
-func NewDefaultLogger(logger log.Logger) *DefaultLogger {
-	return &DefaultLogger{
-		logger: logger,
-	}
-}
+func NewDefaultLogger(logger log.Logger) *DefaultLogger { _ = "STUB: not implemented"; return nil }
+
 func (d *DefaultLogger) Debugf(format string, params ...interface{}) {
-	d.logger.Debugf(format, params...)
+	_ = "STUB: not implemented"
+	return
 }
 
 func (d *DefaultLogger) Infof(format string, params ...interface{}) {
-	d.logger.Infof(format, params...)
+	_ = "STUB: not implemented"
+	return
 }
 
 func (d *DefaultLogger) Warnf(format string, params ...interface{}) {
-	d.logger.Warnf(format, params...)
+	_ = "STUB: not implemented"
+	return
 }
 
 func (d *DefaultLogger) Errorf(format string, params ...interface{}) {
-	d.logger.Errorf(format, params...)
+	_ = "STUB: not implemented"
+	return
 }
 
-func (d *DefaultLogger) Debug(v ...interface{}) {
-	d.logger.Debugf("%v", v)
-}
+func (d *DefaultLogger) Debug(v ...interface{}) { _ = "STUB: not implemented"; return }
 
-func (d *DefaultLogger) Info(v ...interface{}) {
-	d.logger.Infof("%v", v)
-}
+func (d *DefaultLogger) Info(v ...interface{}) { _ = "STUB: not implemented"; return }
 
-func (d *DefaultLogger) Warn(v ...interface{}) {
-	d.logger.Warnf("%v", v)
-}
+func (d *DefaultLogger) Warn(v ...interface{}) { _ = "STUB: not implemented"; return }
 
-func (d *DefaultLogger) Error(v ...interface{}) {
-	d.logger.Errorf("%v", v)
-}
+func (d *DefaultLogger) Error(v ...interface{}) { _ = "STUB: not implemented"; return }

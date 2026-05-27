@@ -66,9 +66,6 @@ type MosnRuntimeConfig struct {
 }
 
 func ParseRuntimeConfig(data json.RawMessage) (*MosnRuntimeConfig, error) {
-	cfg := &MosnRuntimeConfig{}
-	if err := json.Unmarshal(data, cfg); err != nil {
-		return nil, err
-	}
-	return cfg, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

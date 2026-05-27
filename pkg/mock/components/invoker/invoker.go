@@ -6,7 +6,6 @@ package mock
 
 import (
 	context "context"
-	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
 
@@ -25,44 +24,34 @@ type MockInvokerMockRecorder struct {
 }
 
 // NewMockInvoker creates a new mock instance.
-func NewMockInvoker(ctrl *gomock.Controller) *MockInvoker {
-	mock := &MockInvoker{ctrl: ctrl}
-	mock.recorder = &MockInvokerMockRecorder{mock}
-	return mock
-}
+func NewMockInvoker(ctrl *gomock.Controller) *MockInvoker { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockInvoker) EXPECT() *MockInvokerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Init mocks base method.
+	return nil
 }
 
-// Init mocks base method.
-func (m *MockInvoker) Init(config rpc.RpcConfig) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", config)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockInvoker) Init(config rpc.RpcConfig) error { _ = "STUB: not implemented"; return nil }
 
 // Init indicates an expected call of Init.
 func (mr *MockInvokerMockRecorder) Init(config interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockInvoker)(nil).Init), config)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Invoke mocks base method.
 func (m *MockInvoker) Invoke(ctx context.Context, req *rpc.RPCRequest) (*rpc.RPCResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Invoke", ctx, req)
-	ret0, _ := ret[0].(*rpc.RPCResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Invoke indicates an expected call of Invoke.
 func (mr *MockInvokerMockRecorder) Invoke(ctx, req interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Invoke", reflect.TypeOf((*MockInvoker)(nil).Invoke), ctx, req)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockCallback is a mock of Callback interface.
@@ -77,69 +66,55 @@ type MockCallbackMockRecorder struct {
 }
 
 // NewMockCallback creates a new mock instance.
-func NewMockCallback(ctrl *gomock.Controller) *MockCallback {
-	mock := &MockCallback{ctrl: ctrl}
-	mock.recorder = &MockCallbackMockRecorder{mock}
-	return mock
-}
+func NewMockCallback(ctrl *gomock.Controller) *MockCallback { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockCallback) EXPECT() *MockCallbackMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// AddAfterInvoke mocks base method.
+	return nil
 }
 
-// AddAfterInvoke mocks base method.
-func (m *MockCallback) AddAfterInvoke(arg0 rpc.CallbackFunc) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "AddAfterInvoke", arg0)
-}
+func (m *MockCallback) AddAfterInvoke(arg0 rpc.CallbackFunc) { _ = "STUB: not implemented"; return }
 
 // AddAfterInvoke indicates an expected call of AddAfterInvoke.
 func (mr *MockCallbackMockRecorder) AddAfterInvoke(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddAfterInvoke", reflect.TypeOf((*MockCallback)(nil).AddAfterInvoke), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // AddBeforeInvoke mocks base method.
-func (m *MockCallback) AddBeforeInvoke(arg0 rpc.CallbackFunc) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "AddBeforeInvoke", arg0)
-}
+func (m *MockCallback) AddBeforeInvoke(arg0 rpc.CallbackFunc) { _ = "STUB: not implemented"; return }
 
 // AddBeforeInvoke indicates an expected call of AddBeforeInvoke.
 func (mr *MockCallbackMockRecorder) AddBeforeInvoke(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddBeforeInvoke", reflect.TypeOf((*MockCallback)(nil).AddBeforeInvoke), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // AfterInvoke mocks base method.
 func (m *MockCallback) AfterInvoke(arg0 *rpc.RPCResponse) (*rpc.RPCResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AfterInvoke", arg0)
-	ret0, _ := ret[0].(*rpc.RPCResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AfterInvoke indicates an expected call of AfterInvoke.
 func (mr *MockCallbackMockRecorder) AfterInvoke(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AfterInvoke", reflect.TypeOf((*MockCallback)(nil).AfterInvoke), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // BeforeInvoke mocks base method.
 func (m *MockCallback) BeforeInvoke(arg0 *rpc.RPCRequest) (*rpc.RPCRequest, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "BeforeInvoke", arg0)
-	ret0, _ := ret[0].(*rpc.RPCRequest)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // BeforeInvoke indicates an expected call of BeforeInvoke.
 func (mr *MockCallbackMockRecorder) BeforeInvoke(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BeforeInvoke", reflect.TypeOf((*MockCallback)(nil).BeforeInvoke), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockChannel is a mock of Channel interface.
@@ -154,28 +129,23 @@ type MockChannelMockRecorder struct {
 }
 
 // NewMockChannel creates a new mock instance.
-func NewMockChannel(ctrl *gomock.Controller) *MockChannel {
-	mock := &MockChannel{ctrl: ctrl}
-	mock.recorder = &MockChannelMockRecorder{mock}
-	return mock
-}
+func NewMockChannel(ctrl *gomock.Controller) *MockChannel { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockChannel) EXPECT() *MockChannelMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Do mocks base method.
+	return nil
 }
 
-// Do mocks base method.
 func (m *MockChannel) Do(arg0 *rpc.RPCRequest) (*rpc.RPCResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Do", arg0)
-	ret0, _ := ret[0].(*rpc.RPCResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Do indicates an expected call of Do.
 func (mr *MockChannelMockRecorder) Do(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Do", reflect.TypeOf((*MockChannel)(nil).Do), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }

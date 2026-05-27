@@ -14,9 +14,6 @@ package utils
 
 import (
 	"context"
-	"errors"
-	"fmt"
-	"strconv"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -115,150 +112,55 @@ type MongoSingleResult interface {
 type MongoFactoryImpl struct{}
 
 func (c *MongoFactoryImpl) NewSingleResult(sr *mongo.SingleResult) MongoSingleResult {
-	return sr
+	_ = "STUB: not implemented"
+	return *new(MongoSingleResult)
 }
 
 func (c *MongoFactoryImpl) NewMongoCollection(m *mongo.Database, collectionName string, opts *options.CollectionOptions) MongoCollection {
-	collection := m.Collection(collectionName, opts)
-	return collection
+	_ = "STUB: not implemented"
+	return *new(MongoCollection)
 }
 
 func (c *MongoFactoryImpl) NewMongoClient(m MongoMetadata) (MongoClient, error) {
-	uri := getMongoURI(m)
+	_ = "STUB: not implemented"
+	return *
 
 	// Set client options
-	clientOptions := options.Client().ApplyURI(uri)
-
-	// Connect to MongoDB
-	ctx, cancel := context.WithTimeout(context.Background(), m.OperationTimeout)
-	defer cancel()
-
-	client, err := mongo.Connect(ctx, clientOptions)
-	if err != nil {
-		return nil, err
-	}
-
-	return client, err
+	new(MongoClient), nil
 }
 
+// Connect to MongoDB
+
 func ParseMongoMetadata(properties map[string]string) (MongoMetadata, error) {
-	m := MongoMetadata{}
-
-	m.Host = getString(properties, mongoHost)
-
-	m.Server = getString(properties, server)
-
-	if len(m.Host) == 0 && len(m.Server) == 0 {
-		return m, errors.New("must set 'host' or 'server' fields")
-	}
-
-	if len(m.Host) != 0 && len(m.Server) != 0 {
-		return m, errors.New("'host' or 'server' fields are mutually exclusive")
-	}
-
-	m.Username = getString(properties, username)
-	m.Password = getString(properties, mongoPassword)
-
-	m.DatabaseName = defaultDatabase
-	if val, ok := properties[databaseName]; ok && val != "" {
-		m.DatabaseName = val
-	}
-
-	m.CollectionName = defaultCollectionName
-	if val, ok := properties[collecttionName]; ok && val != "" {
-		m.CollectionName = val
-	}
-
-	m.WriteConcern = getString(properties, writeConcern)
-	m.ReadConcern = getString(properties, readConcern)
-	m.Params = getString(properties, params)
-
-	var err error
-	m.OperationTimeout = defaultTimeout
-	if val, ok := properties[operationTimeout]; ok && val != "" {
-		m.OperationTimeout, err = time.ParseDuration(val)
-		if err != nil {
-			return m, errors.New("incorrect operationTimeout field")
-		}
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return *new(MongoMetadata), nil
 }
 
 func getString(properties map[string]string, key string) string {
-	if val, ok := properties[key]; ok && val != "" {
-		return val
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func getMongoURI(m MongoMetadata) string {
-	if len(m.Server) != 0 {
-		return fmt.Sprintf(connectionURIFormatWithSrv, m.Server, m.Params)
-	}
-
-	if m.Username != "" && m.Password != "" {
-		return fmt.Sprintf(connectionURIFormatWithAuthentication, m.Username, m.Password, m.Host, m.DatabaseName, m.Params)
-	}
-
-	return fmt.Sprintf(connectionURIFormat, m.Host, m.DatabaseName, m.Params)
-}
+func getMongoURI(m MongoMetadata) string { _ = "STUB: not implemented"; return "" }
 
 func GetWriteConcernObject(cn string) (*writeconcern.WriteConcern, error) {
-	var wc *writeconcern.WriteConcern
-	if cn != "" {
-		if cn == "majority" {
-			wc = writeconcern.New(writeconcern.WMajority(), writeconcern.J(true), writeconcern.WTimeout(defaultTimeout))
-		} else {
-			w, err := strconv.Atoi(cn)
-			wc = writeconcern.New(writeconcern.W(w), writeconcern.J(true), writeconcern.WTimeout(defaultTimeout))
-			return wc, err
-		}
-	} else {
-		wc = writeconcern.New(writeconcern.W(1), writeconcern.J(true), writeconcern.WTimeout(defaultTimeout))
-	}
-	return wc, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func GetReadConcrenObject(cn string) (*readconcern.ReadConcern, error) {
-	switch cn {
-	case "local":
-		return readconcern.Local(), nil
-	case "majority":
-		return readconcern.Majority(), nil
-	case "available":
-		return readconcern.Available(), nil
-	case "linearizable":
-		return readconcern.Linearizable(), nil
-	case "snapshot":
-		return readconcern.Snapshot(), nil
-	case "":
-		return readconcern.Local(), nil
-	}
+	_ = "STUB: not implemented"
 	return nil, nil
 }
 
 func SetConcern(m MongoMetadata) (*options.CollectionOptions, error) {
-
-	wc, err := GetWriteConcernObject(m.WriteConcern)
-	if err != nil {
-		return nil, err
-	}
-
-	rc, err := GetReadConcrenObject(m.ReadConcern)
-	if err != nil {
-		return nil, err
-	}
-
-	// set mongo options of collection
-	opts := options.Collection().SetWriteConcern(wc).SetReadConcern(rc)
-
-	return opts, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
+// set mongo options of collection
+
 func SetCollection(c MongoClient, f MongoFactory, m MongoMetadata) (MongoCollection, error) {
-	opts, err := SetConcern(m)
-	if err != nil {
-		return nil, err
-	}
-	return f.NewMongoCollection(c.Database(m.DatabaseName), m.CollectionName, opts), err
+	_ = "STUB: not implemented"
+	return *new(MongoCollection), nil
 }

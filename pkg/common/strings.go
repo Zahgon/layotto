@@ -16,23 +16,9 @@
 
 package common
 
-import "strings"
-
 // PointerToString convert *string to string
-func PointerToString(value *string) string {
-	if value == nil {
-		return ""
-	}
-	return *value
-}
+func PointerToString(value *string) string { _ = "STUB: not implemented"; return "" }
 
 // StringToBool returns true if a string is a truthy value.
 // Truthy values are "y", "yes", "true", "t", "on", "1" (case-insensitive); everything else is false.
-func StringToBool(val string) bool {
-	switch strings.ToLower(strings.TrimSpace(val)) {
-	case "y", "yes", "true", "t", "on", "1":
-		return true
-	default:
-		return false
-	}
-}
+func StringToBool(val string) bool { _ = "STUB: not implemented"; return false }

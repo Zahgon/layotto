@@ -24,10 +24,12 @@ type Indicator interface {
 type IndicatorAdapter func() (string, map[string]interface{})
 
 func (ca IndicatorAdapter) Report() (status Status, details map[string]interface{}) {
-	return ca()
+	_ = "STUB: not implemented"
+
+	// Status is the enumeration value of component health status.
+	return *new(Status), nil
 }
 
-// Status is the enumeration value of component health status.
 type Status = string
 
 var (
@@ -42,10 +44,7 @@ var (
 // Details hold additional contextual details about the health of a component.
 type Details = map[string]interface{}
 
-func NewDetails() Details {
-	m := make(map[string]interface{})
-	return m
-}
+func NewDetails() Details { _ = "STUB: not implemented"; return *new(Details) }
 
 // Health carries information about the health of a component.
 // Details are optional.
@@ -54,28 +53,13 @@ type Health struct {
 	Details Details `json:"details,omitempty"`
 }
 
-func NewHealth(status Status) Health {
-	return Health{
-		Status:  status,
-		Details: NewDetails(),
-	}
-}
+func NewHealth(status Status) Health { _ = "STUB: not implemented"; return *new(Health) }
 
 // SetDetail sets a message v into the health details, indexed by k.
 // Note that the previous message of k, if exists, will be overriden.
 // v MUST be a valid json marshable type, otherwise runtime panic or
 // error occurs which fails the actuator health API.
-func (h *Health) SetDetail(k string, v interface{}) {
-	if h == nil {
-		return
-	}
-	h.Details[k] = v
-}
+func (h *Health) SetDetail(k string, v interface{}) { _ = "STUB: not implemented"; return }
 
 // GetDetail returns the detailed message indexed by k.
-func (h *Health) GetDetail(k string) interface{} {
-	if h == nil {
-		return nil
-	}
-	return h.Details[k]
-}
+func (h *Health) GetDetail(k string) interface{} { _ = "STUB: not implemented"; return nil }

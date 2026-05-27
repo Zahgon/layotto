@@ -12,13 +12,6 @@
 // limitations under the License.
 package wasm
 
-import (
-	"errors"
-	"math/rand"
-
-	"mosn.io/mosn/pkg/log"
-)
-
 type Group struct {
 	count   int
 	plugins []*WasmPlugin
@@ -31,34 +24,15 @@ type Router struct {
 // RegisterRoute register a group with id
 // unsafe for concurrent
 func (route *Router) RegisterRoute(id string, plugin *WasmPlugin) {
-	if group, found := route.routes[id]; found {
-		group.plugins = append(filter(group.plugins, func(item *WasmPlugin) bool {
-			return item.pluginName != plugin.pluginName
-		}).([]*WasmPlugin), plugin)
-		group.count = len(group.plugins)
-	} else {
-		route.routes[id] = &Group{
-			count:   1,
-			plugins: []*WasmPlugin{plugin},
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 // RemoveRoute remove group by id
-func (route *Router) RemoveRoute(id string) {
-	delete(route.routes, id)
-}
+func (route *Router) RemoveRoute(id string) { _ = "STUB: not implemented"; return }
 
 // GetRandomPluginByID Get random plugin with rand id
 func (route *Router) GetRandomPluginByID(id string) (*WasmPlugin, error) {
-	group, ok := route.routes[id]
-	if !ok {
-		log.DefaultLogger.Infof("[proxywasm][dispatch] GetRandomPluginByID id not registered, id: %s", id)
-		return nil, errors.New("id is not registered")
-	}
-
-	idx := rand.Intn(group.count)
-	plugin := group.plugins[idx]
-	log.DefaultLogger.Infof("[proxywasm][dispatch] GetRandomPluginByID return index: %d, plugin: %s", idx, plugin.pluginName)
-	return plugin, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

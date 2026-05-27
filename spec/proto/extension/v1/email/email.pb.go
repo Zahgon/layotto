@@ -7,7 +7,6 @@
 package email
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -39,63 +38,37 @@ type SendEmailWithTemplateRequest struct {
 	Address *EmailAddress `protobuf:"bytes,4,opt,name=address,proto3" json:"address,omitempty"`
 }
 
-func (x *SendEmailWithTemplateRequest) Reset() {
-	*x = SendEmailWithTemplateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendEmailWithTemplateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendEmailWithTemplateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendEmailWithTemplateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendEmailWithTemplateRequest) ProtoMessage() {}
+func (*SendEmailWithTemplateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendEmailWithTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendEmailWithTemplateRequest.ProtoReflect.Descriptor instead.
 func (*SendEmailWithTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *SendEmailWithTemplateRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *SendEmailWithTemplateRequest) GetTemplate() *EmailTemplate {
-	if x != nil {
-		return x.Template
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *SendEmailWithTemplateRequest) GetSubject() string {
-	if x != nil {
-		return x.Subject
-	}
-	return ""
-}
+func (x *SendEmailWithTemplateRequest) GetSubject() string { _ = "STUB: not implemented"; return "" }
 
 func (x *SendEmailWithTemplateRequest) GetAddress() *EmailAddress {
-	if x != nil {
-		return x.Address
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -113,58 +86,25 @@ type EmailAddress struct {
 	Cc []string `protobuf:"bytes,3,rep,name=cc,proto3" json:"cc,omitempty"`
 }
 
-func (x *EmailAddress) Reset() {
-	*x = EmailAddress{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *EmailAddress) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *EmailAddress) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *EmailAddress) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*EmailAddress) ProtoMessage() {}
+func (*EmailAddress) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *EmailAddress) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use EmailAddress.ProtoReflect.Descriptor instead.
-func (*EmailAddress) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{1}
-}
+func (*EmailAddress) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *EmailAddress) GetFrom() string {
-	if x != nil {
-		return x.From
-	}
-	return ""
-}
+func (x *EmailAddress) GetFrom() string { _ = "STUB: not implemented"; return "" }
 
-func (x *EmailAddress) GetTo() []string {
-	if x != nil {
-		return x.To
-	}
-	return nil
-}
+func (x *EmailAddress) GetTo() []string { _ = "STUB: not implemented"; return nil }
 
-func (x *EmailAddress) GetCc() []string {
-	if x != nil {
-		return x.Cc
-	}
-	return nil
-}
+func (x *EmailAddress) GetCc() []string { _ = "STUB: not implemented"; return nil }
 
 // Email template
 type EmailTemplate struct {
@@ -178,49 +118,24 @@ type EmailTemplate struct {
 	TemplateParams map[string]string `protobuf:"bytes,2,rep,name=template_params,json=templateParams,proto3" json:"template_params,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *EmailTemplate) Reset() {
-	*x = EmailTemplate{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *EmailTemplate) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *EmailTemplate) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *EmailTemplate) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*EmailTemplate) ProtoMessage() {}
+func (*EmailTemplate) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *EmailTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use EmailTemplate.ProtoReflect.Descriptor instead.
-func (*EmailTemplate) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{2}
-}
+func (*EmailTemplate) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *EmailTemplate) GetTemplateId() string {
-	if x != nil {
-		return x.TemplateId
-	}
-	return ""
-}
+func (x *EmailTemplate) GetTemplateId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *EmailTemplate) GetTemplateParams() map[string]string {
-	if x != nil {
-		return x.TemplateParams
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -234,44 +149,24 @@ type SendEmailWithTemplateResponse struct {
 	RequestId string `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
 }
 
-func (x *SendEmailWithTemplateResponse) Reset() {
-	*x = SendEmailWithTemplateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendEmailWithTemplateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendEmailWithTemplateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendEmailWithTemplateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendEmailWithTemplateResponse) ProtoMessage() {}
+func (*SendEmailWithTemplateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendEmailWithTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendEmailWithTemplateResponse.ProtoReflect.Descriptor instead.
 func (*SendEmailWithTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{3}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *SendEmailWithTemplateResponse) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
+func (x *SendEmailWithTemplateResponse) GetRequestId() string { _ = "STUB: not implemented"; return "" }
 
 // SendEmailRequest is the message send to email.
 type SendEmailRequest struct {
@@ -293,72 +188,29 @@ type SendEmailRequest struct {
 	Address *EmailAddress `protobuf:"bytes,5,opt,name=address,proto3" json:"address,omitempty"`
 }
 
-func (x *SendEmailRequest) Reset() {
-	*x = SendEmailRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendEmailRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendEmailRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendEmailRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendEmailRequest) ProtoMessage() {}
+func (*SendEmailRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendEmailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendEmailRequest.ProtoReflect.Descriptor instead.
-func (*SendEmailRequest) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{4}
-}
+func (*SendEmailRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SendEmailRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
-	return ""
-}
+func (x *SendEmailRequest) GetComponentName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SendEmailRequest) GetSettingId() string {
-	if x != nil {
-		return x.SettingId
-	}
-	return ""
-}
+func (x *SendEmailRequest) GetSettingId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SendEmailRequest) GetSubject() string {
-	if x != nil {
-		return x.Subject
-	}
-	return ""
-}
+func (x *SendEmailRequest) GetSubject() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SendEmailRequest) GetContent() *Content {
-	if x != nil {
-		return x.Content
-	}
-	return nil
-}
+func (x *SendEmailRequest) GetContent() *Content { _ = "STUB: not implemented"; return nil }
 
-func (x *SendEmailRequest) GetAddress() *EmailAddress {
-	if x != nil {
-		return x.Address
-	}
-	return nil
-}
+func (x *SendEmailRequest) GetAddress() *EmailAddress { _ = "STUB: not implemented"; return nil }
 
 // Email content
 type Content struct {
@@ -370,44 +222,21 @@ type Content struct {
 	Text string `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
 }
 
-func (x *Content) Reset() {
-	*x = Content{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Content) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Content) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Content) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Content) ProtoMessage() {}
+func (*Content) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Content) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Content.ProtoReflect.Descriptor instead.
-func (*Content) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{5}
-}
+func (*Content) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Content) GetText() string {
-	if x != nil {
-		return x.Text
-	}
-	return ""
-}
+func (x *Content) GetText() string { _ = "STUB: not implemented"; return "" }
 
 // The response of `SendEmail` method
 type SendEmailResponse struct {
@@ -419,44 +248,21 @@ type SendEmailResponse struct {
 	RequestId string `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
 }
 
-func (x *SendEmailResponse) Reset() {
-	*x = SendEmailResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_email_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendEmailResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendEmailResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendEmailResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendEmailResponse) ProtoMessage() {}
+func (*SendEmailResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendEmailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_email_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendEmailResponse.ProtoReflect.Descriptor instead.
-func (*SendEmailResponse) Descriptor() ([]byte, []int) {
-	return file_email_proto_rawDescGZIP(), []int{6}
-}
+func (*SendEmailResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SendEmailResponse) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
+func (x *SendEmailResponse) GetRequestId() string { _ = "STUB: not implemented"; return "" }
 
 var File_email_proto protoreflect.FileDescriptor
 
@@ -551,12 +357,7 @@ var (
 	file_email_proto_rawDescData = file_email_proto_rawDesc
 )
 
-func file_email_proto_rawDescGZIP() []byte {
-	file_email_proto_rawDescOnce.Do(func() {
-		file_email_proto_rawDescData = protoimpl.X.CompressGZIP(file_email_proto_rawDescData)
-	})
-	return file_email_proto_rawDescData
-}
+func file_email_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_email_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_email_proto_goTypes = []interface{}{
@@ -586,113 +387,5 @@ var file_email_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_email_proto_init() }
-func file_email_proto_init() {
-	if File_email_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_email_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendEmailWithTemplateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_email_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EmailAddress); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_email_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EmailTemplate); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_email_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendEmailWithTemplateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_email_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendEmailRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_email_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Content); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_email_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendEmailResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_email_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   8,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_email_proto_goTypes,
-		DependencyIndexes: file_email_proto_depIdxs,
-		MessageInfos:      file_email_proto_msgTypes,
-	}.Build()
-	File_email_proto = out.File
-	file_email_proto_rawDesc = nil
-	file_email_proto_goTypes = nil
-	file_email_proto_depIdxs = nil
-}
+func init()                  { file_email_proto_init() }
+func file_email_proto_init() { _ = "STUB: not implemented"; return }

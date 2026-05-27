@@ -7,7 +7,6 @@
 package cryption
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -35,58 +34,25 @@ type EncryptRequest struct {
 	KeyId string `protobuf:"bytes,3,opt,name=key_id,json=keyId,proto3" json:"key_id,omitempty"`
 }
 
-func (x *EncryptRequest) Reset() {
-	*x = EncryptRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cryption_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *EncryptRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *EncryptRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *EncryptRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*EncryptRequest) ProtoMessage() {}
+func (*EncryptRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *EncryptRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_cryption_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use EncryptRequest.ProtoReflect.Descriptor instead.
-func (*EncryptRequest) Descriptor() ([]byte, []int) {
-	return file_cryption_proto_rawDescGZIP(), []int{0}
-}
+func (*EncryptRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *EncryptRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
-	return ""
-}
+func (x *EncryptRequest) GetComponentName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *EncryptRequest) GetPlainText() []byte {
-	if x != nil {
-		return x.PlainText
-	}
-	return nil
-}
+func (x *EncryptRequest) GetPlainText() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *EncryptRequest) GetKeyId() string {
-	if x != nil {
-		return x.KeyId
-	}
-	return ""
-}
+func (x *EncryptRequest) GetKeyId() string { _ = "STUB: not implemented"; return "" }
 
 // EncryptResponse is the response of the `Encrypt` method.
 type EncryptResponse struct {
@@ -104,65 +70,27 @@ type EncryptResponse struct {
 	RequestId string `protobuf:"bytes,4,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
 }
 
-func (x *EncryptResponse) Reset() {
-	*x = EncryptResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cryption_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *EncryptResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *EncryptResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *EncryptResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*EncryptResponse) ProtoMessage() {}
+func (*EncryptResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *EncryptResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_cryption_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use EncryptResponse.ProtoReflect.Descriptor instead.
-func (*EncryptResponse) Descriptor() ([]byte, []int) {
-	return file_cryption_proto_rawDescGZIP(), []int{1}
-}
+func (*EncryptResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *EncryptResponse) GetCipherText() []byte {
-	if x != nil {
-		return x.CipherText
-	}
-	return nil
-}
+func (x *EncryptResponse) GetCipherText() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *EncryptResponse) GetKeyId() string {
-	if x != nil {
-		return x.KeyId
-	}
-	return ""
-}
+func (x *EncryptResponse) GetKeyId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *EncryptResponse) GetKeyVersionId() string {
-	if x != nil {
-		return x.KeyVersionId
-	}
-	return ""
-}
+func (x *EncryptResponse) GetKeyVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *EncryptResponse) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
+func (x *EncryptResponse) GetRequestId() string { _ = "STUB: not implemented"; return "" }
 
 // DecryptRequest is the request of the `Decrypt` method.
 type DecryptRequest struct {
@@ -176,51 +104,23 @@ type DecryptRequest struct {
 	CipherText []byte `protobuf:"bytes,2,opt,name=cipher_text,json=cipherText,proto3" json:"cipher_text,omitempty"`
 }
 
-func (x *DecryptRequest) Reset() {
-	*x = DecryptRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cryption_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DecryptRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DecryptRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DecryptRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DecryptRequest) ProtoMessage() {}
+func (*DecryptRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DecryptRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_cryption_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DecryptRequest.ProtoReflect.Descriptor instead.
-func (*DecryptRequest) Descriptor() ([]byte, []int) {
-	return file_cryption_proto_rawDescGZIP(), []int{2}
-}
+func (*DecryptRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DecryptRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
-	return ""
-}
+func (x *DecryptRequest) GetComponentName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DecryptRequest) GetCipherText() []byte {
-	if x != nil {
-		return x.CipherText
-	}
-	return nil
-}
+func (x *DecryptRequest) GetCipherText() []byte { _ = "STUB: not implemented"; return nil }
 
 // DecryptResponse is the response of the `Decrypt` method.
 type DecryptResponse struct {
@@ -238,65 +138,27 @@ type DecryptResponse struct {
 	RequestId string `protobuf:"bytes,4,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
 }
 
-func (x *DecryptResponse) Reset() {
-	*x = DecryptResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_cryption_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DecryptResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DecryptResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DecryptResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DecryptResponse) ProtoMessage() {}
+func (*DecryptResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DecryptResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_cryption_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DecryptResponse.ProtoReflect.Descriptor instead.
-func (*DecryptResponse) Descriptor() ([]byte, []int) {
-	return file_cryption_proto_rawDescGZIP(), []int{3}
-}
+func (*DecryptResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DecryptResponse) GetPlainText() []byte {
-	if x != nil {
-		return x.PlainText
-	}
-	return nil
-}
+func (x *DecryptResponse) GetPlainText() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *DecryptResponse) GetKeyId() string {
-	if x != nil {
-		return x.KeyId
-	}
-	return ""
-}
+func (x *DecryptResponse) GetKeyId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DecryptResponse) GetKeyVersionId() string {
-	if x != nil {
-		return x.KeyVersionId
-	}
-	return ""
-}
+func (x *DecryptResponse) GetKeyVersionId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DecryptResponse) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
+func (x *DecryptResponse) GetRequestId() string { _ = "STUB: not implemented"; return "" }
 
 var File_cryption_proto protoreflect.FileDescriptor
 
@@ -362,12 +224,7 @@ var (
 	file_cryption_proto_rawDescData = file_cryption_proto_rawDesc
 )
 
-func file_cryption_proto_rawDescGZIP() []byte {
-	file_cryption_proto_rawDescOnce.Do(func() {
-		file_cryption_proto_rawDescData = protoimpl.X.CompressGZIP(file_cryption_proto_rawDescData)
-	})
-	return file_cryption_proto_rawDescData
-}
+func file_cryption_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_cryption_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_cryption_proto_goTypes = []interface{}{
@@ -388,77 +245,5 @@ var file_cryption_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_cryption_proto_init() }
-func file_cryption_proto_init() {
-	if File_cryption_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_cryption_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EncryptRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cryption_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*EncryptResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cryption_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DecryptRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_cryption_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DecryptResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_cryption_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   4,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_cryption_proto_goTypes,
-		DependencyIndexes: file_cryption_proto_depIdxs,
-		MessageInfos:      file_cryption_proto_msgTypes,
-	}.Build()
-	File_cryption_proto = out.File
-	file_cryption_proto_rawDesc = nil
-	file_cryption_proto_goTypes = nil
-	file_cryption_proto_depIdxs = nil
-}
+func init()                     { file_cryption_proto_init() }
+func file_cryption_proto_init() { _ = "STUB: not implemented"; return }

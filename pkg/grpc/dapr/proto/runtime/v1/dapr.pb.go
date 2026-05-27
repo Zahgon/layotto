@@ -12,7 +12,6 @@
 package runtime
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	proto "github.com/golang/protobuf/proto"
@@ -47,49 +46,27 @@ type InvokeServiceRequest struct {
 	Message *v1.InvokeRequest `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 }
 
-func (x *InvokeServiceRequest) Reset() {
-	*x = InvokeServiceRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeServiceRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeServiceRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeServiceRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeServiceRequest) ProtoMessage() {}
+func (*InvokeServiceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeServiceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeServiceRequest.ProtoReflect.Descriptor instead.
 func (*InvokeServiceRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *InvokeServiceRequest) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *InvokeServiceRequest) GetId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *InvokeServiceRequest) GetMessage() *v1.InvokeRequest {
-	if x != nil {
-		return x.Message
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -109,65 +86,30 @@ type GetStateRequest struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetStateRequest) Reset() {
-	*x = GetStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetStateRequest) ProtoMessage() {}
+func (*GetStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetStateRequest.ProtoReflect.Descriptor instead.
-func (*GetStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{1}
-}
+func (*GetStateRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *GetStateRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetStateRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetStateRequest) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *GetStateRequest) GetKey() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetStateRequest) GetConsistency() v1.StateOptions_StateConsistency {
-	if x != nil {
-		return x.Consistency
-	}
-	return v1.StateOptions_CONSISTENCY_UNSPECIFIED
+	_ = "STUB: not implemented"
+	return *new(v1.StateOptions_StateConsistency)
 }
 
-func (x *GetStateRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *GetStateRequest) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // GetBulkStateRequest is the message to get a list of key-value states from specific state store.
 type GetBulkStateRequest struct {
@@ -185,63 +127,31 @@ type GetBulkStateRequest struct {
 	Metadata map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetBulkStateRequest) Reset() {
-	*x = GetBulkStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetBulkStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetBulkStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetBulkStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetBulkStateRequest) ProtoMessage() {}
+func (*GetBulkStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetBulkStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetBulkStateRequest.ProtoReflect.Descriptor instead.
 func (*GetBulkStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetBulkStateRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetBulkStateRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetBulkStateRequest) GetKeys() []string {
-	if x != nil {
-		return x.Keys
-	}
-	return nil
-}
+func (x *GetBulkStateRequest) GetKeys() []string { _ = "STUB: not implemented"; return nil }
 
-func (x *GetBulkStateRequest) GetParallelism() int32 {
-	if x != nil {
-		return x.Parallelism
-	}
-	return 0
-}
+func (x *GetBulkStateRequest) GetParallelism() int32 { _ = "STUB: not implemented"; return 0 }
 
 func (x *GetBulkStateRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -255,44 +165,24 @@ type GetBulkStateResponse struct {
 	Items []*BulkStateItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *GetBulkStateResponse) Reset() {
-	*x = GetBulkStateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetBulkStateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetBulkStateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetBulkStateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetBulkStateResponse) ProtoMessage() {}
+func (*GetBulkStateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetBulkStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetBulkStateResponse.ProtoReflect.Descriptor instead.
 func (*GetBulkStateResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{3}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetBulkStateResponse) GetItems() []*BulkStateItem {
-	if x != nil {
-		return x.Items
-	}
-	return nil
-}
+func (x *GetBulkStateResponse) GetItems() []*BulkStateItem { _ = "STUB: not implemented"; return nil }
 
 // BulkStateItem is the response item for a bulk get operation.
 // Return values include the item key, data and etag.
@@ -314,72 +204,29 @@ type BulkStateItem struct {
 	Metadata map[string]string `protobuf:"bytes,5,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *BulkStateItem) Reset() {
-	*x = BulkStateItem{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *BulkStateItem) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *BulkStateItem) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *BulkStateItem) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*BulkStateItem) ProtoMessage() {}
+func (*BulkStateItem) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *BulkStateItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use BulkStateItem.ProtoReflect.Descriptor instead.
-func (*BulkStateItem) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{4}
-}
+func (*BulkStateItem) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *BulkStateItem) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *BulkStateItem) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *BulkStateItem) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *BulkStateItem) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *BulkStateItem) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *BulkStateItem) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *BulkStateItem) GetError() string {
-	if x != nil {
-		return x.Error
-	}
-	return ""
-}
+func (x *BulkStateItem) GetError() string { _ = "STUB: not implemented"; return "" }
 
-func (x *BulkStateItem) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *BulkStateItem) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // GetStateResponse is the response conveying the state value and etag.
 type GetStateResponse struct {
@@ -396,58 +243,25 @@ type GetStateResponse struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetStateResponse) Reset() {
-	*x = GetStateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetStateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetStateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetStateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetStateResponse) ProtoMessage() {}
+func (*GetStateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetStateResponse.ProtoReflect.Descriptor instead.
-func (*GetStateResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{5}
-}
+func (*GetStateResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *GetStateResponse) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *GetStateResponse) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *GetStateResponse) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *GetStateResponse) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetStateResponse) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *GetStateResponse) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // DeleteStateRequest is the message to delete key-value states in the specific state store.
 type DeleteStateRequest struct {
@@ -469,72 +283,29 @@ type DeleteStateRequest struct {
 	Metadata map[string]string `protobuf:"bytes,5,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *DeleteStateRequest) Reset() {
-	*x = DeleteStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteStateRequest) ProtoMessage() {}
+func (*DeleteStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteStateRequest.ProtoReflect.Descriptor instead.
-func (*DeleteStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{6}
-}
+func (*DeleteStateRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *DeleteStateRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *DeleteStateRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteStateRequest) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *DeleteStateRequest) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteStateRequest) GetEtag() *v1.Etag {
-	if x != nil {
-		return x.Etag
-	}
-	return nil
-}
+func (x *DeleteStateRequest) GetEtag() *v1.Etag { _ = "STUB: not implemented"; return nil }
 
-func (x *DeleteStateRequest) GetOptions() *v1.StateOptions {
-	if x != nil {
-		return x.Options
-	}
-	return nil
-}
+func (x *DeleteStateRequest) GetOptions() *v1.StateOptions { _ = "STUB: not implemented"; return nil }
 
-func (x *DeleteStateRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *DeleteStateRequest) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // DeleteBulkStateRequest is the message to delete a list of key-value states from specific state store.
 type DeleteBulkStateRequest struct {
@@ -548,51 +319,26 @@ type DeleteBulkStateRequest struct {
 	States []*v1.StateItem `protobuf:"bytes,2,rep,name=states,proto3" json:"states,omitempty"`
 }
 
-func (x *DeleteBulkStateRequest) Reset() {
-	*x = DeleteBulkStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DeleteBulkStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DeleteBulkStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DeleteBulkStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DeleteBulkStateRequest) ProtoMessage() {}
+func (*DeleteBulkStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DeleteBulkStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DeleteBulkStateRequest.ProtoReflect.Descriptor instead.
 func (*DeleteBulkStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{7}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *DeleteBulkStateRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *DeleteBulkStateRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DeleteBulkStateRequest) GetStates() []*v1.StateItem {
-	if x != nil {
-		return x.States
-	}
-	return nil
-}
+func (x *DeleteBulkStateRequest) GetStates() []*v1.StateItem { _ = "STUB: not implemented"; return nil }
 
 // SaveStateRequest is the message to save multiple states into state store.
 type SaveStateRequest struct {
@@ -606,51 +352,23 @@ type SaveStateRequest struct {
 	States []*v1.StateItem `protobuf:"bytes,2,rep,name=states,proto3" json:"states,omitempty"`
 }
 
-func (x *SaveStateRequest) Reset() {
-	*x = SaveStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SaveStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SaveStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SaveStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SaveStateRequest) ProtoMessage() {}
+func (*SaveStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SaveStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SaveStateRequest.ProtoReflect.Descriptor instead.
-func (*SaveStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{8}
-}
+func (*SaveStateRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SaveStateRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *SaveStateRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SaveStateRequest) GetStates() []*v1.StateItem {
-	if x != nil {
-		return x.States
-	}
-	return nil
-}
+func (x *SaveStateRequest) GetStates() []*v1.StateItem { _ = "STUB: not implemented"; return nil }
 
 // QueryStateRequest is the message to query state store.
 type QueryStateRequest struct {
@@ -666,58 +384,25 @@ type QueryStateRequest struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *QueryStateRequest) Reset() {
-	*x = QueryStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *QueryStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *QueryStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *QueryStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*QueryStateRequest) ProtoMessage() {}
+func (*QueryStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *QueryStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use QueryStateRequest.ProtoReflect.Descriptor instead.
-func (*QueryStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{9}
-}
+func (*QueryStateRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *QueryStateRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *QueryStateRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *QueryStateRequest) GetQuery() string {
-	if x != nil {
-		return x.Query
-	}
-	return ""
-}
+func (x *QueryStateRequest) GetQuery() string { _ = "STUB: not implemented"; return "" }
 
-func (x *QueryStateRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *QueryStateRequest) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 type QueryStateItem struct {
 	state         protoimpl.MessageState
@@ -735,65 +420,27 @@ type QueryStateItem struct {
 	Error string `protobuf:"bytes,4,opt,name=error,proto3" json:"error,omitempty"`
 }
 
-func (x *QueryStateItem) Reset() {
-	*x = QueryStateItem{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *QueryStateItem) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *QueryStateItem) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *QueryStateItem) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*QueryStateItem) ProtoMessage() {}
+func (*QueryStateItem) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *QueryStateItem) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use QueryStateItem.ProtoReflect.Descriptor instead.
-func (*QueryStateItem) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{10}
-}
+func (*QueryStateItem) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *QueryStateItem) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *QueryStateItem) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *QueryStateItem) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *QueryStateItem) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *QueryStateItem) GetEtag() string {
-	if x != nil {
-		return x.Etag
-	}
-	return ""
-}
+func (x *QueryStateItem) GetEtag() string { _ = "STUB: not implemented"; return "" }
 
-func (x *QueryStateItem) GetError() string {
-	if x != nil {
-		return x.Error
-	}
-	return ""
-}
+func (x *QueryStateItem) GetError() string { _ = "STUB: not implemented"; return "" }
 
 // QueryStateResponse is the response conveying the query results.
 type QueryStateResponse struct {
@@ -809,58 +456,25 @@ type QueryStateResponse struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *QueryStateResponse) Reset() {
-	*x = QueryStateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *QueryStateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *QueryStateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *QueryStateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*QueryStateResponse) ProtoMessage() {}
+func (*QueryStateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *QueryStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use QueryStateResponse.ProtoReflect.Descriptor instead.
-func (*QueryStateResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{11}
-}
+func (*QueryStateResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *QueryStateResponse) GetResults() []*QueryStateItem {
-	if x != nil {
-		return x.Results
-	}
-	return nil
-}
+func (x *QueryStateResponse) GetResults() []*QueryStateItem { _ = "STUB: not implemented"; return nil }
 
-func (x *QueryStateResponse) GetToken() string {
-	if x != nil {
-		return x.Token
-	}
-	return ""
-}
+func (x *QueryStateResponse) GetToken() string { _ = "STUB: not implemented"; return "" }
 
-func (x *QueryStateResponse) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *QueryStateResponse) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // PublishEventRequest is the message to publish event data to pubsub topic
 type PublishEventRequest struct {
@@ -883,70 +497,33 @@ type PublishEventRequest struct {
 	Metadata map[string]string `protobuf:"bytes,5,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *PublishEventRequest) Reset() {
-	*x = PublishEventRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *PublishEventRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *PublishEventRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *PublishEventRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*PublishEventRequest) ProtoMessage() {}
+func (*PublishEventRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *PublishEventRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use PublishEventRequest.ProtoReflect.Descriptor instead.
 func (*PublishEventRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{12}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *PublishEventRequest) GetPubsubName() string {
-	if x != nil {
-		return x.PubsubName
-	}
-	return ""
-}
+func (x *PublishEventRequest) GetPubsubName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PublishEventRequest) GetTopic() string {
-	if x != nil {
-		return x.Topic
-	}
-	return ""
-}
+func (x *PublishEventRequest) GetTopic() string { _ = "STUB: not implemented"; return "" }
 
-func (x *PublishEventRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *PublishEventRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *PublishEventRequest) GetDataContentType() string {
-	if x != nil {
-		return x.DataContentType
-	}
-	return ""
-}
+func (x *PublishEventRequest) GetDataContentType() string { _ = "STUB: not implemented"; return "" }
 
 func (x *PublishEventRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -972,65 +549,33 @@ type InvokeBindingRequest struct {
 	Operation string `protobuf:"bytes,4,opt,name=operation,proto3" json:"operation,omitempty"`
 }
 
-func (x *InvokeBindingRequest) Reset() {
-	*x = InvokeBindingRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeBindingRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeBindingRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeBindingRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeBindingRequest) ProtoMessage() {}
+func (*InvokeBindingRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeBindingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeBindingRequest.ProtoReflect.Descriptor instead.
 func (*InvokeBindingRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{13}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *InvokeBindingRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *InvokeBindingRequest) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InvokeBindingRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *InvokeBindingRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
 func (x *InvokeBindingRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *InvokeBindingRequest) GetOperation() string {
-	if x != nil {
-		return x.Operation
-	}
-	return ""
-}
+func (x *InvokeBindingRequest) GetOperation() string { _ = "STUB: not implemented"; return "" }
 
 // InvokeBindingResponse is the message returned from an output binding invocation
 type InvokeBindingResponse struct {
@@ -1044,49 +589,27 @@ type InvokeBindingResponse struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *InvokeBindingResponse) Reset() {
-	*x = InvokeBindingResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[14]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeBindingResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeBindingResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeBindingResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeBindingResponse) ProtoMessage() {}
+func (*InvokeBindingResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeBindingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[14]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeBindingResponse.ProtoReflect.Descriptor instead.
 func (*InvokeBindingResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{14}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *InvokeBindingResponse) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *InvokeBindingResponse) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
 func (x *InvokeBindingResponse) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1104,58 +627,25 @@ type GetSecretRequest struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetSecretRequest) Reset() {
-	*x = GetSecretRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[15]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetSecretRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetSecretRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetSecretRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetSecretRequest) ProtoMessage() {}
+func (*GetSecretRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetSecretRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[15]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetSecretRequest.ProtoReflect.Descriptor instead.
-func (*GetSecretRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{15}
-}
+func (*GetSecretRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *GetSecretRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetSecretRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetSecretRequest) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *GetSecretRequest) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetSecretRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *GetSecretRequest) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // GetSecretResponse is the response message to convey the requested secret.
 type GetSecretResponse struct {
@@ -1168,44 +658,21 @@ type GetSecretResponse struct {
 	Data map[string]string `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetSecretResponse) Reset() {
-	*x = GetSecretResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[16]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetSecretResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetSecretResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetSecretResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetSecretResponse) ProtoMessage() {}
+func (*GetSecretResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetSecretResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[16]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetSecretResponse.ProtoReflect.Descriptor instead.
-func (*GetSecretResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{16}
-}
+func (*GetSecretResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *GetSecretResponse) GetData() map[string]string {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *GetSecretResponse) GetData() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // GetBulkSecretRequest is the message to get the secrets from secret store.
 type GetBulkSecretRequest struct {
@@ -1219,49 +686,27 @@ type GetBulkSecretRequest struct {
 	Metadata map[string]string `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetBulkSecretRequest) Reset() {
-	*x = GetBulkSecretRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetBulkSecretRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetBulkSecretRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetBulkSecretRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetBulkSecretRequest) ProtoMessage() {}
+func (*GetBulkSecretRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetBulkSecretRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetBulkSecretRequest.ProtoReflect.Descriptor instead.
 func (*GetBulkSecretRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{17}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetBulkSecretRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetBulkSecretRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetBulkSecretRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1274,44 +719,21 @@ type SecretResponse struct {
 	Secrets map[string]string `protobuf:"bytes,1,rep,name=secrets,proto3" json:"secrets,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *SecretResponse) Reset() {
-	*x = SecretResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[18]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SecretResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SecretResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SecretResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SecretResponse) ProtoMessage() {}
+func (*SecretResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SecretResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[18]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SecretResponse.ProtoReflect.Descriptor instead.
-func (*SecretResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{18}
-}
+func (*SecretResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SecretResponse) GetSecrets() map[string]string {
-	if x != nil {
-		return x.Secrets
-	}
-	return nil
-}
+func (x *SecretResponse) GetSecrets() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // GetBulkSecretResponse is the response message to convey the requested secrets.
 type GetBulkSecretResponse struct {
@@ -1324,42 +746,25 @@ type GetBulkSecretResponse struct {
 	Data map[string]*SecretResponse `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetBulkSecretResponse) Reset() {
-	*x = GetBulkSecretResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[19]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetBulkSecretResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetBulkSecretResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetBulkSecretResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetBulkSecretResponse) ProtoMessage() {}
+func (*GetBulkSecretResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetBulkSecretResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[19]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetBulkSecretResponse.ProtoReflect.Descriptor instead.
 func (*GetBulkSecretResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{19}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *GetBulkSecretResponse) GetData() map[string]*SecretResponse {
-	if x != nil {
-		return x.Data
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1375,49 +780,30 @@ type TransactionalStateOperation struct {
 	Request *v1.StateItem `protobuf:"bytes,2,opt,name=request,proto3" json:"request,omitempty"`
 }
 
-func (x *TransactionalStateOperation) Reset() {
-	*x = TransactionalStateOperation{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *TransactionalStateOperation) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TransactionalStateOperation) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TransactionalStateOperation) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TransactionalStateOperation) ProtoMessage() {}
+func (*TransactionalStateOperation) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TransactionalStateOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TransactionalStateOperation.ProtoReflect.Descriptor instead.
 func (*TransactionalStateOperation) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{20}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *TransactionalStateOperation) GetOperationType() string {
-	if x != nil {
-		return x.OperationType
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *TransactionalStateOperation) GetRequest() *v1.StateItem {
-	if x != nil {
-		return x.Request
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1435,56 +821,35 @@ type ExecuteStateTransactionRequest struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ExecuteStateTransactionRequest) Reset() {
-	*x = ExecuteStateTransactionRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ExecuteStateTransactionRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ExecuteStateTransactionRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ExecuteStateTransactionRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ExecuteStateTransactionRequest) ProtoMessage() {}
+func (*ExecuteStateTransactionRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ExecuteStateTransactionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ExecuteStateTransactionRequest.ProtoReflect.Descriptor instead.
 func (*ExecuteStateTransactionRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{21}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *ExecuteStateTransactionRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *ExecuteStateTransactionRequest) GetOperations() []*TransactionalStateOperation {
-	if x != nil {
-		return x.Operations
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *ExecuteStateTransactionRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1504,93 +869,38 @@ type RegisterActorTimerRequest struct {
 	Ttl       string `protobuf:"bytes,8,opt,name=ttl,proto3" json:"ttl,omitempty"`
 }
 
-func (x *RegisterActorTimerRequest) Reset() {
-	*x = RegisterActorTimerRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[22]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *RegisterActorTimerRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *RegisterActorTimerRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *RegisterActorTimerRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*RegisterActorTimerRequest) ProtoMessage() {}
+func (*RegisterActorTimerRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *RegisterActorTimerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[22]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use RegisterActorTimerRequest.ProtoReflect.Descriptor instead.
 func (*RegisterActorTimerRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{22}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *RegisterActorTimerRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetActorType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorTimerRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetActorId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorTimerRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorTimerRequest) GetDueTime() string {
-	if x != nil {
-		return x.DueTime
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetDueTime() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorTimerRequest) GetPeriod() string {
-	if x != nil {
-		return x.Period
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetPeriod() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorTimerRequest) GetCallback() string {
-	if x != nil {
-		return x.Callback
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetCallback() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorTimerRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *RegisterActorTimerRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *RegisterActorTimerRequest) GetTtl() string {
-	if x != nil {
-		return x.Ttl
-	}
-	return ""
-}
+func (x *RegisterActorTimerRequest) GetTtl() string { _ = "STUB: not implemented"; return "" }
 
 // UnregisterActorTimerRequest is the message to unregister an actor timer
 type UnregisterActorTimerRequest struct {
@@ -1603,58 +913,28 @@ type UnregisterActorTimerRequest struct {
 	Name      string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *UnregisterActorTimerRequest) Reset() {
-	*x = UnregisterActorTimerRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[23]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UnregisterActorTimerRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UnregisterActorTimerRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UnregisterActorTimerRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UnregisterActorTimerRequest) ProtoMessage() {}
+func (*UnregisterActorTimerRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UnregisterActorTimerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[23]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UnregisterActorTimerRequest.ProtoReflect.Descriptor instead.
 func (*UnregisterActorTimerRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{23}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *UnregisterActorTimerRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
-	return ""
-}
+func (x *UnregisterActorTimerRequest) GetActorType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UnregisterActorTimerRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
+func (x *UnregisterActorTimerRequest) GetActorId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UnregisterActorTimerRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *UnregisterActorTimerRequest) GetName() string { _ = "STUB: not implemented"; return "" }
 
 // RegisterActorReminderRequest is the message to register a reminder for an actor of a given type and id.
 type RegisterActorReminderRequest struct {
@@ -1671,86 +951,36 @@ type RegisterActorReminderRequest struct {
 	Ttl       string `protobuf:"bytes,7,opt,name=ttl,proto3" json:"ttl,omitempty"`
 }
 
-func (x *RegisterActorReminderRequest) Reset() {
-	*x = RegisterActorReminderRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[24]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *RegisterActorReminderRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *RegisterActorReminderRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *RegisterActorReminderRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*RegisterActorReminderRequest) ProtoMessage() {}
+func (*RegisterActorReminderRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *RegisterActorReminderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[24]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use RegisterActorReminderRequest.ProtoReflect.Descriptor instead.
 func (*RegisterActorReminderRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{24}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *RegisterActorReminderRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
-	return ""
-}
+func (x *RegisterActorReminderRequest) GetActorType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorReminderRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
+func (x *RegisterActorReminderRequest) GetActorId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorReminderRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *RegisterActorReminderRequest) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorReminderRequest) GetDueTime() string {
-	if x != nil {
-		return x.DueTime
-	}
-	return ""
-}
+func (x *RegisterActorReminderRequest) GetDueTime() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorReminderRequest) GetPeriod() string {
-	if x != nil {
-		return x.Period
-	}
-	return ""
-}
+func (x *RegisterActorReminderRequest) GetPeriod() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisterActorReminderRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *RegisterActorReminderRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *RegisterActorReminderRequest) GetTtl() string {
-	if x != nil {
-		return x.Ttl
-	}
-	return ""
-}
+func (x *RegisterActorReminderRequest) GetTtl() string { _ = "STUB: not implemented"; return "" }
 
 // UnregisterActorReminderRequest is the message to unregister an actor reminder.
 type UnregisterActorReminderRequest struct {
@@ -1763,58 +993,31 @@ type UnregisterActorReminderRequest struct {
 	Name      string `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *UnregisterActorReminderRequest) Reset() {
-	*x = UnregisterActorReminderRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[25]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *UnregisterActorReminderRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *UnregisterActorReminderRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *UnregisterActorReminderRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*UnregisterActorReminderRequest) ProtoMessage() {}
+func (*UnregisterActorReminderRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *UnregisterActorReminderRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[25]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use UnregisterActorReminderRequest.ProtoReflect.Descriptor instead.
 func (*UnregisterActorReminderRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{25}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *UnregisterActorReminderRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *UnregisterActorReminderRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
+func (x *UnregisterActorReminderRequest) GetActorId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *UnregisterActorReminderRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *UnregisterActorReminderRequest) GetName() string { _ = "STUB: not implemented"; return "" }
 
 // GetActorStateRequest is the message to get key-value states from specific actor.
 type GetActorStateRequest struct {
@@ -1827,58 +1030,28 @@ type GetActorStateRequest struct {
 	Key       string `protobuf:"bytes,3,opt,name=key,proto3" json:"key,omitempty"`
 }
 
-func (x *GetActorStateRequest) Reset() {
-	*x = GetActorStateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[26]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetActorStateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetActorStateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetActorStateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetActorStateRequest) ProtoMessage() {}
+func (*GetActorStateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetActorStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[26]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetActorStateRequest.ProtoReflect.Descriptor instead.
 func (*GetActorStateRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{26}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetActorStateRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
-	return ""
-}
+func (x *GetActorStateRequest) GetActorType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetActorStateRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
+func (x *GetActorStateRequest) GetActorId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetActorStateRequest) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *GetActorStateRequest) GetKey() string { _ = "STUB: not implemented"; return "" }
 
 // GetActorStateResponse is the response conveying the actor's state value.
 type GetActorStateResponse struct {
@@ -1889,44 +1062,24 @@ type GetActorStateResponse struct {
 	Data []byte `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
 }
 
-func (x *GetActorStateResponse) Reset() {
-	*x = GetActorStateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[27]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetActorStateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetActorStateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetActorStateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetActorStateResponse) ProtoMessage() {}
+func (*GetActorStateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetActorStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[27]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetActorStateResponse.ProtoReflect.Descriptor instead.
 func (*GetActorStateResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{27}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetActorStateResponse) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *GetActorStateResponse) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
 // ExecuteActorStateTransactionRequest is the message to execute multiple operations on a specified actor.
 type ExecuteActorStateTransactionRequest struct {
@@ -1939,56 +1092,35 @@ type ExecuteActorStateTransactionRequest struct {
 	Operations []*TransactionalActorStateOperation `protobuf:"bytes,3,rep,name=operations,proto3" json:"operations,omitempty"`
 }
 
-func (x *ExecuteActorStateTransactionRequest) Reset() {
-	*x = ExecuteActorStateTransactionRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[28]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ExecuteActorStateTransactionRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ExecuteActorStateTransactionRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ExecuteActorStateTransactionRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ExecuteActorStateTransactionRequest) ProtoMessage() {}
+func (*ExecuteActorStateTransactionRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ExecuteActorStateTransactionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[28]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ExecuteActorStateTransactionRequest.ProtoReflect.Descriptor instead.
 func (*ExecuteActorStateTransactionRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{28}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *ExecuteActorStateTransactionRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *ExecuteActorStateTransactionRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *ExecuteActorStateTransactionRequest) GetOperations() []*TransactionalActorStateOperation {
-	if x != nil {
-		return x.Operations
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2003,56 +1135,32 @@ type TransactionalActorStateOperation struct {
 	Value         *anypb.Any `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
 }
 
-func (x *TransactionalActorStateOperation) Reset() {
-	*x = TransactionalActorStateOperation{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[29]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *TransactionalActorStateOperation) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TransactionalActorStateOperation) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TransactionalActorStateOperation) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TransactionalActorStateOperation) ProtoMessage() {}
+func (*TransactionalActorStateOperation) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TransactionalActorStateOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[29]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TransactionalActorStateOperation.ProtoReflect.Descriptor instead.
 func (*TransactionalActorStateOperation) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{29}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *TransactionalActorStateOperation) GetOperationType() string {
-	if x != nil {
-		return x.OperationType
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
-func (x *TransactionalActorStateOperation) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *TransactionalActorStateOperation) GetKey() string { _ = "STUB: not implemented"; return "" }
 
 func (x *TransactionalActorStateOperation) GetValue() *anypb.Any {
-	if x != nil {
-		return x.Value
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2068,65 +1176,27 @@ type InvokeActorRequest struct {
 	Data      []byte `protobuf:"bytes,4,opt,name=data,proto3" json:"data,omitempty"`
 }
 
-func (x *InvokeActorRequest) Reset() {
-	*x = InvokeActorRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[30]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeActorRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeActorRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeActorRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeActorRequest) ProtoMessage() {}
+func (*InvokeActorRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeActorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[30]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeActorRequest.ProtoReflect.Descriptor instead.
-func (*InvokeActorRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{30}
-}
+func (*InvokeActorRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *InvokeActorRequest) GetActorType() string {
-	if x != nil {
-		return x.ActorType
-	}
-	return ""
-}
+func (x *InvokeActorRequest) GetActorType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InvokeActorRequest) GetActorId() string {
-	if x != nil {
-		return x.ActorId
-	}
-	return ""
-}
+func (x *InvokeActorRequest) GetActorId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InvokeActorRequest) GetMethod() string {
-	if x != nil {
-		return x.Method
-	}
-	return ""
-}
+func (x *InvokeActorRequest) GetMethod() string { _ = "STUB: not implemented"; return "" }
 
-func (x *InvokeActorRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *InvokeActorRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
 // InvokeActorResponse is the method that returns an actor invocation response.
 type InvokeActorResponse struct {
@@ -2137,44 +1207,24 @@ type InvokeActorResponse struct {
 	Data []byte `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
 }
 
-func (x *InvokeActorResponse) Reset() {
-	*x = InvokeActorResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[31]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *InvokeActorResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *InvokeActorResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *InvokeActorResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*InvokeActorResponse) ProtoMessage() {}
+func (*InvokeActorResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *InvokeActorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[31]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use InvokeActorResponse.ProtoReflect.Descriptor instead.
 func (*InvokeActorResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{31}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *InvokeActorResponse) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *InvokeActorResponse) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
 // GetMetadataResponse is a message that is returned on GetMetadata rpc call
 type GetMetadataResponse struct {
@@ -2188,63 +1238,37 @@ type GetMetadataResponse struct {
 	ExtendedMetadata     map[string]string       `protobuf:"bytes,4,rep,name=extended_metadata,json=extendedMetadata,proto3" json:"extended_metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetMetadataResponse) Reset() {
-	*x = GetMetadataResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[32]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetMetadataResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetMetadataResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetMetadataResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetMetadataResponse) ProtoMessage() {}
+func (*GetMetadataResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetMetadataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[32]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetMetadataResponse.ProtoReflect.Descriptor instead.
 func (*GetMetadataResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{32}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetMetadataResponse) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *GetMetadataResponse) GetId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *GetMetadataResponse) GetActiveActorsCount() []*ActiveActorsCount {
-	if x != nil {
-		return x.ActiveActorsCount
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *GetMetadataResponse) GetRegisteredComponents() []*RegisteredComponents {
-	if x != nil {
-		return x.RegisteredComponents
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *GetMetadataResponse) GetExtendedMetadata() map[string]string {
-	if x != nil {
-		return x.ExtendedMetadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2257,51 +1281,23 @@ type ActiveActorsCount struct {
 	Count int32  `protobuf:"varint,2,opt,name=count,proto3" json:"count,omitempty"`
 }
 
-func (x *ActiveActorsCount) Reset() {
-	*x = ActiveActorsCount{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[33]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ActiveActorsCount) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ActiveActorsCount) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ActiveActorsCount) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ActiveActorsCount) ProtoMessage() {}
+func (*ActiveActorsCount) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ActiveActorsCount) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[33]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ActiveActorsCount.ProtoReflect.Descriptor instead.
-func (*ActiveActorsCount) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{33}
-}
+func (*ActiveActorsCount) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ActiveActorsCount) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
+func (x *ActiveActorsCount) GetType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ActiveActorsCount) GetCount() int32 {
-	if x != nil {
-		return x.Count
-	}
-	return 0
-}
+func (x *ActiveActorsCount) GetCount() int32 { _ = "STUB: not implemented"; return 0 }
 
 type RegisteredComponents struct {
 	state         protoimpl.MessageState
@@ -2313,58 +1309,28 @@ type RegisteredComponents struct {
 	Version string `protobuf:"bytes,3,opt,name=version,proto3" json:"version,omitempty"`
 }
 
-func (x *RegisteredComponents) Reset() {
-	*x = RegisteredComponents{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[34]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *RegisteredComponents) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *RegisteredComponents) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *RegisteredComponents) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*RegisteredComponents) ProtoMessage() {}
+func (*RegisteredComponents) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *RegisteredComponents) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[34]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use RegisteredComponents.ProtoReflect.Descriptor instead.
 func (*RegisteredComponents) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{34}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *RegisteredComponents) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *RegisteredComponents) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisteredComponents) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
+func (x *RegisteredComponents) GetType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *RegisteredComponents) GetVersion() string {
-	if x != nil {
-		return x.Version
-	}
-	return ""
-}
+func (x *RegisteredComponents) GetVersion() string { _ = "STUB: not implemented"; return "" }
 
 type SetMetadataRequest struct {
 	state         protoimpl.MessageState
@@ -2375,51 +1341,23 @@ type SetMetadataRequest struct {
 	Value string `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 }
 
-func (x *SetMetadataRequest) Reset() {
-	*x = SetMetadataRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[35]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SetMetadataRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SetMetadataRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SetMetadataRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SetMetadataRequest) ProtoMessage() {}
+func (*SetMetadataRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SetMetadataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[35]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SetMetadataRequest.ProtoReflect.Descriptor instead.
-func (*SetMetadataRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{35}
-}
+func (*SetMetadataRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SetMetadataRequest) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *SetMetadataRequest) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SetMetadataRequest) GetValue() string {
-	if x != nil {
-		return x.Value
-	}
-	return ""
-}
+func (x *SetMetadataRequest) GetValue() string { _ = "STUB: not implemented"; return "" }
 
 // GetConfigurationRequest is the message to get a list of key-value configuration from specified configuration store.
 type GetConfigurationRequest struct {
@@ -2437,56 +1375,29 @@ type GetConfigurationRequest struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *GetConfigurationRequest) Reset() {
-	*x = GetConfigurationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[36]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetConfigurationRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetConfigurationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetConfigurationRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetConfigurationRequest) ProtoMessage() {}
+func (*GetConfigurationRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetConfigurationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[36]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetConfigurationRequest.ProtoReflect.Descriptor instead.
 func (*GetConfigurationRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{36}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *GetConfigurationRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *GetConfigurationRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *GetConfigurationRequest) GetKeys() []string {
-	if x != nil {
-		return x.Keys
-	}
-	return nil
-}
+func (x *GetConfigurationRequest) GetKeys() []string { _ = "STUB: not implemented"; return nil }
 
 func (x *GetConfigurationRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2500,42 +1411,25 @@ type GetConfigurationResponse struct {
 	Items []*v1.ConfigurationItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *GetConfigurationResponse) Reset() {
-	*x = GetConfigurationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[37]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *GetConfigurationResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *GetConfigurationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *GetConfigurationResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*GetConfigurationResponse) ProtoMessage() {}
+func (*GetConfigurationResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *GetConfigurationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[37]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use GetConfigurationResponse.ProtoReflect.Descriptor instead.
 func (*GetConfigurationResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{37}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *GetConfigurationResponse) GetItems() []*v1.ConfigurationItem {
-	if x != nil {
-		return x.Items
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2555,56 +1449,29 @@ type SubscribeConfigurationRequest struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *SubscribeConfigurationRequest) Reset() {
-	*x = SubscribeConfigurationRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[38]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SubscribeConfigurationRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SubscribeConfigurationRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SubscribeConfigurationRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SubscribeConfigurationRequest) ProtoMessage() {}
+func (*SubscribeConfigurationRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SubscribeConfigurationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[38]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SubscribeConfigurationRequest.ProtoReflect.Descriptor instead.
 func (*SubscribeConfigurationRequest) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{38}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *SubscribeConfigurationRequest) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *SubscribeConfigurationRequest) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SubscribeConfigurationRequest) GetKeys() []string {
-	if x != nil {
-		return x.Keys
-	}
-	return nil
-}
+func (x *SubscribeConfigurationRequest) GetKeys() []string { _ = "STUB: not implemented"; return nil }
 
 func (x *SubscribeConfigurationRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2617,42 +1484,25 @@ type SubscribeConfigurationResponse struct {
 	Items []*v1.ConfigurationItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 }
 
-func (x *SubscribeConfigurationResponse) Reset() {
-	*x = SubscribeConfigurationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[39]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SubscribeConfigurationResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SubscribeConfigurationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SubscribeConfigurationResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SubscribeConfigurationResponse) ProtoMessage() {}
+func (*SubscribeConfigurationResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SubscribeConfigurationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapr_proto_runtime_v1_dapr_proto_msgTypes[39]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SubscribeConfigurationResponse.ProtoReflect.Descriptor instead.
 func (*SubscribeConfigurationResponse) Descriptor() ([]byte, []int) {
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP(), []int{39}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *SubscribeConfigurationResponse) GetItems() []*v1.ConfigurationItem {
-	if x != nil {
-		return x.Items
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -3271,10 +2121,8 @@ var (
 )
 
 func file_dapr_proto_runtime_v1_dapr_proto_rawDescGZIP() []byte {
-	file_dapr_proto_runtime_v1_dapr_proto_rawDescOnce.Do(func() {
-		file_dapr_proto_runtime_v1_dapr_proto_rawDescData = protoimpl.X.CompressGZIP(file_dapr_proto_runtime_v1_dapr_proto_rawDescData)
-	})
-	return file_dapr_proto_runtime_v1_dapr_proto_rawDescData
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var file_dapr_proto_runtime_v1_dapr_proto_msgTypes = make([]protoimpl.MessageInfo, 59)
@@ -3440,509 +2288,5 @@ var file_dapr_proto_runtime_v1_dapr_proto_depIdxs = []int32{
 	0,  // [0:36] is the sub-list for field type_name
 }
 
-func init() { file_dapr_proto_runtime_v1_dapr_proto_init() }
-func file_dapr_proto_runtime_v1_dapr_proto_init() {
-	if File_dapr_proto_runtime_v1_dapr_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeServiceRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBulkStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBulkStateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BulkStateItem); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetStateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteBulkStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SaveStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QueryStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QueryStateItem); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QueryStateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PublishEventRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeBindingRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeBindingResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSecretRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetSecretResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBulkSecretRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SecretResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBulkSecretResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TransactionalStateOperation); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExecuteStateTransactionRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegisterActorTimerRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnregisterActorTimerRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegisterActorReminderRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UnregisterActorReminderRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetActorStateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetActorStateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ExecuteActorStateTransactionRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TransactionalActorStateOperation); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeActorRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*InvokeActorResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetMetadataResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ActiveActorsCount); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegisteredComponents); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SetMetadataRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetConfigurationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetConfigurationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubscribeConfigurationRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_dapr_proto_runtime_v1_dapr_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubscribeConfigurationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_dapr_proto_runtime_v1_dapr_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   59,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_dapr_proto_runtime_v1_dapr_proto_goTypes,
-		DependencyIndexes: file_dapr_proto_runtime_v1_dapr_proto_depIdxs,
-		MessageInfos:      file_dapr_proto_runtime_v1_dapr_proto_msgTypes,
-	}.Build()
-	File_dapr_proto_runtime_v1_dapr_proto = out.File
-	file_dapr_proto_runtime_v1_dapr_proto_rawDesc = nil
-	file_dapr_proto_runtime_v1_dapr_proto_goTypes = nil
-	file_dapr_proto_runtime_v1_dapr_proto_depIdxs = nil
-}
+func init()                                       { file_dapr_proto_runtime_v1_dapr_proto_init() }
+func file_dapr_proto_runtime_v1_dapr_proto_init() { _ = "STUB: not implemented"; return }

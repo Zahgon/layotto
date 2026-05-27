@@ -7,7 +7,6 @@
 package delay_queue
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -45,77 +44,35 @@ type DelayMessageRequest struct {
 	Metadata map[string]string `protobuf:"bytes,6,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *DelayMessageRequest) Reset() {
-	*x = DelayMessageRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_delay_queue_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DelayMessageRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DelayMessageRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DelayMessageRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DelayMessageRequest) ProtoMessage() {}
+func (*DelayMessageRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DelayMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_delay_queue_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DelayMessageRequest.ProtoReflect.Descriptor instead.
 func (*DelayMessageRequest) Descriptor() ([]byte, []int) {
-	return file_delay_queue_proto_rawDescGZIP(), []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *DelayMessageRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
-	return ""
-}
+func (x *DelayMessageRequest) GetComponentName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DelayMessageRequest) GetTopic() string {
-	if x != nil {
-		return x.Topic
-	}
-	return ""
-}
+func (x *DelayMessageRequest) GetTopic() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DelayMessageRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *DelayMessageRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *DelayMessageRequest) GetDataContentType() string {
-	if x != nil {
-		return x.DataContentType
-	}
-	return ""
-}
+func (x *DelayMessageRequest) GetDataContentType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *DelayMessageRequest) GetDelayInSeconds() int32 {
-	if x != nil {
-		return x.DelayInSeconds
-	}
-	return 0
-}
+func (x *DelayMessageRequest) GetDelayInSeconds() int32 { _ = "STUB: not implemented"; return 0 }
 
 func (x *DelayMessageRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -129,44 +86,24 @@ type DelayMessageResponse struct {
 	MessageId string `protobuf:"bytes,1,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"`
 }
 
-func (x *DelayMessageResponse) Reset() {
-	*x = DelayMessageResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_delay_queue_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DelayMessageResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DelayMessageResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DelayMessageResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DelayMessageResponse) ProtoMessage() {}
+func (*DelayMessageResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DelayMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_delay_queue_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DelayMessageResponse.ProtoReflect.Descriptor instead.
 func (*DelayMessageResponse) Descriptor() ([]byte, []int) {
-	return file_delay_queue_proto_rawDescGZIP(), []int{1}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *DelayMessageResponse) GetMessageId() string {
-	if x != nil {
-		return x.MessageId
-	}
-	return ""
-}
+func (x *DelayMessageResponse) GetMessageId() string { _ = "STUB: not implemented"; return "" }
 
 var File_delay_queue_proto protoreflect.FileDescriptor
 
@@ -222,12 +159,7 @@ var (
 	file_delay_queue_proto_rawDescData = file_delay_queue_proto_rawDesc
 )
 
-func file_delay_queue_proto_rawDescGZIP() []byte {
-	file_delay_queue_proto_rawDescOnce.Do(func() {
-		file_delay_queue_proto_rawDescData = protoimpl.X.CompressGZIP(file_delay_queue_proto_rawDescData)
-	})
-	return file_delay_queue_proto_rawDescData
-}
+func file_delay_queue_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_delay_queue_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_delay_queue_proto_goTypes = []interface{}{
@@ -246,53 +178,5 @@ var file_delay_queue_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_delay_queue_proto_init() }
-func file_delay_queue_proto_init() {
-	if File_delay_queue_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_delay_queue_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DelayMessageRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_delay_queue_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DelayMessageResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_delay_queue_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   3,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_delay_queue_proto_goTypes,
-		DependencyIndexes: file_delay_queue_proto_depIdxs,
-		MessageInfos:      file_delay_queue_proto_msgTypes,
-	}.Build()
-	File_delay_queue_proto = out.File
-	file_delay_queue_proto_rawDesc = nil
-	file_delay_queue_proto_goTypes = nil
-	file_delay_queue_proto_depIdxs = nil
-}
+func init()                        { file_delay_queue_proto_init() }
+func file_delay_queue_proto_init() { _ = "STUB: not implemented"; return }

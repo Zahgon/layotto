@@ -41,82 +41,47 @@ type RepoForListener interface {
 }
 
 func newChangeListener(c RepoForListener, log logger.Logger) *changeListener {
-	return &changeListener{
-		subscribers: newSubscriberHolder(),
-		timeout:     time.Duration(defaultTimeoutWhenResponse) * time.Millisecond,
-		store:       c,
-		logger:      log,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (lis *changeListener) OnChange(changeEvent *storage.ChangeEvent) {
+	_ = "STUB: not implemented"
 	// 1. find related subscribers
-	ns := changeEvent.Namespace
-	groupLevel := lis.subscribers.findByTopic(ns, "")
-	for key, change := range changeEvent.Changes {
-		keyLevel := lis.subscribers.findByTopic(ns, key)
-		// 2. notice
-		for _, s := range groupLevel {
-			lis.notify(s, key, change)
-		}
-		for _, s := range keyLevel {
-			lis.notify(s, key, change)
-		}
-	}
+	return
 }
 
+// 2. notice
+
 func (lis *changeListener) OnNewestChange(event *storage.FullChangeEvent) {
+	_ = "STUB: not implemented"
+	return
 }
 
 func (lis *changeListener) notify(s *subscriber, keyWithLabel string, change *storage.ConfigChange) {
-	if s == nil || s.respChan == nil || change == nil {
-		return
-	}
-	// 1 recover panic caused when interacting with the chan
-	defer func() {
-		if r := recover(); r != nil {
-			lis.logger.Errorf("panic when notify subscriber. %v", r)
-			// make sure unused chan are all deleted
-			if lis != nil && lis.subscribers != nil {
-				lis.subscribers.remove(s)
-			}
-		}
-	}()
-	// 2 prepare response
-	res := &configstores.SubscribeResp{StoreName: lis.store.GetStoreName(), AppId: lis.store.GetAppId()}
-	item := &configstores.ConfigurationItem{}
-	item.Group = s.group
-	item.Key, item.Label = lis.store.splitKey(keyWithLabel)
-	// TODO add a removed flag in response struct.
-	if change.ChangeType != storage.DELETED {
-		item.Content = change.NewValue.(string)
-		tags, err := lis.store.getAllTags(s.group, keyWithLabel)
-		if err != nil {
-			//	log and ignore
-			lis.logger.Errorf("Error when querying tags in change_listener: %v", err)
-		} else {
-			item.Tags = tags
-		}
-	}
-	res.Items = append(res.Items, item)
-
-	select {
-	// 3 write
-	case s.respChan <- res:
-		return
-	// 4 close chan if timeout
-	case <-time.After(lis.timeout):
-		// remove for gc
-		lis.subscribers.remove(s)
-		close(s.respChan)
-		return
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// 1 recover panic caused when interacting with the chan
+
+// make sure unused chan are all deleted
+
+// 2 prepare response
+
+// TODO add a removed flag in response struct.
+
+//	log and ignore
+
+// 3 write
+
+// 4 close chan if timeout
+
+// remove for gc
 
 func (lis *changeListener) addByTopic(namespace string, keyWithLabel string, respChan chan *configstores.SubscribeResp) error {
-	return lis.subscribers.addByTopic(namespace, keyWithLabel, respChan)
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (lis *changeListener) reset() {
-	lis.subscribers.reset()
-}
+func (lis *changeListener) reset() { _ = "STUB: not implemented"; return }

@@ -25,11 +25,7 @@ import (
 
 type AppContributor info.Contributor
 
-func GetAppContributor() AppContributor {
-	return info.ContributorAdapter(func() (interface{}, error) {
-		return GetAppInfoSingleton(), nil
-	})
-}
+func GetAppContributor() AppContributor { _ = "STUB: not implemented"; return *new(AppContributor) }
 
 var appInfoSingleton atomic.Value
 
@@ -42,22 +38,8 @@ type AppInfo struct {
 	Compiled time.Time `json:"compiled,omitempty"`
 }
 
-func NewAppInfo() *AppInfo {
-	return &AppInfo{}
-}
+func NewAppInfo() *AppInfo { _ = "STUB: not implemented"; return nil }
 
-func GetAppInfoSingleton() AppInfo {
-	info, ok := appInfoSingleton.Load().(AppInfo)
-	if ok {
-		return info
-	}
-	return AppInfo{}
-}
+func GetAppInfoSingleton() AppInfo { _ = "STUB: not implemented"; return *new(AppInfo) }
 
-func SetAppInfoSingleton(a *AppInfo) {
-	if a == nil {
-		appInfoSingleton.Store(AppInfo{})
-		return
-	}
-	appInfoSingleton.Store(*a)
-}
+func SetAppInfoSingleton(a *AppInfo) { _ = "STUB: not implemented"; return }

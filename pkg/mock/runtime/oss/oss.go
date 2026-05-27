@@ -6,7 +6,6 @@ package mock_s3
 
 import (
 	context "context"
-	reflect "reflect"
 
 	"mosn.io/layotto/spec/proto/extension/v1/s3"
 
@@ -29,534 +28,327 @@ type MockObjectStorageServiceClientMockRecorder struct {
 
 // NewMockObjectStorageServiceClient creates a new mock instance.
 func NewMockObjectStorageServiceClient(ctrl *gomock.Controller) *MockObjectStorageServiceClient {
-	mock := &MockObjectStorageServiceClient{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageServiceClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageServiceClient) EXPECT() *MockObjectStorageServiceClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// AbortMultipartUpload mocks base method.
+	return nil
 }
 
-// AbortMultipartUpload mocks base method.
 func (m *MockObjectStorageServiceClient) AbortMultipartUpload(ctx context.Context, in *s3.AbortMultipartUploadInput, opts ...grpc.CallOption) (*s3.AbortMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "AbortMultipartUpload", varargs...)
-	ret0, _ := ret[0].(*s3.AbortMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AbortMultipartUpload indicates an expected call of AbortMultipartUpload.
 func (mr *MockObjectStorageServiceClientMockRecorder) AbortMultipartUpload(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AbortMultipartUpload", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).AbortMultipartUpload), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // AppendObject mocks base method.
 func (m *MockObjectStorageServiceClient) AppendObject(ctx context.Context, opts ...grpc.CallOption) (s3.ObjectStorageService_AppendObjectClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "AppendObject", varargs...)
-	ret0, _ := ret[0].(s3.ObjectStorageService_AppendObjectClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(s3.ObjectStorageService_AppendObjectClient), nil
 }
 
 // AppendObject indicates an expected call of AppendObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) AppendObject(ctx interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AppendObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).AppendObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CompleteMultipartUpload mocks base method.
 func (m *MockObjectStorageServiceClient) CompleteMultipartUpload(ctx context.Context, in *s3.CompleteMultipartUploadInput, opts ...grpc.CallOption) (*s3.CompleteMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "CompleteMultipartUpload", varargs...)
-	ret0, _ := ret[0].(*s3.CompleteMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CompleteMultipartUpload indicates an expected call of CompleteMultipartUpload.
 func (mr *MockObjectStorageServiceClientMockRecorder) CompleteMultipartUpload(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CompleteMultipartUpload", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).CompleteMultipartUpload), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CopyObject mocks base method.
 func (m *MockObjectStorageServiceClient) CopyObject(ctx context.Context, in *s3.CopyObjectInput, opts ...grpc.CallOption) (*s3.CopyObjectOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "CopyObject", varargs...)
-	ret0, _ := ret[0].(*s3.CopyObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CopyObject indicates an expected call of CopyObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) CopyObject(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CopyObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).CopyObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CreateMultipartUpload mocks base method.
 func (m *MockObjectStorageServiceClient) CreateMultipartUpload(ctx context.Context, in *s3.CreateMultipartUploadInput, opts ...grpc.CallOption) (*s3.CreateMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "CreateMultipartUpload", varargs...)
-	ret0, _ := ret[0].(*s3.CreateMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CreateMultipartUpload indicates an expected call of CreateMultipartUpload.
 func (mr *MockObjectStorageServiceClientMockRecorder) CreateMultipartUpload(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateMultipartUpload", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).CreateMultipartUpload), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObject mocks base method.
 func (m *MockObjectStorageServiceClient) DeleteObject(ctx context.Context, in *s3.DeleteObjectInput, opts ...grpc.CallOption) (*s3.DeleteObjectOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DeleteObject", varargs...)
-	ret0, _ := ret[0].(*s3.DeleteObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObject indicates an expected call of DeleteObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) DeleteObject(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).DeleteObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObjectTagging mocks base method.
 func (m *MockObjectStorageServiceClient) DeleteObjectTagging(ctx context.Context, in *s3.DeleteObjectTaggingInput, opts ...grpc.CallOption) (*s3.DeleteObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DeleteObjectTagging", varargs...)
-	ret0, _ := ret[0].(*s3.DeleteObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObjectTagging indicates an expected call of DeleteObjectTagging.
 func (mr *MockObjectStorageServiceClientMockRecorder) DeleteObjectTagging(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObjectTagging", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).DeleteObjectTagging), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObjects mocks base method.
 func (m *MockObjectStorageServiceClient) DeleteObjects(ctx context.Context, in *s3.DeleteObjectsInput, opts ...grpc.CallOption) (*s3.DeleteObjectsOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DeleteObjects", varargs...)
-	ret0, _ := ret[0].(*s3.DeleteObjectsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObjects indicates an expected call of DeleteObjects.
 func (mr *MockObjectStorageServiceClientMockRecorder) DeleteObjects(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObjects", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).DeleteObjects), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObject mocks base method.
 func (m *MockObjectStorageServiceClient) GetObject(ctx context.Context, in *s3.GetObjectInput, opts ...grpc.CallOption) (s3.ObjectStorageService_GetObjectClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetObject", varargs...)
-	ret0, _ := ret[0].(s3.ObjectStorageService_GetObjectClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(s3.ObjectStorageService_GetObjectClient), nil
 }
 
 // GetObject indicates an expected call of GetObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) GetObject(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).GetObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObjectCannedAcl mocks base method.
 func (m *MockObjectStorageServiceClient) GetObjectCannedAcl(ctx context.Context, in *s3.GetObjectCannedAclInput, opts ...grpc.CallOption) (*s3.GetObjectCannedAclOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetObjectCannedAcl", varargs...)
-	ret0, _ := ret[0].(*s3.GetObjectCannedAclOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObjectCannedAcl indicates an expected call of GetObjectCannedAcl.
 func (mr *MockObjectStorageServiceClientMockRecorder) GetObjectCannedAcl(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObjectCannedAcl", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).GetObjectCannedAcl), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObjectTagging mocks base method.
 func (m *MockObjectStorageServiceClient) GetObjectTagging(ctx context.Context, in *s3.GetObjectTaggingInput, opts ...grpc.CallOption) (*s3.GetObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetObjectTagging", varargs...)
-	ret0, _ := ret[0].(*s3.GetObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObjectTagging indicates an expected call of GetObjectTagging.
 func (mr *MockObjectStorageServiceClientMockRecorder) GetObjectTagging(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObjectTagging", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).GetObjectTagging), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // HeadObject mocks base method.
 func (m *MockObjectStorageServiceClient) HeadObject(ctx context.Context, in *s3.HeadObjectInput, opts ...grpc.CallOption) (*s3.HeadObjectOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "HeadObject", varargs...)
-	ret0, _ := ret[0].(*s3.HeadObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // HeadObject indicates an expected call of HeadObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) HeadObject(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HeadObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).HeadObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // IsObjectExist mocks base method.
 func (m *MockObjectStorageServiceClient) IsObjectExist(ctx context.Context, in *s3.IsObjectExistInput, opts ...grpc.CallOption) (*s3.IsObjectExistOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "IsObjectExist", varargs...)
-	ret0, _ := ret[0].(*s3.IsObjectExistOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // IsObjectExist indicates an expected call of IsObjectExist.
 func (mr *MockObjectStorageServiceClientMockRecorder) IsObjectExist(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsObjectExist", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).IsObjectExist), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListMultipartUploads mocks base method.
 func (m *MockObjectStorageServiceClient) ListMultipartUploads(ctx context.Context, in *s3.ListMultipartUploadsInput, opts ...grpc.CallOption) (*s3.ListMultipartUploadsOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ListMultipartUploads", varargs...)
-	ret0, _ := ret[0].(*s3.ListMultipartUploadsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListMultipartUploads indicates an expected call of ListMultipartUploads.
 func (mr *MockObjectStorageServiceClientMockRecorder) ListMultipartUploads(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListMultipartUploads", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).ListMultipartUploads), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListObjectVersions mocks base method.
 func (m *MockObjectStorageServiceClient) ListObjectVersions(ctx context.Context, in *s3.ListObjectVersionsInput, opts ...grpc.CallOption) (*s3.ListObjectVersionsOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ListObjectVersions", varargs...)
-	ret0, _ := ret[0].(*s3.ListObjectVersionsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListObjectVersions indicates an expected call of ListObjectVersions.
 func (mr *MockObjectStorageServiceClientMockRecorder) ListObjectVersions(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListObjectVersions", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).ListObjectVersions), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListObjects mocks base method.
 func (m *MockObjectStorageServiceClient) ListObjects(ctx context.Context, in *s3.ListObjectsInput, opts ...grpc.CallOption) (*s3.ListObjectsOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ListObjects", varargs...)
-	ret0, _ := ret[0].(*s3.ListObjectsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListObjects indicates an expected call of ListObjects.
 func (mr *MockObjectStorageServiceClientMockRecorder) ListObjects(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListObjects", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).ListObjects), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListParts mocks base method.
 func (m *MockObjectStorageServiceClient) ListParts(ctx context.Context, in *s3.ListPartsInput, opts ...grpc.CallOption) (*s3.ListPartsOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ListParts", varargs...)
-	ret0, _ := ret[0].(*s3.ListPartsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListParts indicates an expected call of ListParts.
 func (mr *MockObjectStorageServiceClientMockRecorder) ListParts(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParts", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).ListParts), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObject mocks base method.
 func (m *MockObjectStorageServiceClient) PutObject(ctx context.Context, opts ...grpc.CallOption) (s3.ObjectStorageService_PutObjectClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "PutObject", varargs...)
-	ret0, _ := ret[0].(s3.ObjectStorageService_PutObjectClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(s3.ObjectStorageService_PutObjectClient), nil
 }
 
 // PutObject indicates an expected call of PutObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) PutObject(ctx interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).PutObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObjectCannedAcl mocks base method.
 func (m *MockObjectStorageServiceClient) PutObjectCannedAcl(ctx context.Context, in *s3.PutObjectCannedAclInput, opts ...grpc.CallOption) (*s3.PutObjectCannedAclOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "PutObjectCannedAcl", varargs...)
-	ret0, _ := ret[0].(*s3.PutObjectCannedAclOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObjectCannedAcl indicates an expected call of PutObjectCannedAcl.
 func (mr *MockObjectStorageServiceClientMockRecorder) PutObjectCannedAcl(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObjectCannedAcl", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).PutObjectCannedAcl), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObjectTagging mocks base method.
 func (m *MockObjectStorageServiceClient) PutObjectTagging(ctx context.Context, in *s3.PutObjectTaggingInput, opts ...grpc.CallOption) (*s3.PutObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "PutObjectTagging", varargs...)
-	ret0, _ := ret[0].(*s3.PutObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObjectTagging indicates an expected call of PutObjectTagging.
 func (mr *MockObjectStorageServiceClientMockRecorder) PutObjectTagging(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObjectTagging", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).PutObjectTagging), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RestoreObject mocks base method.
 func (m *MockObjectStorageServiceClient) RestoreObject(ctx context.Context, in *s3.RestoreObjectInput, opts ...grpc.CallOption) (*s3.RestoreObjectOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "RestoreObject", varargs...)
-	ret0, _ := ret[0].(*s3.RestoreObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RestoreObject indicates an expected call of RestoreObject.
 func (mr *MockObjectStorageServiceClientMockRecorder) RestoreObject(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RestoreObject", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).RestoreObject), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SignURL mocks base method.
 func (m *MockObjectStorageServiceClient) SignURL(ctx context.Context, in *s3.SignURLInput, opts ...grpc.CallOption) (*s3.SignURLOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "SignURL", varargs...)
-	ret0, _ := ret[0].(*s3.SignURLOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SignURL indicates an expected call of SignURL.
 func (mr *MockObjectStorageServiceClientMockRecorder) SignURL(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SignURL", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).SignURL), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateDownloadBandwidthRateLimit mocks base method.
 func (m *MockObjectStorageServiceClient) UpdateDownloadBandwidthRateLimit(ctx context.Context, in *s3.UpdateBandwidthRateLimitInput, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "UpdateDownloadBandwidthRateLimit", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UpdateDownloadBandwidthRateLimit indicates an expected call of UpdateDownloadBandwidthRateLimit.
 func (mr *MockObjectStorageServiceClientMockRecorder) UpdateDownloadBandwidthRateLimit(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDownloadBandwidthRateLimit", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).UpdateDownloadBandwidthRateLimit), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateUploadBandwidthRateLimit mocks base method.
 func (m *MockObjectStorageServiceClient) UpdateUploadBandwidthRateLimit(ctx context.Context, in *s3.UpdateBandwidthRateLimitInput, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "UpdateUploadBandwidthRateLimit", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UpdateUploadBandwidthRateLimit indicates an expected call of UpdateUploadBandwidthRateLimit.
 func (mr *MockObjectStorageServiceClientMockRecorder) UpdateUploadBandwidthRateLimit(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateUploadBandwidthRateLimit", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).UpdateUploadBandwidthRateLimit), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPart mocks base method.
 func (m *MockObjectStorageServiceClient) UploadPart(ctx context.Context, opts ...grpc.CallOption) (s3.ObjectStorageService_UploadPartClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "UploadPart", varargs...)
-	ret0, _ := ret[0].(s3.ObjectStorageService_UploadPartClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(s3.ObjectStorageService_UploadPartClient), nil
 }
 
 // UploadPart indicates an expected call of UploadPart.
 func (mr *MockObjectStorageServiceClientMockRecorder) UploadPart(ctx interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPart", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).UploadPart), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPartCopy mocks base method.
 func (m *MockObjectStorageServiceClient) UploadPartCopy(ctx context.Context, in *s3.UploadPartCopyInput, opts ...grpc.CallOption) (*s3.UploadPartCopyOutput, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "UploadPartCopy", varargs...)
-	ret0, _ := ret[0].(*s3.UploadPartCopyOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UploadPartCopy indicates an expected call of UploadPartCopy.
 func (mr *MockObjectStorageServiceClientMockRecorder) UploadPartCopy(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPartCopy", reflect.TypeOf((*MockObjectStorageServiceClient)(nil).UploadPartCopy), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_PutObjectClient is a mock of ObjectStorageService_PutObjectClient interface.
@@ -572,128 +364,111 @@ type MockObjectStorageService_PutObjectClientMockRecorder struct {
 
 // NewMockObjectStorageService_PutObjectClient creates a new mock instance.
 func NewMockObjectStorageService_PutObjectClient(ctrl *gomock.Controller) *MockObjectStorageService_PutObjectClient {
-	mock := &MockObjectStorageService_PutObjectClient{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_PutObjectClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_PutObjectClient) EXPECT() *MockObjectStorageService_PutObjectClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseAndRecv mocks base method.
+	return nil
 }
 
-// CloseAndRecv mocks base method.
 func (m *MockObjectStorageService_PutObjectClient) CloseAndRecv() (*s3.PutObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseAndRecv")
-	ret0, _ := ret[0].(*s3.PutObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CloseAndRecv indicates an expected call of CloseAndRecv.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) CloseAndRecv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseAndRecv", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).CloseAndRecv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend mocks base method.
 func (m *MockObjectStorageService_PutObjectClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockObjectStorageService_PutObjectClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockObjectStorageService_PutObjectClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_PutObjectClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockObjectStorageService_PutObjectClient) Send(arg0 *s3.PutObjectInput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_PutObjectClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockObjectStorageService_PutObjectClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockObjectStorageService_PutObjectClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockObjectStorageService_PutObjectClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_GetObjectClient is a mock of ObjectStorageService_GetObjectClient interface.
@@ -709,114 +484,99 @@ type MockObjectStorageService_GetObjectClientMockRecorder struct {
 
 // NewMockObjectStorageService_GetObjectClient creates a new mock instance.
 func NewMockObjectStorageService_GetObjectClient(ctrl *gomock.Controller) *MockObjectStorageService_GetObjectClient {
-	mock := &MockObjectStorageService_GetObjectClient{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_GetObjectClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_GetObjectClient) EXPECT() *MockObjectStorageService_GetObjectClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseSend mocks base method.
+	return nil
 }
 
-// CloseSend mocks base method.
 func (m *MockObjectStorageService_GetObjectClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockObjectStorageService_GetObjectClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockObjectStorageService_GetObjectClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockObjectStorageService_GetObjectClient) Recv() (*s3.GetObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*s3.GetObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_GetObjectClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_GetObjectClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockObjectStorageService_GetObjectClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockObjectStorageService_GetObjectClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockObjectStorageService_GetObjectClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_UploadPartClient is a mock of ObjectStorageService_UploadPartClient interface.
@@ -832,128 +592,111 @@ type MockObjectStorageService_UploadPartClientMockRecorder struct {
 
 // NewMockObjectStorageService_UploadPartClient creates a new mock instance.
 func NewMockObjectStorageService_UploadPartClient(ctrl *gomock.Controller) *MockObjectStorageService_UploadPartClient {
-	mock := &MockObjectStorageService_UploadPartClient{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_UploadPartClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_UploadPartClient) EXPECT() *MockObjectStorageService_UploadPartClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseAndRecv mocks base method.
+	return nil
 }
 
-// CloseAndRecv mocks base method.
 func (m *MockObjectStorageService_UploadPartClient) CloseAndRecv() (*s3.UploadPartOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseAndRecv")
-	ret0, _ := ret[0].(*s3.UploadPartOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CloseAndRecv indicates an expected call of CloseAndRecv.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) CloseAndRecv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseAndRecv", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).CloseAndRecv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend mocks base method.
 func (m *MockObjectStorageService_UploadPartClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockObjectStorageService_UploadPartClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockObjectStorageService_UploadPartClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_UploadPartClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockObjectStorageService_UploadPartClient) Send(arg0 *s3.UploadPartInput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_UploadPartClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockObjectStorageService_UploadPartClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockObjectStorageService_UploadPartClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockObjectStorageService_UploadPartClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_AppendObjectClient is a mock of ObjectStorageService_AppendObjectClient interface.
@@ -969,128 +712,111 @@ type MockObjectStorageService_AppendObjectClientMockRecorder struct {
 
 // NewMockObjectStorageService_AppendObjectClient creates a new mock instance.
 func NewMockObjectStorageService_AppendObjectClient(ctrl *gomock.Controller) *MockObjectStorageService_AppendObjectClient {
-	mock := &MockObjectStorageService_AppendObjectClient{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_AppendObjectClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_AppendObjectClient) EXPECT() *MockObjectStorageService_AppendObjectClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseAndRecv mocks base method.
+	return nil
 }
 
-// CloseAndRecv mocks base method.
 func (m *MockObjectStorageService_AppendObjectClient) CloseAndRecv() (*s3.AppendObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseAndRecv")
-	ret0, _ := ret[0].(*s3.AppendObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CloseAndRecv indicates an expected call of CloseAndRecv.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) CloseAndRecv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseAndRecv", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).CloseAndRecv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend mocks base method.
 func (m *MockObjectStorageService_AppendObjectClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockObjectStorageService_AppendObjectClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockObjectStorageService_AppendObjectClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_AppendObjectClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockObjectStorageService_AppendObjectClient) Send(arg0 *s3.AppendObjectInput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_AppendObjectClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockObjectStorageService_AppendObjectClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockObjectStorageService_AppendObjectClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockObjectStorageService_AppendObjectClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageServiceServer is a mock of ObjectStorageServiceServer interface.
@@ -1106,400 +832,327 @@ type MockObjectStorageServiceServerMockRecorder struct {
 
 // NewMockObjectStorageServiceServer creates a new mock instance.
 func NewMockObjectStorageServiceServer(ctrl *gomock.Controller) *MockObjectStorageServiceServer {
-	mock := &MockObjectStorageServiceServer{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageServiceServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageServiceServer) EXPECT() *MockObjectStorageServiceServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// AbortMultipartUpload mocks base method.
+	return nil
 }
 
-// AbortMultipartUpload mocks base method.
 func (m *MockObjectStorageServiceServer) AbortMultipartUpload(arg0 context.Context, arg1 *s3.AbortMultipartUploadInput) (*s3.AbortMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AbortMultipartUpload", arg0, arg1)
-	ret0, _ := ret[0].(*s3.AbortMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AbortMultipartUpload indicates an expected call of AbortMultipartUpload.
 func (mr *MockObjectStorageServiceServerMockRecorder) AbortMultipartUpload(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AbortMultipartUpload", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).AbortMultipartUpload), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // AppendObject mocks base method.
 func (m *MockObjectStorageServiceServer) AppendObject(arg0 s3.ObjectStorageService_AppendObjectServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AppendObject", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // AppendObject indicates an expected call of AppendObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) AppendObject(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AppendObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).AppendObject), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CompleteMultipartUpload mocks base method.
 func (m *MockObjectStorageServiceServer) CompleteMultipartUpload(arg0 context.Context, arg1 *s3.CompleteMultipartUploadInput) (*s3.CompleteMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CompleteMultipartUpload", arg0, arg1)
-	ret0, _ := ret[0].(*s3.CompleteMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CompleteMultipartUpload indicates an expected call of CompleteMultipartUpload.
 func (mr *MockObjectStorageServiceServerMockRecorder) CompleteMultipartUpload(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CompleteMultipartUpload", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).CompleteMultipartUpload), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CopyObject mocks base method.
 func (m *MockObjectStorageServiceServer) CopyObject(arg0 context.Context, arg1 *s3.CopyObjectInput) (*s3.CopyObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CopyObject", arg0, arg1)
-	ret0, _ := ret[0].(*s3.CopyObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CopyObject indicates an expected call of CopyObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) CopyObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CopyObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).CopyObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CreateMultipartUpload mocks base method.
 func (m *MockObjectStorageServiceServer) CreateMultipartUpload(arg0 context.Context, arg1 *s3.CreateMultipartUploadInput) (*s3.CreateMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CreateMultipartUpload", arg0, arg1)
-	ret0, _ := ret[0].(*s3.CreateMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CreateMultipartUpload indicates an expected call of CreateMultipartUpload.
 func (mr *MockObjectStorageServiceServerMockRecorder) CreateMultipartUpload(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateMultipartUpload", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).CreateMultipartUpload), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObject mocks base method.
 func (m *MockObjectStorageServiceServer) DeleteObject(arg0 context.Context, arg1 *s3.DeleteObjectInput) (*s3.DeleteObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteObject", arg0, arg1)
-	ret0, _ := ret[0].(*s3.DeleteObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObject indicates an expected call of DeleteObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) DeleteObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).DeleteObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObjectTagging mocks base method.
 func (m *MockObjectStorageServiceServer) DeleteObjectTagging(arg0 context.Context, arg1 *s3.DeleteObjectTaggingInput) (*s3.DeleteObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteObjectTagging", arg0, arg1)
-	ret0, _ := ret[0].(*s3.DeleteObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObjectTagging indicates an expected call of DeleteObjectTagging.
 func (mr *MockObjectStorageServiceServerMockRecorder) DeleteObjectTagging(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObjectTagging", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).DeleteObjectTagging), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObjects mocks base method.
 func (m *MockObjectStorageServiceServer) DeleteObjects(arg0 context.Context, arg1 *s3.DeleteObjectsInput) (*s3.DeleteObjectsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteObjects", arg0, arg1)
-	ret0, _ := ret[0].(*s3.DeleteObjectsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObjects indicates an expected call of DeleteObjects.
 func (mr *MockObjectStorageServiceServerMockRecorder) DeleteObjects(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObjects", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).DeleteObjects), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObject mocks base method.
 func (m *MockObjectStorageServiceServer) GetObject(arg0 *s3.GetObjectInput, arg1 s3.ObjectStorageService_GetObjectServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetObject", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObject indicates an expected call of GetObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) GetObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).GetObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObjectCannedAcl mocks base method.
 func (m *MockObjectStorageServiceServer) GetObjectCannedAcl(arg0 context.Context, arg1 *s3.GetObjectCannedAclInput) (*s3.GetObjectCannedAclOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetObjectCannedAcl", arg0, arg1)
-	ret0, _ := ret[0].(*s3.GetObjectCannedAclOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObjectCannedAcl indicates an expected call of GetObjectCannedAcl.
 func (mr *MockObjectStorageServiceServerMockRecorder) GetObjectCannedAcl(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObjectCannedAcl", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).GetObjectCannedAcl), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObjectTagging mocks base method.
 func (m *MockObjectStorageServiceServer) GetObjectTagging(arg0 context.Context, arg1 *s3.GetObjectTaggingInput) (*s3.GetObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetObjectTagging", arg0, arg1)
-	ret0, _ := ret[0].(*s3.GetObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObjectTagging indicates an expected call of GetObjectTagging.
 func (mr *MockObjectStorageServiceServerMockRecorder) GetObjectTagging(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObjectTagging", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).GetObjectTagging), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // HeadObject mocks base method.
 func (m *MockObjectStorageServiceServer) HeadObject(arg0 context.Context, arg1 *s3.HeadObjectInput) (*s3.HeadObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "HeadObject", arg0, arg1)
-	ret0, _ := ret[0].(*s3.HeadObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // HeadObject indicates an expected call of HeadObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) HeadObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HeadObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).HeadObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // IsObjectExist mocks base method.
 func (m *MockObjectStorageServiceServer) IsObjectExist(arg0 context.Context, arg1 *s3.IsObjectExistInput) (*s3.IsObjectExistOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "IsObjectExist", arg0, arg1)
-	ret0, _ := ret[0].(*s3.IsObjectExistOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // IsObjectExist indicates an expected call of IsObjectExist.
 func (mr *MockObjectStorageServiceServerMockRecorder) IsObjectExist(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsObjectExist", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).IsObjectExist), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListMultipartUploads mocks base method.
 func (m *MockObjectStorageServiceServer) ListMultipartUploads(arg0 context.Context, arg1 *s3.ListMultipartUploadsInput) (*s3.ListMultipartUploadsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListMultipartUploads", arg0, arg1)
-	ret0, _ := ret[0].(*s3.ListMultipartUploadsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListMultipartUploads indicates an expected call of ListMultipartUploads.
 func (mr *MockObjectStorageServiceServerMockRecorder) ListMultipartUploads(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListMultipartUploads", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).ListMultipartUploads), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListObjectVersions mocks base method.
 func (m *MockObjectStorageServiceServer) ListObjectVersions(arg0 context.Context, arg1 *s3.ListObjectVersionsInput) (*s3.ListObjectVersionsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListObjectVersions", arg0, arg1)
-	ret0, _ := ret[0].(*s3.ListObjectVersionsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListObjectVersions indicates an expected call of ListObjectVersions.
 func (mr *MockObjectStorageServiceServerMockRecorder) ListObjectVersions(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListObjectVersions", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).ListObjectVersions), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListObjects mocks base method.
 func (m *MockObjectStorageServiceServer) ListObjects(arg0 context.Context, arg1 *s3.ListObjectsInput) (*s3.ListObjectsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListObjects", arg0, arg1)
-	ret0, _ := ret[0].(*s3.ListObjectsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListObjects indicates an expected call of ListObjects.
 func (mr *MockObjectStorageServiceServerMockRecorder) ListObjects(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListObjects", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).ListObjects), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListParts mocks base method.
 func (m *MockObjectStorageServiceServer) ListParts(arg0 context.Context, arg1 *s3.ListPartsInput) (*s3.ListPartsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListParts", arg0, arg1)
-	ret0, _ := ret[0].(*s3.ListPartsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListParts indicates an expected call of ListParts.
 func (mr *MockObjectStorageServiceServerMockRecorder) ListParts(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParts", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).ListParts), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObject mocks base method.
 func (m *MockObjectStorageServiceServer) PutObject(arg0 s3.ObjectStorageService_PutObjectServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutObject", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObject indicates an expected call of PutObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) PutObject(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).PutObject), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObjectCannedAcl mocks base method.
 func (m *MockObjectStorageServiceServer) PutObjectCannedAcl(arg0 context.Context, arg1 *s3.PutObjectCannedAclInput) (*s3.PutObjectCannedAclOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutObjectCannedAcl", arg0, arg1)
-	ret0, _ := ret[0].(*s3.PutObjectCannedAclOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObjectCannedAcl indicates an expected call of PutObjectCannedAcl.
 func (mr *MockObjectStorageServiceServerMockRecorder) PutObjectCannedAcl(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObjectCannedAcl", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).PutObjectCannedAcl), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObjectTagging mocks base method.
 func (m *MockObjectStorageServiceServer) PutObjectTagging(arg0 context.Context, arg1 *s3.PutObjectTaggingInput) (*s3.PutObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutObjectTagging", arg0, arg1)
-	ret0, _ := ret[0].(*s3.PutObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObjectTagging indicates an expected call of PutObjectTagging.
 func (mr *MockObjectStorageServiceServerMockRecorder) PutObjectTagging(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObjectTagging", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).PutObjectTagging), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RestoreObject mocks base method.
 func (m *MockObjectStorageServiceServer) RestoreObject(arg0 context.Context, arg1 *s3.RestoreObjectInput) (*s3.RestoreObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "RestoreObject", arg0, arg1)
-	ret0, _ := ret[0].(*s3.RestoreObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RestoreObject indicates an expected call of RestoreObject.
 func (mr *MockObjectStorageServiceServerMockRecorder) RestoreObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RestoreObject", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).RestoreObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SignURL mocks base method.
 func (m *MockObjectStorageServiceServer) SignURL(arg0 context.Context, arg1 *s3.SignURLInput) (*s3.SignURLOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SignURL", arg0, arg1)
-	ret0, _ := ret[0].(*s3.SignURLOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SignURL indicates an expected call of SignURL.
 func (mr *MockObjectStorageServiceServerMockRecorder) SignURL(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SignURL", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).SignURL), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateDownloadBandwidthRateLimit mocks base method.
 func (m *MockObjectStorageServiceServer) UpdateDownloadBandwidthRateLimit(arg0 context.Context, arg1 *s3.UpdateBandwidthRateLimitInput) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UpdateDownloadBandwidthRateLimit", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UpdateDownloadBandwidthRateLimit indicates an expected call of UpdateDownloadBandwidthRateLimit.
 func (mr *MockObjectStorageServiceServerMockRecorder) UpdateDownloadBandwidthRateLimit(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDownloadBandwidthRateLimit", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).UpdateDownloadBandwidthRateLimit), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateUploadBandwidthRateLimit mocks base method.
 func (m *MockObjectStorageServiceServer) UpdateUploadBandwidthRateLimit(arg0 context.Context, arg1 *s3.UpdateBandwidthRateLimitInput) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UpdateUploadBandwidthRateLimit", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UpdateUploadBandwidthRateLimit indicates an expected call of UpdateUploadBandwidthRateLimit.
 func (mr *MockObjectStorageServiceServerMockRecorder) UpdateUploadBandwidthRateLimit(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateUploadBandwidthRateLimit", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).UpdateUploadBandwidthRateLimit), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPart mocks base method.
 func (m *MockObjectStorageServiceServer) UploadPart(arg0 s3.ObjectStorageService_UploadPartServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UploadPart", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPart indicates an expected call of UploadPart.
 func (mr *MockObjectStorageServiceServerMockRecorder) UploadPart(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPart", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).UploadPart), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPartCopy mocks base method.
 func (m *MockObjectStorageServiceServer) UploadPartCopy(arg0 context.Context, arg1 *s3.UploadPartCopyInput) (*s3.UploadPartCopyOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UploadPartCopy", arg0, arg1)
-	ret0, _ := ret[0].(*s3.UploadPartCopyOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UploadPartCopy indicates an expected call of UploadPartCopy.
 func (mr *MockObjectStorageServiceServerMockRecorder) UploadPartCopy(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPartCopy", reflect.TypeOf((*MockObjectStorageServiceServer)(nil).UploadPartCopy), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockUnsafeObjectStorageServiceServer is a mock of UnsafeObjectStorageServiceServer interface.
@@ -1515,26 +1168,27 @@ type MockUnsafeObjectStorageServiceServerMockRecorder struct {
 
 // NewMockUnsafeObjectStorageServiceServer creates a new mock instance.
 func NewMockUnsafeObjectStorageServiceServer(ctrl *gomock.Controller) *MockUnsafeObjectStorageServiceServer {
-	mock := &MockUnsafeObjectStorageServiceServer{ctrl: ctrl}
-	mock.recorder = &MockUnsafeObjectStorageServiceServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockUnsafeObjectStorageServiceServer) EXPECT() *MockUnsafeObjectStorageServiceServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// mustEmbedUnimplementedObjectStorageServiceServer mocks base method.
+	return nil
 }
 
-// mustEmbedUnimplementedObjectStorageServiceServer mocks base method.
 func (m *MockUnsafeObjectStorageServiceServer) mustEmbedUnimplementedObjectStorageServiceServer() {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "mustEmbedUnimplementedObjectStorageServiceServer")
+	_ = "STUB: not implemented"
+	return
 }
 
 // mustEmbedUnimplementedObjectStorageServiceServer indicates an expected call of mustEmbedUnimplementedObjectStorageServiceServer.
 func (mr *MockUnsafeObjectStorageServiceServerMockRecorder) mustEmbedUnimplementedObjectStorageServiceServer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "mustEmbedUnimplementedObjectStorageServiceServer", reflect.TypeOf((*MockUnsafeObjectStorageServiceServer)(nil).mustEmbedUnimplementedObjectStorageServiceServer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_PutObjectServer is a mock of ObjectStorageService_PutObjectServer interface.
@@ -1550,125 +1204,111 @@ type MockObjectStorageService_PutObjectServerMockRecorder struct {
 
 // NewMockObjectStorageService_PutObjectServer creates a new mock instance.
 func NewMockObjectStorageService_PutObjectServer(ctrl *gomock.Controller) *MockObjectStorageService_PutObjectServer {
-	mock := &MockObjectStorageService_PutObjectServer{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_PutObjectServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_PutObjectServer) EXPECT() *MockObjectStorageService_PutObjectServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockObjectStorageService_PutObjectServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockObjectStorageService_PutObjectServer) Recv() (*s3.PutObjectInput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*s3.PutObjectInput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_PutObjectServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose mocks base method.
 func (m *MockObjectStorageService_PutObjectServer) SendAndClose(arg0 *s3.PutObjectOutput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendAndClose", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose indicates an expected call of SendAndClose.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) SendAndClose(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendAndClose", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).SendAndClose), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockObjectStorageService_PutObjectServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_PutObjectServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockObjectStorageService_PutObjectServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
 func (m *MockObjectStorageService_PutObjectServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockObjectStorageService_PutObjectServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockObjectStorageService_PutObjectServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_GetObjectServer is a mock of ObjectStorageService_GetObjectServer interface.
@@ -1684,110 +1324,99 @@ type MockObjectStorageService_GetObjectServerMockRecorder struct {
 
 // NewMockObjectStorageService_GetObjectServer creates a new mock instance.
 func NewMockObjectStorageService_GetObjectServer(ctrl *gomock.Controller) *MockObjectStorageService_GetObjectServer {
-	mock := &MockObjectStorageService_GetObjectServer{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_GetObjectServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_GetObjectServer) EXPECT() *MockObjectStorageService_GetObjectServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockObjectStorageService_GetObjectServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_GetObjectServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockObjectStorageService_GetObjectServer) Send(arg0 *s3.GetObjectOutput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockObjectStorageService_GetObjectServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_GetObjectServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockObjectStorageService_GetObjectServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
 func (m *MockObjectStorageService_GetObjectServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockObjectStorageService_GetObjectServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockObjectStorageService_GetObjectServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_UploadPartServer is a mock of ObjectStorageService_UploadPartServer interface.
@@ -1803,125 +1432,111 @@ type MockObjectStorageService_UploadPartServerMockRecorder struct {
 
 // NewMockObjectStorageService_UploadPartServer creates a new mock instance.
 func NewMockObjectStorageService_UploadPartServer(ctrl *gomock.Controller) *MockObjectStorageService_UploadPartServer {
-	mock := &MockObjectStorageService_UploadPartServer{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_UploadPartServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_UploadPartServer) EXPECT() *MockObjectStorageService_UploadPartServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockObjectStorageService_UploadPartServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockObjectStorageService_UploadPartServer) Recv() (*s3.UploadPartInput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*s3.UploadPartInput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_UploadPartServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose mocks base method.
 func (m *MockObjectStorageService_UploadPartServer) SendAndClose(arg0 *s3.UploadPartOutput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendAndClose", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose indicates an expected call of SendAndClose.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) SendAndClose(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendAndClose", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).SendAndClose), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockObjectStorageService_UploadPartServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_UploadPartServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockObjectStorageService_UploadPartServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
 func (m *MockObjectStorageService_UploadPartServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockObjectStorageService_UploadPartServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockObjectStorageService_UploadPartServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockObjectStorageService_AppendObjectServer is a mock of ObjectStorageService_AppendObjectServer interface.
@@ -1937,123 +1552,109 @@ type MockObjectStorageService_AppendObjectServerMockRecorder struct {
 
 // NewMockObjectStorageService_AppendObjectServer creates a new mock instance.
 func NewMockObjectStorageService_AppendObjectServer(ctrl *gomock.Controller) *MockObjectStorageService_AppendObjectServer {
-	mock := &MockObjectStorageService_AppendObjectServer{ctrl: ctrl}
-	mock.recorder = &MockObjectStorageService_AppendObjectServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockObjectStorageService_AppendObjectServer) EXPECT() *MockObjectStorageService_AppendObjectServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockObjectStorageService_AppendObjectServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockObjectStorageService_AppendObjectServer) Recv() (*s3.AppendObjectInput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*s3.AppendObjectInput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockObjectStorageService_AppendObjectServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose mocks base method.
 func (m *MockObjectStorageService_AppendObjectServer) SendAndClose(arg0 *s3.AppendObjectOutput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendAndClose", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose indicates an expected call of SendAndClose.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) SendAndClose(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendAndClose", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).SendAndClose), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockObjectStorageService_AppendObjectServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockObjectStorageService_AppendObjectServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockObjectStorageService_AppendObjectServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
 func (m *MockObjectStorageService_AppendObjectServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockObjectStorageService_AppendObjectServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockObjectStorageService_AppendObjectServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }

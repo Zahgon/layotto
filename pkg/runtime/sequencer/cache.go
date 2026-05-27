@@ -14,12 +14,8 @@ package sequencer
 
 import (
 	"context"
-	"errors"
 	"sync"
 	"time"
-
-	"mosn.io/pkg/log"
-	"mosn.io/pkg/utils"
 
 	"mosn.io/layotto/components/sequencer"
 )
@@ -48,15 +44,8 @@ type Buffer struct {
 }
 
 func NewDoubleBuffer(key string, store sequencer.Store) *DoubleBuffer {
-
-	d := &DoubleBuffer{
-		Key:              key,
-		size:             defaultSize,
-		Store:            store,
-		backUpBufferChan: make(chan *Buffer, 1),
-	}
-
-	return d
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // init double buffer
@@ -73,89 +62,24 @@ func (d *DoubleBuffer) init() error {
 }
 
 // getId next id
-func (d *DoubleBuffer) getId() (int64, error) {
+func (d *DoubleBuffer) getId() (int64, error) { _ = "STUB: not implemented"; return 0, nil }
 
-	d.lock.Lock()
-	defer d.lock.Unlock()
+//check swap
 
-	if d.inUseBuffer == nil {
-		return 0, errors.New("[DoubleBuffer] Get error: inUseBuffer nil ")
-	}
-	//check swap
-	if d.inUseBuffer.from > d.inUseBuffer.to {
-		err := d.swap()
-		if err != nil {
-			return 0, err
-		}
-	}
-	next := d.inUseBuffer.from
-	d.inUseBuffer.from++
+//when inUseBuffer id more than limit used, initialize BackUpBuffer.
+//equal make sure only one thread enter
 
-	//when inUseBuffer id more than limit used, initialize BackUpBuffer.
-	//equal make sure only one thread enter
-	if d.inUseBuffer.to-d.inUseBuffer.from == defaultLimit {
-		utils.GoWithRecover(func() {
-			//quick retry
-			for i := 0; i < defaultRetry; i++ {
-				buffer, err := d.getNewBuffer()
-				if err != nil {
-					log.DefaultLogger.Errorf("[DoubleBuffer] [getNewBuffer] error: %v", err)
-					continue
-				}
-				d.backUpBufferChan <- buffer
-				return
-			}
-			//slow retry
-			for {
-				buffer, err := d.getNewBuffer()
-				if err != nil {
-					log.DefaultLogger.Errorf("[DoubleBuffer] [getNewBuffer] error: %v", err)
-					time.Sleep(waitTime)
-					continue
-				}
-				d.backUpBufferChan <- buffer
-				return
-			}
-		}, nil)
-	}
+//quick retry
 
-	return next, nil
-}
+//slow retry
 
 // swap inUseBuffer and BackUpBuffer, must be locked
-func (d *DoubleBuffer) swap() error {
+func (d *DoubleBuffer) swap() error { _ = "STUB: not implemented"; return nil }
 
-	select {
-	case buffer := <-d.backUpBufferChan:
-		{
-			d.inUseBuffer = buffer
-			return nil
-		}
-	//timeout, return error
-	case <-time.After(waitTime):
-		{
-			return errors.New("[DoubleBuffer] swap error")
-		}
-	}
-}
+//timeout, return error
 
 // getNewBuffer return a new segment
-func (d *DoubleBuffer) getNewBuffer() (*Buffer, error) {
-	support, result, err := d.Store.GetSegment(&sequencer.GetSegmentRequest{
-		Key:  d.Key,
-		Size: d.size,
-	})
-	if err != nil {
-		return nil, err
-	}
-	if !support {
-		return nil, errors.New("[DoubleBuffer] unSupport Segment id")
-	}
-	return &Buffer{
-		from: result.From,
-		to:   result.To,
-	}, nil
-}
+func (d *DoubleBuffer) getNewBuffer() (*Buffer, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // BufferCatch catch key and buffer
 var BufferCatch = map[string]*DoubleBuffer{}
@@ -164,65 +88,26 @@ var BufferCatch = map[string]*DoubleBuffer{}
 var rwLock sync.RWMutex
 
 func GetNextIdFromCache(ctx context.Context, store sequencer.Store, req *sequencer.GetNextIdRequest) (bool, int64, error) {
+	_ = "STUB: not implemented"
 
 	// 1. check support
-	support, _, _ := store.GetSegment(&sequencer.GetSegmentRequest{
-		Key:  req.Key,
-		Size: 0,
-	})
-
-	// return if not support
-	if !support {
-		return false, 0, nil
-	}
-
-	// 2. find the DoubleBuffer for this store and key
-	var d *DoubleBuffer
-	var err error
-
-	d = getDoubleBufferInRL(req.Key)
-	if d == nil {
-		d, err = getDoubleBufferInWL(req.Key, store)
-	}
-
-	if err != nil {
-		return true, 0, err
-	}
-
-	// 3. get the next id.
-	// The buffer should automatically load segment into cache if the cache is (nearly) empty
-	id, err := d.getId()
-
-	if err != nil {
-		return true, 0, err
-	}
-
-	return true, id, nil
+	return false, 0, nil
 }
+
+// return if not support
+
+// 2. find the DoubleBuffer for this store and key
+
+// 3. get the next id.
+// The buffer should automatically load segment into cache if the cache is (nearly) empty
 
 // get DoubleBuffer using write lock
 func getDoubleBufferInWL(key string, store sequencer.Store) (*DoubleBuffer, error) {
-	d := NewDoubleBuffer(key, store)
-	rwLock.Lock()
-	defer rwLock.Unlock()
-	//double check
-	if _, ok := BufferCatch[key]; ok {
-		return BufferCatch[key], nil
-	}
-	err := d.init()
-	if err != nil {
-		return nil, err
-	}
-	BufferCatch[key] = d
-	return d, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
+//double check
+
 // get DoubleBuffer using read lock
-func getDoubleBufferInRL(key string) *DoubleBuffer {
-	rwLock.RLock()
-	defer rwLock.RUnlock()
-	if buffer, ok := BufferCatch[key]; ok {
-		return buffer
-	}
-	return nil
-}
+func getDoubleBufferInRL(key string) *DoubleBuffer { _ = "STUB: not implemented"; return nil }

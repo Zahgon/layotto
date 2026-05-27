@@ -18,20 +18,13 @@ package actuators
 
 import (
 	"sync"
-
-	"mosn.io/layotto/components/pkg/common"
 )
 
 const (
 	reasonKey = "reason"
 )
 
-func NewHealthIndicator() *HealthIndicator {
-	return &HealthIndicator{
-		started: false,
-		isErr:   false,
-	}
-}
+func NewHealthIndicator() *HealthIndicator { _ = "STUB: not implemented"; return nil }
 
 type HealthIndicator struct {
 	mu sync.Mutex
@@ -42,35 +35,10 @@ type HealthIndicator struct {
 }
 
 func (idc *HealthIndicator) Report() (status Status, details map[string]interface{}) {
-	idc.mu.Lock()
-	defer idc.mu.Unlock()
-	statusDetail := make(map[string]interface{})
-	status = common.INIT
-	if idc.isErr {
-		status = common.DOWN
-		statusDetail[reasonKey] = idc.errReason
-	}
-	if idc.started {
-		status = common.UP
-	}
-
-	return status, statusDetail
+	_ = "STUB: not implemented"
+	return *new(Status), nil
 }
 
-func (idc *HealthIndicator) ReportError(reason string) {
-	idc.mu.Lock()
-	defer idc.mu.Unlock()
+func (idc *HealthIndicator) ReportError(reason string) { _ = "STUB: not implemented"; return }
 
-	if idc.isErr {
-		return
-	}
-	idc.isErr = true
-	idc.errReason = reason
-}
-
-func (idc *HealthIndicator) SetStarted() {
-	idc.mu.Lock()
-	defer idc.mu.Unlock()
-
-	idc.started = true
-}
+func (idc *HealthIndicator) SetStarted() { _ = "STUB: not implemented"; return }

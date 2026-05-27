@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -32,16 +30,13 @@ type phoneCallServiceClient struct {
 }
 
 func NewPhoneCallServiceClient(cc grpc.ClientConnInterface) PhoneCallServiceClient {
-	return &phoneCallServiceClient{cc}
+	_ = "STUB: not implemented"
+	return *new(PhoneCallServiceClient)
 }
 
 func (c *phoneCallServiceClient) SendVoiceWithTemplate(ctx context.Context, in *SendVoiceWithTemplateRequest, opts ...grpc.CallOption) (*SendVoiceWithTemplateResponse, error) {
-	out := new(SendVoiceWithTemplateResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.phone.PhoneCallService/SendVoiceWithTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PhoneCallServiceServer is the server API for PhoneCallService service.
@@ -57,7 +52,8 @@ type UnimplementedPhoneCallServiceServer struct {
 }
 
 func (UnimplementedPhoneCallServiceServer) SendVoiceWithTemplate(context.Context, *SendVoiceWithTemplateRequest) (*SendVoiceWithTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendVoiceWithTemplate not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafePhoneCallServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -68,25 +64,13 @@ type UnsafePhoneCallServiceServer interface {
 }
 
 func RegisterPhoneCallServiceServer(s grpc.ServiceRegistrar, srv PhoneCallServiceServer) {
-	s.RegisterService(&PhoneCallService_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _PhoneCallService_SendVoiceWithTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendVoiceWithTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(PhoneCallServiceServer).SendVoiceWithTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.phone.PhoneCallService/SendVoiceWithTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PhoneCallServiceServer).SendVoiceWithTemplate(ctx, req.(*SendVoiceWithTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PhoneCallService_ServiceDesc is the grpc.ServiceDesc for PhoneCallService service.

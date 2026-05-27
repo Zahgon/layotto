@@ -17,13 +17,8 @@
 package transport_protocol
 
 import (
-	"context"
-
 	"mosn.io/api"
-	"mosn.io/mosn/pkg/protocol/xprotocol/dubbo"
-	"mosn.io/pkg/buffer"
 
-	common "mosn.io/layotto/components/pkg/common"
 	"mosn.io/layotto/components/rpc"
 )
 
@@ -34,7 +29,8 @@ func init() {
 
 // newDubboProtocol is create dubbo TransportProtocol
 func newDubboProtocol() TransportProtocol {
-	return &dubboProtocol{XProtocol: (&dubbo.XCodec{}).NewXProtocol(context.TODO())}
+	_ = "STUB: not implemented"
+	return *new(TransportProtocol)
 }
 
 type dubboProtocol struct {
@@ -43,24 +39,19 @@ type dubboProtocol struct {
 }
 
 func (d *dubboProtocol) Init(map[string]interface{}) error {
+	_ = "STUB: not implemented"
+
+	// ToFrame is dubboProtocol transform
 	return nil
 }
 
-// ToFrame is dubboProtocol transform
 func (d *dubboProtocol) ToFrame(req *rpc.RPCRequest) api.XFrame {
-	dubboReq := dubbo.NewRpcRequest(nil, buffer.NewIoBufferBytes(req.Data))
-	req.Header.Range(func(key string, value string) bool {
-		dubboReq.Header.Set(key, value)
-		return true
-	})
-	return dubboReq
+	_ = "STUB: not implemented"
+	return *new(api.XFrame)
 }
 
 // FromFrame is dubboProtocol transform
 func (d *dubboProtocol) FromFrame(resp api.XRespFrame) (*rpc.RPCResponse, error) {
-	if resp.GetStatusCode() != dubbo.RespStatusOK {
-		return nil, common.Errorf(common.UnavailebleCode, "dubbo error code %d", resp.GetStatusCode())
-	}
-
-	return d.fromFrame.FromFrame(resp)
+	_ = "STUB: not implemented"
+	return nil, nil
 }

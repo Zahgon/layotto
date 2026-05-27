@@ -27,8 +27,6 @@ type Factory struct {
 
 // Create a new Factory type variable
 func NewFactory(compType string, f func() state.Store) *Factory {
-	return &Factory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

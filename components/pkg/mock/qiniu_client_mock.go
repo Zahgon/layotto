@@ -23,7 +23,6 @@ package mock
 import (
 	context "context"
 	io "io"
-	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
 	storage "github.com/qiniu/go-sdk/v7/storage"
@@ -42,28 +41,27 @@ type MockFormUploaderMockRecorder struct {
 
 // NewMockFormUploader creates a new mock instance.
 func NewMockFormUploader(ctrl *gomock.Controller) *MockFormUploader {
-	mock := &MockFormUploader{ctrl: ctrl}
-	mock.recorder = &MockFormUploaderMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockFormUploader) EXPECT() *MockFormUploaderMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Put mocks base method.
+	return nil
 }
 
-// Put mocks base method.
 func (m *MockFormUploader) Put(ctx context.Context, ret interface{}, uptoken, key string, data io.Reader, size int64, extra *storage.PutExtra) error {
-	m.ctrl.T.Helper()
-	ret_2 := m.ctrl.Call(m, "Put", ctx, ret, uptoken, key, data, size, extra)
-	ret0, _ := ret_2[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Put indicates an expected call of Put.
 func (mr *MockFormUploaderMockRecorder) Put(ctx, ret, uptoken, key, data, size, extra interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Put", reflect.TypeOf((*MockFormUploader)(nil).Put), ctx, ret, uptoken, key, data, size, extra)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockBucketManager is a mock of BucketManager interface.
@@ -79,59 +77,46 @@ type MockBucketManagerMockRecorder struct {
 
 // NewMockBucketManager creates a new mock instance.
 func NewMockBucketManager(ctrl *gomock.Controller) *MockBucketManager {
-	mock := &MockBucketManager{ctrl: ctrl}
-	mock.recorder = &MockBucketManagerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockBucketManager) EXPECT() *MockBucketManagerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Delete mocks base method.
+	return nil
 }
 
-// Delete mocks base method.
-func (m *MockBucketManager) Delete(bucket, key string) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Delete", bucket, key)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockBucketManager) Delete(bucket, key string) error { _ = "STUB: not implemented"; return nil }
 
 // Delete indicates an expected call of Delete.
 func (mr *MockBucketManagerMockRecorder) Delete(bucket, key interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockBucketManager)(nil).Delete), bucket, key)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListFiles mocks base method.
 func (m *MockBucketManager) ListFiles(bucket, prefix, delimiter, marker string, limit int) ([]storage.ListItem, []string, string, bool, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListFiles", bucket, prefix, delimiter, marker, limit)
-	ret0, _ := ret[0].([]storage.ListItem)
-	ret1, _ := ret[1].([]string)
-	ret2, _ := ret[2].(string)
-	ret3, _ := ret[3].(bool)
-	ret4, _ := ret[4].(error)
-	return ret0, ret1, ret2, ret3, ret4
+	_ = "STUB: not implemented"
+	return nil, nil, "", false, nil
 }
 
 // ListFiles indicates an expected call of ListFiles.
 func (mr *MockBucketManagerMockRecorder) ListFiles(bucket, prefix, delimiter, marker, limit interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListFiles", reflect.TypeOf((*MockBucketManager)(nil).ListFiles), bucket, prefix, delimiter, marker, limit)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Stat mocks base method.
 func (m *MockBucketManager) Stat(bucket, key string) (storage.FileInfo, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Stat", bucket, key)
-	ret0, _ := ret[0].(storage.FileInfo)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(storage.FileInfo), nil
 }
 
 // Stat indicates an expected call of Stat.
 func (mr *MockBucketManagerMockRecorder) Stat(bucket, key interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Stat", reflect.TypeOf((*MockBucketManager)(nil).Stat), bucket, key)
+	_ = "STUB: not implemented"
+	return nil
 }

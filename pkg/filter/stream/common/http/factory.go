@@ -20,18 +20,9 @@ import (
 	"context"
 
 	"mosn.io/api"
-	"mosn.io/mosn/pkg/log"
 )
 
-func RegisterFilter(filterType string, handler RequestHandler) {
-	api.RegisterStream(filterType+"_filter", func(config map[string]interface{}) (api.StreamFilterChainFactory, error) {
-		log.DefaultLogger.Infof("[%v] create filter factory", filterType)
-		return &ServiceFactory{
-			filterType:     filterType,
-			requestHandler: handler,
-		}, nil
-	})
-}
+func RegisterFilter(filterType string, handler RequestHandler) { _ = "STUB: not implemented"; return }
 
 type ServiceFactory struct {
 	filterType     string
@@ -39,8 +30,6 @@ type ServiceFactory struct {
 }
 
 func (f *ServiceFactory) CreateFilterChain(context context.Context, callbacks api.StreamFilterChainFactoryCallbacks) {
-	filter := &DispatchFilter{}
-	filter.filterType = f.filterType
-	filter.requestHandler = f.requestHandler
-	callbacks.AddStreamReceiverFilter(filter, api.BeforeRoute)
+	_ = "STUB: not implemented"
+	return
 }

@@ -25,49 +25,61 @@ import (
 )
 
 func (d *daprGrpcAPI) RegisterActorTimer(ctx context.Context, request *runtime.RegisterActorTimerRequest) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) UnregisterActorTimer(ctx context.Context, request *runtime.UnregisterActorTimerRequest) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) RegisterActorReminder(ctx context.Context, request *runtime.RegisterActorReminderRequest) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) UnregisterActorReminder(ctx context.Context, request *runtime.UnregisterActorReminderRequest) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) GetActorState(ctx context.Context, request *runtime.GetActorStateRequest) (*runtime.GetActorStateResponse, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) ExecuteActorStateTransaction(ctx context.Context, request *runtime.ExecuteActorStateTransactionRequest) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) InvokeActor(ctx context.Context, request *runtime.InvokeActorRequest) (*runtime.InvokeActorResponse, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) GetConfigurationAlpha1(ctx context.Context, request *runtime.GetConfigurationRequest) (*runtime.GetConfigurationResponse, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) SubscribeConfigurationAlpha1(request *runtime.SubscribeConfigurationRequest, server runtime.Dapr_SubscribeConfigurationAlpha1Server) error {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (d *daprGrpcAPI) GetMetadata(ctx context.Context, empty *emptypb.Empty) (*runtime.GetMetadataResponse, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) SetMetadata(ctx context.Context, request *runtime.SetMetadataRequest) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) Shutdown(ctx context.Context, empty *emptypb.Empty) (*emptypb.Empty, error) {
-	panic("implement me")
+	_ = "STUB: not implemented"
+	return nil, nil
 }

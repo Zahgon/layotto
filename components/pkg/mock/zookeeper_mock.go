@@ -18,7 +18,6 @@
 package mock
 
 import (
-	reflect "reflect"
 	time "time"
 
 	"mosn.io/layotto/components/pkg/utils"
@@ -40,29 +39,27 @@ type MockConnectionFactoryMockRecorder struct {
 
 // NewMockConnectionFactory creates a new mock instance.
 func NewMockConnectionFactory(ctrl *gomock.Controller) *MockConnectionFactory {
-	mock := &MockConnectionFactory{ctrl: ctrl}
-	mock.recorder = &MockConnectionFactoryMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockConnectionFactory) EXPECT() *MockConnectionFactoryMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// NewConnection mocks base method.
+	return nil
 }
 
-// NewConnection mocks base method.
 func (m *MockConnectionFactory) NewConnection(expire time.Duration, meta utils.ZookeeperMetadata) (utils.ZKConnection, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "NewConnection", expire, meta)
-	ret0, _ := ret[0].(utils.ZKConnection)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(utils.ZKConnection), nil
 }
 
 // NewConnection indicates an expected call of NewConnection.
 func (mr *MockConnectionFactoryMockRecorder) NewConnection(expire, meta interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewConnection", reflect.TypeOf((*MockConnectionFactory)(nil).NewConnection), expire, meta)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockZKConnection is a mock of ZKConnection interface.
@@ -78,84 +75,67 @@ type MockZKConnectionMockRecorder struct {
 
 // NewMockZKConnection creates a new mock instance.
 func NewMockZKConnection(ctrl *gomock.Controller) *MockZKConnection {
-	mock := &MockZKConnection{ctrl: ctrl}
-	mock.recorder = &MockZKConnectionMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockZKConnection) EXPECT() *MockZKConnectionMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Close mocks base method.
+	return nil
 }
 
-// Close mocks base method.
-func (m *MockZKConnection) Close() {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "Close")
-}
+func (m *MockZKConnection) Close() { _ = "STUB: not implemented"; return }
 
 // Close indicates an expected call of Close.
-func (mr *MockZKConnectionMockRecorder) Close() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Close", reflect.TypeOf((*MockZKConnection)(nil).Close))
-}
+func (mr *MockZKConnectionMockRecorder) Close() *gomock.Call { _ = "STUB: not implemented"; return nil }
 
 // Create mocks base method.
 func (m *MockZKConnection) Create(path string, data []byte, flags int32, acl []zk.ACL) (string, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Create", path, data, flags, acl)
-	ret0, _ := ret[0].(string)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 // Create indicates an expected call of Create.
 func (mr *MockZKConnectionMockRecorder) Create(path, data, flags, acl interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockZKConnection)(nil).Create), path, data, flags, acl)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Delete mocks base method.
 func (m *MockZKConnection) Delete(path string, version int32) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Delete", path, version)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Delete indicates an expected call of Delete.
 func (mr *MockZKConnectionMockRecorder) Delete(path, version interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockZKConnection)(nil).Delete), path, version)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Get mocks base method.
 func (m *MockZKConnection) Get(path string) ([]byte, *zk.Stat, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", path)
-	ret0, _ := ret[0].([]byte)
-	ret1, _ := ret[1].(*zk.Stat)
-	ret2, _ := ret[2].(error)
-	return ret0, ret1, ret2
+	_ = "STUB: not implemented"
+	return nil, nil, nil
 }
 
 // Get indicates an expected call of Get.
 func (mr *MockZKConnectionMockRecorder) Get(path interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockZKConnection)(nil).Get), path)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Set mocks base method.
 func (m *MockZKConnection) Set(path string, data []byte, version int32) (*zk.Stat, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Set", path, data, version)
-	ret0, _ := ret[0].(*zk.Stat)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Set indicates an expected call of Set.
 func (mr *MockZKConnectionMockRecorder) Set(path, data, version interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockZKConnection)(nil).Set), path, data, version)
+	_ = "STUB: not implemented"
+	return nil
 }

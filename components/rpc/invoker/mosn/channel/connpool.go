@@ -20,16 +20,10 @@ import (
 	"container/list"
 	"context"
 	"errors"
-	"io"
 	"net"
 	"sync"
-	"sync/atomic"
 
 	"mosn.io/pkg/buffer"
-	"mosn.io/pkg/log"
-	"mosn.io/pkg/utils"
-
-	common "mosn.io/layotto/components/pkg/common"
 )
 
 const (
@@ -52,19 +46,10 @@ type wrapConn struct {
 }
 
 // isClose is checked wrapConn close or not
-func (w *wrapConn) isClose() bool {
-	return atomic.LoadInt32(&w.closed) == 1
-}
+func (w *wrapConn) isClose() bool { _ = "STUB: not implemented"; return false }
 
 // close is real close connect
-func (w *wrapConn) close() error {
-	var err error
-	if atomic.CompareAndSwapInt32(&w.closed, 0, 1) {
-		w.cancelFunc()
-		err = w.Conn.Close()
-	}
-	return err
-}
+func (w *wrapConn) close() error { _ = "STUB: not implemented"; return nil }
 
 // newConnPool is reduced the overhead of creating connections and improve program performance
 // im-memory fake conn pool
@@ -79,17 +64,8 @@ func newConnPool(
 	onDataFunc func(*wrapConn) error,
 	// clean connected
 	cleanupFunc func(*wrapConn, error)) *connPool {
-
-	p := &connPool{
-		maxActive:   maxActive,
-		dialFunc:    dialFunc,
-		stateFunc:   stateFunc,
-		onDataFunc:  onDataFunc,
-		cleanupFunc: cleanupFunc,
-		sema:        make(chan struct{}, maxActive),
-		free:        list.New(),
-	}
-	return p
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // connPool is connected pool
@@ -107,115 +83,27 @@ type connPool struct {
 
 // Get is get wrapConn by context.Context
 func (p *connPool) Get(ctx context.Context) (*wrapConn, bool, error) {
-	if err := p.waitTurn(ctx); err != nil {
-		return nil, false, err
-	}
-
-	p.mu.Lock()
-	// get free conn
-	if ele := p.free.Front(); ele != nil {
-		p.free.Remove(ele)
-		p.mu.Unlock()
-		wc := ele.Value.(*wrapConn)
-		if !wc.isClose() {
-			return wc, false, nil
-		}
-	} else {
-		p.mu.Unlock()
-	}
-
-	// create new conn
-	c, err := p.dialFunc()
-	if err != nil {
-		p.freeTurn()
-		return nil, false, err
-	}
-	cancelCtx, cancel := context.WithCancel(context.Background())
-	wc := &wrapConn{Conn: c, cancelFunc: cancel, cancelCtx: cancelCtx}
-	if p.stateFunc != nil {
-		wc.state = p.stateFunc()
-	}
-	// start a readloop gorountine to read and handle data
-	if p.onDataFunc != nil {
-		utils.GoWithRecover(func() {
-			p.readloop(wc)
-		}, nil)
-	}
-	return wc, true, nil
+	_ = "STUB: not implemented"
+	return nil, false, nil
 }
+
+// get free conn
+
+// create new conn
+
+// start a readloop gorountine to read and handle data
 
 // Put when connected less than maxActive
-func (p *connPool) Put(c *wrapConn, close bool) {
-	if close {
-		c.close()
-		p.freeTurn()
-		return
-	}
-
-	p.mu.Lock()
-	if p.free.Len() < p.maxActive {
-		p.free.PushBack(c)
-		p.mu.Unlock()
-	} else {
-		p.mu.Unlock()
-		c.close()
-	}
-	p.freeTurn()
-}
+func (p *connPool) Put(c *wrapConn, close bool) { _ = "STUB: not implemented"; return }
 
 // readloop is loop to read connected then exec onDataFunc
-func (p *connPool) readloop(c *wrapConn) {
-	var err error
+func (p *connPool) readloop(c *wrapConn) { _ = "STUB: not implemented"; return }
 
-	defer func() {
-		c.close()
-		if p.cleanupFunc != nil {
-			p.cleanupFunc(c, err)
-		}
-	}()
+// read data from connection
 
-	c.buf = buffer.NewIoBuffer(defaultBufSize)
-	for {
-		// read data from connection
-		n, readErr := c.buf.ReadOnce(c)
-		if readErr != nil {
-			err = readErr
-			if readErr == io.EOF {
-				log.DefaultLogger.Debugf("[runtime][rpc]connpool readloop err: %s", readErr.Error())
-			} else {
-				log.DefaultLogger.Errorf("[runtime][rpc]connpool readloop err: %s", readErr.Error())
-			}
-		}
+// handle data.
+// it will delegate to hstate if it's constructed by httpchannel
 
-		if n > 0 {
-			// handle data.
-			// it will delegate to hstate if it's constructed by httpchannel
-			if onDataErr := p.onDataFunc(c); onDataErr != nil {
-				err = onDataErr
-				log.DefaultLogger.Errorf("[runtime][rpc]connpool onData err: %s", onDataErr.Error())
-			}
-		}
+func (p *connPool) waitTurn(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
-		if err != nil {
-			break
-		}
-
-		if c.buf != nil && c.buf.Len() == 0 && c.buf.Cap() > maxBufSize {
-			c.buf.Free()
-			c.buf.Alloc(defaultBufSize)
-		}
-	}
-}
-
-func (p *connPool) waitTurn(ctx context.Context) error {
-	select {
-	case <-ctx.Done():
-		return common.Error(common.TimeoutCode, connpoolTimeout.Error())
-	case p.sema <- struct{}{}:
-		return nil
-	}
-}
-
-func (p *connPool) freeTurn() {
-	<-p.sema
-}
+func (p *connPool) freeTurn() { _ = "STUB: not implemented"; return }

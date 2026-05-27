@@ -14,8 +14,6 @@
 package wasm
 
 import (
-	"errors"
-
 	"mosn.io/mosn/pkg/types"
 	"mosn.io/mosn/pkg/wasm/abi"
 	v1 "mosn.io/mosn/pkg/wasm/abi/proxywasm010"
@@ -30,9 +28,8 @@ func init() {
 
 // initialization an abi
 func abiImplFactory(instance types.WasmInstance) types.ABI {
-	abi := &AbiV2Impl{}
-	abi.SetInstance(instance)
-	return abi
+	_ = "STUB: not implemented"
+	return *new(types.ABI)
 }
 
 // AbiV2Impl easy for extension
@@ -47,32 +44,23 @@ var (
 
 // Name Get abi name
 func (a *AbiV2Impl) Name() string {
-	return AbiV2
+	_ = "STUB: not implemented"
+
+	// GetABIExports Get abi
+	return ""
 }
 
-// GetABIExports Get abi
 func (a *AbiV2Impl) GetABIExports() interface{} {
-	return a
+	_ = "STUB: not implemented"
+
+	// ProxyGetID Get id
+	return nil
 }
 
-// ProxyGetID Get id
 func (a *AbiV2Impl) ProxyGetID() (string, error) {
+	_ = "STUB: not implemented"
 	// store the funcName and common.WasmFunction, then return the common.WasmFunction
-	ff, err := a.Instance.GetExportsFunc("proxy_get_id")
-	if err != nil {
-		return "", err
-	}
-	_, err = ff.Call()
-	if err != nil {
-		a.Instance.HandleError(err)
-		return "", err
-	}
-	a.Imports.Wait()
-	// generate functionId
-	functionId := string(a.Imports.GetFuncCallData().Bytes())
-	if functionId == "" {
-		return "", errors.New("")
-	}
-
-	return functionId, nil
+	return "", nil
 }
+
+// generate functionId

@@ -17,8 +17,6 @@
 package file
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 )
 
@@ -32,37 +30,18 @@ type Factory struct {
 	FactoryMethod func() File
 }
 
-func NewFileFactory(CompType string, f func() File) *Factory {
-	return &Factory{
-		CompType:      CompType,
-		FactoryMethod: f,
-	}
-}
+func NewFileFactory(CompType string, f func() File) *Factory { _ = "STUB: not implemented"; return nil }
 
 type FileStoreRegistry struct {
 	files map[string]func() File
 	info  *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &FileStoreRegistry{
-		files: make(map[string]func() File),
-		info:  info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
-func (r *FileStoreRegistry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.files[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
-}
+func (r *FileStoreRegistry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 func (r *FileStoreRegistry) Create(compType string) (File, error) {
-	if f, ok := r.files[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(File), nil
 }

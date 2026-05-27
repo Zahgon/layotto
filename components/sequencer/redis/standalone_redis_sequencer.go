@@ -52,20 +52,11 @@ type StandaloneRedisSequencer struct {
 }
 
 // NewStandaloneRedisSequencer returns a new redis sequencer
-func NewStandaloneRedisSequencer() *StandaloneRedisSequencer {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	s := &StandaloneRedisSequencer{
-		logger: logger.NewLayottoLogger("sequencer/redis"),
-	}
-	logger.RegisterComponentLoggerListener("sequencer/redis", s)
-	return s
-}
+func NewStandaloneRedisSequencer() *StandaloneRedisSequencer { _ = "STUB: not implemented"; return nil }
 
 func (s *StandaloneRedisSequencer) OnLogLevelChanged(level logger.LogLevel) {
-	s.logger.SetLogLevel(level)
+	_ = "STUB: not implemented"
+	return
 }
 
 /*
@@ -83,75 +74,31 @@ end
 `
 
 func (s *StandaloneRedisSequencer) Init(config sequencer.Configuration) error {
-	m, err := utils.ParseRedisMetadata(config.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	//init
-	s.metadata = m
-	s.biggerThan = config.BiggerThan
-
-	// construct client
-	s.client = utils.NewRedisClient(m)
-	s.ctx, s.cancel = context.WithCancel(context.Background())
-
-	//check biggerThan, initialize if not satisfied
-	for k, needV := range s.biggerThan {
-		if needV <= 0 {
-			continue
-		}
-
-		eval := s.client.Eval(s.ctx, initScript, []string{k}, needV)
-		err = eval.Err()
-		//occur error,  such as value is string type
-		if err != nil {
-			readinessIndicator.ReportError(err.Error())
-			livenessIndicator.ReportError(err.Error())
-			return err
-		}
-		//As long as there is no error, the initialization is successful
-		//It may be a reset value or it may be satisfied before
-	}
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
+	_ = "STUB: not implemented"
 	return nil
 }
 
+//init
+
+// construct client
+
+//check biggerThan, initialize if not satisfied
+
+//occur error,  such as value is string type
+
+//As long as there is no error, the initialization is successful
+//It may be a reset value or it may be satisfied before
+
 func (s *StandaloneRedisSequencer) GetNextId(req *sequencer.GetNextIdRequest) (*sequencer.GetNextIdResponse, error) {
-
-	incr := s.client.Incr(s.ctx, req.Key)
-
-	err := incr.Err()
-	if err != nil {
-		return nil, err
-	}
-
-	return &sequencer.GetNextIdResponse{
-		NextId: incr.Val(),
-	}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (s *StandaloneRedisSequencer) GetSegment(req *sequencer.GetSegmentRequest) (bool, *sequencer.GetSegmentResponse, error) {
+	_ = "STUB: not implemented"
 
 	// size=0 only check support
-	if req.Size == 0 {
-		return true, nil, nil
-	}
-
-	by := s.client.IncrBy(s.ctx, req.Key, int64(req.Size))
-	err := by.Err()
-	if err != nil {
-		return true, nil, err
-	}
-
-	return true, &sequencer.GetSegmentResponse{
-		From: by.Val() - int64(req.Size) + 1,
-		To:   by.Val(),
-	}, nil
+	return false, nil, nil
 }
-func (s *StandaloneRedisSequencer) Close() error {
-	s.cancel()
-	return s.client.Close()
-}
+
+func (s *StandaloneRedisSequencer) Close() error { _ = "STUB: not implemented"; return nil }

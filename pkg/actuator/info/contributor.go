@@ -24,5 +24,6 @@ type Contributor interface {
 type ContributorAdapter func() (interface{}, error)
 
 func (ca ContributorAdapter) GetInfo() (interface{}, error) {
-	return ca()
+	_ = "STUB: not implemented"
+	return nil, nil
 }

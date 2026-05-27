@@ -7,7 +7,6 @@
 package common
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -30,51 +29,23 @@ type Config struct {
 	ComponentRef *ComponentRefConfig `protobuf:"bytes,2,opt,name=component_ref,json=componentRef,proto3" json:"component_ref,omitempty"`
 }
 
-func (x *Config) Reset() {
-	*x = Config{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_spec_proto_pluggable_v1_common_common_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *Config) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *Config) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *Config) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*Config) ProtoMessage() {}
+func (*Config) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *Config) ProtoReflect() protoreflect.Message {
-	mi := &file_spec_proto_pluggable_v1_common_common_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use Config.ProtoReflect.Descriptor instead.
-func (*Config) Descriptor() ([]byte, []int) {
-	return file_spec_proto_pluggable_v1_common_common_proto_rawDescGZIP(), []int{0}
-}
+func (*Config) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *Config) GetSecretRef() []*SecretRefConfig {
-	if x != nil {
-		return x.SecretRef
-	}
-	return nil
-}
+func (x *Config) GetSecretRef() []*SecretRefConfig { _ = "STUB: not implemented"; return nil }
 
-func (x *Config) GetComponentRef() *ComponentRefConfig {
-	if x != nil {
-		return x.ComponentRef
-	}
-	return nil
-}
+func (x *Config) GetComponentRef() *ComponentRefConfig { _ = "STUB: not implemented"; return nil }
 
 type SecretRefConfig struct {
 	state         protoimpl.MessageState
@@ -87,65 +58,27 @@ type SecretRefConfig struct {
 	InjectAs  string `protobuf:"bytes,4,opt,name=inject_as,json=injectAs,proto3" json:"inject_as,omitempty"`
 }
 
-func (x *SecretRefConfig) Reset() {
-	*x = SecretRefConfig{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_spec_proto_pluggable_v1_common_common_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SecretRefConfig) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SecretRefConfig) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SecretRefConfig) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SecretRefConfig) ProtoMessage() {}
+func (*SecretRefConfig) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SecretRefConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_spec_proto_pluggable_v1_common_common_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SecretRefConfig.ProtoReflect.Descriptor instead.
-func (*SecretRefConfig) Descriptor() ([]byte, []int) {
-	return file_spec_proto_pluggable_v1_common_common_proto_rawDescGZIP(), []int{1}
-}
+func (*SecretRefConfig) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *SecretRefConfig) GetStoreName() string {
-	if x != nil {
-		return x.StoreName
-	}
-	return ""
-}
+func (x *SecretRefConfig) GetStoreName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SecretRefConfig) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
+func (x *SecretRefConfig) GetKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SecretRefConfig) GetSubKey() string {
-	if x != nil {
-		return x.SubKey
-	}
-	return ""
-}
+func (x *SecretRefConfig) GetSubKey() string { _ = "STUB: not implemented"; return "" }
 
-func (x *SecretRefConfig) GetInjectAs() string {
-	if x != nil {
-		return x.InjectAs
-	}
-	return ""
-}
+func (x *SecretRefConfig) GetInjectAs() string { _ = "STUB: not implemented"; return "" }
 
 type ComponentRefConfig struct {
 	state         protoimpl.MessageState
@@ -156,51 +89,23 @@ type ComponentRefConfig struct {
 	ConfigStore string `protobuf:"bytes,2,opt,name=config_store,json=configStore,proto3" json:"config_store,omitempty"`
 }
 
-func (x *ComponentRefConfig) Reset() {
-	*x = ComponentRefConfig{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_spec_proto_pluggable_v1_common_common_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ComponentRefConfig) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ComponentRefConfig) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ComponentRefConfig) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ComponentRefConfig) ProtoMessage() {}
+func (*ComponentRefConfig) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ComponentRefConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_spec_proto_pluggable_v1_common_common_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ComponentRefConfig.ProtoReflect.Descriptor instead.
-func (*ComponentRefConfig) Descriptor() ([]byte, []int) {
-	return file_spec_proto_pluggable_v1_common_common_proto_rawDescGZIP(), []int{2}
-}
+func (*ComponentRefConfig) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ComponentRefConfig) GetSecretStore() string {
-	if x != nil {
-		return x.SecretStore
-	}
-	return ""
-}
+func (x *ComponentRefConfig) GetSecretStore() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ComponentRefConfig) GetConfigStore() string {
-	if x != nil {
-		return x.ConfigStore
-	}
-	return ""
-}
+func (x *ComponentRefConfig) GetConfigStore() string { _ = "STUB: not implemented"; return "" }
 
 var File_spec_proto_pluggable_v1_common_common_proto protoreflect.FileDescriptor
 
@@ -251,10 +156,8 @@ var (
 )
 
 func file_spec_proto_pluggable_v1_common_common_proto_rawDescGZIP() []byte {
-	file_spec_proto_pluggable_v1_common_common_proto_rawDescOnce.Do(func() {
-		file_spec_proto_pluggable_v1_common_common_proto_rawDescData = protoimpl.X.CompressGZIP(file_spec_proto_pluggable_v1_common_common_proto_rawDescData)
-	})
-	return file_spec_proto_pluggable_v1_common_common_proto_rawDescData
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var file_spec_proto_pluggable_v1_common_common_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
@@ -273,65 +176,5 @@ var file_spec_proto_pluggable_v1_common_common_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_spec_proto_pluggable_v1_common_common_proto_init() }
-func file_spec_proto_pluggable_v1_common_common_proto_init() {
-	if File_spec_proto_pluggable_v1_common_common_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_spec_proto_pluggable_v1_common_common_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Config); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_spec_proto_pluggable_v1_common_common_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SecretRefConfig); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_spec_proto_pluggable_v1_common_common_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ComponentRefConfig); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_spec_proto_pluggable_v1_common_common_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   3,
-			NumExtensions: 0,
-			NumServices:   0,
-		},
-		GoTypes:           file_spec_proto_pluggable_v1_common_common_proto_goTypes,
-		DependencyIndexes: file_spec_proto_pluggable_v1_common_common_proto_depIdxs,
-		MessageInfos:      file_spec_proto_pluggable_v1_common_common_proto_msgTypes,
-	}.Build()
-	File_spec_proto_pluggable_v1_common_common_proto = out.File
-	file_spec_proto_pluggable_v1_common_common_proto_rawDesc = nil
-	file_spec_proto_pluggable_v1_common_common_proto_goTypes = nil
-	file_spec_proto_pluggable_v1_common_common_proto_depIdxs = nil
-}
+func init()                                                  { file_spec_proto_pluggable_v1_common_common_proto_init() }
+func file_spec_proto_pluggable_v1_common_common_proto_init() { _ = "STUB: not implemented"; return }

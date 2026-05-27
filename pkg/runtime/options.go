@@ -18,7 +18,6 @@ package runtime
 
 import (
 	"google.golang.org/grpc"
-	"mosn.io/pkg/log"
 
 	"mosn.io/layotto/components/oss"
 
@@ -67,124 +66,80 @@ type runtimeOptions struct {
 	apiFactorys []rgrpc.NewGrpcAPI
 }
 
-func newRuntimeOptions() *runtimeOptions {
-	return &runtimeOptions{
-		services: services{
-			custom: make(map[string][]*custom.Factory),
-		},
-	}
-}
+func newRuntimeOptions() *runtimeOptions { _ = "STUB: not implemented"; return nil }
 
 type Option func(o *runtimeOptions)
 
-func WithNewServer(f rgrpc.NewServer) Option {
-	return func(o *runtimeOptions) {
-		o.srvMaker = f
-	}
-}
+func WithNewServer(f rgrpc.NewServer) Option { _ = "STUB: not implemented"; return *new(Option) }
 
 func WithGrpcOptions(options ...grpc.ServerOption) Option {
-	return func(o *runtimeOptions) {
-		o.options = append(o.options, options...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithGrpcAPI(apiFuncs ...rgrpc.NewGrpcAPI) Option {
-	return func(o *runtimeOptions) {
-		o.apiFactorys = append(o.apiFactorys, apiFuncs...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 type ErrInterceptor func(err error, format string, args ...interface{})
 
-func WithErrInterceptor(i ErrInterceptor) Option {
-	return func(o *runtimeOptions) {
-		if o.errInt != nil {
-			log.DefaultLogger.Fatalf("the error interceptor was already setted")
-		}
-		o.errInt = i
-	}
-}
+func WithErrInterceptor(i ErrInterceptor) Option { _ = "STUB: not implemented"; return *new(Option) }
 
 func WithCustomComponentFactory(kind string, factorys ...*custom.Factory) Option {
-	return func(o *runtimeOptions) {
-		if len(factorys) == 0 {
-			return
-		}
-		o.services.custom[kind] = append(o.services.custom[kind], factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithHelloFactory(hellos ...*hello.HelloFactory) Option {
-	return func(o *runtimeOptions) {
-		o.services.hellos = append(o.services.hellos, hellos...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithConfigStoresFactory(configStores ...*configstores.StoreFactory) Option {
-	return func(o *runtimeOptions) {
-		o.services.configStores = append(o.services.configStores, configStores...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
-func WithRpcFactory(rpcs ...*rpc.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.rpcs = append(o.services.rpcs, rpcs...)
-	}
-}
+func WithRpcFactory(rpcs ...*rpc.Factory) Option { _ = "STUB: not implemented"; return *new(Option) }
 
-func WithOssFactory(oss ...*oss.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.oss = append(o.services.oss, oss...)
-	}
-}
+func WithOssFactory(oss ...*oss.Factory) Option { _ = "STUB: not implemented"; return *new(Option) }
 
-func WithFileFactory(files ...*file.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.files = append(o.services.files, files...)
-	}
-}
+func WithFileFactory(files ...*file.Factory) Option { _ = "STUB: not implemented"; return *new(Option) }
 
 func WithPubSubFactory(factorys ...*pubsub.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.pubSubs = append(o.services.pubSubs, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithLockFactory(factorys ...*runtime_lock.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.locks = append(o.services.locks, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithStateFactory(factorys ...*state.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.states = append(o.services.states, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 // WithInputBindings adds input binding components to the runtime.
 func WithInputBindings(factorys ...*mbindings.InputBindingFactory) Option {
-	return func(o *runtimeOptions) {
-		o.services.inputBinding = append(o.services.inputBinding, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 // WithOutputBindings adds output binding components to the runtime.
 func WithOutputBindings(factorys ...*mbindings.OutputBindingFactory) Option {
-	return func(o *runtimeOptions) {
-		o.services.outputBinding = append(o.services.outputBinding, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithSequencerFactory(factorys ...*runtime_sequencer.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.sequencers = append(o.services.sequencers, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }
 
 func WithSecretStoresFactory(factorys ...*msecretstores.Factory) Option {
-	return func(o *runtimeOptions) {
-		o.services.secretStores = append(o.services.secretStores, factorys...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }

@@ -17,8 +17,6 @@
 package rpc
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 )
 
@@ -39,29 +37,15 @@ type rpcRegistry struct {
 type FactoryMethod func() Invoker
 
 // NewRegistry is init rpcRegistry
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &rpcRegistry{
-		rpc:  make(map[string]FactoryMethod),
-		info: info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
 // Register is responsible for register factory to map
-func (r rpcRegistry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.rpc[f.Name] = f.Fm
-		r.info.RegisterComponent(ServiceName, f.Name)
-	}
-}
+func (r rpcRegistry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 // Create is responsible for get registered factory
 func (r rpcRegistry) Create(name string) (Invoker, error) {
-	if f, ok := r.rpc[name]; ok {
-		r.info.LoadComponent(ServiceName, name)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not registered", name)
+	_ = "STUB: not implemented"
+	return *new(Invoker), nil
 }
 
 // Factory is NewRpcFactory implement
@@ -71,9 +55,4 @@ type Factory struct {
 }
 
 // NewRpcFactory is rpc create factory entrance
-func NewRpcFactory(name string, fm FactoryMethod) *Factory {
-	return &Factory{
-		Name: name,
-		Fm:   fm,
-	}
-}
+func NewRpcFactory(name string, fm FactoryMethod) *Factory { _ = "STUB: not implemented"; return nil }

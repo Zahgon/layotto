@@ -18,6 +18,4 @@ package actuator
 
 var singleton = New()
 
-func GetDefault() *Actuator {
-	return singleton
-}
+func GetDefault() *Actuator { _ = "STUB: not implemented"; return nil }

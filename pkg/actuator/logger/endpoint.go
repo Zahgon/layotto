@@ -18,10 +18,7 @@ package info
 
 import (
 	"context"
-	"encoding/json"
-	"errors"
 
-	log "mosn.io/layotto/kit/logger"
 	"mosn.io/layotto/pkg/actuator"
 	"mosn.io/layotto/pkg/filter/stream/common/http"
 )
@@ -39,24 +36,11 @@ type LoggerLevelChangedRequest struct {
 	Level     string `json:"level"`
 }
 
-func NewEndpoint() *Endpoint {
-	return &Endpoint{}
-}
+func NewEndpoint() *Endpoint { _ = "STUB: not implemented"; return nil }
 
 func (e *Endpoint) Handle(ctx context.Context, params http.ParamsScanner) (map[string]interface{}, error) {
-	result := make(map[string]interface{})
-
-	requestData := ctx.Value(http.ContextKeyRequestData{})
-	if requestData == nil {
-		return nil, errors.New("invalid request body")
-	}
-	var request LoggerLevelChangedRequest
-	err := json.Unmarshal(requestData.([]byte), &request)
-	if err != nil {
-		return nil, err
-	}
-	log.SetComponentLoggerLevel(request.Component, request.Level)
-	var resultErr error
-	// handle the infoContributors
-	return result, resultErr
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// handle the infoContributors

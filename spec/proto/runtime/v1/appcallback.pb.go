@@ -7,7 +7,6 @@
 package runtime
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -49,30 +48,34 @@ var (
 )
 
 func (x TopicEventResponse_TopicEventResponseStatus) Enum() *TopicEventResponse_TopicEventResponseStatus {
-	p := new(TopicEventResponse_TopicEventResponseStatus)
-	*p = x
-	return p
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x TopicEventResponse_TopicEventResponseStatus) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+	_ = "STUB: not implemented"
+	return ""
 }
 
 func (TopicEventResponse_TopicEventResponseStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_appcallback_proto_enumTypes[0].Descriptor()
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumDescriptor)
 }
 
 func (TopicEventResponse_TopicEventResponseStatus) Type() protoreflect.EnumType {
-	return &file_appcallback_proto_enumTypes[0]
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumType)
 }
 
 func (x TopicEventResponse_TopicEventResponseStatus) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.EnumNumber)
 }
 
 // Deprecated: Use TopicEventResponse_TopicEventResponseStatus.Descriptor instead.
 func (TopicEventResponse_TopicEventResponseStatus) EnumDescriptor() ([]byte, []int) {
-	return file_appcallback_proto_rawDescGZIP(), []int{1, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // TopicEventRequest message is compatible with CloudEvent spec v1.0
@@ -108,100 +111,37 @@ type TopicEventRequest struct {
 	Metadata map[string]string `protobuf:"bytes,10,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *TopicEventRequest) Reset() {
-	*x = TopicEventRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_appcallback_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *TopicEventRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TopicEventRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TopicEventRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TopicEventRequest) ProtoMessage() {}
+func (*TopicEventRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TopicEventRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_appcallback_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TopicEventRequest.ProtoReflect.Descriptor instead.
-func (*TopicEventRequest) Descriptor() ([]byte, []int) {
-	return file_appcallback_proto_rawDescGZIP(), []int{0}
-}
+func (*TopicEventRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *TopicEventRequest) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetId() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetSource() string {
-	if x != nil {
-		return x.Source
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetSource() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetSpecVersion() string {
-	if x != nil {
-		return x.SpecVersion
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetSpecVersion() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetDataContentType() string {
-	if x != nil {
-		return x.DataContentType
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetDataContentType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetData() []byte {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
+func (x *TopicEventRequest) GetData() []byte { _ = "STUB: not implemented"; return nil }
 
-func (x *TopicEventRequest) GetTopic() string {
-	if x != nil {
-		return x.Topic
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetTopic() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetPubsubName() string {
-	if x != nil {
-		return x.PubsubName
-	}
-	return ""
-}
+func (x *TopicEventRequest) GetPubsubName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicEventRequest) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *TopicEventRequest) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 // TopicEventResponse is response from app on published message
 type TopicEventResponse struct {
@@ -213,43 +153,23 @@ type TopicEventResponse struct {
 	Status TopicEventResponse_TopicEventResponseStatus `protobuf:"varint,1,opt,name=status,proto3,enum=spec.proto.runtime.v1.TopicEventResponse_TopicEventResponseStatus" json:"status,omitempty"`
 }
 
-func (x *TopicEventResponse) Reset() {
-	*x = TopicEventResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_appcallback_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *TopicEventResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TopicEventResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TopicEventResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TopicEventResponse) ProtoMessage() {}
+func (*TopicEventResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TopicEventResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_appcallback_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TopicEventResponse.ProtoReflect.Descriptor instead.
-func (*TopicEventResponse) Descriptor() ([]byte, []int) {
-	return file_appcallback_proto_rawDescGZIP(), []int{1}
-}
+func (*TopicEventResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 func (x *TopicEventResponse) GetStatus() TopicEventResponse_TopicEventResponseStatus {
-	if x != nil {
-		return x.Status
-	}
-	return TopicEventResponse_SUCCESS
+	_ = "STUB: not implemented"
+	return *new(TopicEventResponse_TopicEventResponseStatus)
 }
 
 // ListTopicSubscriptionsResponse is the message including the list of the subscribing topics.
@@ -262,42 +182,25 @@ type ListTopicSubscriptionsResponse struct {
 	Subscriptions []*TopicSubscription `protobuf:"bytes,1,rep,name=subscriptions,proto3" json:"subscriptions,omitempty"`
 }
 
-func (x *ListTopicSubscriptionsResponse) Reset() {
-	*x = ListTopicSubscriptionsResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_appcallback_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ListTopicSubscriptionsResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ListTopicSubscriptionsResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ListTopicSubscriptionsResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ListTopicSubscriptionsResponse) ProtoMessage() {}
+func (*ListTopicSubscriptionsResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ListTopicSubscriptionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_appcallback_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ListTopicSubscriptionsResponse.ProtoReflect.Descriptor instead.
 func (*ListTopicSubscriptionsResponse) Descriptor() ([]byte, []int) {
-	return file_appcallback_proto_rawDescGZIP(), []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *ListTopicSubscriptionsResponse) GetSubscriptions() []*TopicSubscription {
-	if x != nil {
-		return x.Subscriptions
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -315,58 +218,25 @@ type TopicSubscription struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *TopicSubscription) Reset() {
-	*x = TopicSubscription{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_appcallback_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *TopicSubscription) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *TopicSubscription) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *TopicSubscription) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*TopicSubscription) ProtoMessage() {}
+func (*TopicSubscription) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *TopicSubscription) ProtoReflect() protoreflect.Message {
-	mi := &file_appcallback_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use TopicSubscription.ProtoReflect.Descriptor instead.
-func (*TopicSubscription) Descriptor() ([]byte, []int) {
-	return file_appcallback_proto_rawDescGZIP(), []int{3}
-}
+func (*TopicSubscription) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *TopicSubscription) GetPubsubName() string {
-	if x != nil {
-		return x.PubsubName
-	}
-	return ""
-}
+func (x *TopicSubscription) GetPubsubName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicSubscription) GetTopic() string {
-	if x != nil {
-		return x.Topic
-	}
-	return ""
-}
+func (x *TopicSubscription) GetTopic() string { _ = "STUB: not implemented"; return "" }
 
-func (x *TopicSubscription) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *TopicSubscription) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 var File_appcallback_proto protoreflect.FileDescriptor
 
@@ -459,12 +329,7 @@ var (
 	file_appcallback_proto_rawDescData = file_appcallback_proto_rawDesc
 )
 
-func file_appcallback_proto_rawDescGZIP() []byte {
-	file_appcallback_proto_rawDescOnce.Do(func() {
-		file_appcallback_proto_rawDescData = protoimpl.X.CompressGZIP(file_appcallback_proto_rawDescData)
-	})
-	return file_appcallback_proto_rawDescData
-}
+func file_appcallback_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_appcallback_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_appcallback_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
@@ -494,78 +359,5 @@ var file_appcallback_proto_depIdxs = []int32{
 	0, // [0:4] is the sub-list for field type_name
 }
 
-func init() { file_appcallback_proto_init() }
-func file_appcallback_proto_init() {
-	if File_appcallback_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_appcallback_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TopicEventRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_appcallback_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TopicEventResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_appcallback_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListTopicSubscriptionsResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_appcallback_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*TopicSubscription); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_appcallback_proto_rawDesc,
-			NumEnums:      1,
-			NumMessages:   6,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_appcallback_proto_goTypes,
-		DependencyIndexes: file_appcallback_proto_depIdxs,
-		EnumInfos:         file_appcallback_proto_enumTypes,
-		MessageInfos:      file_appcallback_proto_msgTypes,
-	}.Build()
-	File_appcallback_proto = out.File
-	file_appcallback_proto_rawDesc = nil
-	file_appcallback_proto_goTypes = nil
-	file_appcallback_proto_depIdxs = nil
-}
+func init()                        { file_appcallback_proto_init() }
+func file_appcallback_proto_init() { _ = "STUB: not implemented"; return }

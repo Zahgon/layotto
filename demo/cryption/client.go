@@ -17,55 +17,16 @@
 package main
 
 import (
-	"context"
 	"fmt"
-
-	"mosn.io/layotto/spec/proto/extension/v1/cryption"
-
-	"google.golang.org/grpc"
 )
 
 const (
 	storeName = "cryption_demo"
 )
 
-func TestEncrypt() []byte {
-	conn, err := grpc.Dial("127.0.0.1:34904", grpc.WithInsecure())
-	if err != nil {
-		fmt.Printf("failed to establish connection: %+v", err)
-		return nil
-	}
+func TestEncrypt() []byte { _ = "STUB: not implemented"; return nil }
 
-	c := cryption.NewCryptionServiceClient(conn)
-
-	req := &cryption.EncryptRequest{ComponentName: storeName, PlainText: []byte("Hello, world")}
-
-	resp, err := c.Encrypt(context.Background(), req)
-	if err != nil {
-		fmt.Printf("failed to Encrypt data: %+v", err)
-		return nil
-	}
-	return resp.CipherText
-}
-
-func TestDecrypt(data []byte) []byte {
-	conn, err := grpc.Dial("127.0.0.1:34904", grpc.WithInsecure())
-	if err != nil {
-		fmt.Printf("failed to establish connection: %+v", err)
-		return nil
-	}
-
-	c := cryption.NewCryptionServiceClient(conn)
-
-	req := &cryption.DecryptRequest{ComponentName: storeName, CipherText: data}
-
-	resp, err := c.Decrypt(context.Background(), req)
-	if err != nil {
-		fmt.Printf("failed to Decrypt: %+v", err)
-		return nil
-	}
-	return resp.PlainText
-}
+func TestDecrypt(data []byte) []byte { _ = "STUB: not implemented"; return nil }
 
 func main() {
 	encyptContent := TestEncrypt()

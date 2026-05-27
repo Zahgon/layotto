@@ -33,42 +33,29 @@ type HelloWorld struct {
 }
 
 func (hw *HelloWorld) ApplyConfig(ctx context.Context, metadata map[string]string) (err error) {
-	greetings, ok := metadata["hello"]
-	if !ok {
-		return nil
-	}
-	hw.Say.Store(greetings)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (hw *HelloWorld) SetConfigStore(cs configstores.Store) (err error) {
+	_ = "STUB: not implemented"
 	//save for use
-	hw.config = cs
 	return nil
 }
+
 func (hw *HelloWorld) SetSecretStore(ss secretstores.SecretStore) (err error) {
+	_ = "STUB: not implemented"
 	//save for use
-	hw.secretStore = ss
 	return nil
 }
 
 var _ hello.HelloService = &HelloWorld{}
 
-func NewHelloWorld() hello.HelloService {
-	return &HelloWorld{}
-}
+func NewHelloWorld() hello.HelloService { _ = "STUB: not implemented"; return *new(hello.HelloService) }
 
-func (hw *HelloWorld) Init(config *hello.HelloConfig) error {
-	hw.Say.Store(config.HelloString)
-	return nil
-}
+func (hw *HelloWorld) Init(config *hello.HelloConfig) error { _ = "STUB: not implemented"; return nil }
 
 func (hw *HelloWorld) Hello(ctx context.Context, req *hello.HelloRequest) (*hello.HelloResponse, error) {
-	greetings, _ := hw.Say.Load().(string)
-	if req.Name != "" {
-		greetings = greetings + ", " + req.Name
-	}
-	return &hello.HelloResponse{
-		HelloString: greetings,
-	}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

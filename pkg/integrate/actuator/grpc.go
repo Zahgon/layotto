@@ -27,27 +27,15 @@ type GrpcServerWithActuator struct {
 }
 
 func (s *GrpcServerWithActuator) Serve(ln net.Listener) (err error) {
-	err = s.srv.Serve(ln)
-	if err != nil {
-		GetRuntimeReadinessIndicator().SetUnhealthy(err.Error())
-		GetRuntimeLivenessIndicator().SetUnhealthy(err.Error())
-	}
-	return
-}
-func (s *GrpcServerWithActuator) Stop() {
-	GetRuntimeReadinessIndicator().SetUnhealthy("shutdown")
-	GetRuntimeLivenessIndicator().SetUnhealthy("shutdown")
-	s.srv.Stop()
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (s *GrpcServerWithActuator) GracefulStop() {
-	GetRuntimeReadinessIndicator().SetUnhealthy("shutdown")
-	GetRuntimeLivenessIndicator().SetUnhealthy("shutdown")
-	s.srv.GracefulStop()
-}
+func (s *GrpcServerWithActuator) Stop() { _ = "STUB: not implemented"; return }
+
+func (s *GrpcServerWithActuator) GracefulStop() { _ = "STUB: not implemented"; return }
 
 func NewGrpcServerWithActuator(srv mgrpc.RegisteredServer) (mgrpc.RegisteredServer, error) {
-	return &GrpcServerWithActuator{
-		srv: srv,
-	}, nil
+	_ = "STUB: not implemented"
+	return *new(mgrpc.RegisteredServer), nil
 }

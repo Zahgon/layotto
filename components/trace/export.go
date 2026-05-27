@@ -27,27 +27,10 @@ var (
 	exporters sync.Map
 )
 
-func SetActiveExporters(exporter []string) {
-	activeExporters = exporter
-}
+func SetActiveExporters(exporter []string) { _ = "STUB: not implemented"; return }
 
-func GetExporter(name string) Exporter {
-	if v, ok := exporters.Load(name); ok {
-		return v.(Exporter)
-	}
-	return nil
-}
+func GetExporter(name string) Exporter { _ = "STUB: not implemented"; return *new(Exporter) }
 
-func RegisterExporter(name string, e Exporter) {
-	exporters.Store(name, e)
-}
+func RegisterExporter(name string, e Exporter) { _ = "STUB: not implemented"; return }
 
-func UnregisterExporter(name string) {
-	exporters.Delete(name)
-	for i, v := range activeExporters {
-		if v == name {
-			activeExporters = append(activeExporters[:i], activeExporters[i+1:]...)
-			return
-		}
-	}
-}
+func UnregisterExporter(name string) { _ = "STUB: not implemented"; return }

@@ -18,21 +18,14 @@ package jaeger
 
 import (
 	"context"
-	"os"
 	"time"
-
-	"github.com/pkg/errors"
 
 	"github.com/opentracing/opentracing-go"
 	jaegerc "github.com/uber/jaeger-client-go"
-	"github.com/uber/jaeger-client-go/config"
 	"mosn.io/api"
-	"mosn.io/mosn/pkg/log"
-	"mosn.io/mosn/pkg/trace/jaeger"
 	"mosn.io/mosn/pkg/types"
 
 	ltrace "mosn.io/layotto/components/trace"
-	"mosn.io/layotto/diagnostics/grpc"
 )
 
 const (
@@ -61,135 +54,56 @@ type grpcJaegerSpan struct {
 }
 
 func NewGrpcJaegerTracer(traceCfg map[string]interface{}) (api.Tracer, error) {
+	_ = "STUB: not implemented"
 	// 1. construct the ReporterConfig, which is used to communicate with jaeger
-	var reporter *config.ReporterConfig
-
-	// Determining whether to start the agent
-	strategy, err := getStrategy(traceCfg)
-
-	if err != nil {
-		return nil, err
-	}
-
-	if strategy == defaultStrategy {
-		reporter = &config.ReporterConfig{
-			LogSpans:            false,
-			BufferFlushInterval: 1 * time.Second,
-			CollectorEndpoint:   getCollectorEndpoint(traceCfg),
-		}
-	} else {
-		reporter = &config.ReporterConfig{
-			LogSpans:            false,
-			BufferFlushInterval: 1 * time.Second,
-			LocalAgentHostPort:  getAgentHost(traceCfg),
-		}
-	}
-	// 2. construct the Configuration
-	cfg := config.Configuration{
-		Disabled: false,
-		Sampler: &config.SamplerConfig{
-			Type:  "const",
-			Param: 1,
-		},
-		Reporter: reporter,
-	}
-
-	cfg.ServiceName = getServiceName(traceCfg)
-
-	// 3. use the Configuration to construct a new tracer
-	tracer, _, err := cfg.NewTracer()
-
-	log.DefaultLogger.Infof("[layotto] [jaeger] [tracer] report service name:%s", getServiceName(traceCfg))
-
-	if err != nil {
-		log.DefaultLogger.Errorf("[layotto] [jaeger] [tracer] cannot initialize Jaeger Tracer")
-		return nil, err
-	}
-
-	// 4. adapt to the `api.Tracer`
-	return &grpcJaegerTracer{
-		tracer: tracer,
-	}, nil
+	return *new(api.Tracer), nil
 }
 
-func getAgentHost(traceCfg map[string]interface{}) string {
-	if agentHost, ok := traceCfg[agentHost]; ok {
-		return agentHost.(string)
-	}
+// Determining whether to start the agent
 
-	//if TRACE is not set, get it from the env variable
-	if host := os.Getenv(jaegerAgentHostKey); host != "" {
-		return host
-	}
+// 2. construct the Configuration
 
-	return defaultJaegerAgentHost
-}
+// 3. use the Configuration to construct a new tracer
+
+// 4. adapt to the `api.Tracer`
+
+func getAgentHost(traceCfg map[string]interface{}) string { _ = "STUB: not implemented"; return "" }
+
+//if TRACE is not set, get it from the env variable
 
 func getStrategy(traceCfg map[string]interface{}) (string, error) {
-	if k, ok := traceCfg[strategy]; ok {
-		if ok && (k.(string) == defaultStrategy || k.(string) == "agent") {
-			return k.(string), nil
-		} else if ok {
-			return "", errors.New("Unknown Strategy")
-		}
-	}
-
-	return defaultStrategy, nil
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 func getCollectorEndpoint(traceCfg map[string]interface{}) string {
-	if collectorEndpoint, ok := traceCfg[collectorEndpoint]; ok {
-		return collectorEndpoint.(string)
-	}
-
-	return defaultCollectorEndpoint
+	_ = "STUB: not implemented"
+	return ""
 }
 
-func getServiceName(traceCfg map[string]interface{}) string {
-	if service, ok := traceCfg[serviceName]; ok {
-		return service.(string)
-	}
+func getServiceName(traceCfg map[string]interface{}) string { _ = "STUB: not implemented"; return "" }
 
-	//if service_name is not set, get it from the env variable
-	if appID := os.Getenv(appIDKey); appID != "" {
-		return appID + "_sidecar"
-	}
-
-	return defaultServiceName
-}
+//if service_name is not set, get it from the env variable
 
 func (t *grpcJaegerTracer) Start(ctx context.Context, request interface{}, startTime time.Time) api.Span {
-	header, ok := request.(*grpc.RequestInfo)
-	if !ok {
-		log.DefaultLogger.Debugf("[layotto] [jaeger] [tracer] unable to get request header, downstream trace ignored")
-		return &jaeger.Span{}
-	}
-
-	//create entry span (downstream)
-	sp, _ := opentracing.StartSpanFromContextWithTracer(ctx, t.tracer, header.FullMethod)
-
-	//renew span context
-	newSpanCtx, _ := sp.Context().(jaegerc.SpanContext)
-
-	return &grpcJaegerSpan{
-		trace:      t,
-		ctx:        ctx,
-		Span:       &ltrace.Span{},
-		spanCtx:    newSpanCtx,
-		jaegerSpan: sp,
-	}
+	_ = "STUB: not implemented"
+	return *new(api.Span)
 }
 
-func (s *grpcJaegerSpan) TraceId() string {
-	return s.spanCtx.TraceID().String()
-}
+//create entry span (downstream)
+
+//renew span context
+
+func (s *grpcJaegerSpan) TraceId() string { _ = "STUB: not implemented"; return "" }
 
 func (s *grpcJaegerSpan) InjectContext(requestHeaders types.HeaderMap, requestInfo api.RequestInfo) {
+	_ = "STUB: not implemented"
+	return
 }
 
 func (s *grpcJaegerSpan) SetRequestInfo(requestInfo api.RequestInfo) {
+	_ = "STUB: not implemented"
+	return
 }
 
-func (s *grpcJaegerSpan) FinishSpan() {
-	s.jaegerSpan.Finish()
-}
+func (s *grpcJaegerSpan) FinishSpan() { _ = "STUB: not implemented"; return }

@@ -19,12 +19,8 @@ package main
 import (
 	"context"
 	"flag"
-	"fmt"
-	"net"
-	"strconv"
 
 	"github.com/golang/protobuf/ptypes/empty"
-	"google.golang.org/grpc"
 
 	runtimev1pb "mosn.io/layotto/spec/proto/runtime/v1"
 )
@@ -44,41 +40,17 @@ func main() {
 	testSub()
 }
 
-func testSub() {
-	port := 9999
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
-	if err != nil {
-		panic("failed to listen on port " + strconv.Itoa(port))
-	}
-	grpcServer := grpc.NewServer()
-	runtimev1pb.RegisterAppCallbackServer(grpcServer, &AppCallbackServerImpl{})
-	fmt.Printf("Start listening on port %v ...... \n", port)
-	err = grpcServer.Serve(lis)
-	if err != nil {
-		panic(err)
-	}
-}
+func testSub() { _ = "STUB: not implemented"; return }
 
 type AppCallbackServerImpl struct {
 }
 
 func (a *AppCallbackServerImpl) ListTopicSubscriptions(ctx context.Context, empty *empty.Empty) (*runtimev1pb.ListTopicSubscriptionsResponse, error) {
-	result := &runtimev1pb.ListTopicSubscriptionsResponse{}
-	ts := &runtimev1pb.TopicSubscription{
-		PubsubName: storeName,
-		Topic:      "hello",
-		Metadata:   nil,
-	}
-	result.Subscriptions = append(result.Subscriptions, ts)
-	result.Subscriptions = append(result.Subscriptions, &runtimev1pb.TopicSubscription{
-		PubsubName: storeName,
-		Topic:      "topic1",
-		Metadata:   nil,
-	})
-	return result, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (a *AppCallbackServerImpl) OnTopicEvent(ctx context.Context, request *runtimev1pb.TopicEventRequest) (*runtimev1pb.TopicEventResponse, error) {
-	fmt.Printf("Received a new event.Topic: %s , Data: %s \n", request.Topic, request.Data)
-	return &runtimev1pb.TopicEventResponse{}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

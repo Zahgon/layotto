@@ -17,21 +17,14 @@
 package hdfs
 
 import (
-	"bytes"
 	"context"
-	"encoding/json"
 	"errors"
-	"fmt"
 	"io"
-	"io/ioutil"
-	"strconv"
 	"sync"
 
 	"mosn.io/layotto/components/file"
 	"mosn.io/layotto/components/pkg/actuators"
 
-	store "go.beyondstorage.io/services/hdfs"
-	"go.beyondstorage.io/v5/pairs"
 	"go.beyondstorage.io/v5/types"
 )
 
@@ -67,216 +60,54 @@ type HdfsMetaData struct {
 	EndPoint string `json:"endpoint"`
 }
 
-func NewHdfs() file.File {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	return &hdfs{
-		client: make(map[string]types.Storager),
-		meta:   make(map[string]*HdfsMetaData),
-	}
-}
+func NewHdfs() file.File { _ = "STUB: not implemented"; return *new(file.File) }
 
 func (h *hdfs) Init(ctx context.Context, config *file.FileConfig) error {
-	hd := make([]*HdfsMetaData, 0)
-	err := json.Unmarshal(config.Metadata, &hd)
-
-	if err != nil {
-		return ErrInvalidConfig
-	}
-	for _, data := range hd {
-		if !data.isHdfsMetaValid() {
-			return ErrInvalidConfig
-		}
-		client, err := h.createHdfsClient(data)
-
-		if err != nil {
-			readinessIndicator.ReportError(err.Error())
-			livenessIndicator.ReportError(err.Error())
-			return ErrInitFailed
-		}
-
-		h.client[data.EndPoint] = client
-		h.meta[data.EndPoint] = data
-	}
-
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (h *hdfs) Put(ctx context.Context, stu *file.PutFileStu) error {
-	endpoint := stu.Metadata[endpointKey]
-
-	//It depends on OS HDFS XML ???
-	if endpoint == "" {
-		return ErrMissingEndPoint
-	}
-
-	client, err := h.selectClient(stu.Metadata)
-	if err != nil {
-		return err
-	}
-
-	var size int64
-	if filesize, ok := stu.Metadata[fileSize]; ok {
-		size, err = strconv.ParseInt(filesize, 10, 64)
-		if err != nil {
-			return err
-		}
-	}
-
-	_, err = client.Write(stu.FileName, stu.DataStream, size)
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
 
+//It depends on OS HDFS XML ???
+
 func (h *hdfs) Get(ctx context.Context, stu *file.GetFileStu) (io.ReadCloser, error) {
-	if _, ok := stu.Metadata[endpointKey]; !ok {
-		return nil, ErrMissingEndPoint
-	}
-	client, err := h.selectClient(stu.Metadata)
-	if err != nil {
-		return nil, err
-	}
-
-	var w bytes.Buffer
-	_, err = client.Read(stu.FileName, &w)
-	if err != nil {
-		return nil, err
-	}
-	r := ioutil.NopCloser(bytes.NewReader(w.Bytes()))
-
-	return r, nil
+	_ = "STUB: not implemented"
+	return *new(io.ReadCloser), nil
 }
 
 func (h *hdfs) List(ctx context.Context, request *file.ListRequest) (*file.ListResp, error) {
-	if _, ok := request.Metadata[endpointKey]; !ok {
-		return nil, ErrMissingEndPoint
-	}
-
-	client, err := h.selectClient(request.Metadata)
-	if err != nil {
-		return nil, err
-	}
-	starter := ""
-	resp := &file.ListResp{}
-
-	it, err := client.List(starter)
-	if err != nil {
-		return nil, ErrHdfsListFail
-	}
-
-	marker := ""
-	for {
-		o, err := it.Next()
-		if err != nil && !errors.Is(err, types.IterateDone) {
-			return nil, err
-		}
-
-		if err != nil {
-			fmt.Println("list completed")
-			break
-		}
-		file := &file.FilesInfo{}
-		file.FileName = o.Path
-
-		size, ok := o.GetContentLength()
-		if !ok {
-			return nil, fmt.Errorf("Hdfs list path[%s] size fail, err: %s", o.Path, err.Error())
-		}
-
-		file.Size = size
-
-		time, ok := o.GetLastModified()
-		if !ok {
-			return nil, fmt.Errorf("Hdfs list path[%s] lastModified fail, err: %s", o.Path, err.Error())
-		}
-		file.LastModified = time.String()
-
-		resp.Files = append(resp.Files, file)
-
-		marker = o.Path
-	}
-
-	resp.Marker = marker
-
-	return resp, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (h *hdfs) Del(ctx context.Context, request *file.DelRequest) error {
-	if _, ok := request.Metadata[endpointKey]; !ok {
-		return ErrMissingEndPoint
-	}
-
-	client, err := h.selectClient(request.Metadata)
-	if err != nil {
-		return err
-	}
-	return client.Delete(request.FileName)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (h *hdfs) Stat(ctx context.Context, request *file.FileMetaRequest) (*file.FileMetaResp, error) {
-
-	clinet, err := h.selectClient(request.Metadata)
-	if err != nil {
-		return nil, err
-	}
-
-	stat, err := clinet.Stat(request.FileName)
-	if err != nil {
-		return nil, err
-	}
-
-	resp := &file.FileMetaResp{}
-
-	size, ok := stat.GetContentLength()
-	if !ok {
-		return nil, fmt.Errorf("Hdfs stat file[%s] size fail, err: %s", stat.Path, err.Error())
-	}
-
-	resp.Size = size
-
-	time, ok := stat.GetLastModified()
-	if !ok {
-		return nil, fmt.Errorf("Hdfs stat file[%s] lastModified fail, err: %s", stat.Path, err.Error())
-	}
-
-	resp.LastModified = time.String()
-
-	return resp, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (h *hdfs) selectClient(meta map[string]string) (client types.Storager, err error) {
-	var endpoint string
-	var ok bool
-
-	//endpoint not invaild
-	if endpoint, ok = meta[endpointKey]; !ok {
-
-		if len(h.client) == 1 {
-			for _, client := range h.client {
-				return client, nil
-			}
-		}
-		//May be not use?
-		//Because BeyondStorage implemented storage type cannot be assigned a value
-		return nil, ErrNotSpecifyEndpoint
-	}
-
-	if client, ok = h.client[endpoint]; !ok {
-		err = ErrClientNotExist
-		return
-	}
-	return client, err
+	_ = "STUB: not implemented"
+	return *new(types.Storager), nil
 }
 
+//endpoint not invaild
+
+//May be not use?
+//Because BeyondStorage implemented storage type cannot be assigned a value
+
 func (h *hdfs) createHdfsClient(meta *HdfsMetaData) (types.Storager, error) {
-	return store.NewStorager(pairs.WithEndpoint(meta.EndPoint))
+	_ = "STUB: not implemented"
+	return *new(types.Storager), nil
 }
 
 // ishdfsMetaValid check if the metadata is valid
-func (hm *HdfsMetaData) isHdfsMetaValid() bool {
-	return hm.EndPoint != ""
-}
+func (hm *HdfsMetaData) isHdfsMetaValid() bool { _ = "STUB: not implemented"; return false }

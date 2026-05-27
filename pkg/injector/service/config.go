@@ -14,7 +14,6 @@
 package service
 
 import (
-	"github.com/kelseyhightower/envconfig"
 	corev1 "k8s.io/api/core/v1"
 )
 
@@ -30,32 +29,16 @@ type Config struct {
 // NewConfigWithDefaults returns a Config object with default values already
 // applied. Callers are then free to set custom values for the remaining fields
 // and/or override default values.
-func NewConfigWithDefaults() Config {
-	return Config{
-		SidecarImagePullPolicy: "Always",
-	}
-}
+func NewConfigWithDefaults() Config { _ = "STUB: not implemented"; return *new(Config) }
 
 // GetConfig returns configuration derived from environment variables.
 func GetConfig() (Config, error) {
+	_ = "STUB: not implemented"
 	// get config from environment variables
-	c := NewConfigWithDefaults()
-	err := envconfig.Process("", &c)
-	if err != nil {
-		return c, err
-	}
-	return c, nil
+	return *new(Config), nil
 }
 
 func (c Config) GetPullPolicy() corev1.PullPolicy {
-	switch c.SidecarImagePullPolicy {
-	case "Always":
-		return corev1.PullAlways
-	case "Never":
-		return corev1.PullNever
-	case "IfNotPresent":
-		return corev1.PullIfNotPresent
-	default:
-		return corev1.PullIfNotPresent
-	}
+	_ = "STUB: not implemented"
+	return *new(corev1.PullPolicy)
 }

@@ -29,17 +29,14 @@ type RefContainer struct {
 }
 
 // NewRefContainer return a new container
-func NewRefContainer() *RefContainer {
-	return &RefContainer{
-		SecretRef: make(map[string]secretstores.SecretStore),
-		ConfigRef: make(map[string]configstores.Store),
-	}
-}
+func NewRefContainer() *RefContainer { _ = "STUB: not implemented"; return nil }
 
 func (r *RefContainer) getSecretStore(key string) secretstores.SecretStore {
-	return r.SecretRef[key]
+	_ = "STUB: not implemented"
+	return *new(secretstores.SecretStore)
 }
 
 func (r *RefContainer) getConfigStore(key string) configstores.Store {
-	return r.ConfigRef[key]
+	_ = "STUB: not implemented"
+	return *new(configstores.Store)
 }

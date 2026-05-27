@@ -18,7 +18,6 @@ package channel
 
 import (
 	"errors"
-	"fmt"
 	"net"
 	"time"
 
@@ -54,59 +53,65 @@ type ChannelConfig struct {
 
 // GetChannel creates a rpc.Channel according to config.Protocol
 func GetChannel(config ChannelConfig) (rpc.Channel, error) {
-	c, ok := registry[config.Protocol]
-	if !ok {
-		return nil, fmt.Errorf("channel %s not found", config.Protocol)
-	}
-	return c(config)
+	_ = "STUB: not implemented"
+	return *new(rpc.Channel), nil
 }
 
 // RegistChannel is set protocol
 func RegistChannel(proto string, f func(config ChannelConfig) (rpc.Channel, error)) {
-	registry[proto] = f
+	_ = "STUB: not implemented"
+	return
+
+	// fakeTcpConn simulates tcp connection. It implements net.Conn
 }
 
-// fakeTcpConn simulates tcp connection. It implements net.Conn
 type fakeTcpConn struct {
 	c net.Conn
 }
 
 // read data
 func (t *fakeTcpConn) Read(b []byte) (n int, err error) {
-	return t.c.Read(b)
+	_ = "STUB: not implemented"
+
+	// write data
+	return 0, nil
 }
 
-// write data
 func (t *fakeTcpConn) Write(b []byte) (n int, err error) {
-	return t.c.Write(b)
+	_ = "STUB: not implemented"
+	return 0,
+
+		// Close is closed connected
+		nil
 }
 
-// Close is closed connected
 func (t *fakeTcpConn) Close() error {
-	return t.c.Close()
+	_ = "STUB: not implemented"
+
+	// LocalAddr is get local net address
+	return nil
 }
 
-// LocalAddr is get local net address
 func (t *fakeTcpConn) LocalAddr() net.Addr {
-	return &net.TCPAddr{}
+	_ = "STUB: not implemented"
+	return *
+
+	// RemoteAddr is get remote address
+	new(net.Addr)
 }
 
-// RemoteAddr is get remote address
 func (t *fakeTcpConn) RemoteAddr() net.Addr {
-	return &net.TCPAddr{}
+	_ = "STUB: not implemented"
+	return *
+
+	// SetDeadline is set deadline
+	new(net.Addr)
 }
 
-// SetDeadline is set deadline
-func (t *fakeTcpConn) SetDeadline(time time.Time) error {
-	return t.c.SetDeadline(time)
-}
+func (t *fakeTcpConn) SetDeadline(time time.Time) error { _ = "STUB: not implemented"; return nil }
 
 // SetReadDeadline is set read deadline
-func (t *fakeTcpConn) SetReadDeadline(time time.Time) error {
-	return t.c.SetReadDeadline(time)
-}
+func (t *fakeTcpConn) SetReadDeadline(time time.Time) error { _ = "STUB: not implemented"; return nil }
 
 // SetWriteDeadline is set write deadline
-func (t fakeTcpConn) SetWriteDeadline(time time.Time) error {
-	return t.c.SetWriteDeadline(time)
-}
+func (t fakeTcpConn) SetWriteDeadline(time time.Time) error { _ = "STUB: not implemented"; return nil }

@@ -18,12 +18,9 @@ package update
 
 import (
 	"context"
-	"errors"
 
 	"mosn.io/layotto/pkg/filter/stream/common/http"
 	"mosn.io/layotto/pkg/wasm"
-
-	wasm2 "mosn.io/mosn/pkg/wasm"
 
 	"mosn.io/layotto/kit/logger"
 )
@@ -37,45 +34,9 @@ type Endpoint struct {
 	logger logger.Logger
 }
 
-func NewEndpoint(logger logger.Logger) *Endpoint {
-	return &Endpoint{
-		logger: logger,
-	}
-}
+func NewEndpoint(logger logger.Logger) *Endpoint { _ = "STUB: not implemented"; return nil }
 
 func (e *Endpoint) Handle(ctx context.Context, params http.ParamsScanner) (map[string]interface{}, error) {
-	conf, err := http.GetRequestData(ctx)
-	if err != nil {
-		e.logger.Errorf("[wasm][update] invalid request body for request /wasm/update, err:%v", err)
-		return map[string]interface{}{"error": err.Error()}, err
-	}
-
-	if conf["name"] == nil {
-		errorMessage := "can't get name property"
-		e.logger.Errorf("[wasm][update] %v", errorMessage)
-		return map[string]interface{}{"error": errorMessage}, errors.New(errorMessage)
-	}
-
-	if conf["instance_num"] == nil {
-		errorMessage := "can't get instance_num property"
-		e.logger.Errorf("[wasm][update] %v", errorMessage)
-		return map[string]interface{}{"error": errorMessage}, errors.New(errorMessage)
-	}
-
-	instanceNum := int(conf["instance_num"].(float64))
-	if instanceNum <= 0 {
-		errorMessage := "instance_num should be greater than 0"
-		e.logger.Errorf("[wasm][update] %v", errorMessage)
-		return map[string]interface{}{"error": errorMessage}, errors.New(errorMessage)
-	}
-
-	id := (conf["name"]).(string)
-	factory := wasm.GetFactory()
-	err = factory.UpdateInstanceNum(id, instanceNum, wasm2.GetWasmManager())
-	if err != nil {
-		e.logger.Errorf("[wasm][update] %v", err)
-		return map[string]interface{}{"error": err.Error()}, err
-	}
-	e.logger.Infof("[wasm] [update] wasm instance number updated success, id: %v, num: %v", id, instanceNum)
+	_ = "STUB: not implemented"
 	return nil, nil
 }

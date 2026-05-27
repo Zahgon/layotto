@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
@@ -111,16 +109,13 @@ type objectStorageServiceClient struct {
 }
 
 func NewObjectStorageServiceClient(cc grpc.ClientConnInterface) ObjectStorageServiceClient {
-	return &objectStorageServiceClient{cc}
+	_ = "STUB: not implemented"
+	return *new(ObjectStorageServiceClient)
 }
 
 func (c *objectStorageServiceClient) PutObject(ctx context.Context, opts ...grpc.CallOption) (ObjectStorageService_PutObjectClient, error) {
-	stream, err := c.cc.NewStream(ctx, &ObjectStorageService_ServiceDesc.Streams[0], "/spec.proto.extension.v1.s3.ObjectStorageService/PutObject", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &objectStorageServicePutObjectClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(ObjectStorageService_PutObjectClient), nil
 }
 
 type ObjectStorageService_PutObjectClient interface {
@@ -134,33 +129,18 @@ type objectStorageServicePutObjectClient struct {
 }
 
 func (x *objectStorageServicePutObjectClient) Send(m *PutObjectInput) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *objectStorageServicePutObjectClient) CloseAndRecv() (*PutObjectOutput, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(PutObjectOutput)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) GetObject(ctx context.Context, in *GetObjectInput, opts ...grpc.CallOption) (ObjectStorageService_GetObjectClient, error) {
-	stream, err := c.cc.NewStream(ctx, &ObjectStorageService_ServiceDesc.Streams[1], "/spec.proto.extension.v1.s3.ObjectStorageService/GetObject", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &objectStorageServiceGetObjectClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(ObjectStorageService_GetObjectClient), nil
 }
 
 type ObjectStorageService_GetObjectClient interface {
@@ -173,128 +153,73 @@ type objectStorageServiceGetObjectClient struct {
 }
 
 func (x *objectStorageServiceGetObjectClient) Recv() (*GetObjectOutput, error) {
-	m := new(GetObjectOutput)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) DeleteObject(ctx context.Context, in *DeleteObjectInput, opts ...grpc.CallOption) (*DeleteObjectOutput, error) {
-	out := new(DeleteObjectOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/DeleteObject", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) CopyObject(ctx context.Context, in *CopyObjectInput, opts ...grpc.CallOption) (*CopyObjectOutput, error) {
-	out := new(CopyObjectOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/CopyObject", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) DeleteObjects(ctx context.Context, in *DeleteObjectsInput, opts ...grpc.CallOption) (*DeleteObjectsOutput, error) {
-	out := new(DeleteObjectsOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/DeleteObjects", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) ListObjects(ctx context.Context, in *ListObjectsInput, opts ...grpc.CallOption) (*ListObjectsOutput, error) {
-	out := new(ListObjectsOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/ListObjects", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) HeadObject(ctx context.Context, in *HeadObjectInput, opts ...grpc.CallOption) (*HeadObjectOutput, error) {
-	out := new(HeadObjectOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/HeadObject", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) IsObjectExist(ctx context.Context, in *IsObjectExistInput, opts ...grpc.CallOption) (*IsObjectExistOutput, error) {
-	out := new(IsObjectExistOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/IsObjectExist", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) PutObjectTagging(ctx context.Context, in *PutObjectTaggingInput, opts ...grpc.CallOption) (*PutObjectTaggingOutput, error) {
-	out := new(PutObjectTaggingOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/PutObjectTagging", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) DeleteObjectTagging(ctx context.Context, in *DeleteObjectTaggingInput, opts ...grpc.CallOption) (*DeleteObjectTaggingOutput, error) {
-	out := new(DeleteObjectTaggingOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/DeleteObjectTagging", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) GetObjectTagging(ctx context.Context, in *GetObjectTaggingInput, opts ...grpc.CallOption) (*GetObjectTaggingOutput, error) {
-	out := new(GetObjectTaggingOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/GetObjectTagging", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) GetObjectCannedAcl(ctx context.Context, in *GetObjectCannedAclInput, opts ...grpc.CallOption) (*GetObjectCannedAclOutput, error) {
-	out := new(GetObjectCannedAclOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/GetObjectCannedAcl", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) PutObjectCannedAcl(ctx context.Context, in *PutObjectCannedAclInput, opts ...grpc.CallOption) (*PutObjectCannedAclOutput, error) {
-	out := new(PutObjectCannedAclOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/PutObjectCannedAcl", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) CreateMultipartUpload(ctx context.Context, in *CreateMultipartUploadInput, opts ...grpc.CallOption) (*CreateMultipartUploadOutput, error) {
-	out := new(CreateMultipartUploadOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/CreateMultipartUpload", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) UploadPart(ctx context.Context, opts ...grpc.CallOption) (ObjectStorageService_UploadPartClient, error) {
-	stream, err := c.cc.NewStream(ctx, &ObjectStorageService_ServiceDesc.Streams[2], "/spec.proto.extension.v1.s3.ObjectStorageService/UploadPart", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &objectStorageServiceUploadPartClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(ObjectStorageService_UploadPartClient), nil
 }
 
 type ObjectStorageService_UploadPartClient interface {
@@ -308,108 +233,63 @@ type objectStorageServiceUploadPartClient struct {
 }
 
 func (x *objectStorageServiceUploadPartClient) Send(m *UploadPartInput) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *objectStorageServiceUploadPartClient) CloseAndRecv() (*UploadPartOutput, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(UploadPartOutput)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) UploadPartCopy(ctx context.Context, in *UploadPartCopyInput, opts ...grpc.CallOption) (*UploadPartCopyOutput, error) {
-	out := new(UploadPartCopyOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/UploadPartCopy", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) CompleteMultipartUpload(ctx context.Context, in *CompleteMultipartUploadInput, opts ...grpc.CallOption) (*CompleteMultipartUploadOutput, error) {
-	out := new(CompleteMultipartUploadOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/CompleteMultipartUpload", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) AbortMultipartUpload(ctx context.Context, in *AbortMultipartUploadInput, opts ...grpc.CallOption) (*AbortMultipartUploadOutput, error) {
-	out := new(AbortMultipartUploadOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/AbortMultipartUpload", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) ListMultipartUploads(ctx context.Context, in *ListMultipartUploadsInput, opts ...grpc.CallOption) (*ListMultipartUploadsOutput, error) {
-	out := new(ListMultipartUploadsOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/ListMultipartUploads", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) ListParts(ctx context.Context, in *ListPartsInput, opts ...grpc.CallOption) (*ListPartsOutput, error) {
-	out := new(ListPartsOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/ListParts", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) ListObjectVersions(ctx context.Context, in *ListObjectVersionsInput, opts ...grpc.CallOption) (*ListObjectVersionsOutput, error) {
-	out := new(ListObjectVersionsOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/ListObjectVersions", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) SignURL(ctx context.Context, in *SignURLInput, opts ...grpc.CallOption) (*SignURLOutput, error) {
-	out := new(SignURLOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/SignURL", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) UpdateDownloadBandwidthRateLimit(ctx context.Context, in *UpdateBandwidthRateLimitInput, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/UpdateDownloadBandwidthRateLimit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) UpdateUploadBandwidthRateLimit(ctx context.Context, in *UpdateBandwidthRateLimitInput, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/UpdateUploadBandwidthRateLimit", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) AppendObject(ctx context.Context, opts ...grpc.CallOption) (ObjectStorageService_AppendObjectClient, error) {
-	stream, err := c.cc.NewStream(ctx, &ObjectStorageService_ServiceDesc.Streams[3], "/spec.proto.extension.v1.s3.ObjectStorageService/AppendObject", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &objectStorageServiceAppendObjectClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(ObjectStorageService_AppendObjectClient), nil
 }
 
 type ObjectStorageService_AppendObjectClient interface {
@@ -423,27 +303,18 @@ type objectStorageServiceAppendObjectClient struct {
 }
 
 func (x *objectStorageServiceAppendObjectClient) Send(m *AppendObjectInput) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *objectStorageServiceAppendObjectClient) CloseAndRecv() (*AppendObjectOutput, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(AppendObjectOutput)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *objectStorageServiceClient) RestoreObject(ctx context.Context, in *RestoreObjectInput, opts ...grpc.CallOption) (*RestoreObjectOutput, error) {
-	out := new(RestoreObjectOutput)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.s3.ObjectStorageService/RestoreObject", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ObjectStorageServiceServer is the server API for ObjectStorageService service.
@@ -537,82 +408,133 @@ type UnimplementedObjectStorageServiceServer struct {
 }
 
 func (UnimplementedObjectStorageServiceServer) PutObject(ObjectStorageService_PutObjectServer) error {
-	return status.Errorf(codes.Unimplemented, "method PutObject not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedObjectStorageServiceServer) GetObject(*GetObjectInput, ObjectStorageService_GetObjectServer) error {
-	return status.Errorf(codes.Unimplemented, "method GetObject not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedObjectStorageServiceServer) DeleteObject(context.Context, *DeleteObjectInput) (*DeleteObjectOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteObject not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) CopyObject(context.Context, *CopyObjectInput) (*CopyObjectOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CopyObject not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) DeleteObjects(context.Context, *DeleteObjectsInput) (*DeleteObjectsOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteObjects not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) ListObjects(context.Context, *ListObjectsInput) (*ListObjectsOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListObjects not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) HeadObject(context.Context, *HeadObjectInput) (*HeadObjectOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method HeadObject not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) IsObjectExist(context.Context, *IsObjectExistInput) (*IsObjectExistOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method IsObjectExist not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) PutObjectTagging(context.Context, *PutObjectTaggingInput) (*PutObjectTaggingOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PutObjectTagging not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) DeleteObjectTagging(context.Context, *DeleteObjectTaggingInput) (*DeleteObjectTaggingOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteObjectTagging not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) GetObjectTagging(context.Context, *GetObjectTaggingInput) (*GetObjectTaggingOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetObjectTagging not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) GetObjectCannedAcl(context.Context, *GetObjectCannedAclInput) (*GetObjectCannedAclOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetObjectCannedAcl not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) PutObjectCannedAcl(context.Context, *PutObjectCannedAclInput) (*PutObjectCannedAclOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PutObjectCannedAcl not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) CreateMultipartUpload(context.Context, *CreateMultipartUploadInput) (*CreateMultipartUploadOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateMultipartUpload not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) UploadPart(ObjectStorageService_UploadPartServer) error {
-	return status.Errorf(codes.Unimplemented, "method UploadPart not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedObjectStorageServiceServer) UploadPartCopy(context.Context, *UploadPartCopyInput) (*UploadPartCopyOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UploadPartCopy not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) CompleteMultipartUpload(context.Context, *CompleteMultipartUploadInput) (*CompleteMultipartUploadOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CompleteMultipartUpload not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) AbortMultipartUpload(context.Context, *AbortMultipartUploadInput) (*AbortMultipartUploadOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AbortMultipartUpload not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) ListMultipartUploads(context.Context, *ListMultipartUploadsInput) (*ListMultipartUploadsOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListMultipartUploads not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) ListParts(context.Context, *ListPartsInput) (*ListPartsOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListParts not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) ListObjectVersions(context.Context, *ListObjectVersionsInput) (*ListObjectVersionsOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListObjectVersions not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) SignURL(context.Context, *SignURLInput) (*SignURLOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SignURL not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) UpdateDownloadBandwidthRateLimit(context.Context, *UpdateBandwidthRateLimitInput) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateDownloadBandwidthRateLimit not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) UpdateUploadBandwidthRateLimit(context.Context, *UpdateBandwidthRateLimitInput) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateUploadBandwidthRateLimit not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedObjectStorageServiceServer) AppendObject(ObjectStorageService_AppendObjectServer) error {
-	return status.Errorf(codes.Unimplemented, "method AppendObject not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedObjectStorageServiceServer) RestoreObject(context.Context, *RestoreObjectInput) (*RestoreObjectOutput, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RestoreObject not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeObjectStorageServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -623,11 +545,13 @@ type UnsafeObjectStorageServiceServer interface {
 }
 
 func RegisterObjectStorageServiceServer(s grpc.ServiceRegistrar, srv ObjectStorageServiceServer) {
-	s.RegisterService(&ObjectStorageService_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _ObjectStorageService_PutObject_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(ObjectStorageServiceServer).PutObject(&objectStorageServicePutObjectServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type ObjectStorageService_PutObjectServer interface {
@@ -641,23 +565,18 @@ type objectStorageServicePutObjectServer struct {
 }
 
 func (x *objectStorageServicePutObjectServer) SendAndClose(m *PutObjectOutput) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *objectStorageServicePutObjectServer) Recv() (*PutObjectInput, error) {
-	m := new(PutObjectInput)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_GetObject_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(GetObjectInput)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(ObjectStorageServiceServer).GetObject(m, &objectStorageServiceGetObjectServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type ObjectStorageService_GetObjectServer interface {
@@ -670,227 +589,73 @@ type objectStorageServiceGetObjectServer struct {
 }
 
 func (x *objectStorageServiceGetObjectServer) Send(m *GetObjectOutput) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func _ObjectStorageService_DeleteObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteObjectInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).DeleteObject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/DeleteObject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).DeleteObject(ctx, req.(*DeleteObjectInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_CopyObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CopyObjectInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).CopyObject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/CopyObject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).CopyObject(ctx, req.(*CopyObjectInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_DeleteObjects_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteObjectsInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).DeleteObjects(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/DeleteObjects",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).DeleteObjects(ctx, req.(*DeleteObjectsInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_ListObjects_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListObjectsInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).ListObjects(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/ListObjects",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).ListObjects(ctx, req.(*ListObjectsInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_HeadObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HeadObjectInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).HeadObject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/HeadObject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).HeadObject(ctx, req.(*HeadObjectInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_IsObjectExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IsObjectExistInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).IsObjectExist(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/IsObjectExist",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).IsObjectExist(ctx, req.(*IsObjectExistInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_PutObjectTagging_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PutObjectTaggingInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).PutObjectTagging(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/PutObjectTagging",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).PutObjectTagging(ctx, req.(*PutObjectTaggingInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_DeleteObjectTagging_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteObjectTaggingInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).DeleteObjectTagging(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/DeleteObjectTagging",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).DeleteObjectTagging(ctx, req.(*DeleteObjectTaggingInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_GetObjectTagging_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetObjectTaggingInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).GetObjectTagging(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/GetObjectTagging",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).GetObjectTagging(ctx, req.(*GetObjectTaggingInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_GetObjectCannedAcl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetObjectCannedAclInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).GetObjectCannedAcl(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/GetObjectCannedAcl",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).GetObjectCannedAcl(ctx, req.(*GetObjectCannedAclInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_PutObjectCannedAcl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PutObjectCannedAclInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).PutObjectCannedAcl(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/PutObjectCannedAcl",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).PutObjectCannedAcl(ctx, req.(*PutObjectCannedAclInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_CreateMultipartUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateMultipartUploadInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).CreateMultipartUpload(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/CreateMultipartUpload",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).CreateMultipartUpload(ctx, req.(*CreateMultipartUploadInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_UploadPart_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(ObjectStorageServiceServer).UploadPart(&objectStorageServiceUploadPartServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type ObjectStorageService_UploadPartServer interface {
@@ -904,181 +669,63 @@ type objectStorageServiceUploadPartServer struct {
 }
 
 func (x *objectStorageServiceUploadPartServer) SendAndClose(m *UploadPartOutput) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *objectStorageServiceUploadPartServer) Recv() (*UploadPartInput, error) {
-	m := new(UploadPartInput)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_UploadPartCopy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UploadPartCopyInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).UploadPartCopy(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/UploadPartCopy",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).UploadPartCopy(ctx, req.(*UploadPartCopyInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_CompleteMultipartUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CompleteMultipartUploadInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).CompleteMultipartUpload(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/CompleteMultipartUpload",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).CompleteMultipartUpload(ctx, req.(*CompleteMultipartUploadInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_AbortMultipartUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AbortMultipartUploadInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).AbortMultipartUpload(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/AbortMultipartUpload",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).AbortMultipartUpload(ctx, req.(*AbortMultipartUploadInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_ListMultipartUploads_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListMultipartUploadsInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).ListMultipartUploads(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/ListMultipartUploads",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).ListMultipartUploads(ctx, req.(*ListMultipartUploadsInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_ListParts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListPartsInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).ListParts(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/ListParts",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).ListParts(ctx, req.(*ListPartsInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_ListObjectVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListObjectVersionsInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).ListObjectVersions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/ListObjectVersions",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).ListObjectVersions(ctx, req.(*ListObjectVersionsInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_SignURL_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SignURLInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).SignURL(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/SignURL",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).SignURL(ctx, req.(*SignURLInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_UpdateDownloadBandwidthRateLimit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBandwidthRateLimitInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).UpdateDownloadBandwidthRateLimit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/UpdateDownloadBandwidthRateLimit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).UpdateDownloadBandwidthRateLimit(ctx, req.(*UpdateBandwidthRateLimitInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_UpdateUploadBandwidthRateLimit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBandwidthRateLimitInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).UpdateUploadBandwidthRateLimit(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/UpdateUploadBandwidthRateLimit",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).UpdateUploadBandwidthRateLimit(ctx, req.(*UpdateBandwidthRateLimitInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_AppendObject_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(ObjectStorageServiceServer).AppendObject(&objectStorageServiceAppendObjectServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type ObjectStorageService_AppendObjectServer interface {
@@ -1092,33 +739,18 @@ type objectStorageServiceAppendObjectServer struct {
 }
 
 func (x *objectStorageServiceAppendObjectServer) SendAndClose(m *AppendObjectOutput) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *objectStorageServiceAppendObjectServer) Recv() (*AppendObjectInput, error) {
-	m := new(AppendObjectInput)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ObjectStorageService_RestoreObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RestoreObjectInput)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ObjectStorageServiceServer).RestoreObject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.s3.ObjectStorageService/RestoreObject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ObjectStorageServiceServer).RestoreObject(ctx, req.(*RestoreObjectInput))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ObjectStorageService_ServiceDesc is the grpc.ServiceDesc for ObjectStorageService service.

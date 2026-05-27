@@ -14,18 +14,9 @@
 package pluggable
 
 import (
-	"context"
-	"os"
-	"path/filepath"
-	"time"
-
-	reflectpb "google.golang.org/grpc/reflection/grpc_reflection_v1alpha"
-
-	"github.com/jhump/protoreflect/grpcreflect"
 	"google.golang.org/grpc"
 
 	"mosn.io/layotto/components/pluggable"
-	"mosn.io/layotto/pkg/common"
 )
 
 const (
@@ -37,27 +28,18 @@ const (
 )
 
 // GetSocketFolderPath gets the path of folder storing pluggable component socket files.
-func GetSocketFolderPath() string {
-	if v, ok := os.LookupEnv(SocketFolderEnvVar); ok {
-		return v
-	}
-	return defaultSocketFolder
-}
+func GetSocketFolderPath() string { _ = "STUB: not implemented"; return "" }
 
 // Discover discovers pluggable component.
 // At present, layotto only support register component from unix domain socket connection,
 // and not compatible with windows.
 func Discover() ([]pluggable.Component, error) {
+	_ = "STUB: not implemented"
 	// 1. discover pluggable component
-	serviceList, err := discover()
-	if err != nil {
-		return nil, err
-	}
-
-	// 2. callback to register factory into MosnRuntime
-	res := callback(serviceList)
-	return res, nil
+	return nil, nil
 }
+
+// 2. callback to register factory into MosnRuntime
 
 // get service form socket files.
 type reflectServiceClient interface {
@@ -81,105 +63,32 @@ type grpcConnectionCloser interface {
 
 // discover use grpc reflect to get services' information.
 func discover() ([]grpcService, error) {
+	_ = "STUB: not implemented"
 	// set grpc connection timeout to prevent block
-	ctx, cancel := context.WithTimeout(context.TODO(), time.Second*5)
-	defer cancel()
-	serviceList, err := serviceDiscovery(func(socket string) (client reflectServiceClient, closer func(), err error) {
-		conn, err := pluggable.SocketDial(
-			ctx,
-			socket,
-		)
-		if err != nil {
-			return nil, nil, err
-		}
-
-		client = grpcreflect.NewClientV1Alpha(ctx, reflectpb.NewServerReflectionClient(conn))
-		return client, reflectServiceConnectionCloser(conn, client), nil
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	return serviceList, nil
+	return nil, nil
 }
 
 // reflectServiceConnectionCloser is used for cleanup the stream created to be used for the reflection service.
 func reflectServiceConnectionCloser(conn grpcConnectionCloser, client reflectServiceClient) func() {
-	return func() {
-		client.Reset()
-		conn.Close()
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // discover service socket files and get service information from factory factor function.
 func serviceDiscovery(reflectClientFactory func(socket string) (client reflectServiceClient, cleanup func(), err error)) ([]grpcService, error) {
-	res := make([]grpcService, 0)
+	_ = "STUB: not implemented"
+	return nil, nil
 
 	// 1. get socket folder files
-	path := GetSocketFolderPath()
-	_, err := os.Stat(path)
-	if os.IsNotExist(err) {
-		return res, nil
-	}
-	if err != nil {
-		return nil, err
-	}
-
-	// 2. read socket files
-	files, err := os.ReadDir(path)
-	if err != nil {
-		return nil, err
-	}
-
-	for _, dirEntry := range files {
-		if dirEntry.IsDir() { // skip dirs
-			continue
-		}
-
-		f, err := dirEntry.Info()
-		if err != nil {
-			return nil, err
-		}
-
-		if isSocket := common.IsSocket(f); !isSocket { // check is socket files
-			continue
-		}
-
-		// 3. using reflectClientFactory gets service information
-		socket := filepath.Join(path, f.Name())
-		client, cleanup, err := reflectClientFactory(socket)
-		if err != nil {
-			return nil, err
-		}
-		defer cleanup()
-
-		serviceList, err := client.ListServices()
-		if err != nil {
-			return nil, err
-		}
-
-		for _, s := range serviceList {
-			res = append(res, grpcService{
-				protoRef:      s,
-				dialer:        pluggable.SocketDialer(socket, grpc.FailOnNonTempDialError(true)),
-				componentName: common.RemoveExt(f.Name()),
-			})
-		}
-	}
-	return res, nil
 }
+
+// 2. read socket files
+
+// skip dirs
+
+// check is socket files
+
+// 3. using reflectClientFactory gets service information
 
 // callback use callback function to register pluggable component factories into MosnRuntime
-func callback(services []grpcService) []pluggable.Component {
-	res := make([]pluggable.Component, 0, len(services))
-	mapper := pluggable.GetServiceDiscoveryMapper()
-	for _, service := range services {
-		fn, ok := mapper[service.protoRef]
-		if !ok {
-			continue
-		}
-
-		res = append(res, fn(service.componentName, service.dialer))
-	}
-	return res
-}
+func callback(services []grpcService) []pluggable.Component { _ = "STUB: not implemented"; return nil }

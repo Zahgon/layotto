@@ -18,12 +18,9 @@ package uninstall
 
 import (
 	"context"
-	"errors"
 
 	"mosn.io/layotto/pkg/filter/stream/common/http"
 	"mosn.io/layotto/pkg/wasm"
-
-	wasm2 "mosn.io/mosn/pkg/wasm"
 
 	"mosn.io/layotto/kit/logger"
 )
@@ -37,30 +34,9 @@ type Endpoint struct {
 	logger logger.Logger
 }
 
-func NewEndpoint(logger logger.Logger) *Endpoint {
-	return &Endpoint{
-		logger: logger,
-	}
-}
+func NewEndpoint(logger logger.Logger) *Endpoint { _ = "STUB: not implemented"; return nil }
 
 func (e *Endpoint) Handle(ctx context.Context, params http.ParamsScanner) (map[string]interface{}, error) {
-	conf, err := http.GetRequestData(ctx)
-	if err != nil {
-		e.logger.Errorf("[wasm][uninstall] invalid request body for request /wasm/uninstall, err:%v", err)
-		return map[string]interface{}{"error": err.Error()}, err
-	}
-
-	if conf["name"] == nil {
-		errorMessage := "can't get name property"
-		e.logger.Errorf("[wasm][uninstall] %v", errorMessage)
-		return map[string]interface{}{"error": errorMessage}, errors.New(errorMessage)
-	}
-
-	factory := wasm.GetFactory()
-	err = factory.UnInstall(conf["name"].(string), wasm2.GetWasmManager())
-	if err != nil {
-		e.logger.Errorf("[wasm][uninstall] %v", err)
-		return map[string]interface{}{"error": err.Error()}, err
-	}
+	_ = "STUB: not implemented"
 	return nil, nil
 }

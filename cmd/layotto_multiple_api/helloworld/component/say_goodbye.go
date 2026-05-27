@@ -24,15 +24,16 @@ type sayGoodbyeHelloWorld struct {
 }
 
 func (s *sayGoodbyeHelloWorld) Initialize(ctx context.Context, config custom.Config) error {
-	s.ctx = ctx
-	s.config = &config
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (s *sayGoodbyeHelloWorld) SayHello(name string) (string, error) {
-	return "Goodbye " + name, nil
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 func NewSayGoodbyeHelloWorld() custom.Component {
-	return &sayGoodbyeHelloWorld{}
+	_ = "STUB: not implemented"
+	return *new(custom.Component)
 }

@@ -15,45 +15,21 @@ package service
 
 import (
 	"context"
-	"encoding/json"
-	"fmt"
 
 	jsonpatch "github.com/evanphx/json-patch/v5"
-	log "github.com/sirupsen/logrus"
 	admissionv1 "k8s.io/api/admission/v1"
-	corev1 "k8s.io/api/core/v1"
-
-	"mosn.io/layotto/pkg/injector/patcher"
 )
 
 func (i *injector) getPodPatchOperations(ctx context.Context, ar *admissionv1.AdmissionReview) (patchOps jsonpatch.Patch, err error) {
-	pod := &corev1.Pod{}
-	err = json.Unmarshal(ar.Request.Object.Raw, pod)
-	if err != nil {
-		return nil, fmt.Errorf("could not unmarshal raw object: %w", err)
-	}
-	log.Infof(
-		"AdmissionReview for Kind=%v, Namespace=%s Name=%s (%s) UID=%v patchOperation=%v UserInfo=%v",
-		ar.Request.Kind, ar.Request.Namespace, ar.Request.Name, pod.Name, ar.Request.UID, ar.Request.Operation, ar.Request.UserInfo,
-	)
-
-	// Create the sidecar configuration object from the pod
-	sidecar := patcher.NewSidecarConfig(pod)
-	sidecar.Namespace = ar.Request.Namespace
-	sidecar.ImagePullPolicy = i.config.GetPullPolicy()
-
-	// Default value for the sidecar image, which can be overridden by annotations
-	sidecar.SidecarImage = i.config.SidecarImage
-
-	// Set the configuration from annotations
-	sidecar.SetFromPodAnnotations()
-
-	// Get the patch to apply to the pod
-	// Patch may be empty if there's nothing that needs to be done
-	patchOps, err = sidecar.GetPatch()
-	if err != nil {
-		return nil, err
-	}
-
-	return patchOps, nil
+	_ = "STUB: not implemented"
+	return *new(jsonpatch.Patch), nil
 }
+
+// Create the sidecar configuration object from the pod
+
+// Default value for the sidecar image, which can be overridden by annotations
+
+// Set the configuration from annotations
+
+// Get the patch to apply to the pod
+// Patch may be empty if there's nothing that needs to be done

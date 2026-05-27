@@ -24,15 +24,16 @@ type inMemoryHelloWorld struct {
 }
 
 func (i *inMemoryHelloWorld) Initialize(ctx context.Context, config custom.Config) error {
-	i.ctx = ctx
-	i.config = &config
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (i *inMemoryHelloWorld) SayHello(name string) (string, error) {
-	return "Hello " + name, nil
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 func NewInMemoryHelloWorld() custom.Component {
-	return &inMemoryHelloWorld{}
+	_ = "STUB: not implemented"
+	return *new(custom.Component)
 }

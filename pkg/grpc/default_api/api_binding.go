@@ -19,22 +19,10 @@ package default_api
 import (
 	"context"
 
-	dapr_v1pb "mosn.io/layotto/pkg/grpc/dapr/proto/runtime/v1"
 	runtimev1pb "mosn.io/layotto/spec/proto/runtime/v1"
 )
 
 func (a *api) InvokeBinding(ctx context.Context, in *runtimev1pb.InvokeBindingRequest) (*runtimev1pb.InvokeBindingResponse, error) {
-	daprResp, err := a.daprAPI.InvokeBinding(ctx, &dapr_v1pb.InvokeBindingRequest{
-		Name:      in.Name,
-		Data:      in.Data,
-		Metadata:  in.Metadata,
-		Operation: in.Operation,
-	})
-	if err != nil {
-		return &runtimev1pb.InvokeBindingResponse{}, err
-	}
-	return &runtimev1pb.InvokeBindingResponse{
-		Data:     daprResp.Data,
-		Metadata: daprResp.Metadata,
-	}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

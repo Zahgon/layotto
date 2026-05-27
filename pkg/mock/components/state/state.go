@@ -5,8 +5,6 @@
 package mock_state
 
 import (
-	reflect "reflect"
-
 	state "github.com/dapr/components-contrib/state"
 	gomock "github.com/golang/mock/gomock"
 )
@@ -23,138 +21,94 @@ type MockStoreMockRecorder struct {
 }
 
 // NewMockStore creates a new mock instance.
-func NewMockStore(ctrl *gomock.Controller) *MockStore {
-	mock := &MockStore{ctrl: ctrl}
-	mock.recorder = &MockStoreMockRecorder{mock}
-	return mock
-}
+func NewMockStore(ctrl *gomock.Controller) *MockStore { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockStore) EXPECT() *MockStoreMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// BulkDelete mocks base method.
+	return nil
 }
 
-// BulkDelete mocks base method.
 func (m *MockStore) BulkDelete(arg0 []state.DeleteRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "BulkDelete", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // BulkDelete indicates an expected call of BulkDelete.
 func (mr *MockStoreMockRecorder) BulkDelete(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BulkDelete", reflect.TypeOf((*MockStore)(nil).BulkDelete), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // BulkGet mocks base method.
 func (m *MockStore) BulkGet(arg0 []state.GetRequest) (bool, []state.BulkGetResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "BulkGet", arg0)
-	ret0, _ := ret[0].(bool)
-	ret1, _ := ret[1].([]state.BulkGetResponse)
-	ret2, _ := ret[2].(error)
-	return ret0, ret1, ret2
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 // BulkGet indicates an expected call of BulkGet.
 func (mr *MockStoreMockRecorder) BulkGet(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BulkGet", reflect.TypeOf((*MockStore)(nil).BulkGet), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // BulkSet mocks base method.
-func (m *MockStore) BulkSet(arg0 []state.SetRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "BulkSet", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockStore) BulkSet(arg0 []state.SetRequest) error { _ = "STUB: not implemented"; return nil }
 
 // BulkSet mocks base method.
-func (m *MockStore) Ping() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Ping")
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockStore) Ping() error { _ = "STUB: not implemented"; return nil }
 
 // BulkSet indicates an expected call of BulkSet.
 func (mr *MockStoreMockRecorder) BulkSet(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "BulkSet", reflect.TypeOf((*MockStore)(nil).BulkSet), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Delete mocks base method.
-func (m *MockStore) Delete(arg0 *state.DeleteRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Delete", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockStore) Delete(arg0 *state.DeleteRequest) error { _ = "STUB: not implemented"; return nil }
 
 // Delete indicates an expected call of Delete.
 func (mr *MockStoreMockRecorder) Delete(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockStore)(nil).Delete), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Features mocks base method.
-func (m *MockStore) Features() []state.Feature {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Features")
-	ret0, _ := ret[0].([]state.Feature)
-	return ret0
-}
+func (m *MockStore) Features() []state.Feature { _ = "STUB: not implemented"; return nil }
 
 // Features indicates an expected call of Features.
-func (mr *MockStoreMockRecorder) Features() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Features", reflect.TypeOf((*MockStore)(nil).Features))
-}
+func (mr *MockStoreMockRecorder) Features() *gomock.Call { _ = "STUB: not implemented"; return nil }
 
 // Get mocks base method.
 func (m *MockStore) Get(arg0 *state.GetRequest) (*state.GetResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", arg0)
-	ret0, _ := ret[0].(*state.GetResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Get indicates an expected call of Get.
 func (mr *MockStoreMockRecorder) Get(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockStore)(nil).Get), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init mocks base method.
-func (m *MockStore) Init(arg0 state.Metadata) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockStore) Init(arg0 state.Metadata) error { _ = "STUB: not implemented"; return nil }
 
 // Init indicates an expected call of Init.
 func (mr *MockStoreMockRecorder) Init(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockStore)(nil).Init), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Set mocks base method.
-func (m *MockStore) Set(arg0 *state.SetRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Set", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockStore) Set(arg0 *state.SetRequest) error { _ = "STUB: not implemented"; return nil }
 
 // Set indicates an expected call of Set.
 func (mr *MockStoreMockRecorder) Set(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockStore)(nil).Set), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockTransactionalStore is a mock of TransactionalStore interface.
@@ -170,40 +124,37 @@ type MockTransactionalStoreMockRecorder struct {
 
 // NewMockTransactionalStore creates a new mock instance.
 func NewMockTransactionalStore(ctrl *gomock.Controller) *MockTransactionalStore {
-	mock := &MockTransactionalStore{ctrl: ctrl}
-	mock.recorder = &MockTransactionalStoreMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockTransactionalStore) EXPECT() *MockTransactionalStoreMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Init mocks base method.
+	return nil
 }
 
-// Init mocks base method.
 func (m *MockTransactionalStore) Init(arg0 state.Metadata) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init indicates an expected call of Init.
 func (mr *MockTransactionalStoreMockRecorder) Init(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockTransactionalStore)(nil).Init), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Multi mocks base method.
 func (m *MockTransactionalStore) Multi(arg0 *state.TransactionalStateRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Multi", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Multi indicates an expected call of Multi.
 func (mr *MockTransactionalStoreMockRecorder) Multi(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Multi", reflect.TypeOf((*MockTransactionalStore)(nil).Multi), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }

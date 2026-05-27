@@ -13,8 +13,6 @@
 package custom
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 )
 
@@ -29,10 +27,8 @@ type Factory struct {
 }
 
 func NewComponentFactory(compType string, f func() Component) *Factory {
-	return &Factory{
-		Type:          compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type componentRegistry struct {
@@ -40,37 +36,18 @@ type componentRegistry struct {
 	info   *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	return &componentRegistry{
-		stores: make(map[string]map[string]func() Component),
-		info:   info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
 func (r *componentRegistry) Register(kind string, fs ...*Factory) {
-	if len(fs) == 0 {
-		return
-	}
-	r.info.AddService(kind)
-	// lazy init
-	if _, ok := r.stores[kind]; !ok {
-		r.stores[kind] = make(map[string]func() Component)
-	}
-	// register FactoryMethod
-	for _, f := range fs {
-		r.stores[kind][f.Type] = f.FactoryMethod
-		r.info.RegisterComponent(kind, f.Type)
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
+// lazy init
+
+// register FactoryMethod
+
 func (r *componentRegistry) Create(kind, compType string) (Component, error) {
-	store, ok := r.stores[kind]
-	if !ok {
-		return nil, fmt.Errorf("custom component kind %s is not regsitered", kind)
-	}
-	if f, ok := store[compType]; ok {
-		r.info.LoadComponent(kind, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("custom component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(Component), nil
 }

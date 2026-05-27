@@ -18,7 +18,6 @@ package secretstores
 
 import (
 	"github.com/dapr/components-contrib/secretstores"
-	"github.com/pkg/errors"
 
 	"mosn.io/layotto/components/pkg/info"
 )
@@ -39,28 +38,13 @@ type (
 )
 
 // NewRegistry returns a new secret store registry.
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &secretStoreRegistry{
-		secretStores: map[string]func() secretstores.SecretStore{},
-		info:         info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
 // Register adds one or many new secret stores to the registry.
-func (s *secretStoreRegistry) Register(ss ...*Factory) {
-	for _, component := range ss {
-		s.secretStores[component.CompType] = component.FactoryMethod
-		s.info.RegisterComponent(ServiceName, component.CompType)
-	}
-}
+func (s *secretStoreRegistry) Register(ss ...*Factory) { _ = "STUB: not implemented"; return }
 
 // Create instantiates a secret store based on `name`.
 func (s *secretStoreRegistry) Create(compType string) (secretstores.SecretStore, error) {
-	if method, ok := s.secretStores[compType]; ok {
-		s.info.LoadComponent(ServiceName, compType)
-		return method(), nil
-	}
-
-	return nil, errors.Errorf("couldn't find secret store %s", compType)
+	_ = "STUB: not implemented"
+	return *new(secretstores.SecretStore), nil
 }

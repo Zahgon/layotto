@@ -28,9 +28,8 @@ type CallbackFunc func(compType string, dialer GRPCConnectionDialer) Component
 
 // AddServiceDiscoveryCallback register callback function, not concurrent secure
 func AddServiceDiscoveryCallback(serviceName string, callback CallbackFunc) {
-	onServiceDiscovered[serviceName] = callback
+	_ = "STUB: not implemented"
+	return
 }
 
-func GetServiceDiscoveryMapper() map[string]CallbackFunc {
-	return onServiceDiscovered
-}
+func GetServiceDiscoveryMapper() map[string]CallbackFunc { _ = "STUB: not implemented"; return nil }

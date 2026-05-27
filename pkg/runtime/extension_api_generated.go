@@ -15,22 +15,4 @@
 
 package runtime
 
-import (
-	cryption "mosn.io/layotto/pkg/grpc/cryption"
-	delay_queue "mosn.io/layotto/pkg/grpc/delay_queue"
-	email "mosn.io/layotto/pkg/grpc/email"
-	s3 "mosn.io/layotto/pkg/grpc/extension/s3"
-	phone "mosn.io/layotto/pkg/grpc/phone"
-	sms "mosn.io/layotto/pkg/grpc/sms"
-)
-
-func WithExtensionGrpcAPI() Option {
-	return WithGrpcAPI(
-		s3.NewS3Server,
-		cryption.NewAPI,
-		delay_queue.NewAPI,
-		email.NewAPI,
-		phone.NewAPI,
-		sms.NewAPI,
-	)
-}
+func WithExtensionGrpcAPI() Option { _ = "STUB: not implemented"; return *new(Option) }

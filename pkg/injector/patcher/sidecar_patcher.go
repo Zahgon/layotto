@@ -15,48 +15,21 @@ package patcher
 
 import (
 	jsonpatch "github.com/evanphx/json-patch/v5"
-
-	injectorConsts "mosn.io/layotto/pkg/injector/consts"
 )
 
 // injectRequired check if the sidecar should be injected
-func (c *SidecarConfig) injectRequired() bool {
-	return c.SidecarInject && !c.podContainsSidecarContainer()
-}
+func (c *SidecarConfig) injectRequired() bool { _ = "STUB: not implemented"; return false }
 
 // GetPatch returns the patch to apply to a Pod to inject the Layotto sidecar
 func (c *SidecarConfig) GetPatch() (patchOps jsonpatch.Patch, err error) {
+	_ = "STUB: not implemented"
 	// If Layotto is not enabled, or if the layotto container is already present, return
-	if !c.injectRequired() {
-		return nil, nil
-	}
-
-	patchOps = jsonpatch.Patch{}
-
-	// Get volume mounts
-	volumeMounts := c.getVolumeMounts()
-
-	// Get the sidecar container
-	sidecarContainer, err := c.getSidecarContainer(getSidecarContainerOpts{
-		VolumeMounts: volumeMounts,
-	})
-	if err != nil {
-		return nil, err
-	}
-
-	patchOps = append(patchOps,
-		NewPatchOperation("add", PatchPathContainers+"/-", sidecarContainer),
-	)
-
-	return patchOps, nil
+	return *new(jsonpatch.Patch), nil
 }
+
+// Get volume mounts
+
+// Get the sidecar container
 
 // podContainsSidecarContainer returns true if the pod contains a sidecar container (i.e. a container named "layotto").
-func (c *SidecarConfig) podContainsSidecarContainer() bool {
-	for _, c := range c.pod.Spec.Containers {
-		if c.Name == injectorConsts.SidecarContainerName {
-			return true
-		}
-	}
-	return false
-}
+func (c *SidecarConfig) podContainsSidecarContainer() bool { _ = "STUB: not implemented"; return false }

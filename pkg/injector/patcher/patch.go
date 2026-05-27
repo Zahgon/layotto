@@ -27,23 +27,8 @@ const (
 // NewPatchOperation returns a jsonpatch.Operation with the provided properties.
 // This patch represents a discrete change to be applied to a Kubernetes resource.
 func NewPatchOperation(op string, path string, value any) jsonpatch.Operation {
-	patchOp := jsonpatch.Operation{
-		"op":   newRawMessage([]byte(`"` + op + `"`)),
-		"path": newRawMessage([]byte(`"` + path + `"`)),
-	}
-
-	if value != nil {
-		val, _ := json.Marshal(value)
-		if len(val) > 0 && string(val) != "null" {
-			patchOp["value"] = newRawMessage(val)
-		}
-	}
-
-	return patchOp
+	_ = "STUB: not implemented"
+	return *new(jsonpatch.Operation)
 }
 
-func newRawMessage(buf []byte) *json.RawMessage {
-	ra := make(json.RawMessage, len(buf))
-	copy(ra, buf)
-	return &ra
-}
+func newRawMessage(buf []byte) *json.RawMessage { _ = "STUB: not implemented"; return nil }

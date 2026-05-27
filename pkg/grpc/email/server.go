@@ -17,27 +17,18 @@ package email
 
 import (
 	"context"
-	"fmt"
-
-	"github.com/jinzhu/copier"
-	"mosn.io/pkg/log"
 
 	email "mosn.io/layotto/components/email"
 	email1 "mosn.io/layotto/spec/proto/extension/v1/email"
 
 	rawGRPC "google.golang.org/grpc"
 
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
-
 	grpc_api "mosn.io/layotto/pkg/grpc"
 )
 
 func NewAPI(ac *grpc_api.ApplicationContext) grpc_api.GrpcAPI {
-	return &server{
-		appId:      ac.AppId,
-		components: ac.EmailService,
-	}
+	_ = "STUB: not implemented"
+	return *new(grpc_api.GrpcAPI)
 }
 
 type server struct {
@@ -46,74 +37,37 @@ type server struct {
 }
 
 func (s *server) SendEmail(ctx context.Context, in *email1.SendEmailRequest) (*email1.SendEmailResponse, error) {
+	_ = "STUB: not implemented"
 	// find the component
-	comp := s.components[in.ComponentName]
-	if comp == nil {
-		return nil, invalidArgumentError("SendEmail", grpc_api.ErrComponentNotFound, "email", in.ComponentName)
-	}
-
-	// convert request
-	req := &email.SendEmailRequest{}
-	err := copier.CopyWithOption(req, in, copier.Option{IgnoreEmpty: true, DeepCopy: true, Converters: []copier.TypeConverter{}})
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, "Error when converting the request: %s", err.Error())
-	}
-
-	// delegate to the component
-	resp, err := comp.SendEmail(ctx, req)
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, err.Error())
-	}
-
-	// convert response
-	out := &email1.SendEmailResponse{}
-	err = copier.CopyWithOption(out, resp, copier.Option{IgnoreEmpty: true, DeepCopy: true, Converters: []copier.TypeConverter{}})
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, "Error when converting the response: %s", err.Error())
-	}
-	return out, nil
+	return nil, nil
 }
+
+// convert request
+
+// delegate to the component
+
+// convert response
 
 func (s *server) SendEmailWithTemplate(ctx context.Context, in *email1.SendEmailWithTemplateRequest) (*email1.SendEmailWithTemplateResponse, error) {
+	_ = "STUB: not implemented"
 	// find the component
-	comp := s.components[in.ComponentName]
-	if comp == nil {
-		return nil, invalidArgumentError("SendEmailWithTemplate", grpc_api.ErrComponentNotFound, "email", in.ComponentName)
-	}
-
-	// convert request
-	req := &email.SendEmailWithTemplateRequest{}
-	err := copier.CopyWithOption(req, in, copier.Option{IgnoreEmpty: true, DeepCopy: true, Converters: []copier.TypeConverter{}})
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, "Error when converting the request: %s", err.Error())
-	}
-
-	// delegate to the component
-	resp, err := comp.SendEmailWithTemplate(ctx, req)
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, err.Error())
-	}
-
-	// convert response
-	out := &email1.SendEmailWithTemplateResponse{}
-	err = copier.CopyWithOption(out, resp, copier.Option{IgnoreEmpty: true, DeepCopy: true, Converters: []copier.TypeConverter{}})
-	if err != nil {
-		return nil, status.Errorf(codes.Internal, "Error when converting the response: %s", err.Error())
-	}
-	return out, nil
+	return nil, nil
 }
+
+// convert request
+
+// delegate to the component
+
+// convert response
 
 func invalidArgumentError(method string, format string, a ...interface{}) error {
-	err := status.Errorf(codes.InvalidArgument, format, a...)
-	log.DefaultLogger.Errorf(fmt.Sprintf("%s fail: %+v", method, err))
-	return err
-}
-
-func (s *server) Init(conn *rawGRPC.ClientConn) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
+func (s *server) Init(conn *rawGRPC.ClientConn) error { _ = "STUB: not implemented"; return nil }
+
 func (s *server) Register(rawGrpcServer *rawGRPC.Server) error {
-	email1.RegisterEmailServiceServer(rawGrpcServer, s)
+	_ = "STUB: not implemented"
 	return nil
 }

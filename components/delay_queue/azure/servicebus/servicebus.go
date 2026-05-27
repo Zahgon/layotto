@@ -15,10 +15,6 @@ package servicebus
 
 import (
 	"context"
-	"net/http"
-	"time"
-
-	azservicebus "github.com/dapr/components-contrib/pubsub/azure/servicebus"
 
 	delay_queue "mosn.io/layotto/components/delay_queue"
 
@@ -32,23 +28,12 @@ type azureServiceBus struct {
 
 // NewAzureServiceBus returns a new Azure ServiceBus pub-sub implementation.
 func NewAzureServiceBus(logger logger.Logger) pubsub.PubSub {
-	return &azureServiceBus{
-		PubSub: azservicebus.NewAzureServiceBus(logger),
-	}
+	_ = "STUB: not implemented"
+	return *new(pubsub.PubSub)
 }
 
 func (a *azureServiceBus) PublishDelayMessage(ctx context.Context, request *delay_queue.DelayMessageRequest) (*delay_queue.DelayMessageResponse, error) {
+	_ = "STUB: not implemented"
 	// convert ScheduledEnqueueTimeUtc
-	nowUtc := time.Now().UTC()
-	enqueueTime := nowUtc.Add(time.Second * time.Duration(request.DelayInSeconds))
-	request.Metadata["metadata.ScheduledEnqueueTimeUtc"] = enqueueTime.Format(http.TimeFormat)
-
-	req := &pubsub.PublishRequest{
-		Data:       request.Data,
-		PubsubName: request.ComponentName,
-		Topic:      request.Topic,
-		Metadata:   request.Metadata,
-	}
-	err := a.Publish(req)
-	return nil, err
+	return nil, nil
 }

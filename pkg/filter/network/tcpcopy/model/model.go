@@ -42,13 +42,6 @@ type DumpUploadDynamicConfig struct {
 }
 
 func NewDumpUploadDynamicConfig(unique_sample_window string, businessType _type.BusinessType, port string, binary_flow_data []byte, portrait_data string) *DumpUploadDynamicConfig {
-	dynamicConfig := &DumpUploadDynamicConfig{
-		Unique_sample_window: unique_sample_window,
-		BusinessType:         businessType,
-		Port:                 port,
-		Binary_flow_data:     binary_flow_data,
-		Portrait_data:        portrait_data,
-	}
-
-	return dynamicConfig
+	_ = "STUB: not implemented"
+	return nil
 }

@@ -18,8 +18,6 @@ package dapr
 
 import (
 	"context"
-	"errors"
-	"strings"
 
 	"github.com/dapr/components-contrib/bindings"
 	"github.com/dapr/components-contrib/pubsub"
@@ -27,24 +25,16 @@ import (
 	"github.com/dapr/components-contrib/state"
 	jsoniter "github.com/json-iterator/go"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/status"
-	"google.golang.org/protobuf/types/known/anypb"
-	"mosn.io/pkg/log"
 
 	"mosn.io/layotto/components/configstores"
 	"mosn.io/layotto/components/file"
 	"mosn.io/layotto/components/hello"
 	"mosn.io/layotto/components/lock"
-	runtime_common "mosn.io/layotto/components/pkg/common"
 	"mosn.io/layotto/components/rpc"
-	mosninvoker "mosn.io/layotto/components/rpc/invoker/mosn"
 	"mosn.io/layotto/components/sequencer"
 	grpc_api "mosn.io/layotto/pkg/grpc"
 	dapr_common_v1pb "mosn.io/layotto/pkg/grpc/dapr/proto/common/v1"
 	dapr_v1pb "mosn.io/layotto/pkg/grpc/dapr/proto/runtime/v1"
-	"mosn.io/layotto/pkg/messages"
 )
 
 type DaprGrpcAPI interface {
@@ -73,116 +63,51 @@ type daprGrpcAPI struct {
 }
 
 func (d *daprGrpcAPI) Init(conn *grpc.ClientConn) error {
+	_ = "STUB: not implemented"
 	// 1. set connection
-	d.AppCallbackConn = conn
-	return d.startSubscribing()
+	return nil
 }
 
 func (d *daprGrpcAPI) Register(rawGrpcServer *grpc.Server) error {
-	dapr_v1pb.RegisterDaprServer(rawGrpcServer, d)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (d *daprGrpcAPI) InvokeService(ctx context.Context, in *dapr_v1pb.InvokeServiceRequest) (*dapr_common_v1pb.InvokeResponse, error) {
+	_ = "STUB: not implemented"
 	// 1. convert request to RPCRequest,which is the parameter for RPC components
-	msg := in.GetMessage()
-	req := &rpc.RPCRequest{
-		Ctx:         ctx,
-		Id:          in.GetId(),
-		Method:      msg.GetMethod(),
-		ContentType: msg.GetContentType(),
-		Data:        msg.GetData().GetValue(),
-	}
-	if md, ok := metadata.FromIncomingContext(ctx); ok {
-		req.Header = rpc.RPCHeader(md)
-	} else {
-		req.Header = rpc.RPCHeader(map[string][]string{})
-	}
-	if ext := msg.GetHttpExtension(); ext != nil {
-		req.Header["verb"] = []string{ext.Verb.String()}
-		req.Header["query_string"] = []string{ext.GetQuerystring()}
-	}
-
-	// 2. route to the specific rpc.Invoker component.
-	// Only support mosn component now.
-	invoker, ok := d.rpcs[mosninvoker.Name]
-	if !ok {
-		return nil, errors.New("invoker not init")
-	}
-
-	// 3. delegate to the rpc.Invoker component
-	resp, err := invoker.Invoke(ctx, req)
-
-	// 4. convert result
-	if err != nil {
-		return nil, runtime_common.ToGrpcError(err)
-	}
-	// 5. convert result
-	if !resp.Success && resp.Error != nil {
-		return nil, runtime_common.ToGrpcError(resp.Error)
-	}
-
-	if resp.Header != nil {
-		header := metadata.Pairs()
-		for k, values := range resp.Header {
-			// fix https://github.com/mosn/layotto/issues/285
-			if strings.EqualFold("content-length", k) {
-				continue
-			}
-			header.Set(k, values...)
-		}
-		grpc.SetHeader(ctx, header)
-	}
-	return &dapr_common_v1pb.InvokeResponse{
-		ContentType: resp.ContentType,
-		Data:        &anypb.Any{Value: resp.Data},
-	}, nil
+	return nil, nil
 }
 
+// 2. route to the specific rpc.Invoker component.
+// Only support mosn component now.
+
+// 3. delegate to the rpc.Invoker component
+
+// 4. convert result
+
+// 5. convert result
+
+// fix https://github.com/mosn/layotto/issues/285
+
 func (d *daprGrpcAPI) InvokeBinding(ctx context.Context, in *dapr_v1pb.InvokeBindingRequest) (*dapr_v1pb.InvokeBindingResponse, error) {
-	req := &bindings.InvokeRequest{
-		Metadata:  in.Metadata,
-		Operation: bindings.OperationKind(in.Operation),
-	}
-	if in.Data != nil {
-		req.Data = in.Data
-	}
-
-	r := &dapr_v1pb.InvokeBindingResponse{}
-	resp, err := d.sendToOutputBindingFn(in.Name, req)
-	if err != nil {
-		err = status.Errorf(codes.Internal, messages.ErrInvokeOutputBinding, in.Name, err.Error())
-		log.DefaultLogger.Errorf("call out binding fail, err:%+v", err)
-		return r, err
-	}
-
-	if resp != nil {
-		r.Data = resp.Data
-		r.Metadata = resp.Metadata
-	}
-	return r, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (d *daprGrpcAPI) isSecretAllowed(storeName string, key string) bool {
+	_ = "STUB: not implemented"
 	// TODO: add permission control
-	return true
+	return false
 }
 
 // NewDaprAPI_Alpha construct a grpc_api.GrpcAPI which implements DaprServer.
 // Currently it only support Dapr's InvokeService and InvokeBinding API.
 // Note: this feature is still in Alpha state and we don't recommend that you use it in your production environment.
 func NewDaprAPI_Alpha(ac *grpc_api.ApplicationContext) grpc_api.GrpcAPI {
+	_ = "STUB: not implemented"
 	// filter out transactionalStateStores
-	transactionalStateStores := map[string]state.TransactionalStore{}
-	for key, store := range ac.StateStores {
-		if state.FeatureTransactional.IsPresent(store.Features()) {
-			transactionalStateStores[key] = store.(state.TransactionalStore)
-		}
-	}
-	return NewDaprServer(ac.AppId,
-		ac.Hellos, ac.ConfigStores, ac.Rpcs, ac.PubSubs, ac.StateStores, transactionalStateStores,
-		ac.Files, ac.LockStores, ac.Sequencers,
-		ac.SendToOutputBindingFn, ac.SecretStores)
+	return *new(grpc_api.GrpcAPI)
 }
 
 func NewDaprServer(
@@ -199,20 +124,7 @@ func NewDaprServer(
 	sendToOutputBindingFn func(name string, req *bindings.InvokeRequest) (*bindings.InvokeResponse, error),
 	secretStores map[string]secretstores.SecretStore,
 ) DaprGrpcAPI {
+	_ = "STUB: not implemented"
 	// construct
-	return &daprGrpcAPI{
-		appId:                    appId,
-		hellos:                   hellos,
-		configStores:             configStores,
-		rpcs:                     rpcs,
-		pubSubs:                  pubSubs,
-		stateStores:              stateStores,
-		transactionalStateStores: transactionalStateStores,
-		fileOps:                  files,
-		lockStores:               lockStores,
-		sequencers:               sequencers,
-		sendToOutputBindingFn:    sendToOutputBindingFn,
-		json:                     jsoniter.ConfigFastest,
-		secretStores:             secretStores,
-	}
+	return *new(DaprGrpcAPI)
 }

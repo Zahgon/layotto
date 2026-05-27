@@ -18,11 +18,9 @@ package helloworld
 
 import (
 	"context"
-	"fmt"
 
 	rawGRPC "google.golang.org/grpc"
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
-	"mosn.io/pkg/log"
 
 	"mosn.io/layotto/cmd/layotto_multiple_api/helloworld/component"
 	"mosn.io/layotto/components/lock"
@@ -36,33 +34,21 @@ const kind = "helloworld"
 const componentName = "demo"
 
 func NewHelloWorldAPI(ac *grpc_api.ApplicationContext) grpc.GrpcAPI {
+	_ = "STUB: not implemented"
 	// 1. convert custom components
-	name2component := make(map[string]component.HelloWorld)
-	if len(ac.CustomComponent) != 0 {
-		// we only care about those components of type "helloworld"
-		name2comp, ok := ac.CustomComponent[kind]
-		if ok && len(name2comp) > 0 {
-			for name, v := range name2comp {
-				// convert them using type assertion
-				comp, ok := v.(component.HelloWorld)
-				if !ok {
-					errMsg := fmt.Sprintf("custom component %s does not implement HelloWorld interface", name)
-					log.DefaultLogger.Errorf(errMsg)
-				}
-				name2component[name] = comp
-			}
-		}
-	}
-	// 2. construct your API implementation
-	return &server{
-		appId: ac.AppId,
-		// Your API plugin can store and use all the components.
-		// For example,this demo set all the LockStore components here.
-		name2LockStore: ac.LockStores,
-		// Custom components of type "helloworld"
-		name2component: name2component,
-	}
+	return *new(grpc.GrpcAPI)
 }
+
+// we only care about those components of type "helloworld"
+
+// convert them using type assertion
+
+// 2. construct your API implementation
+
+// Your API plugin can store and use all the components.
+// For example,this demo set all the LockStore components here.
+
+// Custom components of type "helloworld"
 
 // server is used to implement helloworld.GreeterServer.
 type server struct {
@@ -76,21 +62,13 @@ type server struct {
 
 // SayHello implements helloworld.GreeterServer.SayHello
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	if _, ok := s.name2component[componentName]; !ok {
-		return &pb.HelloReply{Message: "We don't want to talk with you!"}, nil
-	}
-	message, err := s.name2component[componentName].SayHello(in.GetName())
-	if err != nil {
-		return nil, err
-	}
-	return &pb.HelloReply{Message: message}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (s *server) Init(conn *rawGRPC.ClientConn) error {
-	return nil
-}
+func (s *server) Init(conn *rawGRPC.ClientConn) error { _ = "STUB: not implemented"; return nil }
 
 func (s *server) Register(rawGrpcServer *rawGRPC.Server) error {
-	pb.RegisterGreeterServer(rawGrpcServer, s)
+	_ = "STUB: not implemented"
 	return nil
 }

@@ -16,10 +16,7 @@ package tencentcloud
 import (
 	"context"
 	"errors"
-	"strconv"
 
-	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
-	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
 	tcsms "github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms/v20210111"
 
 	"mosn.io/layotto/components/sms"
@@ -49,33 +46,14 @@ type InitConfig struct {
 // Please make sure `region` value is available,
 // you can refer https://cloud.tencent.com/document/api/382/52071
 func NewInitConfig(config *sms.Config) (*InitConfig, error) {
-	meta := config.Metadata
-	secretId := meta[sms.ClientKey]
-	if secretId == "" {
-		return nil, sms.MissingInitParam(sms.ClientKey)
-	}
-	secretKey := meta[sms.ClientSecret]
-	if secretKey == "" {
-		return nil, sms.MissingInitParam(sms.ClientSecret)
-	}
-	region := meta[sms.Region]
-	if region == "" {
-		return nil, sms.MissingInitParam(sms.Region)
-	}
-
-	conf := &InitConfig{
-		SecretId:  secretId,
-		SecretKey: secretKey,
-		Region:    region,
-	}
-	return conf, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NewSmsClient create tencentcloud sms client instance by InitConfig.
 func NewSmsClient(conf *InitConfig) (SmsClient, error) {
-	credential := common.NewCredential(conf.SecretId, conf.SecretKey)
-	cpf := profile.NewClientProfile()
-	return tcsms.NewClient(credential, conf.Region, cpf)
+	_ = "STUB: not implemented"
+	return *new(SmsClient), nil
 }
 
 // NewSendSmsRequest create tencentcloud sms request struct by sms.SendSmsWithTemplateRequest.
@@ -87,56 +65,18 @@ func NewSmsClient(conf *InitConfig) (SmsClient, error) {
 // Each parameter and its index must match the variable position of the template corresponding to TemplateId,
 // you can refer https://cloud.tencent.com/document/api/382/55981
 func NewSendSmsRequest(req *sms.SendSmsWithTemplateRequest) (*tcsms.SendSmsRequest, error) {
-	if len(req.PhoneNumbers) == 0 {
-		return nil, sms.MissingSendSmsParam("phone_numbers")
-	}
-	if req.Template == nil {
-		return nil, sms.MissingSendSmsParam("template")
-	}
-
-	n := len(req.Template.TemplateParams)
-	templateParams := make([]string, n)
-	for k, v := range req.Template.TemplateParams {
-		idx, err := strconv.Atoi(k)
-		if err != nil {
-			return nil, ErrTemplateParams
-		}
-		if idx < 0 || idx >= n {
-			return nil, ErrTemplateParams
-		}
-		templateParams[idx] = v
-	}
-
-	meta := req.Metadata
-	request := tcsms.NewSendSmsRequest()
-	// required fields
-	request.PhoneNumberSet = common.StringPtrs(req.PhoneNumbers)
-	request.SmsSdkAppId = common.StringPtr(meta[sms.SdkAppId])
-	request.TemplateId = common.StringPtr(req.Template.TemplateId)
-	// optional fields
-	request.SignName = common.StringPtr(req.SignName)
-	request.SenderId = common.StringPtr(req.SenderId)
-	request.TemplateParamSet = common.StringPtrs(templateParams)
-	return request, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// required fields
+
+// optional fields
 
 // ConvertSmsResponse convert tcsms.SendSmsResponse to sms.SendSmsWithTemplateResponse
 func ConvertSmsResponse(resp *tcsms.SendSmsResponse) *sms.SendSmsWithTemplateResponse {
-	statusSet := resp.Response.SendStatusSet
-	results := make([]*sms.SendStatus, len(statusSet))
-	for i, s := range statusSet {
-		meta := map[string]string{sms.PhoneNumber: *s.PhoneNumber}
-		results[i] = &sms.SendStatus{
-			Code:     *s.Code,
-			Message:  *s.Message,
-			Metadata: meta,
-		}
-	}
-	smsResp := &sms.SendSmsWithTemplateResponse{
-		RequestId: *resp.Response.RequestId,
-		Results:   results,
-	}
-	return smsResp
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Sms implemented sms.Sms, is used to send request to tencentcloud sms
@@ -146,26 +86,20 @@ type Sms struct {
 
 // NewSms create empty sms client for tencentcloud
 func NewSms() sms.SmsService {
-	return &Sms{}
+	_ = "STUB: not implemented"
+
+	// Init used to init tencentcloud sms client
+	// It checks metadata from sms.Config
+	// The `accessKeyID` should not be empty.
+	// The `accessKeySecret` should not be empty.
+	// The `region` should not be empty.
+	// Please make sure `region` value is available,
+	// you can refer https://cloud.tencent.com/document/api/382/52071
+	return *new(sms.SmsService)
 }
 
-// Init used to init tencentcloud sms client
-// It checks metadata from sms.Config
-// The `accessKeyID` should not be empty.
-// The `accessKeySecret` should not be empty.
-// The `region` should not be empty.
-// Please make sure `region` value is available,
-// you can refer https://cloud.tencent.com/document/api/382/52071
 func (s *Sms) Init(ctx context.Context, config *sms.Config) error {
-	conf, err := NewInitConfig(config)
-	if err != nil {
-		return err
-	}
-	client, err := NewSmsClient(conf)
-	if err != nil {
-		return err
-	}
-	s.client = client
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -179,25 +113,11 @@ func (s *Sms) Init(ctx context.Context, config *sms.Config) error {
 // Each parameter and its index must match the variable position of the template corresponding to TemplateId,
 // you can refer https://cloud.tencent.com/document/api/382/55981
 func (s *Sms) SendSmsWithTemplate(ctx context.Context, request *sms.SendSmsWithTemplateRequest) (*sms.SendSmsWithTemplateResponse, error) {
-	client, err := s.getClient()
-	if err != nil {
-		return nil, err
-	}
-	smsRequest, err := NewSendSmsRequest(request)
-	if err != nil {
-		return nil, err
-	}
-	resp, err := client.SendSmsWithContext(ctx, smsRequest)
-	if err != nil {
-		return nil, err
-	}
-	smsResp := ConvertSmsResponse(resp)
-	return smsResp, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (s *Sms) getClient() (SmsClient, error) {
-	if s.client == nil {
-		return nil, sms.ErrClientNotInit
-	}
-	return s.client, nil
+	_ = "STUB: not implemented"
+	return *new(SmsClient), nil
 }

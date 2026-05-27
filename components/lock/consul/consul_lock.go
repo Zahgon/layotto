@@ -15,11 +15,8 @@ package consul
 
 import (
 	"context"
-	"runtime"
-	"strconv"
 	"sync"
 
-	"github.com/hashicorp/consul/api"
 	msync "mosn.io/mosn/pkg/sync"
 
 	log "mosn.io/layotto/kit/logger"
@@ -54,123 +51,51 @@ type ConsulLock struct {
 	workPool       msync.WorkerPool
 }
 
-func NewConsulLock() *ConsulLock {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	consulLock := &ConsulLock{
-		log: log.NewLayottoLogger("lock/consul"),
-	}
-	log.RegisterComponentLoggerListener("lock/consul", consulLock)
-	return consulLock
-}
+func NewConsulLock() *ConsulLock { _ = "STUB: not implemented"; return nil }
 
-func (c *ConsulLock) OnLogLevelChanged(outputLevel log.LogLevel) {
-	c.log.SetLogLevel(outputLevel)
-}
+func (c *ConsulLock) OnLogLevelChanged(outputLevel log.LogLevel) { _ = "STUB: not implemented"; return }
 
-func (c *ConsulLock) Init(metadata lock.Metadata) error {
-	consulMetadata, err := utils.ParseConsulMetadata(metadata)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	c.metadata = consulMetadata
-	client, err := api.NewClient(&api.Config{
-		Address: consulMetadata.Address,
-		Scheme:  consulMetadata.Scheme,
-	})
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	c.client = client
-	c.sessionFactory = client.Session()
-	c.kv = client.KV()
-	c.workPool = msync.NewWorkerPool(runtime.NumCPU())
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	return nil
-}
+func (c *ConsulLock) Init(metadata lock.Metadata) error { _ = "STUB: not implemented"; return nil }
+
 func (c *ConsulLock) Features() []lock.Feature {
+	_ = "STUB: not implemented"
+
+	// LockKeepAlive try to renewal lease
 	return nil
 }
 
-// LockKeepAlive try to renewal lease
 func (c *ConsulLock) LockKeepAlive(ctx context.Context, request *lock.LockKeepAliveRequest) (*lock.LockKeepAliveResponse, error) {
+	_ = "STUB: not implemented"
 	//TODO: implemnt function
 	return nil, nil
 }
 
 func getTTL(expire int32) string {
-	//session TTL must be between [10s=24h0m0s]
-	if expire < 10 {
-		expire = 10
-	}
-	return strconv.Itoa(int(expire)) + "s"
+	_ = "STUB: not implemented"
+	// session TTL must be between [10s=24h0m0s]
+	return ""
 }
 
 func (c *ConsulLock) TryLock(ctx context.Context, req *lock.TryLockRequest) (*lock.TryLockResponse, error) {
+	_ = "STUB: not implemented"
 
 	// create a session TTL
-	session, _, err := c.sessionFactory.Create(&api.SessionEntry{
-		TTL:       getTTL(req.Expire),
-		LockDelay: 0,
-		Behavior:  "delete", //Controls the behavior to delete when a session is invalidated.
-	}, nil)
-
-	if err != nil {
-		return nil, err
-	}
-
-	// put a new KV pair with ttl session
-	p := &api.KVPair{Key: req.ResourceId, Value: []byte(req.LockOwner), Session: session}
-	//acquire lock
-	acquire, _, err := c.kv.Acquire(p, nil)
-
-	if err != nil {
-		return nil, err
-	}
-
-	if acquire {
-		//bind lockOwner+resourceId and session
-		c.sMap.Store(req.LockOwner+"-"+req.ResourceId, session)
-		c.workPool.Schedule(generateGCTask(req.Expire, &c.sMap, req.LockOwner+"-"+req.ResourceId))
-		return &lock.TryLockResponse{
-			Success: true,
-		}, nil
-	}
-	return &lock.TryLockResponse{
-		Success: false,
-	}, nil
+	return nil, nil
 }
+
+//Controls the behavior to delete when a session is invalidated.
+
+// put a new KV pair with ttl session
+
+//acquire lock
+
+//bind lockOwner+resourceId and session
+
 func (c *ConsulLock) Unlock(ctx context.Context, req *lock.UnlockRequest) (*lock.UnlockResponse, error) {
-
-	session, ok := c.sMap.Load(req.LockOwner + "-" + req.ResourceId)
-
-	if !ok {
-		return &lock.UnlockResponse{Status: lock.LOCK_UNEXIST}, nil
-	}
-	// put a new KV pair with ttl session
-	p := &api.KVPair{Key: req.ResourceId, Value: []byte(req.LockOwner), Session: session.(string)}
-	//release lock
-	release, _, err := c.kv.Release(p, nil)
-
-	if err != nil {
-		return &lock.UnlockResponse{Status: lock.INTERNAL_ERROR}, nil
-	}
-
-	if release {
-		c.sMap.Delete(req.LockOwner + "-" + req.ResourceId)
-		_, err = c.sessionFactory.Destroy(session.(string), nil)
-		if err != nil {
-			c.log.Errorf("consul lock session destroy error: %v", err)
-		}
-		return &lock.UnlockResponse{Status: lock.
-			SUCCESS}, nil
-	}
-	return &lock.UnlockResponse{Status: lock.LOCK_BELONG_TO_OTHERS}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// put a new KV pair with ttl session
+
+//release lock

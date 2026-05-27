@@ -44,62 +44,12 @@ type Metadata struct {
 }
 
 func ParseNacosMetadata(properties map[string]string) (*Metadata, error) {
-	if properties == nil {
-		return nil, errConfigMissingField("metadata")
-	}
-
-	config := &Metadata{}
-
-	// the namespace of config, not required
-	config.NameSpaceId = properties[namespaceIdKey]
-	if config.NameSpaceId == "" {
-		config.NameSpaceId = defaultNamespaceId
-	}
-
-	if v, ok := properties[userNameKey]; ok && v != "" {
-		config.Username = v
-	}
-
-	if v, ok := properties[passwordKey]; ok && v != "" {
-		config.Password = v
-	}
-
-	// ACM & KMS
-	if v, ok := properties[endPointKey]; ok && v != "" {
-		config.Endpoint = v
-		config.OpenKMS = true
-	}
-
-	if v, ok := properties[regionIdKey]; ok && v != "" {
-		config.RegionId = v
-		config.OpenKMS = true
-	}
-
-	if v, ok := properties[accessKey]; ok && v != "" {
-		config.AccessKey = v
-		config.OpenKMS = true
-	}
-
-	if v, ok := properties[secretKey]; ok && v != "" {
-		config.SecretKey = v
-		config.OpenKMS = true
-	}
-
-	// log & cache files
-	config.LogDir = properties[logDirKey]
-	if config.LogDir == "" {
-		config.LogDir = defaultLogDir
-	}
-
-	config.LogLevel = properties[logLevelKey]
-	if config.LogLevel == "" {
-		config.LogLevel = defaultLogLevel
-	}
-
-	config.CacheDir = properties[cacheDirKey]
-	if config.CacheDir == "" {
-		config.CacheDir = defaultCacheDir
-	}
-
-	return config, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// the namespace of config, not required
+
+// ACM & KMS
+
+// log & cache files

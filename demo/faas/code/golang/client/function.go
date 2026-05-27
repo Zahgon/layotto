@@ -17,9 +17,6 @@
 package main
 
 import (
-	"errors"
-	"strings"
-
 	"github.com/tetratelabs/proxy-wasm-go-sdk/proxywasm"
 	"github.com/tetratelabs/proxy-wasm-go-sdk/proxywasm/types"
 )
@@ -36,7 +33,8 @@ type vmContext struct {
 
 // Override types.DefaultVMContext.
 func (*vmContext) NewPluginContext(contextID uint32) types.PluginContext {
-	return &pluginContext{}
+	_ = "STUB: not implemented"
+	return *new(types.PluginContext)
 }
 
 type pluginContext struct {
@@ -47,7 +45,8 @@ type pluginContext struct {
 
 // Override types.DefaultPluginContext.
 func (*pluginContext) NewHttpContext(contextID uint32) types.HttpContext {
-	return &httpHeaders{contextID: contextID}
+	_ = "STUB: not implemented"
+	return *new(types.HttpContext)
 }
 
 type httpHeaders struct {
@@ -59,54 +58,28 @@ type httpHeaders struct {
 
 // Override types.DefaultHttpContext.
 func (ctx *httpHeaders) OnHttpRequestBody(bodySize int, endOfStream bool) types.Action {
+	_ = "STUB: not implemented"
 	//1. get request body
-	body, err := proxywasm.GetHttpRequestBody(0, bodySize)
-	if err != nil {
-		proxywasm.LogErrorf("GetHttpRequestBody failed: %v", err)
-		return types.ActionPause
-	}
-
-	//2. parse request param
-	bookName, err := getQueryParam(string(body), "name")
-	if err != nil {
-		proxywasm.LogErrorf("param not found: %v", err)
-		return types.ActionPause
-	}
-
-	//3. request function2 through ABI
-	inventories, err := proxywasm.InvokeService("id_2", "", bookName)
-	if err != nil {
-		proxywasm.LogErrorf("invoke service failed: %v", err)
-		return types.ActionPause
-	}
-
-	//4. return result
-	proxywasm.AppendHttpResponseBody([]byte("There are " + inventories + " inventories for " + bookName + "."))
-	return types.ActionContinue
+	return *new(types.Action)
 }
 
+//2. parse request param
+
+//3. request function2 through ABI
+
+//4. return result
+
 func getQueryParam(body string, paramName string) (string, error) {
-	kvs := strings.Split(body, "&")
-	for _, kv := range kvs {
-		param := strings.Split(kv, "=")
-		if param[0] == paramName {
-			return param[1], nil
-		}
-	}
-	return "", errors.New("not found")
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 // Override types.DefaultHttpContext.
-func (ctx *httpHeaders) OnHttpStreamDone() {
-	proxywasm.LogInfof("%d finished", ctx.contextID)
-}
+func (ctx *httpHeaders) OnHttpStreamDone() { _ = "STUB: not implemented"; return }
 
 const ID = "id_1"
 
 // DO NOT MODIFY THE FOLLOWING FUNCTIONS!
 //
 //export proxy_get_id
-func GetID() {
-	_ = ID[len(ID)-1]
-	proxywasm.SetCallData([]byte(ID))
-}
+func GetID() { _ = "STUB: not implemented"; return }

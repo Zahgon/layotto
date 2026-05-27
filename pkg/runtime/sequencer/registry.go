@@ -13,8 +13,6 @@
 package sequencer
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 	"mosn.io/layotto/components/sequencer"
 )
@@ -33,25 +31,11 @@ type sequencerRegistry struct {
 	info   *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &sequencerRegistry{
-		stores: make(map[string]func() sequencer.Store),
-		info:   info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
-func (r *sequencerRegistry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.stores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
-}
+func (r *sequencerRegistry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 func (r *sequencerRegistry) Create(compType string) (sequencer.Store, error) {
-	if f, ok := r.stores[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(sequencer.Store), nil
 }

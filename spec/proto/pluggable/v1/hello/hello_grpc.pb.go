@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
@@ -38,25 +36,18 @@ type helloClient struct {
 }
 
 func NewHelloClient(cc grpc.ClientConnInterface) HelloClient {
-	return &helloClient{cc}
+	_ = "STUB: not implemented"
+	return *new(HelloClient)
 }
 
 func (c *helloClient) Init(ctx context.Context, in *HelloConfig, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, Hello_Init_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *helloClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error) {
-	out := new(HelloResponse)
-	err := c.cc.Invoke(ctx, Hello_SayHello_FullMethodName, in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // HelloServer is the server API for Hello service.
@@ -73,58 +64,41 @@ type UnimplementedHelloServer struct {
 }
 
 func (UnimplementedHelloServer) Init(context.Context, *HelloConfig) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Init not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (UnimplementedHelloServer) SayHello(context.Context, *HelloRequest) (*HelloResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
-}
-func (UnimplementedHelloServer) mustEmbedUnimplementedHelloServer() {}
 
-// UnsafeHelloServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to HelloServer will
-// result in compilation errors.
+func (UnimplementedHelloServer) SayHello(context.Context, *HelloRequest) (*HelloResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (UnimplementedHelloServer) mustEmbedUnimplementedHelloServer() {
+	_ = "STUB: not implemented"
+
+	// UnsafeHelloServer may be embedded to opt out of forward compatibility for this service.
+	// Use of this interface is not recommended, as added methods to HelloServer will
+	// result in compilation errors.
+	return
+}
+
 type UnsafeHelloServer interface {
 	mustEmbedUnimplementedHelloServer()
 }
 
 func RegisterHelloServer(s grpc.ServiceRegistrar, srv HelloServer) {
-	s.RegisterService(&Hello_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _Hello_Init_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HelloConfig)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(HelloServer).Init(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Hello_Init_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HelloServer).Init(ctx, req.(*HelloConfig))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Hello_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HelloRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(HelloServer).SayHello(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Hello_SayHello_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HelloServer).SayHello(ctx, req.(*HelloRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Hello_ServiceDesc is the grpc.ServiceDesc for Hello service.

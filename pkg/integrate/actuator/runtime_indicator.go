@@ -51,11 +51,13 @@ type RuntimeIndicator interface {
 }
 
 func GetRuntimeReadinessIndicator() RuntimeIndicator {
-	return runtimeReady
+	_ = "STUB: not implemented"
+	return *new(RuntimeIndicator)
 }
 
 func GetRuntimeLivenessIndicator() RuntimeIndicator {
-	return runtimeLive
+	_ = "STUB: not implemented"
+	return *new(RuntimeIndicator)
 }
 
 type runtimeIndicatorImpl struct {
@@ -66,44 +68,13 @@ type runtimeIndicatorImpl struct {
 	reason  string
 }
 
-func (idc *runtimeIndicatorImpl) SetStarted() {
-	idc.mu.Lock()
-	defer idc.mu.Unlock()
-
-	idc.started = true
-}
+func (idc *runtimeIndicatorImpl) SetStarted() { _ = "STUB: not implemented"; return }
 
 func (idc *runtimeIndicatorImpl) Report() (status health.Status, details map[string]interface{}) {
-	idc.mu.RLock()
-	defer idc.mu.RUnlock()
-
-	if !idc.health {
-		h := health.NewHealth(health.DOWN)
-		h.SetDetail(reasonKey, idc.reason)
-		return h.Status, h.Details
-	}
-	if !idc.started {
-		h := health.NewHealth(health.INIT)
-		h.SetDetail(reasonKey, reasonValueStarting)
-		return h.Status, h.Details
-	}
-	h := health.NewHealth(health.UP)
-	h.SetDetail(reasonKey, idc.reason)
-	return h.Status, h.Details
+	_ = "STUB: not implemented"
+	return *new(health.Status), nil
 }
 
-func (idc *runtimeIndicatorImpl) SetUnhealthy(reason string) {
-	idc.mu.Lock()
-	defer idc.mu.Unlock()
+func (idc *runtimeIndicatorImpl) SetUnhealthy(reason string) { _ = "STUB: not implemented"; return }
 
-	idc.health = false
-	idc.reason = reason
-}
-
-func (idc *runtimeIndicatorImpl) SetHealthy(reason string) {
-	idc.mu.Lock()
-	defer idc.mu.Unlock()
-
-	idc.health = true
-	idc.reason = reason
-}
+func (idc *runtimeIndicatorImpl) SetHealthy(reason string) { _ = "STUB: not implemented"; return }

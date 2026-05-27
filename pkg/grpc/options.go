@@ -30,22 +30,13 @@ type grpcOptions struct {
 type Option func(o *grpcOptions)
 
 // apis CANNOT be nil.
-func WithGrpcAPIs(apis []GrpcAPI) Option {
-	return func(o *grpcOptions) {
-		o.apis = apis
-	}
-}
+func WithGrpcAPIs(apis []GrpcAPI) Option { _ = "STUB: not implemented"; return *new(Option) }
 
 type NewServer func(apis []GrpcAPI, opts ...grpc.ServerOption) (mgrpc.RegisteredServer, error)
 
-func WithNewServer(f NewServer) Option {
-	return func(o *grpcOptions) {
-		o.maker = f
-	}
-}
+func WithNewServer(f NewServer) Option { _ = "STUB: not implemented"; return *new(Option) }
 
 func WithGrpcOptions(options ...grpc.ServerOption) Option {
-	return func(o *grpcOptions) {
-		o.options = append(o.options, options...)
-	}
+	_ = "STUB: not implemented"
+	return *new(Option)
 }

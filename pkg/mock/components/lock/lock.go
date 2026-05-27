@@ -6,7 +6,6 @@ package mock_lock
 
 import (
 	context "context"
-	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
 
@@ -26,85 +25,64 @@ type MockLockStoreMockRecorder struct {
 
 // NewMockLockStore creates a new mock instance.
 func NewMockLockStore(ctrl *gomock.Controller) *MockLockStore {
-	mock := &MockLockStore{ctrl: ctrl}
-	mock.recorder = &MockLockStoreMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockLockStore) EXPECT() *MockLockStoreMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Features mocks base method.
+	return nil
 }
 
-// Features mocks base method.
-func (m *MockLockStore) Features() []lock.Feature {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Features")
-	ret0, _ := ret[0].([]lock.Feature)
-	return ret0
-}
+func (m *MockLockStore) Features() []lock.Feature { _ = "STUB: not implemented"; return nil }
 
 // Features indicates an expected call of Features.
-func (mr *MockLockStoreMockRecorder) Features() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Features", reflect.TypeOf((*MockLockStore)(nil).Features))
-}
+func (mr *MockLockStoreMockRecorder) Features() *gomock.Call { _ = "STUB: not implemented"; return nil }
 
 // Init mocks base method.
-func (m *MockLockStore) Init(metadata lock.Metadata) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", metadata)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockLockStore) Init(metadata lock.Metadata) error { _ = "STUB: not implemented"; return nil }
 
 // Init indicates an expected call of Init.
 func (mr *MockLockStoreMockRecorder) Init(metadata interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockLockStore)(nil).Init), metadata)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // LockKeepAlive mocks base method.
 func (m *MockLockStore) LockKeepAlive(arg0 context.Context, arg1 *lock.LockKeepAliveRequest) (*lock.LockKeepAliveResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "LockKeepAlive", arg0, arg1)
-	ret0, _ := ret[0].(*lock.LockKeepAliveResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // LockKeepAlive indicates an expected call of LockKeepAlive.
 func (mr *MockLockStoreMockRecorder) LockKeepAlive(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "LockKeepAlive", reflect.TypeOf((*MockLockStore)(nil).LockKeepAlive), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // TryLock mocks base method.
 func (m *MockLockStore) TryLock(ctx context.Context, req *lock.TryLockRequest) (*lock.TryLockResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "TryLock", ctx, req)
-	ret0, _ := ret[0].(*lock.TryLockResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // TryLock indicates an expected call of TryLock.
 func (mr *MockLockStoreMockRecorder) TryLock(ctx, req interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TryLock", reflect.TypeOf((*MockLockStore)(nil).TryLock), ctx, req)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Unlock mocks base method.
 func (m *MockLockStore) Unlock(ctx context.Context, req *lock.UnlockRequest) (*lock.UnlockResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Unlock", ctx, req)
-	ret0, _ := ret[0].(*lock.UnlockResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Unlock indicates an expected call of Unlock.
 func (mr *MockLockStoreMockRecorder) Unlock(ctx, req interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Unlock", reflect.TypeOf((*MockLockStore)(nil).Unlock), ctx, req)
+	_ = "STUB: not implemented"
+	return nil
 }

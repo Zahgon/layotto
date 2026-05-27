@@ -18,19 +18,10 @@ package tcpcopy
 
 import (
 	"context"
-	"encoding/json"
 	"errors"
-	"net"
-	"strconv"
 
 	"mosn.io/api"
-	v2 "mosn.io/mosn/pkg/config/v2"
 	"mosn.io/mosn/pkg/types"
-	"mosn.io/pkg/log"
-
-	"mosn.io/layotto/pkg/filter/network/tcpcopy/model"
-	"mosn.io/layotto/pkg/filter/network/tcpcopy/persistence"
-	"mosn.io/layotto/pkg/filter/network/tcpcopy/strategy"
 )
 
 func init() {
@@ -50,71 +41,44 @@ type tcpcopyFactory struct {
 }
 
 func CreateTcpcopyFactory(cfg map[string]interface{}) (api.NetworkFilterChainFactory, error) {
-	tcpConfig := &config{}
+	_ = "STUB: not implemented"
+	return *
+
 	// Parse static config for dump strategy
-	if stg, ok := cfg["strategy"]; ok {
-		data, err := json.Marshal(stg)
-		if err != nil {
-			log.DefaultLogger.Errorf("tcpcopy parse config error.%v", data)
-		} else {
-			strategy.UpdateAppDumpConfig(string(data))
-		}
-	}
-	// TODO extract some other fields
-	return &tcpcopyFactory{
-		cfg: tcpConfig,
-	}, nil
+	new(api.NetworkFilterChainFactory), nil
 }
 
+// TODO extract some other fields
+
 func (f *tcpcopyFactory) Init(param interface{}) error {
+	_ = "STUB: not implemented"
 	// 1. get listener config
-	cfg, ok := param.(*v2.Listener)
-	if !ok {
-		return ErrInvalidConfig
-	}
-	addr := cfg.AddrConfig
-	if addr == "" {
-		addr = cfg.Addr.String()
-	}
-	// 2. parse listener port
-	var (
-		netAddr *net.TCPAddr
-		err     error
-	)
-	netAddr, err = net.ResolveTCPAddr("tcp", addr)
-	if err != nil {
-		log.DefaultLogger.Errorf("invalid server address info: %s, error: %v", addr, err)
-		return err
-	}
-	if netAddr.Port == 0 {
-		log.DefaultLogger.Errorf("invalid server address info: %s", addr)
-		return ErrInvalidConfig
-	}
-	// 3. set config
-	f.cfg.port = strconv.Itoa(netAddr.Port)
-	log.DefaultLogger.Debugf("tcpcopy filter initialized success")
 	return nil
 }
 
+// 2. parse listener port
+
+// 3. set config
+
 func (f *tcpcopyFactory) CreateFilterChain(context context.Context, callbacks api.NetWorkFilterChainFactoryCallbacks) {
-	callbacks.AddReadFilter(f)
+	_ = "STUB: not implemented"
+	return
 }
 
 func (f *tcpcopyFactory) OnData(data types.IoBuffer) (res api.FilterStatus) {
+	_ = "STUB: not implemented"
 	// Determine whether to continue sampling
-	if !persistence.IsPersistence() {
-		return api.Continue
-	}
-
-	// Asynchronous sampling
-	config := model.NewDumpUploadDynamicConfig(strategy.DumpSampleUuid, "", f.cfg.port, data.Bytes(), "")
-	persistence.GetDumpWorkPoolInstance().Schedule(config)
-	return api.Continue
+	return *new(api.FilterStatus)
 }
 
+// Asynchronous sampling
+
 func (f *tcpcopyFactory) OnNewConnection() api.FilterStatus {
-	return api.Continue
+	_ = "STUB: not implemented"
+	return *new(api.FilterStatus)
 }
 
 func (f *tcpcopyFactory) InitializeReadFilterCallbacks(cb api.ReadFilterCallbacks) {
+	_ = "STUB: not implemented"
+	return
 }

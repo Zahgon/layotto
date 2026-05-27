@@ -18,9 +18,6 @@ package install
 
 import (
 	"context"
-	"errors"
-
-	wasm2 "mosn.io/mosn/pkg/wasm"
 
 	"mosn.io/layotto/kit/logger"
 
@@ -37,39 +34,9 @@ type Endpoint struct {
 	logger logger.Logger
 }
 
-func NewEndpoint(log logger.Logger) *Endpoint {
-	return &Endpoint{
-		logger: log,
-	}
-}
+func NewEndpoint(log logger.Logger) *Endpoint { _ = "STUB: not implemented"; return nil }
 
 func (e *Endpoint) Handle(ctx context.Context, params http.ParamsScanner) (map[string]interface{}, error) {
-	conf, err := http.GetRequestData(ctx)
-	if err != nil {
-		e.logger.Errorf("[wasm][install] invalid request body for request /wasm/install, err:%v", err)
-		return map[string]interface{}{"error": err.Error()}, err
-	}
-
-	if conf["name"] == nil {
-		errorMessage := "can't get name property"
-		e.logger.Errorf("[wasm][install] %v", errorMessage)
-		return map[string]interface{}{"error": errorMessage}, errors.New(errorMessage)
-	}
-
-	id := conf["name"].(string)
-	factory := wasm.GetFactory()
-	if factory.IsRegister(id) {
-		errorMessage := id + " is already registered"
-		e.logger.Errorf("[wasm][install] %v", errorMessage)
-		return map[string]interface{}{"error": errorMessage}, errors.New(errorMessage)
-	}
-
-	manager := wasm2.GetWasmManager()
-	err = factory.Install(conf, manager)
-	if err != nil {
-		e.logger.Errorf("[wasm][install] %v", err)
-		return map[string]interface{}{"error": err.Error()}, err
-	}
-
+	_ = "STUB: not implemented"
 	return nil, nil
 }

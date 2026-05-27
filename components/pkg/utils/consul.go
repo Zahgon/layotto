@@ -13,8 +13,6 @@
 package utils
 
 import (
-	"errors"
-
 	"github.com/hashicorp/consul/api"
 
 	"mosn.io/layotto/components/lock"
@@ -49,25 +47,6 @@ type ConsulMetadata struct {
 }
 
 func ParseConsulMetadata(meta lock.Metadata) (ConsulMetadata, error) {
-	m := ConsulMetadata{}
-
-	if val, ok := meta.Properties[consulAddress]; ok && val != "" {
-		m.Address = val
-	} else {
-		return m, errors.New("consul error: missing host address")
-	}
-
-	m.Scheme = defaultScheme
-	if val, ok := meta.Properties[scheme]; ok && val != "" {
-		m.Scheme = val
-	}
-
-	if val, ok := meta.Properties[consulUsername]; ok && val != "" {
-		m.Username = val
-	}
-	if val, ok := meta.Properties[consulPassword]; ok && val != "" {
-		m.Password = val
-	}
-
-	return m, nil
+	_ = "STUB: not implemented"
+	return *new(ConsulMetadata), nil
 }

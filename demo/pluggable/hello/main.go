@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"path/filepath"
 
 	"github.com/golang/protobuf/ptypes/empty"
 	"google.golang.org/grpc"
@@ -28,20 +27,13 @@ type HelloService struct {
 }
 
 func (h *HelloService) Init(ctx context.Context, config *pb.HelloConfig) (*empty.Empty, error) {
-	h.hello = config.GetHelloString()
-	h.token = config.Metadata[TokenConfigKey]
-	if h.token != AuthToken {
-		return nil, errors.New("auth failed")
-	}
-
-	return &empty.Empty{}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (h *HelloService) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloResponse, error) {
-	res := &pb.HelloResponse{
-		HelloString: h.hello,
-	}
-	return res, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func main() {
@@ -63,20 +55,6 @@ func main() {
 	}
 }
 
-func checkSocketDir() {
-	if _, err := os.Stat(SocketFilePath); os.IsNotExist(err) {
-		// 创建Socket文件
-		err = os.MkdirAll(filepath.Dir(SocketFilePath), 0755)
-		if err != nil {
-			fmt.Println("Failed to create directory:", err)
-			os.Exit(1)
-		}
-	}
-	if _, err := os.Stat(SocketFilePath); err == nil {
-		err = os.Remove(SocketFilePath)
-		if err != nil {
-			fmt.Println("Failed to remove socket file:", err)
-			os.Exit(1)
-		}
-	}
-}
+func checkSocketDir() { _ = "STUB: not implemented"; return }
+
+// 创建Socket文件

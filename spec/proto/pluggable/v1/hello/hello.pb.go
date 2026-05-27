@@ -7,7 +7,6 @@
 package hello
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -35,65 +34,27 @@ type HelloConfig struct {
 	Metadata    map[string]string `protobuf:"bytes,4,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *HelloConfig) Reset() {
-	*x = HelloConfig{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *HelloConfig) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *HelloConfig) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *HelloConfig) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*HelloConfig) ProtoMessage() {}
+func (*HelloConfig) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *HelloConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use HelloConfig.ProtoReflect.Descriptor instead.
-func (*HelloConfig) Descriptor() ([]byte, []int) {
-	return file_spec_proto_pluggable_v1_hello_hello_proto_rawDescGZIP(), []int{0}
-}
+func (*HelloConfig) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *HelloConfig) GetConfig() *common.Config {
-	if x != nil {
-		return x.Config
-	}
-	return nil
-}
+func (x *HelloConfig) GetConfig() *common.Config { _ = "STUB: not implemented"; return nil }
 
-func (x *HelloConfig) GetType() string {
-	if x != nil {
-		return x.Type
-	}
-	return ""
-}
+func (x *HelloConfig) GetType() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HelloConfig) GetHelloString() string {
-	if x != nil {
-		return x.HelloString
-	}
-	return ""
-}
+func (x *HelloConfig) GetHelloString() string { _ = "STUB: not implemented"; return "" }
 
-func (x *HelloConfig) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *HelloConfig) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 type HelloRequest struct {
 	state         protoimpl.MessageState
@@ -103,44 +64,21 @@ type HelloRequest struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *HelloRequest) Reset() {
-	*x = HelloRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *HelloRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *HelloRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *HelloRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*HelloRequest) ProtoMessage() {}
+func (*HelloRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *HelloRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use HelloRequest.ProtoReflect.Descriptor instead.
-func (*HelloRequest) Descriptor() ([]byte, []int) {
-	return file_spec_proto_pluggable_v1_hello_hello_proto_rawDescGZIP(), []int{1}
-}
+func (*HelloRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *HelloRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *HelloRequest) GetName() string { _ = "STUB: not implemented"; return "" }
 
 type HelloResponse struct {
 	state         protoimpl.MessageState
@@ -150,44 +88,21 @@ type HelloResponse struct {
 	HelloString string `protobuf:"bytes,1,opt,name=hello_string,json=helloString,proto3" json:"hello_string,omitempty"`
 }
 
-func (x *HelloResponse) Reset() {
-	*x = HelloResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *HelloResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *HelloResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *HelloResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*HelloResponse) ProtoMessage() {}
+func (*HelloResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *HelloResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use HelloResponse.ProtoReflect.Descriptor instead.
-func (*HelloResponse) Descriptor() ([]byte, []int) {
-	return file_spec_proto_pluggable_v1_hello_hello_proto_rawDescGZIP(), []int{2}
-}
+func (*HelloResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *HelloResponse) GetHelloString() string {
-	if x != nil {
-		return x.HelloString
-	}
-	return ""
-}
+func (x *HelloResponse) GetHelloString() string { _ = "STUB: not implemented"; return "" }
 
 var File_spec_proto_pluggable_v1_hello_hello_proto protoreflect.FileDescriptor
 
@@ -252,10 +167,8 @@ var (
 )
 
 func file_spec_proto_pluggable_v1_hello_hello_proto_rawDescGZIP() []byte {
-	file_spec_proto_pluggable_v1_hello_hello_proto_rawDescOnce.Do(func() {
-		file_spec_proto_pluggable_v1_hello_hello_proto_rawDescData = protoimpl.X.CompressGZIP(file_spec_proto_pluggable_v1_hello_hello_proto_rawDescData)
-	})
-	return file_spec_proto_pluggable_v1_hello_hello_proto_rawDescData
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
@@ -281,65 +194,5 @@ var file_spec_proto_pluggable_v1_hello_hello_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_spec_proto_pluggable_v1_hello_hello_proto_init() }
-func file_spec_proto_pluggable_v1_hello_hello_proto_init() {
-	if File_spec_proto_pluggable_v1_hello_hello_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HelloConfig); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HelloRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*HelloResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_spec_proto_pluggable_v1_hello_hello_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   4,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_spec_proto_pluggable_v1_hello_hello_proto_goTypes,
-		DependencyIndexes: file_spec_proto_pluggable_v1_hello_hello_proto_depIdxs,
-		MessageInfos:      file_spec_proto_pluggable_v1_hello_hello_proto_msgTypes,
-	}.Build()
-	File_spec_proto_pluggable_v1_hello_hello_proto = out.File
-	file_spec_proto_pluggable_v1_hello_hello_proto_rawDesc = nil
-	file_spec_proto_pluggable_v1_hello_hello_proto_goTypes = nil
-	file_spec_proto_pluggable_v1_hello_hello_proto_depIdxs = nil
-}
+func init()                                                { file_spec_proto_pluggable_v1_hello_hello_proto_init() }
+func file_spec_proto_pluggable_v1_hello_hello_proto_init() { _ = "STUB: not implemented"; return }

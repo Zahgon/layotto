@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
@@ -86,61 +84,38 @@ type runtimeClient struct {
 }
 
 func NewRuntimeClient(cc grpc.ClientConnInterface) RuntimeClient {
-	return &runtimeClient{cc}
+	_ = "STUB: not implemented"
+	return *new(RuntimeClient)
 }
 
 func (c *runtimeClient) SayHello(ctx context.Context, in *SayHelloRequest, opts ...grpc.CallOption) (*SayHelloResponse, error) {
-	out := new(SayHelloResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/SayHello", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) InvokeService(ctx context.Context, in *InvokeServiceRequest, opts ...grpc.CallOption) (*InvokeResponse, error) {
-	out := new(InvokeResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/InvokeService", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetConfiguration(ctx context.Context, in *GetConfigurationRequest, opts ...grpc.CallOption) (*GetConfigurationResponse, error) {
-	out := new(GetConfigurationResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetConfiguration", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) SaveConfiguration(ctx context.Context, in *SaveConfigurationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/SaveConfiguration", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) DeleteConfiguration(ctx context.Context, in *DeleteConfigurationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/DeleteConfiguration", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) SubscribeConfiguration(ctx context.Context, opts ...grpc.CallOption) (Runtime_SubscribeConfigurationClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Runtime_ServiceDesc.Streams[0], "/spec.proto.runtime.v1.Runtime/SubscribeConfiguration", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &runtimeSubscribeConfigurationClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Runtime_SubscribeConfigurationClient), nil
 }
 
 type Runtime_SubscribeConfigurationClient interface {
@@ -154,123 +129,73 @@ type runtimeSubscribeConfigurationClient struct {
 }
 
 func (x *runtimeSubscribeConfigurationClient) Send(m *SubscribeConfigurationRequest) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *runtimeSubscribeConfigurationClient) Recv() (*SubscribeConfigurationResponse, error) {
-	m := new(SubscribeConfigurationResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) TryLock(ctx context.Context, in *TryLockRequest, opts ...grpc.CallOption) (*TryLockResponse, error) {
-	out := new(TryLockResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/TryLock", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) Unlock(ctx context.Context, in *UnlockRequest, opts ...grpc.CallOption) (*UnlockResponse, error) {
-	out := new(UnlockResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/Unlock", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) LockKeepAlive(ctx context.Context, in *LockKeepAliveRequest, opts ...grpc.CallOption) (*LockKeepAliveResponse, error) {
-	out := new(LockKeepAliveResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/LockKeepAlive", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetNextId(ctx context.Context, in *GetNextIdRequest, opts ...grpc.CallOption) (*GetNextIdResponse, error) {
-	out := new(GetNextIdResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetNextId", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetState(ctx context.Context, in *GetStateRequest, opts ...grpc.CallOption) (*GetStateResponse, error) {
-	out := new(GetStateResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetBulkState(ctx context.Context, in *GetBulkStateRequest, opts ...grpc.CallOption) (*GetBulkStateResponse, error) {
-	out := new(GetBulkStateResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetBulkState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) SaveState(ctx context.Context, in *SaveStateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/SaveState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) DeleteState(ctx context.Context, in *DeleteStateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/DeleteState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) DeleteBulkState(ctx context.Context, in *DeleteBulkStateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/DeleteBulkState", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) ExecuteStateTransaction(ctx context.Context, in *ExecuteStateTransactionRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/ExecuteStateTransaction", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) PublishEvent(ctx context.Context, in *PublishEventRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/PublishEvent", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) SubscribeTopicEvents(ctx context.Context, opts ...grpc.CallOption) (Runtime_SubscribeTopicEventsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Runtime_ServiceDesc.Streams[1], "/spec.proto.runtime.v1.Runtime/SubscribeTopicEvents", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &runtimeSubscribeTopicEventsClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Runtime_SubscribeTopicEventsClient), nil
 }
 
 type Runtime_SubscribeTopicEventsClient interface {
@@ -284,30 +209,18 @@ type runtimeSubscribeTopicEventsClient struct {
 }
 
 func (x *runtimeSubscribeTopicEventsClient) Send(m *SubscribeTopicEventsRequest) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *runtimeSubscribeTopicEventsClient) Recv() (*SubscribeTopicEventsResponse, error) {
-	m := new(SubscribeTopicEventsResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetFile(ctx context.Context, in *GetFileRequest, opts ...grpc.CallOption) (Runtime_GetFileClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Runtime_ServiceDesc.Streams[2], "/spec.proto.runtime.v1.Runtime/GetFile", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &runtimeGetFileClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Runtime_GetFileClient), nil
 }
 
 type Runtime_GetFileClient interface {
@@ -320,20 +233,13 @@ type runtimeGetFileClient struct {
 }
 
 func (x *runtimeGetFileClient) Recv() (*GetFileResponse, error) {
-	m := new(GetFileResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) PutFile(ctx context.Context, opts ...grpc.CallOption) (Runtime_PutFileClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Runtime_ServiceDesc.Streams[3], "/spec.proto.runtime.v1.Runtime/PutFile", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &runtimePutFileClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Runtime_PutFileClient), nil
 }
 
 type Runtime_PutFileClient interface {
@@ -346,73 +252,41 @@ type runtimePutFileClient struct {
 	grpc.ClientStream
 }
 
-func (x *runtimePutFileClient) Send(m *PutFileRequest) error {
-	return x.ClientStream.SendMsg(m)
-}
+func (x *runtimePutFileClient) Send(m *PutFileRequest) error { _ = "STUB: not implemented"; return nil }
 
 func (x *runtimePutFileClient) CloseAndRecv() (*emptypb.Empty, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(emptypb.Empty)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) ListFile(ctx context.Context, in *ListFileRequest, opts ...grpc.CallOption) (*ListFileResp, error) {
-	out := new(ListFileResp)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/ListFile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) DelFile(ctx context.Context, in *DelFileRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/DelFile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetFileMeta(ctx context.Context, in *GetFileMetaRequest, opts ...grpc.CallOption) (*GetFileMetaResponse, error) {
-	out := new(GetFileMetaResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetFileMeta", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) InvokeBinding(ctx context.Context, in *InvokeBindingRequest, opts ...grpc.CallOption) (*InvokeBindingResponse, error) {
-	out := new(InvokeBindingResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/InvokeBinding", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error) {
-	out := new(GetSecretResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetSecret", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *runtimeClient) GetBulkSecret(ctx context.Context, in *GetBulkSecretRequest, opts ...grpc.CallOption) (*GetBulkSecretResponse, error) {
-	out := new(GetBulkSecretResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.Runtime/GetBulkSecret", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RuntimeServer is the server API for Runtime service.
@@ -481,82 +355,133 @@ type UnimplementedRuntimeServer struct {
 }
 
 func (UnimplementedRuntimeServer) SayHello(context.Context, *SayHelloRequest) (*SayHelloResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) InvokeService(context.Context, *InvokeServiceRequest) (*InvokeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method InvokeService not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetConfiguration(context.Context, *GetConfigurationRequest) (*GetConfigurationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetConfiguration not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) SaveConfiguration(context.Context, *SaveConfigurationRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SaveConfiguration not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) DeleteConfiguration(context.Context, *DeleteConfigurationRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteConfiguration not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) SubscribeConfiguration(Runtime_SubscribeConfigurationServer) error {
-	return status.Errorf(codes.Unimplemented, "method SubscribeConfiguration not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedRuntimeServer) TryLock(context.Context, *TryLockRequest) (*TryLockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method TryLock not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) Unlock(context.Context, *UnlockRequest) (*UnlockResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Unlock not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) LockKeepAlive(context.Context, *LockKeepAliveRequest) (*LockKeepAliveResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method LockKeepAlive not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetNextId(context.Context, *GetNextIdRequest) (*GetNextIdResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNextId not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetState(context.Context, *GetStateRequest) (*GetStateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetState not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetBulkState(context.Context, *GetBulkStateRequest) (*GetBulkStateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBulkState not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) SaveState(context.Context, *SaveStateRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SaveState not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) DeleteState(context.Context, *DeleteStateRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteState not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) DeleteBulkState(context.Context, *DeleteBulkStateRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBulkState not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) ExecuteStateTransaction(context.Context, *ExecuteStateTransactionRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ExecuteStateTransaction not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) PublishEvent(context.Context, *PublishEventRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PublishEvent not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) SubscribeTopicEvents(Runtime_SubscribeTopicEventsServer) error {
-	return status.Errorf(codes.Unimplemented, "method SubscribeTopicEvents not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedRuntimeServer) GetFile(*GetFileRequest, Runtime_GetFileServer) error {
-	return status.Errorf(codes.Unimplemented, "method GetFile not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedRuntimeServer) PutFile(Runtime_PutFileServer) error {
-	return status.Errorf(codes.Unimplemented, "method PutFile not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (UnimplementedRuntimeServer) ListFile(context.Context, *ListFileRequest) (*ListFileResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFile not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) DelFile(context.Context, *DelFileRequest) (*emptypb.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DelFile not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetFileMeta(context.Context, *GetFileMetaRequest) (*GetFileMetaResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFileMeta not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) InvokeBinding(context.Context, *InvokeBindingRequest) (*InvokeBindingResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method InvokeBinding not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetSecret(context.Context, *GetSecretRequest) (*GetSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSecret not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedRuntimeServer) GetBulkSecret(context.Context, *GetBulkSecretRequest) (*GetBulkSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBulkSecret not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeRuntimeServer may be embedded to opt out of forward compatibility for this service.
@@ -567,101 +492,38 @@ type UnsafeRuntimeServer interface {
 }
 
 func RegisterRuntimeServer(s grpc.ServiceRegistrar, srv RuntimeServer) {
-	s.RegisterService(&Runtime_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _Runtime_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SayHelloRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).SayHello(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/SayHello",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).SayHello(ctx, req.(*SayHelloRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_InvokeService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(InvokeServiceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).InvokeService(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/InvokeService",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).InvokeService(ctx, req.(*InvokeServiceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetConfiguration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetConfigurationRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetConfiguration(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetConfiguration",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetConfiguration(ctx, req.(*GetConfigurationRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_SaveConfiguration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SaveConfigurationRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).SaveConfiguration(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/SaveConfiguration",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).SaveConfiguration(ctx, req.(*SaveConfigurationRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_DeleteConfiguration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteConfigurationRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).DeleteConfiguration(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/DeleteConfiguration",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).DeleteConfiguration(ctx, req.(*DeleteConfigurationRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_SubscribeConfiguration_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RuntimeServer).SubscribeConfiguration(&runtimeSubscribeConfigurationServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Runtime_SubscribeConfigurationServer interface {
@@ -675,217 +537,73 @@ type runtimeSubscribeConfigurationServer struct {
 }
 
 func (x *runtimeSubscribeConfigurationServer) Send(m *SubscribeConfigurationResponse) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *runtimeSubscribeConfigurationServer) Recv() (*SubscribeConfigurationRequest, error) {
-	m := new(SubscribeConfigurationRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_TryLock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TryLockRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).TryLock(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/TryLock",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).TryLock(ctx, req.(*TryLockRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_Unlock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnlockRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).Unlock(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/Unlock",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).Unlock(ctx, req.(*UnlockRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_LockKeepAlive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LockKeepAliveRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).LockKeepAlive(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/LockKeepAlive",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).LockKeepAlive(ctx, req.(*LockKeepAliveRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetNextId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNextIdRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetNextId(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetNextId",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetNextId(ctx, req.(*GetNextIdRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetState(ctx, req.(*GetStateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetBulkState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBulkStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetBulkState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetBulkState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetBulkState(ctx, req.(*GetBulkStateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_SaveState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SaveStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).SaveState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/SaveState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).SaveState(ctx, req.(*SaveStateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_DeleteState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).DeleteState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/DeleteState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).DeleteState(ctx, req.(*DeleteStateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_DeleteBulkState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteBulkStateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).DeleteBulkState(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/DeleteBulkState",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).DeleteBulkState(ctx, req.(*DeleteBulkStateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_ExecuteStateTransaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ExecuteStateTransactionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).ExecuteStateTransaction(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/ExecuteStateTransaction",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).ExecuteStateTransaction(ctx, req.(*ExecuteStateTransactionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_PublishEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PublishEventRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).PublishEvent(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/PublishEvent",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).PublishEvent(ctx, req.(*PublishEventRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_SubscribeTopicEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RuntimeServer).SubscribeTopicEvents(&runtimeSubscribeTopicEventsServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Runtime_SubscribeTopicEventsServer interface {
@@ -899,23 +617,18 @@ type runtimeSubscribeTopicEventsServer struct {
 }
 
 func (x *runtimeSubscribeTopicEventsServer) Send(m *SubscribeTopicEventsResponse) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *runtimeSubscribeTopicEventsServer) Recv() (*SubscribeTopicEventsRequest, error) {
-	m := new(SubscribeTopicEventsRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetFile_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(GetFileRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(RuntimeServer).GetFile(m, &runtimeGetFileServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Runtime_GetFileServer interface {
@@ -928,11 +641,13 @@ type runtimeGetFileServer struct {
 }
 
 func (x *runtimeGetFileServer) Send(m *GetFileResponse) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func _Runtime_PutFile_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RuntimeServer).PutFile(&runtimePutFileServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Runtime_PutFileServer interface {
@@ -946,123 +661,43 @@ type runtimePutFileServer struct {
 }
 
 func (x *runtimePutFileServer) SendAndClose(m *emptypb.Empty) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *runtimePutFileServer) Recv() (*PutFileRequest, error) {
-	m := new(PutFileRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_ListFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).ListFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/ListFile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).ListFile(ctx, req.(*ListFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_DelFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DelFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).DelFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/DelFile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).DelFile(ctx, req.(*DelFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetFileMeta_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetFileMetaRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetFileMeta(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetFileMeta",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetFileMeta(ctx, req.(*GetFileMetaRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_InvokeBinding_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(InvokeBindingRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).InvokeBinding(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/InvokeBinding",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).InvokeBinding(ctx, req.(*InvokeBindingRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetSecret(ctx, req.(*GetSecretRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Runtime_GetBulkSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBulkSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RuntimeServer).GetBulkSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.Runtime/GetBulkSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RuntimeServer).GetBulkSecret(ctx, req.(*GetBulkSecretRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Runtime_ServiceDesc is the grpc.ServiceDesc for Runtime service.

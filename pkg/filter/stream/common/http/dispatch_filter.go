@@ -18,16 +18,9 @@ package http
 
 import (
 	"context"
-	"encoding/json"
-	"net/http"
 
-	"github.com/valyala/fasthttp"
 	"mosn.io/api"
-	mosnhttp "mosn.io/mosn/pkg/protocol/http"
-	"mosn.io/mosn/pkg/types"
 	"mosn.io/pkg/buffer"
-	"mosn.io/pkg/log"
-	"mosn.io/pkg/variable"
 )
 
 type DispatchFilter struct {
@@ -37,79 +30,40 @@ type DispatchFilter struct {
 }
 
 func (dis *DispatchFilter) SetReceiveFilterHandler(handler api.StreamReceiverFilterHandler) {
-	dis.handler = handler
+	_ = "STUB: not implemented"
+	return
 }
 
-func (dis *DispatchFilter) OnDestroy() {}
+func (dis *DispatchFilter) OnDestroy() { _ = "STUB: not implemented"; return }
 
 func (dis *DispatchFilter) OnReceive(ctx context.Context, headers api.HeaderMap, buf buffer.IoBuffer, trailers api.HeaderMap) api.StreamFilterStatus {
+	_ = "STUB: not implemented"
 	// 1. log
-	log.DefaultLogger.Debugf("[%v] receive %v pkt", dis.filterType, dis.filterType)
-	path, err := variable.GetString(ctx, types.VarHttpRequestPath)
-	if err != nil {
-		dis.write404()
-		return api.StreamFilterStop
-	}
-	log.DefaultLogger.Debugf("[%v] path: %v", dis.filterType, path)
-	// 2. validate path
-	resolver := NewPathResolver(path)
-	// http path must be /{dis.filterType}/{endpoint_name}/{params}
-	// So we can return 404 directly if it does not start with {dis.filterType}
-	if resolver.Next() != dis.filterType {
-		// illegal
-		dis.write404()
-		return api.StreamFilterStop
-	}
-	// 3. process request
-	requestData := dis.handler.GetRequestData()
-	if requestData != nil {
-		ctx = context.WithValue(ctx, ContextKeyRequestData{}, requestData.Bytes())
-	}
-	epName := resolver.Next()
-	endpoint, ok := dis.requestHandler.GetEndpoint(epName)
-	if !ok {
-		// illegal
-		dis.write404()
-		return api.StreamFilterStop
-	}
-	json, err := endpoint.Handle(ctx, resolver)
-	var code int
-	if err != nil {
-		code = http.StatusInternalServerError
-	} else {
-		code = http.StatusOK
-	}
-	dis.writeJsonResult(json, code)
-	return api.StreamFilterStop
+	return *new(api.StreamFilterStatus)
 }
 
-func (dis *DispatchFilter) write404() {
-	dis.writeJsonResult(nil, http.StatusNotFound)
-}
+// 2. validate path
+
+// http path must be /{dis.filterType}/{endpoint_name}/{params}
+// So we can return 404 directly if it does not start with {dis.filterType}
+
+// illegal
+
+// 3. process request
+
+// illegal
+
+func (dis *DispatchFilter) write404() { _ = "STUB: not implemented"; return }
 
 func (dis *DispatchFilter) writeJsonResult(jsonObject map[string]interface{}, code int) {
-	if code == 0 {
-		code = http.StatusOK
-	}
-	// 0. marshal
-	var byteSlice []byte
-	if jsonObject != nil {
-		var err error
-		byteSlice, err = json.Marshal(jsonObject)
-		if err != nil {
-			log.DefaultLogger.Errorf("[%v][dispatch_filter]error when marshal result:%v", dis.filterType, err)
-			code = http.StatusInternalServerError
-		}
-	}
-	// 1. header
-	fastHttpHeader := &fasthttp.ResponseHeader{}
-	rspHeader := mosnhttp.ResponseHeader{
-		ResponseHeader: fastHttpHeader,
-	}
-	rspHeader.Set("Content-Type", "application/json")
-	rspHeader.SetStatusCode(code)
-	// 2. body
-	data := buffer.NewIoBufferBytes(byteSlice)
-	// 3. write response
-	dis.handler.SendDirectResponse(rspHeader, data, nil)
+	_ = "STUB: not implemented"
+	return
 }
+
+// 0. marshal
+
+// 1. header
+
+// 2. body
+
+// 3. write response

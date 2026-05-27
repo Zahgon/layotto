@@ -17,8 +17,6 @@
 package apollo
 
 import (
-	"fmt"
-
 	"github.com/apolloconfig/agollo/v4"
 	agolloConfig "github.com/apolloconfig/agollo/v4/env/config"
 
@@ -56,55 +54,34 @@ type AgolloRepository struct {
 	cfg    *repoConfig
 }
 
-func (a *AgolloRepository) Connect() error {
-	var err error
-	a.client, err = agollo.StartWithConfig(func() (*agolloConfig.AppConfig, error) {
-		return repoConfig2AgolloConfig(a.cfg), nil
-	})
-	return err
-}
+func (a *AgolloRepository) Connect() error { _ = "STUB: not implemented"; return nil }
 
-func (a *AgolloRepository) SetConfig(r *repoConfig) {
-	a.cfg = r
-	agollo.SetLogger(r.logger)
-}
+func (a *AgolloRepository) SetConfig(r *repoConfig) { _ = "STUB: not implemented"; return }
 
 func repoConfig2AgolloConfig(r *repoConfig) *agolloConfig.AppConfig {
-	return &agolloConfig.AppConfig{
-		IP:             r.addr,
-		AppID:          r.appId,
-		Cluster:        r.cluster,
-		NamespaceName:  r.namespaceName,
-		IsBackupConfig: r.isBackupConfig,
-		Secret:         r.secret,
-	}
-}
-
-func newAgolloRepository() Repository {
-	return &AgolloRepository{}
-}
-
-func (a *AgolloRepository) Get(namespace string, key string) (interface{}, error) {
-	// 1. get cache
-	cache := a.client.GetConfigCache(namespace)
-	if cache == nil {
-		return nil, fmt.Errorf("no cache for namespace:%v", namespace)
-	}
-	// 2. query value
-	return cache.Get(key)
-}
-
-func (a *AgolloRepository) Range(namespace string, f func(key interface{}, value interface{}) bool) error {
-	// 1. get cache
-	cache := a.client.GetConfigCache(namespace)
-	if cache == nil {
-		return fmt.Errorf("no cache for namespace:%v", namespace)
-	}
-	// 2. loop process
-	cache.Range(f)
+	_ = "STUB: not implemented"
 	return nil
 }
 
+func newAgolloRepository() Repository { _ = "STUB: not implemented"; return *new(Repository) }
+
+func (a *AgolloRepository) Get(namespace string, key string) (interface{}, error) {
+	_ = "STUB: not implemented"
+	// 1. get cache
+	return nil, nil
+}
+
+// 2. query value
+
+func (a *AgolloRepository) Range(namespace string, f func(key interface{}, value interface{}) bool) error {
+	_ = "STUB: not implemented"
+	// 1. get cache
+	return nil
+}
+
+// 2. loop process
+
 func (a *AgolloRepository) AddChangeListener(listener *changeListener) {
-	a.client.AddChangeListener(listener)
+	_ = "STUB: not implemented"
+	return
 }

@@ -13,10 +13,6 @@
 package utils
 
 import (
-	"errors"
-	"fmt"
-	"strconv"
-	"strings"
 	"time"
 
 	"github.com/go-zookeeper/zk"
@@ -38,16 +34,8 @@ type ConnectionFactoryImpl struct {
 }
 
 func (c *ConnectionFactoryImpl) NewConnection(expire time.Duration, meta ZookeeperMetadata) (ZKConnection, error) {
-
-	if expire == 0 {
-		expire = meta.SessionTimeout
-	}
-
-	conn, _, err := zk.Connect(meta.Hosts, expire, zk.WithLogInfo(meta.LogInfo))
-	if err != nil {
-		return nil, err
-	}
-	return conn, nil
+	_ = "STUB: not implemented"
+	return *new(ZKConnection), nil
 }
 
 type ZKConnection interface {
@@ -66,33 +54,6 @@ type ZookeeperMetadata struct {
 }
 
 func ParseZookeeperMetadata(properties map[string]string) (ZookeeperMetadata, error) {
-	m := ZookeeperMetadata{}
-	if val, ok := properties[zkHost]; ok && val != "" {
-		split := strings.Split(val, ";")
-		m.Hosts = append(m.Hosts, split...)
-	} else {
-		return m, errors.New("zookeeper store error: missing zkHost address")
-	}
-
-	if val, ok := properties[zkPassword]; ok && val != "" {
-		m.Password = val
-	}
-
-	m.SessionTimeout = defaultSessionTimeout
-	if val, ok := properties[sessionTimeout]; ok && val != "" {
-		parsedVal, err := strconv.Atoi(val)
-		if err != nil {
-			return m, fmt.Errorf("zookeeper store error: can't parse SessionTimeout field: %s", err)
-		}
-		m.SessionTimeout = time.Duration(parsedVal) * time.Second
-	}
-
-	if val, ok := properties[logInfo]; ok && val != "" {
-		b, err := strconv.ParseBool(val)
-		if err != nil {
-			return ZookeeperMetadata{}, err
-		}
-		m.LogInfo = b
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return *new(ZookeeperMetadata), nil
 }

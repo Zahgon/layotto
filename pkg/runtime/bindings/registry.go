@@ -17,8 +17,6 @@
 package bindings
 
 import (
-	"fmt"
-
 	"github.com/dapr/components-contrib/bindings"
 
 	"mosn.io/layotto/components/pkg/info"
@@ -41,41 +39,24 @@ type bindingsRegistry struct {
 	info                *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &bindingsRegistry{
-		outputBindingStores: make(map[string]func() bindings.OutputBinding),
-		inputBindingStores:  make(map[string]func() bindings.InputBinding),
-		info:                info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
 func (r *bindingsRegistry) RegisterOutputBinding(fs ...*OutputBindingFactory) {
-	for _, f := range fs {
-		r.outputBindingStores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 func (r *bindingsRegistry) RegisterInputBinding(fs ...*InputBindingFactory) {
-	for _, f := range fs {
-		r.inputBindingStores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 func (r *bindingsRegistry) CreateOutputBinding(compType string) (bindings.OutputBinding, error) {
-	if f, ok := r.outputBindingStores[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(bindings.OutputBinding), nil
 }
 
 func (r *bindingsRegistry) CreateInputBinding(compType string) (bindings.InputBinding, error) {
-	if f, ok := r.inputBindingStores[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(bindings.InputBinding), nil
 }

@@ -7,7 +7,6 @@
 package phone
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -38,65 +37,39 @@ type SendVoiceWithTemplateRequest struct {
 	FromMobile string `protobuf:"bytes,4,opt,name=from_mobile,json=fromMobile,proto3" json:"from_mobile,omitempty"`
 }
 
-func (x *SendVoiceWithTemplateRequest) Reset() {
-	*x = SendVoiceWithTemplateRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_phone_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendVoiceWithTemplateRequest) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendVoiceWithTemplateRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendVoiceWithTemplateRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendVoiceWithTemplateRequest) ProtoMessage() {}
+func (*SendVoiceWithTemplateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendVoiceWithTemplateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_phone_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendVoiceWithTemplateRequest.ProtoReflect.Descriptor instead.
 func (*SendVoiceWithTemplateRequest) Descriptor() ([]byte, []int) {
-	return file_phone_proto_rawDescGZIP(), []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *SendVoiceWithTemplateRequest) GetComponentName() string {
-	if x != nil {
-		return x.ComponentName
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (x *SendVoiceWithTemplateRequest) GetTemplate() *VoiceTemplate {
-	if x != nil {
-		return x.Template
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (x *SendVoiceWithTemplateRequest) GetToMobile() []string {
-	if x != nil {
-		return x.ToMobile
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (x *SendVoiceWithTemplateRequest) GetFromMobile() string {
-	if x != nil {
-		return x.FromMobile
-	}
-	return ""
-}
+func (x *SendVoiceWithTemplateRequest) GetFromMobile() string { _ = "STUB: not implemented"; return "" }
 
 // VoiceTemplate
 type VoiceTemplate struct {
@@ -110,49 +83,24 @@ type VoiceTemplate struct {
 	TemplateParams map[string]string `protobuf:"bytes,2,rep,name=template_params,json=templateParams,proto3" json:"template_params,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *VoiceTemplate) Reset() {
-	*x = VoiceTemplate{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_phone_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *VoiceTemplate) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *VoiceTemplate) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *VoiceTemplate) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*VoiceTemplate) ProtoMessage() {}
+func (*VoiceTemplate) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *VoiceTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_phone_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use VoiceTemplate.ProtoReflect.Descriptor instead.
-func (*VoiceTemplate) Descriptor() ([]byte, []int) {
-	return file_phone_proto_rawDescGZIP(), []int{1}
-}
+func (*VoiceTemplate) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *VoiceTemplate) GetTemplateId() string {
-	if x != nil {
-		return x.TemplateId
-	}
-	return ""
-}
+func (x *VoiceTemplate) GetTemplateId() string { _ = "STUB: not implemented"; return "" }
 
 func (x *VoiceTemplate) GetTemplateParams() map[string]string {
-	if x != nil {
-		return x.TemplateParams
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -166,44 +114,24 @@ type SendVoiceWithTemplateResponse struct {
 	RequestId string `protobuf:"bytes,1,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
 }
 
-func (x *SendVoiceWithTemplateResponse) Reset() {
-	*x = SendVoiceWithTemplateResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_phone_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *SendVoiceWithTemplateResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *SendVoiceWithTemplateResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *SendVoiceWithTemplateResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*SendVoiceWithTemplateResponse) ProtoMessage() {}
+func (*SendVoiceWithTemplateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *SendVoiceWithTemplateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_phone_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use SendVoiceWithTemplateResponse.ProtoReflect.Descriptor instead.
 func (*SendVoiceWithTemplateResponse) Descriptor() ([]byte, []int) {
-	return file_phone_proto_rawDescGZIP(), []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (x *SendVoiceWithTemplateResponse) GetRequestId() string {
-	if x != nil {
-		return x.RequestId
-	}
-	return ""
-}
+func (x *SendVoiceWithTemplateResponse) GetRequestId() string { _ = "STUB: not implemented"; return "" }
 
 var File_phone_proto protoreflect.FileDescriptor
 
@@ -264,12 +192,7 @@ var (
 	file_phone_proto_rawDescData = file_phone_proto_rawDesc
 )
 
-func file_phone_proto_rawDescGZIP() []byte {
-	file_phone_proto_rawDescOnce.Do(func() {
-		file_phone_proto_rawDescData = protoimpl.X.CompressGZIP(file_phone_proto_rawDescData)
-	})
-	return file_phone_proto_rawDescData
-}
+func file_phone_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_phone_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_phone_proto_goTypes = []interface{}{
@@ -290,65 +213,5 @@ var file_phone_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_phone_proto_init() }
-func file_phone_proto_init() {
-	if File_phone_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_phone_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendVoiceWithTemplateRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_phone_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*VoiceTemplate); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_phone_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendVoiceWithTemplateResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_phone_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   4,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_phone_proto_goTypes,
-		DependencyIndexes: file_phone_proto_depIdxs,
-		MessageInfos:      file_phone_proto_msgTypes,
-	}.Build()
-	File_phone_proto = out.File
-	file_phone_proto_rawDesc = nil
-	file_phone_proto_goTypes = nil
-	file_phone_proto_depIdxs = nil
-}
+func init()                  { file_phone_proto_init() }
+func file_phone_proto_init() { _ = "STUB: not implemented"; return }

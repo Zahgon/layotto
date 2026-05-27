@@ -18,35 +18,14 @@ import (
 	pb "mosn.io/layotto/spec/proto/pluggable/v1/common"
 )
 
-func ToProtoConfig(config ref.Config) *pb.Config {
-	return &pb.Config{
-		SecretRef:    ToProtoSecretRef(config.SecretRef),
-		ComponentRef: ToProtoComponentRef(config.ComponentRef),
-	}
-}
+func ToProtoConfig(config ref.Config) *pb.Config { _ = "STUB: not implemented"; return nil }
 
 func ToProtoSecretRef(secrets []*ref.SecretRefConfig) []*pb.SecretRefConfig {
-	if secrets == nil {
-		return nil
-	}
-	res := make([]*pb.SecretRefConfig, len(secrets))
-	for i, s := range secrets {
-		res[i] = &pb.SecretRefConfig{
-			StoreName: s.StoreName,
-			Key:       s.Key,
-			SubKey:    s.SubKey,
-			InjectAs:  s.InjectAs,
-		}
-	}
-	return res
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func ToProtoComponentRef(config *ref.ComponentRefConfig) *pb.ComponentRefConfig {
-	if config == nil {
-		return nil
-	}
-	return &pb.ComponentRefConfig{
-		SecretStore: config.SecretStore,
-		ConfigStore: config.ConfigStore,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

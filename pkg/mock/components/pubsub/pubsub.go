@@ -5,8 +5,6 @@
 package mock
 
 import (
-	reflect "reflect"
-
 	pubsub "github.com/dapr/components-contrib/pubsub"
 	gomock "github.com/golang/mock/gomock"
 )
@@ -23,83 +21,56 @@ type MockPubSubMockRecorder struct {
 }
 
 // NewMockPubSub creates a new mock instance.
-func NewMockPubSub(ctrl *gomock.Controller) *MockPubSub {
-	mock := &MockPubSub{ctrl: ctrl}
-	mock.recorder = &MockPubSubMockRecorder{mock}
-	return mock
-}
+func NewMockPubSub(ctrl *gomock.Controller) *MockPubSub { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockPubSub) EXPECT() *MockPubSubMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Close mocks base method.
+	return nil
 }
 
-// Close mocks base method.
-func (m *MockPubSub) Close() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Close")
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockPubSub) Close() error { _ = "STUB: not implemented"; return nil }
 
 // Close indicates an expected call of Close.
-func (mr *MockPubSubMockRecorder) Close() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Close", reflect.TypeOf((*MockPubSub)(nil).Close))
-}
+func (mr *MockPubSubMockRecorder) Close() *gomock.Call { _ = "STUB: not implemented"; return nil }
 
 // Features mocks base method.
-func (m *MockPubSub) Features() []pubsub.Feature {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Features")
-	ret0, _ := ret[0].([]pubsub.Feature)
-	return ret0
-}
+func (m *MockPubSub) Features() []pubsub.Feature { _ = "STUB: not implemented"; return nil }
 
 // Features indicates an expected call of Features.
-func (mr *MockPubSubMockRecorder) Features() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Features", reflect.TypeOf((*MockPubSub)(nil).Features))
-}
+func (mr *MockPubSubMockRecorder) Features() *gomock.Call { _ = "STUB: not implemented"; return nil }
 
 // Init mocks base method.
-func (m *MockPubSub) Init(arg0 pubsub.Metadata) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockPubSub) Init(arg0 pubsub.Metadata) error { _ = "STUB: not implemented"; return nil }
 
 // Init indicates an expected call of Init.
 func (mr *MockPubSubMockRecorder) Init(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockPubSub)(nil).Init), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Publish mocks base method.
 func (m *MockPubSub) Publish(arg0 *pubsub.PublishRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Publish", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Publish indicates an expected call of Publish.
 func (mr *MockPubSubMockRecorder) Publish(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Publish", reflect.TypeOf((*MockPubSub)(nil).Publish), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Subscribe mocks base method.
 func (m *MockPubSub) Subscribe(arg0 pubsub.SubscribeRequest, arg1 pubsub.Handler) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Subscribe", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Subscribe indicates an expected call of Subscribe.
 func (mr *MockPubSubMockRecorder) Subscribe(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Subscribe", reflect.TypeOf((*MockPubSub)(nil).Subscribe), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }

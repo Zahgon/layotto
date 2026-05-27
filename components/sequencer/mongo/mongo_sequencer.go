@@ -14,14 +14,7 @@ package mongo
 
 import (
 	"context"
-	"fmt"
 	"sync"
-
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/mongo/readconcern"
-	"go.mongodb.org/mongo-driver/mongo/writeconcern"
 
 	"mosn.io/layotto/kit/logger"
 
@@ -67,193 +60,61 @@ type SequencerDocument struct {
 }
 
 // MongoSequencer returns a new mongo sequencer
-func NewMongoSequencer() *MongoSequencer {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	m := &MongoSequencer{
-		logger: logger.NewLayottoLogger("sequencer/mongo"),
-	}
-
-	logger.RegisterComponentLoggerListener("sequencer/mongo", m)
-	return m
-}
+func NewMongoSequencer() *MongoSequencer { _ = "STUB: not implemented"; return nil }
 
 func (e *MongoSequencer) OnLogLevelChanged(level logger.LogLevel) {
-	e.logger.SetLogLevel(level)
+	_ = "STUB: not implemented"
+	return
 }
 
 func (e *MongoSequencer) Init(config sequencer.Configuration) error {
-	var document SequencerDocument
-	// 1.parse config
-	m, err := utils.ParseMongoMetadata(config.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	e.metadata = m
-	e.biggerThan = config.BiggerThan
-
-	e.factory = &utils.MongoFactoryImpl{}
-
-	// 2. construct client
-	e.ctx, e.cancel = context.WithCancel(context.Background())
-
-	if e.client, err = e.factory.NewMongoClient(m); err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-
-	if err := e.client.Ping(e.ctx, nil); err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-
-	// Connections Collection
-	e.collection, err = utils.SetCollection(e.client, e.factory, e.metadata)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-
-	if len(e.biggerThan) > 0 {
-		for k, bt := range e.biggerThan {
-			if bt <= 0 {
-				continue
-			}
-			// find key of biggerThan
-			cursor, err := e.collection.Find(e.ctx, bson.M{"_id": k})
-			if err != nil {
-				readinessIndicator.ReportError(err.Error())
-				livenessIndicator.ReportError(err.Error())
-				return err
-			}
-			if cursor != nil && cursor.RemainingBatchLength() > 0 {
-				cursor.Decode(&document)
-			}
-			// check biggerThan's value
-			if document.Sequencer_value < bt {
-				return fmt.Errorf("mongo sequencer error: can not satisfy biggerThan guarantee.key: %s,current id:%v", k, document.Sequencer_value)
-			}
-		}
-	}
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
+
+// 1.parse config
+
+// 2. construct client
+
+// Connections Collection
+
+// find key of biggerThan
+
+// check biggerThan's value
 
 func (e *MongoSequencer) GetNextId(req *sequencer.GetNextIdRequest) (*sequencer.GetNextIdResponse, error) {
-	var err error
-	var document SequencerDocument
-	// create mongo session
-	e.session, err = e.client.StartSession()
-	txnOpts := options.Transaction().SetReadConcern(readconcern.Snapshot()).
-		SetWriteConcern(writeconcern.New(writeconcern.WMajority()))
-
-	// check session
-	if err != nil {
-		return nil, fmt.Errorf("[mongoSequencer]: Create Session return error: %s key: %s", err, req.Key)
-	}
-
-	// close mongo session
-	defer e.session.EndSession(e.ctx)
-
-	status, err := e.session.WithTransaction(e.ctx, func(sessionContext mongo.SessionContext) (interface{}, error) {
-		var err error
-		after := options.After
-		upsert := true
-		opt := options.FindOneAndUpdateOptions{
-			ReturnDocument: &after,
-			Upsert:         &upsert,
-		}
-
-		e.singResult = e.factory.NewSingleResult(e.collection.FindOneAndUpdate(e.ctx, bson.M{"_id": req.Key}, bson.M{"$inc": bson.M{"sequencer_value": 1}}, &opt))
-
-		// rollback
-		if e.singResult.Err() != nil {
-			_ = sessionContext.AbortTransaction(sessionContext)
-			return nil, err
-		}
-
-		// commit
-		if err = sessionContext.CommitTransaction(sessionContext); err != nil {
-			return nil, err
-		}
-		e.singResult.Decode(&document)
-		return document, nil
-	}, txnOpts)
-	if err != nil || status == nil {
-		return nil, err
-	}
-
-	return &sequencer.GetNextIdResponse{
-		NextId: document.Sequencer_value,
-	}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// create mongo session
+
+// check session
+
+// close mongo session
+
+// rollback
+
+// commit
 
 func (e *MongoSequencer) GetSegment(req *sequencer.GetSegmentRequest) (support bool, result *sequencer.GetSegmentResponse, err error) {
-	var document SequencerDocument
+	_ = "STUB: not implemented"
+	return false,
 
-	// size=0 only check support
-	if req.Size == 0 {
-		return true, nil, nil
-	}
-
-	// create mongo session
-	e.session, err = e.client.StartSession()
-	txnOpts := options.Transaction().SetReadConcern(readconcern.Snapshot()).
-		SetWriteConcern(writeconcern.New(writeconcern.WMajority()))
-
-	// check session
-	if err != nil {
-		return true, nil, fmt.Errorf("[mongoSequencer]: Create Session return error: %s key: %s", err, req.Key)
-	}
-
-	// close mongo session
-	defer e.session.EndSession(e.ctx)
-
-	status, err := e.session.WithTransaction(e.ctx, func(sessionContext mongo.SessionContext) (interface{}, error) {
-		var err error
-		after := options.After
-		upsert := true
-		opt := options.FindOneAndUpdateOptions{
-			ReturnDocument: &after,
-			Upsert:         &upsert,
-		}
-
-		// find and upsert
-		e.singResult = e.factory.NewSingleResult(e.collection.FindOneAndUpdate(e.ctx, bson.M{"_id": req.Key}, bson.M{"$inc": bson.M{"sequencer_value": req.Size}}, &opt))
-
-		// rollback
-		if e.singResult.Err() != nil {
-			_ = sessionContext.AbortTransaction(sessionContext)
-			return nil, err
-		}
-
-		// commit
-		if err = sessionContext.CommitTransaction(sessionContext); err != nil {
-			return nil, err
-		}
-		e.singResult.Decode(&document)
-		return document, nil
-	}, txnOpts)
-	if err != nil || status == nil {
-		return true, nil, err
-	}
-
-	return true, &sequencer.GetSegmentResponse{
-		From: document.Sequencer_value - int64(req.Size) + 1,
-		To:   document.Sequencer_value,
-	}, nil
+		// size=0 only check support
+		nil, nil
 }
 
-func (e *MongoSequencer) Close() error {
-	e.cancel()
+// create mongo session
 
-	return e.client.Disconnect(e.ctx)
-}
+// check session
+
+// close mongo session
+
+// find and upsert
+
+// rollback
+
+// commit
+
+func (e *MongoSequencer) Close() error { _ = "STUB: not implemented"; return nil }

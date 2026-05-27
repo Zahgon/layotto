@@ -19,9 +19,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-zookeeper/zk"
-	util "mosn.io/pkg/utils"
-
 	"mosn.io/layotto/kit/logger"
 
 	"mosn.io/layotto/components/lock"
@@ -62,128 +59,64 @@ type ZookeeperLock struct {
 }
 
 // NewZookeeperLock Create ZookeeperLock
-func NewZookeeperLock() *ZookeeperLock {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	lock := &ZookeeperLock{
-		logger: logger.NewLayottoLogger("lock/zookeeper"),
-	}
-	logger.RegisterComponentLoggerListener("lock/zookeeper", lock)
-	return lock
-}
+func NewZookeeperLock() *ZookeeperLock { _ = "STUB: not implemented"; return nil }
 
 // OnLogLevelChanged change log level
-func (p *ZookeeperLock) OnLogLevelChanged(level logger.LogLevel) {
-	p.logger.SetLogLevel(level)
-}
+func (p *ZookeeperLock) OnLogLevelChanged(level logger.LogLevel) { _ = "STUB: not implemented"; return }
 
 // Init ZookeeperLock
-func (p *ZookeeperLock) Init(metadata lock.Metadata) error {
+func (p *ZookeeperLock) Init(metadata lock.Metadata) error { _ = "STUB: not implemented"; return nil }
 
-	m, err := utils.ParseZookeeperMetadata(metadata.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-
-	p.metadata = m
-	p.factory = &utils.ConnectionFactoryImpl{}
-
-	//init unlock connection
-	zkConn, err := p.factory.NewConnection(p.metadata.SessionTimeout, p.metadata)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	p.unlockConn = zkConn
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	return nil
-}
+//init unlock connection
 
 // Features is to get ZookeeperLock's features
 func (p *ZookeeperLock) Features() []lock.Feature {
+	_ = "STUB: not implemented"
+
+	// LockKeepAlive try to renewal lease
 	return nil
 }
 
-// LockKeepAlive try to renewal lease
 func (p *ZookeeperLock) LockKeepAlive(ctx context.Context, request *lock.LockKeepAliveRequest) (*lock.LockKeepAliveResponse, error) {
+	_ = "STUB: not implemented"
 	//TODO: implemnt function
 	return nil, nil
 }
 
 // TryLock Node tries to acquire a zookeeper lock
 func (p *ZookeeperLock) TryLock(ctx context.Context, req *lock.TryLockRequest) (*lock.TryLockResponse, error) {
-
-	conn, err := p.factory.NewConnection(time.Duration(req.Expire)*time.Second, p.metadata)
-	if err != nil {
-		return &lock.TryLockResponse{}, err
-	}
-	//1.create zk ephemeral node
-	_, err = conn.Create("/"+req.ResourceId, []byte(req.LockOwner), zk.FlagEphemeral, zk.WorldACL(zk.PermAll))
-
-	//2.1 create node fail ,indicates lock fail
-	if err != nil {
-		defer conn.Close()
-		//the node exists,lock fail
-		if err == zk.ErrNodeExists {
-			return &lock.TryLockResponse{
-				Success: false,
-			}, nil
-		}
-		//other err
-		return nil, err
-	}
-
-	//2.2 create node success, asyn  to make sure zkclient alive for need time
-	util.GoWithRecover(func() {
-		closeConn(conn, req.Expire)
-	}, nil)
-
-	return &lock.TryLockResponse{
-		Success: true,
-	}, nil
-
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+//1.create zk ephemeral node
+
+//2.1 create node fail ,indicates lock fail
+
+//the node exists,lock fail
+
+//other err
+
+//2.2 create node success, asyn  to make sure zkclient alive for need time
 
 // Unlock Node tries to release a zookeeper lock
 func (p *ZookeeperLock) Unlock(ctx context.Context, req *lock.UnlockRequest) (*lock.UnlockResponse, error) {
-
-	conn := p.unlockConn
-
-	path := "/" + req.ResourceId
-	owner, state, err := conn.Get(path)
-
-	if err != nil {
-		//node does not exist, indicates this lock has expired
-		if err == zk.ErrNoNode {
-			return &lock.UnlockResponse{Status: lock.LOCK_UNEXIST}, nil
-		}
-		//other err
-		return nil, err
-	}
-	//node exist ,but owner not this, indicates this lock has occupied or wrong unlock
-	if string(owner) != req.LockOwner {
-		return &lock.UnlockResponse{Status: lock.LOCK_BELONG_TO_OTHERS}, nil
-	}
-	err = conn.Delete(path, state.Version)
-	//owner is this, but delete fail
-	if err != nil {
-		// delete no node , indicates this lock has expired
-		if err == zk.ErrNoNode {
-			return &lock.UnlockResponse{Status: lock.LOCK_UNEXIST}, nil
-			// delete version error , indicates this lock has occupied by others
-		} else if err == zk.ErrBadVersion {
-			return &lock.UnlockResponse{Status: lock.LOCK_BELONG_TO_OTHERS}, nil
-			//other error
-		} else {
-			return nil, err
-		}
-	}
-	//delete success, unlock success
-	return &lock.UnlockResponse{Status: lock.SUCCESS}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+//node does not exist, indicates this lock has expired
+
+//other err
+
+//node exist ,but owner not this, indicates this lock has occupied or wrong unlock
+
+//owner is this, but delete fail
+
+// delete no node , indicates this lock has expired
+
+// delete version error , indicates this lock has occupied by others
+
+//other error
+
+//delete success, unlock success

@@ -17,8 +17,6 @@
 package configstores
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 )
 
@@ -33,10 +31,8 @@ type StoreFactory struct {
 }
 
 func NewStoreFactory(compType string, f func() Store) *StoreFactory {
-	return &StoreFactory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type StoreRegistry struct {
@@ -44,25 +40,11 @@ type StoreRegistry struct {
 	info   *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &StoreRegistry{
-		stores: make(map[string]func() Store),
-		info:   info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
-func (r *StoreRegistry) Register(fs ...*StoreFactory) {
-	for _, f := range fs {
-		r.stores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
-}
+func (r *StoreRegistry) Register(fs ...*StoreFactory) { _ = "STUB: not implemented"; return }
 
 func (r *StoreRegistry) Create(compType string) (Store, error) {
-	if f, ok := r.stores[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(Store), nil
 }

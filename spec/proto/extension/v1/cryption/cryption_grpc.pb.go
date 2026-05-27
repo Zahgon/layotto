@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -34,25 +32,18 @@ type cryptionServiceClient struct {
 }
 
 func NewCryptionServiceClient(cc grpc.ClientConnInterface) CryptionServiceClient {
-	return &cryptionServiceClient{cc}
+	_ = "STUB: not implemented"
+	return *new(CryptionServiceClient)
 }
 
 func (c *cryptionServiceClient) Encrypt(ctx context.Context, in *EncryptRequest, opts ...grpc.CallOption) (*EncryptResponse, error) {
-	out := new(EncryptResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.cryption.CryptionService/Encrypt", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *cryptionServiceClient) Decrypt(ctx context.Context, in *DecryptRequest, opts ...grpc.CallOption) (*DecryptResponse, error) {
-	out := new(DecryptResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.cryption.CryptionService/Decrypt", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CryptionServiceServer is the server API for CryptionService service.
@@ -70,10 +61,13 @@ type UnimplementedCryptionServiceServer struct {
 }
 
 func (UnimplementedCryptionServiceServer) Encrypt(context.Context, *EncryptRequest) (*EncryptResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Encrypt not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedCryptionServiceServer) Decrypt(context.Context, *DecryptRequest) (*DecryptResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Decrypt not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeCryptionServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -84,43 +78,18 @@ type UnsafeCryptionServiceServer interface {
 }
 
 func RegisterCryptionServiceServer(s grpc.ServiceRegistrar, srv CryptionServiceServer) {
-	s.RegisterService(&CryptionService_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _CryptionService_Encrypt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(EncryptRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CryptionServiceServer).Encrypt(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.cryption.CryptionService/Encrypt",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CryptionServiceServer).Encrypt(ctx, req.(*EncryptRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _CryptionService_Decrypt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DecryptRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CryptionServiceServer).Decrypt(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.cryption.CryptionService/Decrypt",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CryptionServiceServer).Decrypt(ctx, req.(*DecryptRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CryptionService_ServiceDesc is the grpc.ServiceDesc for CryptionService service.

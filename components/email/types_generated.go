@@ -16,8 +16,6 @@
 package email
 
 import (
-	fmt "fmt"
-
 	info "mosn.io/layotto/components/pkg/info"
 	ref "mosn.io/layotto/components/ref"
 )
@@ -44,10 +42,8 @@ type Factory struct {
 }
 
 func NewFactory(compType string, f func() EmailService) *Factory {
-	return &Factory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type registry struct {
@@ -55,25 +51,11 @@ type registry struct {
 	info   *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(serviceName)
-	return &registry{
-		stores: make(map[string]func() EmailService),
-		info:   info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
-func (r *registry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.stores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(serviceName, f.CompType)
-	}
-}
+func (r *registry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 func (r *registry) Create(compType string) (EmailService, error) {
-	if f, ok := r.stores[compType]; ok {
-		r.info.LoadComponent(serviceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not registered", compType)
+	_ = "STUB: not implemented"
+	return *new(EmailService), nil
 }

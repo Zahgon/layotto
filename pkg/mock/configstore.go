@@ -6,7 +6,6 @@ package mock
 
 import (
 	context "context"
-	reflect "reflect"
 
 	"mosn.io/layotto/components/configstores"
 
@@ -19,110 +18,94 @@ type MockStore struct {
 	recorder *MockStoreMockRecorder
 }
 
-func (m *MockStore) GetDefaultGroup() string {
-	return "default"
-}
+func (m *MockStore) GetDefaultGroup() string { _ = "STUB: not implemented"; return "" }
 
 func (m *MockStore) GetDefaultLabel() string {
-	return "default"
+	_ = "STUB: not implemented"
+
+	// MockStoreMockRecorder is the mock recorder for MockStore.
+	return ""
 }
 
-// MockStoreMockRecorder is the mock recorder for MockStore.
 type MockStoreMockRecorder struct {
 	mock *MockStore
 }
 
 // NewMockStore creates a new mock instance.
-func NewMockStore(ctrl *gomock.Controller) *MockStore {
-	mock := &MockStore{ctrl: ctrl}
-	mock.recorder = &MockStoreMockRecorder{mock}
-	return mock
-}
+func NewMockStore(ctrl *gomock.Controller) *MockStore { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockStore) EXPECT() *MockStoreMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Delete mocks base method.
+	return nil
 }
 
-// Delete mocks base method.
 func (m *MockStore) Delete(arg0 context.Context, arg1 *configstores.DeleteRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Delete", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Delete indicates an expected call of Delete.
 func (mr *MockStoreMockRecorder) Delete(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Delete", reflect.TypeOf((*MockStore)(nil).Delete), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Get mocks base method.
 func (m *MockStore) Get(arg0 context.Context, arg1 *configstores.GetRequest) ([]*configstores.ConfigurationItem, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", arg0, arg1)
-	ret0, _ := ret[0].([]*configstores.ConfigurationItem)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Get indicates an expected call of Get.
 func (mr *MockStoreMockRecorder) Get(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockStore)(nil).Get), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init mocks base method.
 func (m *MockStore) Init(config *configstores.StoreConfig) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", config)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init indicates an expected call of Init.
 func (mr *MockStoreMockRecorder) Init(config interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockStore)(nil).Init), config)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Set mocks base method.
 func (m *MockStore) Set(arg0 context.Context, arg1 *configstores.SetRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Set", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Set indicates an expected call of Set.
 func (mr *MockStoreMockRecorder) Set(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Set", reflect.TypeOf((*MockStore)(nil).Set), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // StopSubscribe mocks base method.
-func (m *MockStore) StopSubscribe() {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "StopSubscribe")
-}
+func (m *MockStore) StopSubscribe() { _ = "STUB: not implemented"; return }
 
 // StopSubscribe indicates an expected call of StopSubscribe.
 func (mr *MockStoreMockRecorder) StopSubscribe() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "StopSubscribe", reflect.TypeOf((*MockStore)(nil).StopSubscribe))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Subscribe mocks base method.
 func (m *MockStore) Subscribe(arg0 *configstores.SubscribeReq, arg1 chan *configstores.SubscribeResp) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Subscribe", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Subscribe indicates an expected call of Subscribe.
 func (mr *MockStoreMockRecorder) Subscribe(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Subscribe", reflect.TypeOf((*MockStore)(nil).Subscribe), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }

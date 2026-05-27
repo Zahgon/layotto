@@ -32,24 +32,16 @@ type ComponentInfo struct {
 	Loaded []string `json:"loaded"`
 }
 
-func NewRuntimeInfo() *RuntimeInfo {
-	return &RuntimeInfo{
-		Services: ServiceInfo{},
-	}
-}
+func NewRuntimeInfo() *RuntimeInfo { _ = "STUB: not implemented"; return nil }
 
-func (info *RuntimeInfo) AddService(service string) {
-	info.Services[service] = &ComponentInfo{}
-}
+func (info *RuntimeInfo) AddService(service string) { _ = "STUB: not implemented"; return }
 
 func (info *RuntimeInfo) RegisterComponent(service string, compType string) {
-	if c, ok := info.Services[service]; ok {
-		c.Registered = append(c.Registered, compType)
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 func (info *RuntimeInfo) LoadComponent(service string, compType string) {
-	if c, ok := info.Services[service]; ok {
-		c.Loaded = append(c.Loaded, compType)
-	}
+	_ = "STUB: not implemented"
+	return
 }

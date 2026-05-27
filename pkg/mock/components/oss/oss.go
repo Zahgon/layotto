@@ -6,7 +6,6 @@ package mock_oss
 
 import (
 	context "context"
-	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
 
@@ -25,415 +24,335 @@ type MockOssMockRecorder struct {
 }
 
 // NewMockOss creates a new mock instance.
-func NewMockOss(ctrl *gomock.Controller) *MockOss {
-	mock := &MockOss{ctrl: ctrl}
-	mock.recorder = &MockOssMockRecorder{mock}
-	return mock
-}
+func NewMockOss(ctrl *gomock.Controller) *MockOss { _ = "STUB: not implemented"; return nil }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockOss) EXPECT() *MockOssMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// AbortMultipartUpload mocks base method.
+	return nil
 }
 
-// AbortMultipartUpload mocks base method.
 func (m *MockOss) AbortMultipartUpload(arg0 context.Context, arg1 *oss.AbortMultipartUploadInput) (*oss.AbortMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AbortMultipartUpload", arg0, arg1)
-	ret0, _ := ret[0].(*oss.AbortMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AbortMultipartUpload indicates an expected call of AbortMultipartUpload.
 func (mr *MockOssMockRecorder) AbortMultipartUpload(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AbortMultipartUpload", reflect.TypeOf((*MockOss)(nil).AbortMultipartUpload), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // AppendObject mocks base method.
 func (m *MockOss) AppendObject(arg0 context.Context, arg1 *oss.AppendObjectInput) (*oss.AppendObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "AppendObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.AppendObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AppendObject indicates an expected call of AppendObject.
 func (mr *MockOssMockRecorder) AppendObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AppendObject", reflect.TypeOf((*MockOss)(nil).AppendObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CompleteMultipartUpload mocks base method.
 func (m *MockOss) CompleteMultipartUpload(arg0 context.Context, arg1 *oss.CompleteMultipartUploadInput) (*oss.CompleteMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CompleteMultipartUpload", arg0, arg1)
-	ret0, _ := ret[0].(*oss.CompleteMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CompleteMultipartUpload indicates an expected call of CompleteMultipartUpload.
 func (mr *MockOssMockRecorder) CompleteMultipartUpload(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CompleteMultipartUpload", reflect.TypeOf((*MockOss)(nil).CompleteMultipartUpload), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CopyObject mocks base method.
 func (m *MockOss) CopyObject(arg0 context.Context, arg1 *oss.CopyObjectInput) (*oss.CopyObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CopyObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.CopyObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CopyObject indicates an expected call of CopyObject.
 func (mr *MockOssMockRecorder) CopyObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CopyObject", reflect.TypeOf((*MockOss)(nil).CopyObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CreateMultipartUpload mocks base method.
 func (m *MockOss) CreateMultipartUpload(arg0 context.Context, arg1 *oss.CreateMultipartUploadInput) (*oss.CreateMultipartUploadOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CreateMultipartUpload", arg0, arg1)
-	ret0, _ := ret[0].(*oss.CreateMultipartUploadOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CreateMultipartUpload indicates an expected call of CreateMultipartUpload.
 func (mr *MockOssMockRecorder) CreateMultipartUpload(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateMultipartUpload", reflect.TypeOf((*MockOss)(nil).CreateMultipartUpload), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObject mocks base method.
 func (m *MockOss) DeleteObject(arg0 context.Context, arg1 *oss.DeleteObjectInput) (*oss.DeleteObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.DeleteObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObject indicates an expected call of DeleteObject.
 func (mr *MockOssMockRecorder) DeleteObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObject", reflect.TypeOf((*MockOss)(nil).DeleteObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObjectTagging mocks base method.
 func (m *MockOss) DeleteObjectTagging(arg0 context.Context, arg1 *oss.DeleteObjectTaggingInput) (*oss.DeleteObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteObjectTagging", arg0, arg1)
-	ret0, _ := ret[0].(*oss.DeleteObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObjectTagging indicates an expected call of DeleteObjectTagging.
 func (mr *MockOssMockRecorder) DeleteObjectTagging(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObjectTagging", reflect.TypeOf((*MockOss)(nil).DeleteObjectTagging), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteObjects mocks base method.
 func (m *MockOss) DeleteObjects(arg0 context.Context, arg1 *oss.DeleteObjectsInput) (*oss.DeleteObjectsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteObjects", arg0, arg1)
-	ret0, _ := ret[0].(*oss.DeleteObjectsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteObjects indicates an expected call of DeleteObjects.
 func (mr *MockOssMockRecorder) DeleteObjects(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteObjects", reflect.TypeOf((*MockOss)(nil).DeleteObjects), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObject mocks base method.
 func (m *MockOss) GetObject(arg0 context.Context, arg1 *oss.GetObjectInput) (*oss.GetObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.GetObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObject indicates an expected call of GetObject.
 func (mr *MockOssMockRecorder) GetObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObject", reflect.TypeOf((*MockOss)(nil).GetObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObjectCannedAcl mocks base method.
 func (m *MockOss) GetObjectCannedAcl(arg0 context.Context, arg1 *oss.GetObjectCannedAclInput) (*oss.GetObjectCannedAclOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetObjectCannedAcl", arg0, arg1)
-	ret0, _ := ret[0].(*oss.GetObjectCannedAclOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObjectCannedAcl indicates an expected call of GetObjectCannedAcl.
 func (mr *MockOssMockRecorder) GetObjectCannedAcl(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObjectCannedAcl", reflect.TypeOf((*MockOss)(nil).GetObjectCannedAcl), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetObjectTagging mocks base method.
 func (m *MockOss) GetObjectTagging(arg0 context.Context, arg1 *oss.GetObjectTaggingInput) (*oss.GetObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetObjectTagging", arg0, arg1)
-	ret0, _ := ret[0].(*oss.GetObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetObjectTagging indicates an expected call of GetObjectTagging.
 func (mr *MockOssMockRecorder) GetObjectTagging(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetObjectTagging", reflect.TypeOf((*MockOss)(nil).GetObjectTagging), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // HeadObject mocks base method.
 func (m *MockOss) HeadObject(arg0 context.Context, arg1 *oss.HeadObjectInput) (*oss.HeadObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "HeadObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.HeadObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // HeadObject indicates an expected call of HeadObject.
 func (mr *MockOssMockRecorder) HeadObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "HeadObject", reflect.TypeOf((*MockOss)(nil).HeadObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init mocks base method.
 func (m *MockOss) Init(arg0 context.Context, arg1 *oss.Config) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init indicates an expected call of Init.
 func (mr *MockOssMockRecorder) Init(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockOss)(nil).Init), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // IsObjectExist mocks base method.
 func (m *MockOss) IsObjectExist(arg0 context.Context, arg1 *oss.IsObjectExistInput) (*oss.IsObjectExistOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "IsObjectExist", arg0, arg1)
-	ret0, _ := ret[0].(*oss.IsObjectExistOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // IsObjectExist indicates an expected call of IsObjectExist.
 func (mr *MockOssMockRecorder) IsObjectExist(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "IsObjectExist", reflect.TypeOf((*MockOss)(nil).IsObjectExist), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListMultipartUploads mocks base method.
 func (m *MockOss) ListMultipartUploads(arg0 context.Context, arg1 *oss.ListMultipartUploadsInput) (*oss.ListMultipartUploadsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListMultipartUploads", arg0, arg1)
-	ret0, _ := ret[0].(*oss.ListMultipartUploadsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListMultipartUploads indicates an expected call of ListMultipartUploads.
 func (mr *MockOssMockRecorder) ListMultipartUploads(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListMultipartUploads", reflect.TypeOf((*MockOss)(nil).ListMultipartUploads), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListObjectVersions mocks base method.
 func (m *MockOss) ListObjectVersions(arg0 context.Context, arg1 *oss.ListObjectVersionsInput) (*oss.ListObjectVersionsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListObjectVersions", arg0, arg1)
-	ret0, _ := ret[0].(*oss.ListObjectVersionsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListObjectVersions indicates an expected call of ListObjectVersions.
 func (mr *MockOssMockRecorder) ListObjectVersions(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListObjectVersions", reflect.TypeOf((*MockOss)(nil).ListObjectVersions), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListObjects mocks base method.
 func (m *MockOss) ListObjects(arg0 context.Context, arg1 *oss.ListObjectsInput) (*oss.ListObjectsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListObjects", arg0, arg1)
-	ret0, _ := ret[0].(*oss.ListObjectsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListObjects indicates an expected call of ListObjects.
 func (mr *MockOssMockRecorder) ListObjects(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListObjects", reflect.TypeOf((*MockOss)(nil).ListObjects), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListParts mocks base method.
 func (m *MockOss) ListParts(arg0 context.Context, arg1 *oss.ListPartsInput) (*oss.ListPartsOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListParts", arg0, arg1)
-	ret0, _ := ret[0].(*oss.ListPartsOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListParts indicates an expected call of ListParts.
 func (mr *MockOssMockRecorder) ListParts(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListParts", reflect.TypeOf((*MockOss)(nil).ListParts), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObject mocks base method.
 func (m *MockOss) PutObject(arg0 context.Context, arg1 *oss.PutObjectInput) (*oss.PutObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.PutObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObject indicates an expected call of PutObject.
 func (mr *MockOssMockRecorder) PutObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObject", reflect.TypeOf((*MockOss)(nil).PutObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObjectCannedAcl mocks base method.
 func (m *MockOss) PutObjectCannedAcl(arg0 context.Context, arg1 *oss.PutObjectCannedAclInput) (*oss.PutObjectCannedAclOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutObjectCannedAcl", arg0, arg1)
-	ret0, _ := ret[0].(*oss.PutObjectCannedAclOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObjectCannedAcl indicates an expected call of PutObjectCannedAcl.
 func (mr *MockOssMockRecorder) PutObjectCannedAcl(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObjectCannedAcl", reflect.TypeOf((*MockOss)(nil).PutObjectCannedAcl), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutObjectTagging mocks base method.
 func (m *MockOss) PutObjectTagging(arg0 context.Context, arg1 *oss.PutObjectTaggingInput) (*oss.PutObjectTaggingOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutObjectTagging", arg0, arg1)
-	ret0, _ := ret[0].(*oss.PutObjectTaggingOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PutObjectTagging indicates an expected call of PutObjectTagging.
 func (mr *MockOssMockRecorder) PutObjectTagging(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutObjectTagging", reflect.TypeOf((*MockOss)(nil).PutObjectTagging), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RestoreObject mocks base method.
 func (m *MockOss) RestoreObject(arg0 context.Context, arg1 *oss.RestoreObjectInput) (*oss.RestoreObjectOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "RestoreObject", arg0, arg1)
-	ret0, _ := ret[0].(*oss.RestoreObjectOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RestoreObject indicates an expected call of RestoreObject.
 func (mr *MockOssMockRecorder) RestoreObject(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RestoreObject", reflect.TypeOf((*MockOss)(nil).RestoreObject), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SignURL mocks base method.
 func (m *MockOss) SignURL(arg0 context.Context, arg1 *oss.SignURLInput) (*oss.SignURLOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SignURL", arg0, arg1)
-	ret0, _ := ret[0].(*oss.SignURLOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SignURL indicates an expected call of SignURL.
 func (mr *MockOssMockRecorder) SignURL(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SignURL", reflect.TypeOf((*MockOss)(nil).SignURL), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateDownloadBandwidthRateLimit mocks base method.
 func (m *MockOss) UpdateDownloadBandwidthRateLimit(arg0 context.Context, arg1 *oss.UpdateBandwidthRateLimitInput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UpdateDownloadBandwidthRateLimit", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateDownloadBandwidthRateLimit indicates an expected call of UpdateDownloadBandwidthRateLimit.
 func (mr *MockOssMockRecorder) UpdateDownloadBandwidthRateLimit(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDownloadBandwidthRateLimit", reflect.TypeOf((*MockOss)(nil).UpdateDownloadBandwidthRateLimit), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateUploadBandwidthRateLimit mocks base method.
 func (m *MockOss) UpdateUploadBandwidthRateLimit(arg0 context.Context, arg1 *oss.UpdateBandwidthRateLimitInput) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UpdateUploadBandwidthRateLimit", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UpdateUploadBandwidthRateLimit indicates an expected call of UpdateUploadBandwidthRateLimit.
 func (mr *MockOssMockRecorder) UpdateUploadBandwidthRateLimit(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateUploadBandwidthRateLimit", reflect.TypeOf((*MockOss)(nil).UpdateUploadBandwidthRateLimit), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPart mocks base method.
 func (m *MockOss) UploadPart(arg0 context.Context, arg1 *oss.UploadPartInput) (*oss.UploadPartOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UploadPart", arg0, arg1)
-	ret0, _ := ret[0].(*oss.UploadPartOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UploadPart indicates an expected call of UploadPart.
 func (mr *MockOssMockRecorder) UploadPart(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPart", reflect.TypeOf((*MockOss)(nil).UploadPart), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // UploadPartCopy mocks base method.
 func (m *MockOss) UploadPartCopy(arg0 context.Context, arg1 *oss.UploadPartCopyInput) (*oss.UploadPartCopyOutput, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UploadPartCopy", arg0, arg1)
-	ret0, _ := ret[0].(*oss.UploadPartCopyOutput)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UploadPartCopy indicates an expected call of UploadPartCopy.
 func (mr *MockOssMockRecorder) UploadPartCopy(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UploadPartCopy", reflect.TypeOf((*MockOss)(nil).UploadPartCopy), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }

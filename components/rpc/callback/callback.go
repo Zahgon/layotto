@@ -19,20 +19,14 @@ package callback
 import (
 	"encoding/json"
 
-	"mosn.io/pkg/log"
-
 	"mosn.io/layotto/components/rpc"
 )
 
 // RegisterBeforeInvoke is set BeforeFactory
-func RegisterBeforeInvoke(f BeforeFactory) {
-	beforeInvokeRegistry[f.Name()] = f
-}
+func RegisterBeforeInvoke(f BeforeFactory) { _ = "STUB: not implemented"; return }
 
 // RegisterAfterInvoke is set AfterFactory
-func RegisterAfterInvoke(f AfterFactory) {
-	afterInvokeRegistry[f.Name()] = f
-}
+func RegisterAfterInvoke(f AfterFactory) { _ = "STUB: not implemented"; return }
 
 // BeforeFactory is handled RPCRequest
 type BeforeFactory interface {
@@ -62,9 +56,7 @@ var (
 )
 
 // NewCallback is created Callback
-func NewCallback() rpc.Callback {
-	return &callback{}
-}
+func NewCallback() rpc.Callback { _ = "STUB: not implemented"; return *new(rpc.Callback) }
 
 type callback struct {
 	beforeInvoke []func(*rpc.RPCRequest) (*rpc.RPCRequest, error)
@@ -72,51 +64,19 @@ type callback struct {
 }
 
 // AddBeforeInvoke is add beforeInvoke into callback.beforeInvoke
-func (c *callback) AddBeforeInvoke(conf rpc.CallbackFunc) {
-	f, ok := beforeInvokeRegistry[conf.Name]
-	if !ok {
-		log.DefaultLogger.Errorf("[runtime][rpc]can't find before filter %s", conf.Name)
-		return
-	}
-	if err := f.Init(conf.Config); err != nil {
-		log.DefaultLogger.Errorf("[runtime][rpc]init before filter err %s", err.Error())
-		return
-	}
-	c.beforeInvoke = append(c.beforeInvoke, f.Create())
-}
+func (c *callback) AddBeforeInvoke(conf rpc.CallbackFunc) { _ = "STUB: not implemented"; return }
 
 // AddAfterInvoke is used to add beforeInvoke into callback.afterInvoke
-func (c *callback) AddAfterInvoke(conf rpc.CallbackFunc) {
-	f, ok := afterInvokeRegistry[conf.Name]
-	if !ok {
-		log.DefaultLogger.Errorf("[runtime][rpc]can't find after filter %s", conf.Name)
-		return
-	}
-	if err := f.Init(conf.Config); err != nil {
-		log.DefaultLogger.Errorf("[runtime][rpc]init after filter err %s", err.Error())
-		return
-	}
-	c.afterInvoke = append(c.afterInvoke, f.Create())
-}
+func (c *callback) AddAfterInvoke(conf rpc.CallbackFunc) { _ = "STUB: not implemented"; return }
 
 // BeforeInvoke is used to invoke beforeInvoke callbacks
 func (c *callback) BeforeInvoke(request *rpc.RPCRequest) (*rpc.RPCRequest, error) {
-	var err error
-	for _, cb := range c.beforeInvoke {
-		if request, err = cb(request); err != nil {
-			return nil, err
-		}
-	}
-	return request, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AfterInvoke is used to invoke afterInvoke callbacks
 func (c *callback) AfterInvoke(response *rpc.RPCResponse) (*rpc.RPCResponse, error) {
-	var err error
-	for _, cb := range c.afterInvoke {
-		if response, err = cb(response); err != nil {
-			return nil, err
-		}
-	}
-	return response, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }

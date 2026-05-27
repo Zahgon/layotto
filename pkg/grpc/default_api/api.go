@@ -28,7 +28,6 @@ import (
 	"github.com/dapr/components-contrib/state"
 	jsoniter "github.com/json-iterator/go"
 	"google.golang.org/grpc"
-	"mosn.io/pkg/log"
 
 	"mosn.io/layotto/components/configstores"
 	"mosn.io/layotto/components/file"
@@ -38,8 +37,6 @@ import (
 	"mosn.io/layotto/components/sequencer"
 	grpc_api "mosn.io/layotto/pkg/grpc"
 	"mosn.io/layotto/pkg/grpc/dapr"
-	dapr_common_v1pb "mosn.io/layotto/pkg/grpc/dapr/proto/common/v1"
-	dapr_v1pb "mosn.io/layotto/pkg/grpc/dapr/proto/runtime/v1"
 	"mosn.io/layotto/spec/proto/runtime/v1"
 	runtimev1pb "mosn.io/layotto/spec/proto/runtime/v1"
 )
@@ -92,21 +89,16 @@ type api struct {
 }
 
 func (a *api) Init(conn *grpc.ClientConn) error {
+	_ = "STUB: not implemented"
 	// 1. set connection
-	a.AppCallbackConn = conn
-	return a.startSubscribing()
-}
-
-func (a *api) Register(rawGrpcServer *grpc.Server) error {
-	LayottoAPISingleton = a
-	runtimev1pb.RegisterRuntimeServer(rawGrpcServer, a)
 	return nil
 }
 
+func (a *api) Register(rawGrpcServer *grpc.Server) error { _ = "STUB: not implemented"; return nil }
+
 func NewGrpcAPI(ac *grpc_api.ApplicationContext) grpc_api.GrpcAPI {
-	return NewAPI(ac.AppId,
-		ac.Hellos, ac.ConfigStores, ac.Rpcs, ac.PubSubs, ac.StateStores, ac.Files, ac.LockStores, ac.Sequencers,
-		ac.SendToOutputBindingFn, ac.SecretStores)
+	_ = "STUB: not implemented"
+	return *new(grpc_api.GrpcAPI)
 }
 
 func NewAPI(
@@ -122,99 +114,35 @@ func NewAPI(
 	sendToOutputBindingFn func(name string, req *bindings.InvokeRequest) (*bindings.InvokeResponse, error),
 	secretStores map[string]secretstores.SecretStore,
 ) API {
+	_ = "STUB: not implemented"
 	// filter out transactionalStateStores
-	transactionalStateStores := map[string]state.TransactionalStore{}
-	for key, store := range stateStores {
-		if state.FeatureTransactional.IsPresent(store.Features()) {
-			transactionalStateStores[key] = store.(state.TransactionalStore)
-		}
-	}
-	dAPI := dapr.NewDaprServer(appId, hellos, configStores, rpcs, pubSubs,
-		stateStores, transactionalStateStores,
-		files, lockStores, sequencers, sendToOutputBindingFn, secretStores)
-	// construct
-	return &api{
-		daprAPI:                  dAPI,
-		appId:                    appId,
-		hellos:                   hellos,
-		configStores:             configStores,
-		rpcs:                     rpcs,
-		pubSubs:                  pubSubs,
-		stateStores:              stateStores,
-		transactionalStateStores: transactionalStateStores,
-		fileOps:                  files,
-		lockStores:               lockStores,
-		sequencers:               sequencers,
-		sendToOutputBindingFn:    sendToOutputBindingFn,
-		secretStores:             secretStores,
-		json:                     jsoniter.ConfigFastest,
-	}
-
+	return *new(API)
 }
+
+// construct
 
 func (a *api) SayHello(ctx context.Context, in *runtimev1pb.SayHelloRequest) (*runtimev1pb.SayHelloResponse, error) {
-	h, err := a.getHello(in.ServiceName)
-	if err != nil {
-		log.DefaultLogger.Errorf("[runtime] [grpc.say_hello] get hello error: %v", err)
-		return nil, err
-	}
-	// create hello request based on pb.go struct
-	req := &hello.HelloRequest{
-		Name: in.Name,
-	}
-	resp, err := h.Hello(ctx, req)
-	if err != nil {
-		log.DefaultLogger.Errorf("[runtime] [grpc.say_hello] request hello error: %v", err)
-		return nil, err
-	}
-	// create response base on hello.Response
-	return &runtimev1pb.SayHelloResponse{
-		Hello: resp.HelloString,
-		Data:  in.Data,
-	}, nil
-
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
+// create hello request based on pb.go struct
+
+// create response base on hello.Response
+
 func (a *api) getHello(name string) (hello.HelloService, error) {
-	if len(a.hellos) == 0 {
-		return nil, ErrNoInstance
-	}
-	h, ok := a.hellos[name]
-	if !ok {
-		return nil, ErrNoInstance
-	}
-	return h, nil
+	_ = "STUB: not implemented"
+	return *new(hello.HelloService), nil
 }
 
 func (a *api) InvokeService(ctx context.Context, in *runtimev1pb.InvokeServiceRequest) (*runtimev1pb.InvokeResponse, error) {
+	_ = "STUB: not implemented"
 	// convert request
-	var msg *dapr_common_v1pb.InvokeRequest
-	if in != nil && in.Message != nil {
-		msg = &dapr_common_v1pb.InvokeRequest{
-			Method:      in.Message.Method,
-			Data:        in.Message.Data,
-			ContentType: in.Message.ContentType,
-		}
-		if in.Message.HttpExtension != nil {
-			msg.HttpExtension = &dapr_common_v1pb.HTTPExtension{
-				Verb:        dapr_common_v1pb.HTTPExtension_Verb(in.Message.HttpExtension.Verb),
-				Querystring: in.Message.HttpExtension.Querystring,
-			}
-		}
-	}
-	// delegate to dapr api implementation
-	daprResp, err := a.daprAPI.InvokeService(ctx, &dapr_v1pb.InvokeServiceRequest{
-		Id:      in.Id,
-		Message: msg,
-	})
-	// handle error
-	if err != nil {
-		return nil, err
-	}
-
-	// convert resp
-	return &runtimev1pb.InvokeResponse{
-		Data:        daprResp.Data,
-		ContentType: daprResp.ContentType,
-	}, nil
+	return nil, nil
 }
+
+// delegate to dapr api implementation
+
+// handle error
+
+// convert resp

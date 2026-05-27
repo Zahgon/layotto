@@ -15,21 +15,14 @@ package sms
 
 import (
 	"errors"
-	"fmt"
 )
 
 var (
 	ErrClientNotInit = errors.New("error: client not init")
 )
 
-func MissingMethodParam(method, param string) error {
-	return fmt.Errorf("error: sms `%s` method missing parameter `%s`", method, param)
-}
+func MissingMethodParam(method, param string) error { _ = "STUB: not implemented"; return nil }
 
-func MissingInitParam(param string) error {
-	return MissingMethodParam("init", param)
-}
+func MissingInitParam(param string) error { _ = "STUB: not implemented"; return nil }
 
-func MissingSendSmsParam(param string) error {
-	return MissingMethodParam("sendSms", param)
-}
+func MissingSendSmsParam(param string) error { _ = "STUB: not implemented"; return nil }

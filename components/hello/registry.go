@@ -17,8 +17,6 @@
 package hello
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 )
 
@@ -33,10 +31,8 @@ type HelloFactory struct {
 }
 
 func NewHelloFactory(compType string, f func() HelloService) *HelloFactory {
-	return &HelloFactory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type helloRegistry struct {
@@ -45,24 +41,19 @@ type helloRegistry struct {
 }
 
 func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName) // 添加服务信息
-	return &helloRegistry{
-		stores: make(map[string]func() HelloService),
-		info:   info,
-	}
+	_ = "STUB: not implemented"
+	return *
+	// 添加服务信息
+	new(Registry)
 }
 
-func (r *helloRegistry) Register(fs ...*HelloFactory) {
-	for _, f := range fs {
-		r.stores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType) // 注册组件信息
-	}
-}
+func (r *helloRegistry) Register(fs ...*HelloFactory) { _ = "STUB: not implemented"; return }
+
+// 注册组件信息
 
 func (r *helloRegistry) Create(compType string) (HelloService, error) {
-	if f, ok := r.stores[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType) // 加载组件信息
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(HelloService), nil
 }
+
+// 加载组件信息

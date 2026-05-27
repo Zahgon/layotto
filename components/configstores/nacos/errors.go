@@ -15,7 +15,6 @@ package nacos
 
 import (
 	"errors"
-	"fmt"
 )
 
 var (
@@ -25,10 +24,6 @@ var (
 	IllegalParam = errors.New("illegal parameter")
 )
 
-func errConfigMissingField(field string) error {
-	return fmt.Errorf("configuration illegal:no %s", field)
-}
+func errConfigMissingField(field string) error { _ = "STUB: not implemented"; return nil }
 
-func errParamsMissingField(field string) error {
-	return fmt.Errorf("params illegal:no %s", field)
-}
+func errParamsMissingField(field string) error { _ = "STUB: not implemented"; return nil }

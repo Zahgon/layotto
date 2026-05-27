@@ -15,7 +15,6 @@ package etcd
 
 import (
 	"context"
-	"fmt"
 	"sync"
 
 	clientv3 "go.etcd.io/etcd/client/v3"
@@ -56,132 +55,68 @@ type EtcdLock struct {
 }
 
 // NewEtcdLock returns a new etcd lock
-func NewEtcdLock() *EtcdLock {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	s := &EtcdLock{
-		features: make([]lock.Feature, 0),
-		logger:   logger.NewLayottoLogger("lock/etcd"),
-	}
-	logger.RegisterComponentLoggerListener("lock/etcd", s)
-	return s
-}
+func NewEtcdLock() *EtcdLock { _ = "STUB: not implemented"; return nil }
 
 func (e *EtcdLock) OnLogLevelChanged(outputLevel logger.LogLevel) {
-	e.logger.SetLogLevel(outputLevel)
+	_ = "STUB: not implemented"
+	return
 }
 
 // Init EtcdLock
 func (e *EtcdLock) Init(metadata lock.Metadata) error {
+	_ = "STUB: not implemented"
 	// 1. parse config
-	m, err := utils.ParseEtcdMetadata(metadata.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	e.metadata = m
-	// 2. construct client
-	if e.client, err = utils.NewEtcdClient(m); err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-
-	e.ctx, e.cancel = context.WithCancel(context.Background())
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-
-	return err
+	return nil
 }
+
+// 2. construct client
 
 // LockKeepAlive try to renewal lease
 func (e *EtcdLock) LockKeepAlive(ctx context.Context, request *lock.LockKeepAliveRequest) (*lock.LockKeepAliveResponse, error) {
+	_ = "STUB: not implemented"
 	//TODO: implemnt function
 	return nil, nil
 }
 
 // Features is to get EtcdLock's features
 func (e *EtcdLock) Features() []lock.Feature {
-	return e.features
+	_ = "STUB: not implemented"
+
+	// Node tries to acquire a etcd lock
+	return nil
 }
 
-// Node tries to acquire a etcd lock
 func (e *EtcdLock) TryLock(ctx context.Context, req *lock.TryLockRequest) (*lock.TryLockResponse, error) {
-	var leaseId clientv3.LeaseID
-	//1.Create new lease
-	lease := clientv3.NewLease(e.client)
-	leaseGrantResp, err := lease.Grant(e.ctx, int64(req.Expire))
-	if err != nil {
-		return &lock.TryLockResponse{}, fmt.Errorf("[etcdLock]: Create new lease returned error: %s.ResourceId: %s", err, req.ResourceId)
-	}
-	leaseId = leaseGrantResp.ID
+	_ = "STUB: not implemented"
+	return nil,
 
-	key := e.getKey(req.ResourceId)
-
-	//2.Create new KV
-	kv := clientv3.NewKV(e.client)
-	//3.Create txn
-	txn := kv.Txn(e.ctx)
-	txn.If(clientv3.Compare(clientv3.CreateRevision(key), "=", 0)).Then(
-		clientv3.OpPut(key, req.LockOwner, clientv3.WithLease(leaseId))).Else(
-		clientv3.OpGet(key))
-	//4.Commit and try get lock
-	txnResponse, err := txn.Commit()
-	if err != nil {
-		return &lock.TryLockResponse{}, fmt.Errorf("[etcdLock]: Creat lock returned error: %s.ResourceId: %s", err, req.ResourceId)
-	}
-
-	return &lock.TryLockResponse{
-		Success: txnResponse.Succeeded,
-	}, nil
+		//1.Create new lease
+		nil
 }
+
+//2.Create new KV
+
+//3.Create txn
+
+//4.Commit and try get lock
 
 // Node tries to release a etcd lock
 func (e *EtcdLock) Unlock(ctx context.Context, req *lock.UnlockRequest) (*lock.UnlockResponse, error) {
-	key := e.getKey(req.ResourceId)
+	_ = "STUB: not implemented"
+	return nil, nil
 
 	// 1.Create new KV
-	kv := clientv3.NewKV(e.client)
-	// 2.Create txn
-	txn := kv.Txn(e.ctx)
-	txn.If(clientv3.Compare(clientv3.Value(key), "=", req.LockOwner)).Then(
-		clientv3.OpDelete(key)).Else(
-		clientv3.OpGet(key))
-	// 3.Commit and try release lock
-	txnResponse, err := txn.Commit()
-	if err != nil {
-		return newInternalErrorUnlockResponse(), fmt.Errorf("[etcdLock]: Unlock returned error: %s.ResourceId: %s", err, req.ResourceId)
-	}
-
-	if txnResponse.Succeeded {
-		return &lock.UnlockResponse{Status: lock.SUCCESS}, nil
-	}
-	resp := txnResponse.Responses[0].GetResponseRange()
-	if len(resp.Kvs) == 0 {
-		return &lock.UnlockResponse{Status: lock.LOCK_UNEXIST}, nil
-	}
-
-	return &lock.UnlockResponse{Status: lock.LOCK_BELONG_TO_OTHERS}, nil
 }
+
+// 2.Create txn
+
+// 3.Commit and try release lock
 
 // Close shuts down the client's etcd connections.
-func (e *EtcdLock) Close() error {
-	e.cancel()
-
-	return e.client.Close()
-}
+func (e *EtcdLock) Close() error { _ = "STUB: not implemented"; return nil }
 
 // getkey is to return string of type KeyPrefix + resourceId
-func (e *EtcdLock) getKey(resourceId string) string {
-	return fmt.Sprintf("%s%s", e.metadata.KeyPrefix, resourceId)
-}
+func (e *EtcdLock) getKey(resourceId string) string { _ = "STUB: not implemented"; return "" }
 
 // newInternalErrorUnlockResponse is to return lock release error
-func newInternalErrorUnlockResponse() *lock.UnlockResponse {
-	return &lock.UnlockResponse{
-		Status: lock.INTERNAL_ERROR,
-	}
-}
+func newInternalErrorUnlockResponse() *lock.UnlockResponse { _ = "STUB: not implemented"; return nil }

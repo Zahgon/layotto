@@ -33,7 +33,8 @@ type vmContext struct {
 
 // Override types.DefaultVMContext.
 func (*vmContext) NewPluginContext(contextID uint32) types.PluginContext {
-	return &pluginContext{}
+	_ = "STUB: not implemented"
+	return *new(types.PluginContext)
 }
 
 type pluginContext struct {
@@ -44,7 +45,8 @@ type pluginContext struct {
 
 // Override types.DefaultPluginContext.
 func (*pluginContext) NewHttpContext(contextID uint32) types.HttpContext {
-	return &httpHeaders{contextID: contextID}
+	_ = "STUB: not implemented"
+	return *new(types.HttpContext)
 }
 
 type httpHeaders struct {
@@ -56,37 +58,21 @@ type httpHeaders struct {
 
 // Override types.DefaultHttpContext.
 func (ctx *httpHeaders) OnHttpRequestBody(bodySize int, endOfStream bool) types.Action {
+	_ = "STUB: not implemented"
 	//1. get request body
-	body, err := proxywasm.GetHttpRequestBody(0, bodySize)
-	if err != nil {
-		proxywasm.LogErrorf("GetHttpRequestBody failed: %v", err)
-		return types.ActionPause
-	}
-	bookName := string(body)
-
-	//2. get request state from redis by specific key through ABI
-	inventories, err := proxywasm.GetState("state_demo", bookName)
-	if err != nil {
-		proxywasm.LogErrorf("GetState failed: %v", err)
-		return types.ActionPause
-	}
-
-	//3. return result
-	proxywasm.AppendHttpResponseBody([]byte(inventories))
-	return types.ActionContinue
+	return *new(types.Action)
 }
+
+//2. get request state from redis by specific key through ABI
+
+//3. return result
 
 // Override types.DefaultHttpContext.
-func (ctx *httpHeaders) OnHttpStreamDone() {
-	proxywasm.LogInfof("%d finished", ctx.contextID)
-}
+func (ctx *httpHeaders) OnHttpStreamDone() { _ = "STUB: not implemented"; return }
 
 const ID = "id_2"
 
 // DO NOT MODIFY THE FOLLOWING FUNCTIONS!
 //
 //export proxy_get_id
-func GetID() {
-	_ = ID[len(ID)-1]
-	proxywasm.SetCallData([]byte(ID))
-}
+func GetID() { _ = "STUB: not implemented"; return }

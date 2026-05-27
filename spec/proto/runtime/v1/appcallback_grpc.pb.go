@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 )
 
@@ -35,25 +33,18 @@ type appCallbackClient struct {
 }
 
 func NewAppCallbackClient(cc grpc.ClientConnInterface) AppCallbackClient {
-	return &appCallbackClient{cc}
+	_ = "STUB: not implemented"
+	return *new(AppCallbackClient)
 }
 
 func (c *appCallbackClient) ListTopicSubscriptions(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ListTopicSubscriptionsResponse, error) {
-	out := new(ListTopicSubscriptionsResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.AppCallback/ListTopicSubscriptions", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *appCallbackClient) OnTopicEvent(ctx context.Context, in *TopicEventRequest, opts ...grpc.CallOption) (*TopicEventResponse, error) {
-	out := new(TopicEventResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.runtime.v1.AppCallback/OnTopicEvent", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AppCallbackServer is the server API for AppCallback service.
@@ -71,10 +62,13 @@ type UnimplementedAppCallbackServer struct {
 }
 
 func (UnimplementedAppCallbackServer) ListTopicSubscriptions(context.Context, *emptypb.Empty) (*ListTopicSubscriptionsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListTopicSubscriptions not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedAppCallbackServer) OnTopicEvent(context.Context, *TopicEventRequest) (*TopicEventResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method OnTopicEvent not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeAppCallbackServer may be embedded to opt out of forward compatibility for this service.
@@ -85,43 +79,18 @@ type UnsafeAppCallbackServer interface {
 }
 
 func RegisterAppCallbackServer(s grpc.ServiceRegistrar, srv AppCallbackServer) {
-	s.RegisterService(&AppCallback_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _AppCallback_ListTopicSubscriptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppCallbackServer).ListTopicSubscriptions(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.AppCallback/ListTopicSubscriptions",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppCallbackServer).ListTopicSubscriptions(ctx, req.(*emptypb.Empty))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _AppCallback_OnTopicEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(TopicEventRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AppCallbackServer).OnTopicEvent(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.runtime.v1.AppCallback/OnTopicEvent",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AppCallbackServer).OnTopicEvent(ctx, req.(*TopicEventRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AppCallback_ServiceDesc is the grpc.ServiceDesc for AppCallback service.

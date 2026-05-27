@@ -15,10 +15,7 @@ package redis
 
 import (
 	"context"
-	"fmt"
-	"strings"
 	"sync"
-	"time"
 
 	"github.com/go-redis/redis/v8"
 	msync "mosn.io/mosn/pkg/sync"
@@ -60,22 +57,11 @@ type ClusterRedisLock struct {
 }
 
 // NewClusterRedisLock returns a new redis lock store
-func NewClusterRedisLock() *ClusterRedisLock {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	s := &ClusterRedisLock{
-		features: make([]lock.Feature, 0),
-		logger:   logger.NewLayottoLogger("lock/redis"),
-	}
-
-	logger.RegisterComponentLoggerListener("lock/redis", s)
-	return s
-}
+func NewClusterRedisLock() *ClusterRedisLock { _ = "STUB: not implemented"; return nil }
 
 func (c *ClusterRedisLock) OnLogLevelChanged(outputLevel logger.LogLevel) {
-	c.logger.SetLogLevel(outputLevel)
+	_ = "STUB: not implemented"
+	return
 }
 
 type resultMsg struct {
@@ -86,196 +72,65 @@ type resultMsg struct {
 }
 
 func (c *ClusterRedisLock) Init(metadata lock.Metadata) error {
-
-	m, err := utils.ParseRedisClusterMetadata(metadata.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	c.metadata = m
-	c.clients = utils.NewClusterRedisClient(m)
-	c.ctx, c.cancel = context.WithCancel(context.Background())
-	c.workpool = msync.NewWorkerPool(m.Concurrency)
-	for i, client := range c.clients {
-		if _, err = client.Ping(c.ctx).Result(); err != nil {
-			readinessIndicator.ReportError(err.Error())
-			livenessIndicator.ReportError(err.Error())
-			return fmt.Errorf("[ClusterRedisLock]: error connecting to redis at %s: %s", c.metadata.Hosts[i], err)
-		}
-	}
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (c *ClusterRedisLock) Features() []lock.Feature {
-	return c.features
+	_ = "STUB: not implemented"
+
+	// LockKeepAlive try to renewal lease
+	return nil
 }
 
-// LockKeepAlive try to renewal lease
 func (c *ClusterRedisLock) LockKeepAlive(ctx context.Context, request *lock.LockKeepAliveRequest) (*lock.LockKeepAliveResponse, error) {
+	_ = "STUB: not implemented"
 	//TODO: implemnt function
 	return nil, nil
 }
 
 func (c *ClusterRedisLock) TryLock(ctx context.Context, req *lock.TryLockRequest) (*lock.TryLockResponse, error) {
+	_ = "STUB: not implemented"
 	//try to get lock on all redis nodes
-	intervalStart := utils.GetMiliTimestamp(time.Now().UnixNano())
-	//intervalLimit must be 1/10 of expire time to make sure time of lock far less than expire time
-	intervalLimit := int64(req.Expire) * 1000 / 10
-	wg := sync.WaitGroup{}
-	wg.Add(len(c.clients))
-
-	//resultChan will be used to collect results of getting lock
-	resultChan := make(chan resultMsg, len(c.clients))
-
-	//getting lock concurrently
-	for i := range c.clients {
-		clientIndex := i
-		c.workpool.Schedule(func() {
-			c.LockSingleRedis(clientIndex, req, &wg, resultChan)
-		})
-	}
-	wg.Wait()
-	intervalEnd := utils.GetMiliTimestamp(time.Now().UnixNano())
-
-	//make sure time interval of locking far less than expire time
-	if intervalLimit < intervalEnd-intervalStart {
-		_, _ = c.UnlockAllRedis(&lock.UnlockRequest{
-			ResourceId: req.ResourceId,
-			LockOwner:  req.LockOwner,
-		}, &wg)
-		return &lock.TryLockResponse{
-			Success: false,
-		}, fmt.Errorf("[ClusterRedisLock]: lock timeout. ResourceId: %s", req.ResourceId)
-	}
-	close(resultChan)
-
-	successCount := 0
-	errorStrs := make([]string, 0, len(c.clients))
-	for msg := range resultChan {
-		if msg.error != nil {
-			errorStrs = append(errorStrs, msg.error.Error())
-			continue
-		}
-		if msg.lockStatus {
-			successCount++
-		}
-	}
-	var err error
-	if len(errorStrs) > 0 {
-		err = fmt.Errorf(strings.Join(errorStrs, "\n"))
-	}
-	//getting lock on majority of redis cluster will be regarded as locking success
-	if successCount*2 > len(c.clients) {
-		return &lock.TryLockResponse{
-			Success: true,
-		}, err
-	}
-
-	_, unlockErr := c.UnlockAllRedis(&lock.UnlockRequest{
-		ResourceId: req.ResourceId,
-		LockOwner:  req.LockOwner,
-	}, &wg)
-	if unlockErr != nil {
-		errorStrs = append(errorStrs, unlockErr.Error())
-		err = fmt.Errorf(strings.Join(errorStrs, "\n"))
-	}
-	return &lock.TryLockResponse{
-		Success: false,
-	}, err
+	return nil, nil
 }
 
+//intervalLimit must be 1/10 of expire time to make sure time of lock far less than expire time
+
+//resultChan will be used to collect results of getting lock
+
+//getting lock concurrently
+
+//make sure time interval of locking far less than expire time
+
+//getting lock on majority of redis cluster will be regarded as locking success
+
 func (c *ClusterRedisLock) Unlock(ctx context.Context, req *lock.UnlockRequest) (*lock.UnlockResponse, error) {
-	wg := sync.WaitGroup{}
-	//err means there were some internal errors,then the status must be INTERNAL_ERROR
-	//the LOCK_UNEXIST and LOCK_BELONG_TO_OTHERS status codes can be ignore
-	//becauce they means the lock of the current redis
-	//returned the status code don't need to be unlocked by current invoking
-	_, err := c.UnlockAllRedis(req, &wg)
-	if err != nil {
-		return newInternalErrorUnlockResponse(), err
-	}
-	return &lock.UnlockResponse{
-		Status: lock.SUCCESS,
-	}, nil
+	_ = "STUB: not implemented"
+	return nil,
+
+		//err means there were some internal errors,then the status must be INTERNAL_ERROR
+		//the LOCK_UNEXIST and LOCK_BELONG_TO_OTHERS status codes can be ignore
+		//becauce they means the lock of the current redis
+		//returned the status code don't need to be unlocked by current invoking
+		nil
 }
 
 func (c *ClusterRedisLock) UnlockAllRedis(req *lock.UnlockRequest, wg *sync.WaitGroup) (lock.LockStatus, error) {
-	wg.Add(len(c.clients))
-	ch := make(chan resultMsg, len(c.clients))
-
-	//unlock concurrently
-	for i := range c.clients {
-		clientIndex := i
-		c.workpool.Schedule(func() {
-			c.UnlockSingleRedis(clientIndex, req, wg, ch)
-		})
-	}
-	wg.Wait()
-	close(ch)
-	errorStrs := make([]string, 0, len(c.clients))
-	status := lock.SUCCESS
-
-	//collect result of unlocking
-	for msg := range ch {
-		if msg.unlockStatus == lock.INTERNAL_ERROR {
-			status = msg.unlockStatus
-			errorStrs = append(errorStrs, msg.error.Error())
-		}
-	}
-	if len(errorStrs) > 0 {
-		return status, fmt.Errorf(strings.Join(errorStrs, "\n"))
-	}
-	return status, nil
+	_ = "STUB: not implemented"
+	return *new(lock.LockStatus), nil
 }
 
+//unlock concurrently
+
+//collect result of unlocking
+
 func (c *ClusterRedisLock) LockSingleRedis(clientIndex int, req *lock.TryLockRequest, wg *sync.WaitGroup, ch chan resultMsg) {
-	defer wg.Done()
-	msg := resultMsg{
-		host: c.metadata.Hosts[clientIndex],
-	}
-	nx := c.clients[clientIndex].SetNX(c.ctx, req.ResourceId, req.LockOwner, time.Second*time.Duration(req.Expire))
-	if nx == nil {
-		msg.error = fmt.Errorf("[ClusterRedisLock]: SetNX returned nil. host: %s \n ResourceId: %s", c.clients[clientIndex], req.ResourceId)
-		ch <- msg
-		return
-	}
-	if nx.Err() != nil {
-		msg.error = fmt.Errorf("[ClusterRedisLock]: %s host: %s \n ResourceId: %s", nx.Err().Error(), c.clients[clientIndex], req.ResourceId)
-	}
-	msg.lockStatus = nx.Val()
-	ch <- msg
+	_ = "STUB: not implemented"
+	return
 }
 
 func (c *ClusterRedisLock) UnlockSingleRedis(clientIndex int, req *lock.UnlockRequest, wg *sync.WaitGroup, ch chan resultMsg) {
-	defer wg.Done()
-	eval := c.clients[clientIndex].Eval(c.ctx, unlockScript, []string{req.ResourceId}, req.LockOwner)
-	msg := resultMsg{}
-	msg.unlockStatus = lock.INTERNAL_ERROR
-	if eval == nil {
-		msg.error = fmt.Errorf("[ClusterRedisLock]: Eval unlock script returned nil. host: %s \n ResourceId: %s", c.clients[clientIndex], req.ResourceId)
-		ch <- msg
-		return
-	}
-	if eval.Err() != nil {
-		msg.error = fmt.Errorf("[ClusterRedisLock]: %s host: %s \n ResourceId: %s", eval.Err().Error(), c.clients[clientIndex], req.ResourceId)
-		ch <- msg
-		return
-	}
-	i, err := eval.Int()
-	if err != nil {
-		msg.error = err
-		ch <- msg
-		return
-	}
-	if i >= 0 {
-		msg.unlockStatus = lock.SUCCESS
-	} else if i == -1 {
-		msg.unlockStatus = lock.LOCK_UNEXIST
-	} else if i == -2 {
-		msg.unlockStatus = lock.LOCK_BELONG_TO_OTHERS
-	}
-	ch <- msg
+	_ = "STUB: not implemented"
+	return
 }

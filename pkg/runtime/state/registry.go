@@ -17,8 +17,6 @@
 package state
 
 import (
-	"fmt"
-
 	"github.com/dapr/components-contrib/state"
 
 	"mosn.io/layotto/components/pkg/info"
@@ -39,27 +37,13 @@ type stateRegistry struct {
 }
 
 // Create a new Registry type variable
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &stateRegistry{
-		stores: make(map[string]func() state.Store),
-		info:   info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
 // Registration for multiple Factories
-func (r *stateRegistry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.stores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
-}
+func (r *stateRegistry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 // Loading components for a registered Factory
 func (r *stateRegistry) Create(compType string) (state.Store, error) {
-	if f, ok := r.stores[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not regsitered", compType)
+	_ = "STUB: not implemented"
+	return *new(state.Store), nil
 }

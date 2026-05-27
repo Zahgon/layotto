@@ -1,48 +1,20 @@
 package main
 
 import (
-	"os"
 	"runtime"
 	"time"
 
-	"mosn.io/layotto/kit/logger"
-
-	"mosn.io/api"
 	"mosn.io/mosn/istio/istio1106"
 	v2 "mosn.io/mosn/pkg/config/v2"
-	"mosn.io/mosn/pkg/configmanager"
 	"mosn.io/mosn/pkg/log"
 	"mosn.io/mosn/pkg/metrics"
 	"mosn.io/mosn/pkg/mosn"
-	"mosn.io/mosn/pkg/protocol"
-	"mosn.io/mosn/pkg/protocol/xprotocol"
-	"mosn.io/mosn/pkg/protocol/xprotocol/bolt"
-	"mosn.io/mosn/pkg/protocol/xprotocol/dubbo"
 	"mosn.io/mosn/pkg/server"
 	"mosn.io/mosn/pkg/stagemanager"
-	xstream "mosn.io/mosn/pkg/stream/xprotocol"
-	"mosn.io/mosn/pkg/trace"
-	mosn_jaeger "mosn.io/mosn/pkg/trace/jaeger"
-	"mosn.io/mosn/pkg/trace/skywalking"
-	tracehttp "mosn.io/mosn/pkg/trace/sofa/http"
-	xtrace "mosn.io/mosn/pkg/trace/sofa/xprotocol"
-	tracebolt "mosn.io/mosn/pkg/trace/sofa/xprotocol/bolt"
-	mosn_zipkin "mosn.io/mosn/pkg/trace/zipkin"
-	"mosn.io/pkg/buffer"
-
-	component_actuators "mosn.io/layotto/components/pkg/actuators"
-	"mosn.io/layotto/diagnostics"
-	"mosn.io/layotto/diagnostics/jaeger"
-	lprotocol "mosn.io/layotto/diagnostics/protocol"
-	lsky "mosn.io/layotto/diagnostics/skywalking"
-	"mosn.io/layotto/diagnostics/zipkin"
 
 	// Actuator
-	"mosn.io/layotto/pkg/actuator/health"
-	"mosn.io/layotto/pkg/integrate/actuator"
 
 	"github.com/urfave/cli"
-	"mosn.io/mosn/pkg/featuregate"
 )
 
 var (
@@ -234,72 +206,41 @@ var (
 )
 
 func SetActuatorAfterStart(_ stagemanager.Application) {
+	_ = "STUB: not implemented"
 	// register component actuator
-	component_actuators.RangeAllIndicators(
-		func(name string, v *component_actuators.ComponentsIndicator) bool {
-			if v != nil {
-				health.AddLivenessIndicator(name, v.LivenessIndicator)
-				health.AddReadinessIndicator(name, v.ReadinessIndicator)
-			}
-			return true
-		})
-	// set started
-	actuator.GetRuntimeReadinessIndicator().SetStarted()
-	actuator.GetRuntimeLivenessIndicator().SetStarted()
+	return
 }
 
+// set started
+
 func DefaultParamsParsed(c *cli.Context) {
+	_ = "STUB: not implemented"
 	// log level control
-	flagLogLevel := c.String("log-level")
-	if mosnLogLevel, ok := flagToMosnLogLevel[flagLogLevel]; ok {
-		if mosnLogLevel == "OFF" {
-			log.GetErrorLoggerManagerInstance().Disable()
-		} else {
-			log.GetErrorLoggerManagerInstance().SetLogLevelControl(configmanager.ParseLogLevel(mosnLogLevel))
-		}
-	}
-	// set feature gates
-	err := featuregate.Set(c.String("feature-gates"))
-	if err != nil {
-		log.StartLogger.Infof("[mosn] [start] parse feature-gates flag fail : %+v", err)
-		os.Exit(1)
-	}
+	return
 }
+
+// set feature gates
 
 // ExtensionsRegister for register mosn rpc extensions
 func ExtensionsRegister(_ *cli.Context) {
+	_ = "STUB: not implemented"
 	// 1. tracer driver register
 	// Q: What is a tracer driver ?
 	// A: MOSN implement a group of trace drivers, but only a configured driver will be loaded.
+	//
 	//	A tracer driver can create different tracer by different protocol.
 	//	When MOSN receive a request stream, MOSN will try to start a tracer according to the request protocol.
-	// 	For more details,see https://mosn.io/blog/posts/skywalking-support/
-	trace.RegisterDriver("SOFATracer", trace.NewDefaultDriverImpl())
-
-	// 2. xprotocol action register
-	// RegisterXProtocolAction is MOSN's xprotocol framework's extensions.
-	// when a xprotocol implementation (defined by api.XProtocolCodec) registered, the registered action will be called.
-	xprotocol.RegisterXProtocolAction(xstream.NewConnPool, xstream.NewStreamFactory, func(codec api.XProtocolCodec) {
-		name := codec.ProtocolName()
-		trace.RegisterTracerBuilder("SOFATracer", name, xtrace.NewTracer)
-	})
-
-	// 3. register protocols that are used by layotto.
-	// RegisterXProtocolCodec add a new xprotocol implementation, which is a wrapper for protocol register
-	_ = xprotocol.RegisterXProtocolCodec(&bolt.XCodec{})
-	_ = xprotocol.RegisterXProtocolCodec(&dubbo.XCodec{})
-
-	// 4. register tracer
-	xtrace.RegisterDelegate(bolt.ProtocolName, tracebolt.Boltv1Delegate)
-	trace.RegisterTracerBuilder("SOFATracer", protocol.HTTP1, tracehttp.NewTracer)
-	trace.RegisterTracerBuilder("SOFATracer", lprotocol.Layotto, diagnostics.NewTracer)
-	trace.RegisterTracerBuilder(skywalking.SkyDriverName, lprotocol.Layotto, lsky.NewGrpcSkyTracer)
-	trace.RegisterTracerBuilder(mosn_jaeger.DriverName, lprotocol.Layotto, jaeger.NewGrpcJaegerTracer)
-	trace.RegisterTracerBuilder(mosn_zipkin.DriverName, lprotocol.Layotto, zipkin.NewGrpcZipTracer)
-
-	log := logger.NewLayottoLogger("iobuffer")
-	// register buffer logger
-	buffer.SetLogFunc(func(msg string) {
-		log.Errorf("[iobuffer] iobuffer error log info: %s", msg)
-	})
+	//	For more details,see https://mosn.io/blog/posts/skywalking-support/
+	return
 }
+
+// 2. xprotocol action register
+// RegisterXProtocolAction is MOSN's xprotocol framework's extensions.
+// when a xprotocol implementation (defined by api.XProtocolCodec) registered, the registered action will be called.
+
+// 3. register protocols that are used by layotto.
+// RegisterXProtocolCodec add a new xprotocol implementation, which is a wrapper for protocol register
+
+// 4. register tracer
+
+// register buffer logger

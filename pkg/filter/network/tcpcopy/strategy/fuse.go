@@ -16,31 +16,5 @@
 
 package strategy
 
-import (
-	"mosn.io/pkg/log"
-
-	"mosn.io/layotto/pkg/common"
-	"mosn.io/layotto/pkg/filter/network/tcpcopy/model"
-)
-
 // Whether it has been fused
-func IsAvaliable() (ava bool) {
-
-	cpuRate, memRate, err := common.GetSystemUsageRate()
-	if err != nil {
-		log.DefaultLogger.Errorf(model.AlertDumpKey + " failed to get system usage rate info.")
-		return false
-	}
-
-	if cpuRate < DumpCpuMaxRate && memRate < DumpMemMaxRate {
-		if log.DefaultLogger.GetLogLevel() >= log.DEBUG {
-			log.DefaultLogger.Debugf("%s cpuRate:%f is less than max rate %f, memRate:%f is less than max rate %f", model.LogDumpKey, cpuRate, memRate, DumpCpuMaxRate, DumpMemMaxRate)
-		}
-		return true
-	}
-
-	if log.DefaultLogger.GetLogLevel() >= log.DEBUG {
-		log.DefaultLogger.Debugf("%s cpuRate:%f, memRate:%f, one or both of them are larger than max rate. Max cpu rate %f. Max mem rate %f", model.LogDumpKey, cpuRate, memRate, DumpCpuMaxRate, DumpMemMaxRate)
-	}
-	return false
-}
+func IsAvaliable() (ava bool) { _ = "STUB: not implemented"; return false }

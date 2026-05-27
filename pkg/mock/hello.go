@@ -6,7 +6,6 @@ package mock
 
 import (
 	"context"
-	reflect "reflect"
 
 	"mosn.io/layotto/components/hello"
 
@@ -26,41 +25,37 @@ type MockHelloServiceMockRecorder struct {
 
 // NewMockHelloService creates a new mock instance.
 func NewMockHelloService(ctrl *gomock.Controller) *MockHelloService {
-	mock := &MockHelloService{ctrl: ctrl}
-	mock.recorder = &MockHelloServiceMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockHelloService) EXPECT() *MockHelloServiceMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Init mocks base method.
+	return nil
 }
 
-// Init mocks base method.
 func (m *MockHelloService) Init(arg0 *hello.HelloConfig) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Init", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Init indicates an expected call of Init.
 func (mr *MockHelloServiceMockRecorder) Init(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Init", reflect.TypeOf((*MockHelloService)(nil).Init), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Hello mocks base method.
 func (m *MockHelloService) Hello(ctx context.Context, arg0 *hello.HelloRequest) (*hello.HelloResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Hello", arg0)
-	ret0, _ := ret[0].(*hello.HelloResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Hello indicates an expected call of Hello.
 func (mr *MockHelloServiceMockRecorder) Hello(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Hello", reflect.TypeOf((*MockHelloService)(nil).Hello), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }

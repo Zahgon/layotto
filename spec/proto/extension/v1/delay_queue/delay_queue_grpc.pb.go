@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -32,16 +30,13 @@ type delayQueueClient struct {
 }
 
 func NewDelayQueueClient(cc grpc.ClientConnInterface) DelayQueueClient {
-	return &delayQueueClient{cc}
+	_ = "STUB: not implemented"
+	return *new(DelayQueueClient)
 }
 
 func (c *delayQueueClient) PublishDelayMessage(ctx context.Context, in *DelayMessageRequest, opts ...grpc.CallOption) (*DelayMessageResponse, error) {
-	out := new(DelayMessageResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.delay_queue.DelayQueue/PublishDelayMessage", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DelayQueueServer is the server API for DelayQueue service.
@@ -57,7 +52,8 @@ type UnimplementedDelayQueueServer struct {
 }
 
 func (UnimplementedDelayQueueServer) PublishDelayMessage(context.Context, *DelayMessageRequest) (*DelayMessageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PublishDelayMessage not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeDelayQueueServer may be embedded to opt out of forward compatibility for this service.
@@ -68,25 +64,13 @@ type UnsafeDelayQueueServer interface {
 }
 
 func RegisterDelayQueueServer(s grpc.ServiceRegistrar, srv DelayQueueServer) {
-	s.RegisterService(&DelayQueue_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _DelayQueue_PublishDelayMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DelayMessageRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DelayQueueServer).PublishDelayMessage(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.delay_queue.DelayQueue/PublishDelayMessage",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DelayQueueServer).PublishDelayMessage(ctx, req.(*DelayMessageRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DelayQueue_ServiceDesc is the grpc.ServiceDesc for DelayQueue service.

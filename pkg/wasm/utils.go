@@ -16,22 +16,7 @@
 
 package wasm
 
-import (
-	"reflect"
-)
-
 func filter(arr interface{}, predicate interface{}) interface{} {
-	arrValue := reflect.ValueOf(arr)
-	arrType := arrValue.Type()
-	funcValue := reflect.ValueOf(predicate)
-	resultSliceType := reflect.SliceOf(arrType.Elem())
-	resultSlice := reflect.MakeSlice(resultSliceType, 0, 0)
-	for i := 0; i < arrValue.Len(); i++ {
-		elem := arrValue.Index(i)
-		result := funcValue.Call([]reflect.Value{elem})[0].Interface().(bool)
-		if result {
-			resultSlice = reflect.Append(resultSlice, elem)
-		}
-	}
-	return resultSlice.Interface()
+	_ = "STUB: not implemented"
+	return nil
 }

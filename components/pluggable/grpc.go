@@ -15,37 +15,28 @@ package pluggable
 
 import (
 	"context"
-	"fmt"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 )
 
 type GRPCConnectionDialer func(ctx context.Context, opts ...grpc.DialOption) (*grpc.ClientConn, error)
 
 // WithOptions returns a new connection dialer that adds the new options to it.
 func (g GRPCConnectionDialer) WithOptions(newOpts ...grpc.DialOption) GRPCConnectionDialer {
-	return func(ctx context.Context, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
-		return g(ctx, append(opts, newOpts...)...)
-	}
+	_ = "STUB: not implemented"
+	return *new(GRPCConnectionDialer)
 }
 
 // SocketDialer creates a dialer for the given socket.
 func SocketDialer(socket string, additionalOpts ...grpc.DialOption) GRPCConnectionDialer {
-	return func(ctx context.Context, opts ...grpc.DialOption) (*grpc.ClientConn, error) {
-		return SocketDial(ctx, socket, append(additionalOpts, opts...)...)
-	}
+	_ = "STUB: not implemented"
+	return *new(GRPCConnectionDialer)
 }
 
 // SocketDial creates a grpc connection using the given socket.
 func SocketDial(ctx context.Context, socket string, additionalOpts ...grpc.DialOption) (*grpc.ClientConn, error) {
-	udsSocket := "unix://" + socket
-	//log.Debugf("using socket defined at '%s'", udsSocket)
-	additionalOpts = append(additionalOpts, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	_ = "STUB: not implemented"
+	return nil, nil
 
-	grpcConn, err := grpc.DialContext(ctx, udsSocket, additionalOpts...)
-	if err != nil {
-		return nil, fmt.Errorf("unable to open GRPC connection using socket '%s': %w", udsSocket, err)
-	}
-	return grpcConn, nil
+	//log.Debugf("using socket defined at '%s'", udsSocket)
 }

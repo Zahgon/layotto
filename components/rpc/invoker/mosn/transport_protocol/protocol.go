@@ -18,7 +18,6 @@ package transport_protocol
 
 import (
 	"mosn.io/api"
-	"mosn.io/mosn/pkg/protocol/xprotocol/bolt"
 
 	"mosn.io/layotto/components/rpc"
 )
@@ -37,32 +36,17 @@ type TransportProtocol interface {
 
 // GetProtocol is get TransportProtocol
 func GetProtocol(protocol string) TransportProtocol {
-	return protocolRegistry[protocol]
+	_ = "STUB: not implemented"
+	return *new(TransportProtocol)
 }
 
 // RegistProtocol is regist protocol
-func RegistProtocol(protocol string, proto TransportProtocol) {
-	protocolRegistry[protocol] = proto
-}
+func RegistProtocol(protocol string, proto TransportProtocol) { _ = "STUB: not implemented"; return }
 
 type fromFrame struct{}
 
 // FromFrame is XRespFrame transform RPCResponse
 func (f *fromFrame) FromFrame(resp api.XRespFrame) (*rpc.RPCResponse, error) {
-	rpcResp := &rpc.RPCResponse{}
-	if boltResp, ok := resp.(*bolt.Response); ok {
-		rpcResp.Header = make(map[string][]string, len(boltResp.BytesHeader.Kvs))
-	}
-	resp.GetHeader().Range(func(Key, Value string) bool {
-		if rpcResp.Header == nil {
-			rpcResp.Header = make(map[string][]string)
-		}
-		rpcResp.Header[Key] = []string{Value}
-		return true
-	})
-
-	if data := resp.GetData(); data != nil {
-		rpcResp.Data = data.Bytes()
-	}
-	return rpcResp, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

@@ -19,8 +19,6 @@ package info
 import (
 	"context"
 
-	"mosn.io/pkg/log"
-
 	"mosn.io/layotto/pkg/actuator"
 	"mosn.io/layotto/pkg/filter/stream/common/http"
 )
@@ -35,39 +33,20 @@ var infoContributors = make(map[string]Contributor)
 type Endpoint struct {
 }
 
-func NewEndpoint() *Endpoint {
-	return &Endpoint{}
-}
+func NewEndpoint() *Endpoint { _ = "STUB: not implemented"; return nil }
 
 func (e *Endpoint) Handle(ctx context.Context, params http.ParamsScanner) (map[string]interface{}, error) {
-	result := make(map[string]interface{})
-	var resultErr error
-	// handle the infoContributors
-	for k, c := range infoContributors {
-		cinfo, err := c.GetInfo()
-		if err != nil {
-			log.DefaultLogger.Errorf("[actuator][info] Error when GetInfo.Contributor:%v,error:%v", k, err)
-			result[k] = err.Error()
-			resultErr = err
-		} else {
-			result[k] = cinfo
-		}
-	}
-	return result, resultErr
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
+// handle the infoContributors
+
 // AddInfoContributor register info.Contributor.It's not concurrent-safe,so please invoke it ONLY in init method.
-func AddInfoContributor(name string, c Contributor) {
-	if c == nil {
-		return
-	}
-	infoContributors[name] = c
-}
+func AddInfoContributor(name string, c Contributor) { _ = "STUB: not implemented"; return }
 
 // AddInfoContributorFunc register info.Contributor.It's not concurrent-safe,so please invoke it ONLY in init method.
 func AddInfoContributorFunc(name string, f func() (interface{}, error)) {
-	if f == nil {
-		return
-	}
-	AddInfoContributor(name, ContributorAdapter(f))
+	_ = "STUB: not implemented"
+	return
 }

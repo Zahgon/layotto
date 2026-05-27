@@ -22,8 +22,6 @@ type Factory struct {
 }
 
 func NewFactory(compType string, f func() sequencer.Store) *Factory {
-	return &Factory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

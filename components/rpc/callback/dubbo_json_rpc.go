@@ -30,23 +30,16 @@ func init() {
 type beforeFactory struct {
 }
 
-func (b *beforeFactory) Name() string {
-	return "dubbo_json_rpc"
-}
+func (b *beforeFactory) Name() string { _ = "STUB: not implemented"; return "" }
 
 func (b *beforeFactory) Init(json.RawMessage) error {
+	_ = "STUB: not implemented"
+
+	// Create is set some header before handle RPCRequest
 	return nil
 }
 
-// Create is set some header before handle RPCRequest
 func (b *beforeFactory) Create() func(*rpc.RPCRequest) (*rpc.RPCRequest, error) {
-	return func(request *rpc.RPCRequest) (*rpc.RPCRequest, error) {
-		request.Header["x-services"] = []string{request.Id}
-		request.Header["x-method"] = []string{request.Method}
-		request.Header["content-type"] = []string{"application/json"}
-		request.Header["accept"] = []string{"application/json"}
-
-		request.Method = request.Id
-		return request, nil
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

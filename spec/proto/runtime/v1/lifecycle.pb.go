@@ -7,7 +7,6 @@
 package runtime
 
 import (
-	reflect "reflect"
 	sync "sync"
 
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -31,42 +30,25 @@ type DynamicConfiguration struct {
 	ComponentConfig *ComponentConfig `protobuf:"bytes,1,opt,name=component_config,json=componentConfig,proto3" json:"component_config,omitempty"`
 }
 
-func (x *DynamicConfiguration) Reset() {
-	*x = DynamicConfiguration{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_lifecycle_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *DynamicConfiguration) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *DynamicConfiguration) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *DynamicConfiguration) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*DynamicConfiguration) ProtoMessage() {}
+func (*DynamicConfiguration) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *DynamicConfiguration) ProtoReflect() protoreflect.Message {
-	mi := &file_lifecycle_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use DynamicConfiguration.ProtoReflect.Descriptor instead.
 func (*DynamicConfiguration) Descriptor() ([]byte, []int) {
-	return file_lifecycle_proto_rawDescGZIP(), []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (x *DynamicConfiguration) GetComponentConfig() *ComponentConfig {
-	if x != nil {
-		return x.ComponentConfig
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -77,36 +59,21 @@ type ApplyConfigurationResponse struct {
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *ApplyConfigurationResponse) Reset() {
-	*x = ApplyConfigurationResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_lifecycle_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ApplyConfigurationResponse) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ApplyConfigurationResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ApplyConfigurationResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ApplyConfigurationResponse) ProtoMessage() {}
+func (*ApplyConfigurationResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ApplyConfigurationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_lifecycle_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ApplyConfigurationResponse.ProtoReflect.Descriptor instead.
 func (*ApplyConfigurationResponse) Descriptor() ([]byte, []int) {
-	return file_lifecycle_proto_rawDescGZIP(), []int{1}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // The dynamic configuration of a component
@@ -123,58 +90,25 @@ type ComponentConfig struct {
 	Metadata map[string]string `protobuf:"bytes,3,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (x *ComponentConfig) Reset() {
-	*x = ComponentConfig{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_lifecycle_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
+func (x *ComponentConfig) Reset() { _ = "STUB: not implemented"; return }
 
-func (x *ComponentConfig) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
+func (x *ComponentConfig) String() string { _ = "STUB: not implemented"; return "" }
 
-func (*ComponentConfig) ProtoMessage() {}
+func (*ComponentConfig) ProtoMessage() { _ = "STUB: not implemented"; return }
 
 func (x *ComponentConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_lifecycle_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
+	_ = "STUB: not implemented"
+	return *new(protoreflect.Message)
 }
 
 // Deprecated: Use ComponentConfig.ProtoReflect.Descriptor instead.
-func (*ComponentConfig) Descriptor() ([]byte, []int) {
-	return file_lifecycle_proto_rawDescGZIP(), []int{2}
-}
+func (*ComponentConfig) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
-func (x *ComponentConfig) GetKind() string {
-	if x != nil {
-		return x.Kind
-	}
-	return ""
-}
+func (x *ComponentConfig) GetKind() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ComponentConfig) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
+func (x *ComponentConfig) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (x *ComponentConfig) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
+func (x *ComponentConfig) GetMetadata() map[string]string { _ = "STUB: not implemented"; return nil }
 
 var File_lifecycle_proto protoreflect.FileDescriptor
 
@@ -225,12 +159,7 @@ var (
 	file_lifecycle_proto_rawDescData = file_lifecycle_proto_rawDesc
 )
 
-func file_lifecycle_proto_rawDescGZIP() []byte {
-	file_lifecycle_proto_rawDescOnce.Do(func() {
-		file_lifecycle_proto_rawDescData = protoimpl.X.CompressGZIP(file_lifecycle_proto_rawDescData)
-	})
-	return file_lifecycle_proto_rawDescData
-}
+func file_lifecycle_proto_rawDescGZIP() []byte { _ = "STUB: not implemented"; return nil }
 
 var file_lifecycle_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_lifecycle_proto_goTypes = []interface{}{
@@ -251,65 +180,5 @@ var file_lifecycle_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_lifecycle_proto_init() }
-func file_lifecycle_proto_init() {
-	if File_lifecycle_proto != nil {
-		return
-	}
-	if !protoimpl.UnsafeEnabled {
-		file_lifecycle_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DynamicConfiguration); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_lifecycle_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ApplyConfigurationResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_lifecycle_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ComponentConfig); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
-	type x struct{}
-	out := protoimpl.TypeBuilder{
-		File: protoimpl.DescBuilder{
-			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_lifecycle_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   4,
-			NumExtensions: 0,
-			NumServices:   1,
-		},
-		GoTypes:           file_lifecycle_proto_goTypes,
-		DependencyIndexes: file_lifecycle_proto_depIdxs,
-		MessageInfos:      file_lifecycle_proto_msgTypes,
-	}.Build()
-	File_lifecycle_proto = out.File
-	file_lifecycle_proto_rawDesc = nil
-	file_lifecycle_proto_goTypes = nil
-	file_lifecycle_proto_depIdxs = nil
-}
+func init()                      { file_lifecycle_proto_init() }
+func file_lifecycle_proto_init() { _ = "STUB: not implemented"; return }

@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -34,25 +32,18 @@ type emailServiceClient struct {
 }
 
 func NewEmailServiceClient(cc grpc.ClientConnInterface) EmailServiceClient {
-	return &emailServiceClient{cc}
+	_ = "STUB: not implemented"
+	return *new(EmailServiceClient)
 }
 
 func (c *emailServiceClient) SendEmailWithTemplate(ctx context.Context, in *SendEmailWithTemplateRequest, opts ...grpc.CallOption) (*SendEmailWithTemplateResponse, error) {
-	out := new(SendEmailWithTemplateResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.email.EmailService/SendEmailWithTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *emailServiceClient) SendEmail(ctx context.Context, in *SendEmailRequest, opts ...grpc.CallOption) (*SendEmailResponse, error) {
-	out := new(SendEmailResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.email.EmailService/SendEmail", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // EmailServiceServer is the server API for EmailService service.
@@ -70,10 +61,13 @@ type UnimplementedEmailServiceServer struct {
 }
 
 func (UnimplementedEmailServiceServer) SendEmailWithTemplate(context.Context, *SendEmailWithTemplateRequest) (*SendEmailWithTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendEmailWithTemplate not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (UnimplementedEmailServiceServer) SendEmail(context.Context, *SendEmailRequest) (*SendEmailResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendEmail not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeEmailServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -84,43 +78,18 @@ type UnsafeEmailServiceServer interface {
 }
 
 func RegisterEmailServiceServer(s grpc.ServiceRegistrar, srv EmailServiceServer) {
-	s.RegisterService(&EmailService_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _EmailService_SendEmailWithTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendEmailWithTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(EmailServiceServer).SendEmailWithTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.email.EmailService/SendEmailWithTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EmailServiceServer).SendEmailWithTemplate(ctx, req.(*SendEmailWithTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _EmailService_SendEmail_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendEmailRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(EmailServiceServer).SendEmail(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.email.EmailService/SendEmail",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EmailServiceServer).SendEmail(ctx, req.(*SendEmailRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // EmailService_ServiceDesc is the grpc.ServiceDesc for EmailService service.

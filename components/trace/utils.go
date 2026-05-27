@@ -14,15 +14,6 @@ package trace
 
 import (
 	"context"
-
-	"mosn.io/mosn/pkg/types"
-	"mosn.io/pkg/variable"
 )
 
-func SetExtraComponentInfo(ctx context.Context, info string) {
-	if val, err := variable.Get(ctx, types.VariableTraceSpan); err == nil {
-		if span, ok := val.(*Span); ok {
-			span.SetTag(LAYOTTO_COMPONENT_DETAIL, info)
-		}
-	}
-}
+func SetExtraComponentInfo(ctx context.Context, info string) { _ = "STUB: not implemented"; return }

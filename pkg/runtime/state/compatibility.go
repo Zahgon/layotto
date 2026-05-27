@@ -14,13 +14,6 @@
 // We copied these code here to make our runtime compatible with dapr's component.
 package state
 
-import (
-	"fmt"
-	"strings"
-
-	"github.com/pkg/errors"
-)
-
 const (
 	strategyKey = "keyPrefix"
 
@@ -40,73 +33,45 @@ type StoreConfiguration struct {
 
 // Save StateConfiguration by storeName
 func SaveStateConfiguration(storeName string, metadata map[string]string) error {
+	_ = "STUB: not implemented"
 	// convert
-	strategy := metadata[strategyKey]
-	// Change strategy to lowercase
-	strategy = strings.ToLower(strategy)
-	//if strategy is "",use default values("none")
-	if strategy == "" {
-		strategy = strategyDefault
-	} else {
-		// Check if the secret key is legitimate
-		err := checkKeyIllegal(metadata[strategyKey])
-		if err != nil {
-			return err
-		}
-	}
-	// convert
-	statesConfiguration[storeName] = &StoreConfiguration{keyPrefixStrategy: strategy}
 	return nil
 }
 
+// Change strategy to lowercase
+
+//if strategy is "",use default values("none")
+
+// Check if the secret key is legitimate
+
+// convert
+
 func GetModifiedStateKey(key, storeName, appID string) (string, error) {
+	_ = "STUB: not implemented"
 	// Check if the secret key is legitimate
-	if err := checkKeyIllegal(key); err != nil {
-		return "", err
-	}
-	// Get stateConfiguration by storeName
-	stateConfiguration := getStateConfiguration(storeName)
-	// Determine the keyPrefixStrategy type
-	switch stateConfiguration.keyPrefixStrategy {
-	case strategyNone:
-		return key, nil
-	case strategyStoreName:
-		return fmt.Sprintf("%s%s%s", storeName, daprSeparator, key), nil
-	case strategyAppid:
-		if appID == "" {
-			return key, nil
-		}
-		return fmt.Sprintf("%s%s%s", appID, daprSeparator, key), nil
-	default:
-		return fmt.Sprintf("%s%s%s", stateConfiguration.keyPrefixStrategy, daprSeparator, key), nil
-	}
+	return "", nil
 }
 
+// Get stateConfiguration by storeName
+
+// Determine the keyPrefixStrategy type
+
 func GetOriginalStateKey(modifiedStateKey string) string {
+	_ = "STUB: not implemented"
 	// Split modifiedStateKey by daprSeparator("||")
-	splits := strings.Split(modifiedStateKey, daprSeparator)
-	if len(splits) <= 1 {
-		return modifiedStateKey
-	}
-	return splits[1]
+	return ""
 }
 
 func getStateConfiguration(storeName string) *StoreConfiguration {
+	_ = "STUB: not implemented"
 	// Get statesConfiguration by storeName
-	c := statesConfiguration[storeName]
-	// If statesConfiguration is empty, strategyDefault("none") is provided
-	if c == nil {
-		c = &StoreConfiguration{keyPrefixStrategy: strategyDefault}
-		statesConfiguration[storeName] = c
-	}
-
-	return c
+	return nil
 }
 
+// If statesConfiguration is empty, strategyDefault("none") is provided
+
 func checkKeyIllegal(key string) error {
+	_ = "STUB: not implemented"
 	// Determine if the key contains daprSeparator
-	if strings.Contains(key, daprSeparator) {
-		return errors.Errorf("input key/keyPrefix '%s' can't contain '%s'", key, daprSeparator)
-	}
 	return nil
 }

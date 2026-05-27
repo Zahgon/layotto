@@ -31,17 +31,14 @@ type dynamicComponentHolder struct {
 }
 
 func (d *dynamicComponentHolder) ApplyConfig(ctx context.Context, metadata map[string]string) (err error) {
+	_ = "STUB: not implemented"
 	// 1. lock
-	d.mu.Lock()
-	defer d.mu.Unlock()
-
-	// 2. delegate to the comp
-	return d.comp.ApplyConfig(ctx, metadata)
+	return nil
 }
 
+// 2. delegate to the comp
+
 func ConcurrentDynamicComponent(comp common.DynamicComponent) common.DynamicComponent {
-	return &dynamicComponentHolder{
-		comp: comp,
-		mu:   sync.Mutex{},
-	}
+	_ = "STUB: not implemented"
+	return *new(common.DynamicComponent)
 }

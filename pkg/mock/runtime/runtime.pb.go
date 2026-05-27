@@ -6,7 +6,6 @@ package runtime
 
 import (
 	context "context"
-	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
 	grpc "google.golang.org/grpc"
@@ -29,454 +28,279 @@ type MockRuntimeClientMockRecorder struct {
 
 // NewMockRuntimeClient creates a new mock instance.
 func NewMockRuntimeClient(ctrl *gomock.Controller) *MockRuntimeClient {
-	mock := &MockRuntimeClient{ctrl: ctrl}
-	mock.recorder = &MockRuntimeClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntimeClient) EXPECT() *MockRuntimeClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// DelFile mocks base method.
+	return nil
 }
 
-// DelFile mocks base method.
 func (m *MockRuntimeClient) DelFile(ctx context.Context, in *runtime.DelFileRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DelFile", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DelFile indicates an expected call of DelFile.
 func (mr *MockRuntimeClientMockRecorder) DelFile(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DelFile", reflect.TypeOf((*MockRuntimeClient)(nil).DelFile), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteBulkState mocks base method.
 func (m *MockRuntimeClient) DeleteBulkState(ctx context.Context, in *runtime.DeleteBulkStateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DeleteBulkState", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteBulkState indicates an expected call of DeleteBulkState.
 func (mr *MockRuntimeClientMockRecorder) DeleteBulkState(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteBulkState", reflect.TypeOf((*MockRuntimeClient)(nil).DeleteBulkState), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteConfiguration mocks base method.
 func (m *MockRuntimeClient) DeleteConfiguration(ctx context.Context, in *runtime.DeleteConfigurationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DeleteConfiguration", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteConfiguration indicates an expected call of DeleteConfiguration.
 func (mr *MockRuntimeClientMockRecorder) DeleteConfiguration(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteConfiguration", reflect.TypeOf((*MockRuntimeClient)(nil).DeleteConfiguration), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteState mocks base method.
 func (m *MockRuntimeClient) DeleteState(ctx context.Context, in *runtime.DeleteStateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "DeleteState", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteState indicates an expected call of DeleteState.
 func (mr *MockRuntimeClientMockRecorder) DeleteState(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteState", reflect.TypeOf((*MockRuntimeClient)(nil).DeleteState), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ExecuteStateTransaction mocks base method.
 func (m *MockRuntimeClient) ExecuteStateTransaction(ctx context.Context, in *runtime.ExecuteStateTransactionRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ExecuteStateTransaction", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ExecuteStateTransaction indicates an expected call of ExecuteStateTransaction.
 func (mr *MockRuntimeClientMockRecorder) ExecuteStateTransaction(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExecuteStateTransaction", reflect.TypeOf((*MockRuntimeClient)(nil).ExecuteStateTransaction), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetBulkState mocks base method.
 func (m *MockRuntimeClient) GetBulkState(ctx context.Context, in *runtime.GetBulkStateRequest, opts ...grpc.CallOption) (*runtime.GetBulkStateResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetBulkState", varargs...)
-	ret0, _ := ret[0].(*runtime.GetBulkStateResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetBulkState indicates an expected call of GetBulkState.
 func (mr *MockRuntimeClientMockRecorder) GetBulkState(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetBulkState", reflect.TypeOf((*MockRuntimeClient)(nil).GetBulkState), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetConfiguration mocks base method.
 func (m *MockRuntimeClient) GetConfiguration(ctx context.Context, in *runtime.GetConfigurationRequest, opts ...grpc.CallOption) (*runtime.GetConfigurationResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetConfiguration", varargs...)
-	ret0, _ := ret[0].(*runtime.GetConfigurationResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetConfiguration indicates an expected call of GetConfiguration.
 func (mr *MockRuntimeClientMockRecorder) GetConfiguration(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetConfiguration", reflect.TypeOf((*MockRuntimeClient)(nil).GetConfiguration), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetFile mocks base method.
 func (m *MockRuntimeClient) GetFile(ctx context.Context, in *runtime.GetFileRequest, opts ...grpc.CallOption) (runtime.Runtime_GetFileClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetFile", varargs...)
-	ret0, _ := ret[0].(runtime.Runtime_GetFileClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(runtime.Runtime_GetFileClient), nil
 }
 
 // GetFile indicates an expected call of GetFile.
 func (mr *MockRuntimeClientMockRecorder) GetFile(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFile", reflect.TypeOf((*MockRuntimeClient)(nil).GetFile), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetFileMeta mocks base method.
 func (m *MockRuntimeClient) GetFileMeta(ctx context.Context, in *runtime.GetFileMetaRequest, opts ...grpc.CallOption) (*runtime.GetFileMetaResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetFileMeta", varargs...)
-	ret0, _ := ret[0].(*runtime.GetFileMetaResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetFileMeta indicates an expected call of GetFileMeta.
 func (mr *MockRuntimeClientMockRecorder) GetFileMeta(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFileMeta", reflect.TypeOf((*MockRuntimeClient)(nil).GetFileMeta), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetNextId mocks base method.
 func (m *MockRuntimeClient) GetNextId(ctx context.Context, in *runtime.GetNextIdRequest, opts ...grpc.CallOption) (*runtime.GetNextIdResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetNextId", varargs...)
-	ret0, _ := ret[0].(*runtime.GetNextIdResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetNextId indicates an expected call of GetNextId.
 func (mr *MockRuntimeClientMockRecorder) GetNextId(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNextId", reflect.TypeOf((*MockRuntimeClient)(nil).GetNextId), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetState mocks base method.
 func (m *MockRuntimeClient) GetState(ctx context.Context, in *runtime.GetStateRequest, opts ...grpc.CallOption) (*runtime.GetStateResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "GetState", varargs...)
-	ret0, _ := ret[0].(*runtime.GetStateResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetState indicates an expected call of GetState.
 func (mr *MockRuntimeClientMockRecorder) GetState(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetState", reflect.TypeOf((*MockRuntimeClient)(nil).GetState), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // InvokeBinding mocks base method.
 func (m *MockRuntimeClient) InvokeBinding(ctx context.Context, in *runtime.InvokeBindingRequest, opts ...grpc.CallOption) (*runtime.InvokeBindingResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "InvokeBinding", varargs...)
-	ret0, _ := ret[0].(*runtime.InvokeBindingResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // InvokeBinding indicates an expected call of InvokeBinding.
 func (mr *MockRuntimeClientMockRecorder) InvokeBinding(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvokeBinding", reflect.TypeOf((*MockRuntimeClient)(nil).InvokeBinding), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // InvokeService mocks base method.
 func (m *MockRuntimeClient) InvokeService(ctx context.Context, in *runtime.InvokeServiceRequest, opts ...grpc.CallOption) (*runtime.InvokeResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "InvokeService", varargs...)
-	ret0, _ := ret[0].(*runtime.InvokeResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // InvokeService indicates an expected call of InvokeService.
 func (mr *MockRuntimeClientMockRecorder) InvokeService(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvokeService", reflect.TypeOf((*MockRuntimeClient)(nil).InvokeService), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListFile mocks base method.
 func (m *MockRuntimeClient) ListFile(ctx context.Context, in *runtime.ListFileRequest, opts ...grpc.CallOption) (*runtime.ListFileResp, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "ListFile", varargs...)
-	ret0, _ := ret[0].(*runtime.ListFileResp)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListFile indicates an expected call of ListFile.
 func (mr *MockRuntimeClientMockRecorder) ListFile(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListFile", reflect.TypeOf((*MockRuntimeClient)(nil).ListFile), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PublishEvent mocks base method.
 func (m *MockRuntimeClient) PublishEvent(ctx context.Context, in *runtime.PublishEventRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "PublishEvent", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PublishEvent indicates an expected call of PublishEvent.
 func (mr *MockRuntimeClientMockRecorder) PublishEvent(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PublishEvent", reflect.TypeOf((*MockRuntimeClient)(nil).PublishEvent), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutFile mocks base method.
 func (m *MockRuntimeClient) PutFile(ctx context.Context, opts ...grpc.CallOption) (runtime.Runtime_PutFileClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "PutFile", varargs...)
-	ret0, _ := ret[0].(runtime.Runtime_PutFileClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(runtime.Runtime_PutFileClient), nil
 }
 
 // PutFile indicates an expected call of PutFile.
 func (mr *MockRuntimeClientMockRecorder) PutFile(ctx interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutFile", reflect.TypeOf((*MockRuntimeClient)(nil).PutFile), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SaveConfiguration mocks base method.
 func (m *MockRuntimeClient) SaveConfiguration(ctx context.Context, in *runtime.SaveConfigurationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "SaveConfiguration", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SaveConfiguration indicates an expected call of SaveConfiguration.
 func (mr *MockRuntimeClientMockRecorder) SaveConfiguration(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SaveConfiguration", reflect.TypeOf((*MockRuntimeClient)(nil).SaveConfiguration), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SaveState mocks base method.
 func (m *MockRuntimeClient) SaveState(ctx context.Context, in *runtime.SaveStateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "SaveState", varargs...)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SaveState indicates an expected call of SaveState.
 func (mr *MockRuntimeClientMockRecorder) SaveState(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SaveState", reflect.TypeOf((*MockRuntimeClient)(nil).SaveState), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SayHello mocks base method.
 func (m *MockRuntimeClient) SayHello(ctx context.Context, in *runtime.SayHelloRequest, opts ...grpc.CallOption) (*runtime.SayHelloResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "SayHello", varargs...)
-	ret0, _ := ret[0].(*runtime.SayHelloResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SayHello indicates an expected call of SayHello.
 func (mr *MockRuntimeClientMockRecorder) SayHello(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SayHello", reflect.TypeOf((*MockRuntimeClient)(nil).SayHello), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SubscribeConfiguration mocks base method.
 func (m *MockRuntimeClient) SubscribeConfiguration(ctx context.Context, opts ...grpc.CallOption) (runtime.Runtime_SubscribeConfigurationClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "SubscribeConfiguration", varargs...)
-	ret0, _ := ret[0].(runtime.Runtime_SubscribeConfigurationClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(runtime.Runtime_SubscribeConfigurationClient), nil
 }
 
 // SubscribeConfiguration indicates an expected call of SubscribeConfiguration.
 func (mr *MockRuntimeClientMockRecorder) SubscribeConfiguration(ctx interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SubscribeConfiguration", reflect.TypeOf((*MockRuntimeClient)(nil).SubscribeConfiguration), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // TryLock mocks base method.
 func (m *MockRuntimeClient) TryLock(ctx context.Context, in *runtime.TryLockRequest, opts ...grpc.CallOption) (*runtime.TryLockResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "TryLock", varargs...)
-	ret0, _ := ret[0].(*runtime.TryLockResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // TryLock indicates an expected call of TryLock.
 func (mr *MockRuntimeClientMockRecorder) TryLock(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TryLock", reflect.TypeOf((*MockRuntimeClient)(nil).TryLock), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Unlock mocks base method.
 func (m *MockRuntimeClient) Unlock(ctx context.Context, in *runtime.UnlockRequest, opts ...grpc.CallOption) (*runtime.UnlockResponse, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx, in}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "Unlock", varargs...)
-	ret0, _ := ret[0].(*runtime.UnlockResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Unlock indicates an expected call of Unlock.
 func (mr *MockRuntimeClientMockRecorder) Unlock(ctx, in interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Unlock", reflect.TypeOf((*MockRuntimeClient)(nil).Unlock), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_SubscribeConfigurationClient is a mock of Runtime_SubscribeConfigurationClient interface.
@@ -492,128 +316,111 @@ type MockRuntime_SubscribeConfigurationClientMockRecorder struct {
 
 // NewMockRuntime_SubscribeConfigurationClient creates a new mock instance.
 func NewMockRuntime_SubscribeConfigurationClient(ctrl *gomock.Controller) *MockRuntime_SubscribeConfigurationClient {
-	mock := &MockRuntime_SubscribeConfigurationClient{ctrl: ctrl}
-	mock.recorder = &MockRuntime_SubscribeConfigurationClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_SubscribeConfigurationClient) EXPECT() *MockRuntime_SubscribeConfigurationClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseSend mocks base method.
+	return nil
 }
 
-// CloseSend mocks base method.
 func (m *MockRuntime_SubscribeConfigurationClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockRuntime_SubscribeConfigurationClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockRuntime_SubscribeConfigurationClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockRuntime_SubscribeConfigurationClient) Recv() (*runtime.SubscribeConfigurationResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*runtime.SubscribeConfigurationResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeConfigurationClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockRuntime_SubscribeConfigurationClient) Send(arg0 *runtime.SubscribeConfigurationRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeConfigurationClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockRuntime_SubscribeConfigurationClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockRuntime_SubscribeConfigurationClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockRuntime_SubscribeConfigurationClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_GetFileClient is a mock of Runtime_GetFileClient interface.
@@ -629,114 +436,96 @@ type MockRuntime_GetFileClientMockRecorder struct {
 
 // NewMockRuntime_GetFileClient creates a new mock instance.
 func NewMockRuntime_GetFileClient(ctrl *gomock.Controller) *MockRuntime_GetFileClient {
-	mock := &MockRuntime_GetFileClient{ctrl: ctrl}
-	mock.recorder = &MockRuntime_GetFileClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_GetFileClient) EXPECT() *MockRuntime_GetFileClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseSend mocks base method.
+	return nil
 }
 
-// CloseSend mocks base method.
-func (m *MockRuntime_GetFileClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockRuntime_GetFileClient) CloseSend() error { _ = "STUB: not implemented"; return nil }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockRuntime_GetFileClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockRuntime_GetFileClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_GetFileClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockRuntime_GetFileClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockRuntime_GetFileClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockRuntime_GetFileClient) Recv() (*runtime.GetFileResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*runtime.GetFileResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockRuntime_GetFileClientMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_GetFileClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_GetFileClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_GetFileClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_GetFileClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockRuntime_GetFileClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockRuntime_GetFileClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockRuntime_GetFileClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_PutFileClient is a mock of Runtime_PutFileClient interface.
@@ -752,128 +541,108 @@ type MockRuntime_PutFileClientMockRecorder struct {
 
 // NewMockRuntime_PutFileClient creates a new mock instance.
 func NewMockRuntime_PutFileClient(ctrl *gomock.Controller) *MockRuntime_PutFileClient {
-	mock := &MockRuntime_PutFileClient{ctrl: ctrl}
-	mock.recorder = &MockRuntime_PutFileClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_PutFileClient) EXPECT() *MockRuntime_PutFileClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseAndRecv mocks base method.
+	return nil
 }
 
-// CloseAndRecv mocks base method.
 func (m *MockRuntime_PutFileClient) CloseAndRecv() (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseAndRecv")
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CloseAndRecv indicates an expected call of CloseAndRecv.
 func (mr *MockRuntime_PutFileClientMockRecorder) CloseAndRecv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseAndRecv", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).CloseAndRecv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend mocks base method.
-func (m *MockRuntime_PutFileClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
-}
+func (m *MockRuntime_PutFileClient) CloseSend() error { _ = "STUB: not implemented"; return nil }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockRuntime_PutFileClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockRuntime_PutFileClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_PutFileClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockRuntime_PutFileClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockRuntime_PutFileClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_PutFileClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_PutFileClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockRuntime_PutFileClient) Send(arg0 *runtime.PutFileRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockRuntime_PutFileClientMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_PutFileClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_PutFileClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockRuntime_PutFileClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockRuntime_PutFileClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockRuntime_PutFileClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntimeServer is a mock of RuntimeServer interface.
@@ -889,341 +658,279 @@ type MockRuntimeServerMockRecorder struct {
 
 // NewMockRuntimeServer creates a new mock instance.
 func NewMockRuntimeServer(ctrl *gomock.Controller) *MockRuntimeServer {
-	mock := &MockRuntimeServer{ctrl: ctrl}
-	mock.recorder = &MockRuntimeServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntimeServer) EXPECT() *MockRuntimeServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// DelFile mocks base method.
+	return nil
 }
 
-// DelFile mocks base method.
 func (m *MockRuntimeServer) DelFile(arg0 context.Context, arg1 *runtime.DelFileRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DelFile", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DelFile indicates an expected call of DelFile.
 func (mr *MockRuntimeServerMockRecorder) DelFile(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DelFile", reflect.TypeOf((*MockRuntimeServer)(nil).DelFile), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteBulkState mocks base method.
 func (m *MockRuntimeServer) DeleteBulkState(arg0 context.Context, arg1 *runtime.DeleteBulkStateRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteBulkState", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteBulkState indicates an expected call of DeleteBulkState.
 func (mr *MockRuntimeServerMockRecorder) DeleteBulkState(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteBulkState", reflect.TypeOf((*MockRuntimeServer)(nil).DeleteBulkState), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteConfiguration mocks base method.
 func (m *MockRuntimeServer) DeleteConfiguration(arg0 context.Context, arg1 *runtime.DeleteConfigurationRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteConfiguration", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteConfiguration indicates an expected call of DeleteConfiguration.
 func (mr *MockRuntimeServerMockRecorder) DeleteConfiguration(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteConfiguration", reflect.TypeOf((*MockRuntimeServer)(nil).DeleteConfiguration), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // DeleteState mocks base method.
 func (m *MockRuntimeServer) DeleteState(arg0 context.Context, arg1 *runtime.DeleteStateRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "DeleteState", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DeleteState indicates an expected call of DeleteState.
 func (mr *MockRuntimeServerMockRecorder) DeleteState(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteState", reflect.TypeOf((*MockRuntimeServer)(nil).DeleteState), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ExecuteStateTransaction mocks base method.
 func (m *MockRuntimeServer) ExecuteStateTransaction(arg0 context.Context, arg1 *runtime.ExecuteStateTransactionRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ExecuteStateTransaction", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ExecuteStateTransaction indicates an expected call of ExecuteStateTransaction.
 func (mr *MockRuntimeServerMockRecorder) ExecuteStateTransaction(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ExecuteStateTransaction", reflect.TypeOf((*MockRuntimeServer)(nil).ExecuteStateTransaction), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetBulkState mocks base method.
 func (m *MockRuntimeServer) GetBulkState(arg0 context.Context, arg1 *runtime.GetBulkStateRequest) (*runtime.GetBulkStateResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetBulkState", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.GetBulkStateResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetBulkState indicates an expected call of GetBulkState.
 func (mr *MockRuntimeServerMockRecorder) GetBulkState(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetBulkState", reflect.TypeOf((*MockRuntimeServer)(nil).GetBulkState), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetConfiguration mocks base method.
 func (m *MockRuntimeServer) GetConfiguration(arg0 context.Context, arg1 *runtime.GetConfigurationRequest) (*runtime.GetConfigurationResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetConfiguration", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.GetConfigurationResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetConfiguration indicates an expected call of GetConfiguration.
 func (mr *MockRuntimeServerMockRecorder) GetConfiguration(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetConfiguration", reflect.TypeOf((*MockRuntimeServer)(nil).GetConfiguration), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetFile mocks base method.
 func (m *MockRuntimeServer) GetFile(arg0 *runtime.GetFileRequest, arg1 runtime.Runtime_GetFileServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetFile", arg0, arg1)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetFile indicates an expected call of GetFile.
 func (mr *MockRuntimeServerMockRecorder) GetFile(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFile", reflect.TypeOf((*MockRuntimeServer)(nil).GetFile), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetFileMeta mocks base method.
 func (m *MockRuntimeServer) GetFileMeta(arg0 context.Context, arg1 *runtime.GetFileMetaRequest) (*runtime.GetFileMetaResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetFileMeta", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.GetFileMetaResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetFileMeta indicates an expected call of GetFileMeta.
 func (mr *MockRuntimeServerMockRecorder) GetFileMeta(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFileMeta", reflect.TypeOf((*MockRuntimeServer)(nil).GetFileMeta), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetNextId mocks base method.
 func (m *MockRuntimeServer) GetNextId(arg0 context.Context, arg1 *runtime.GetNextIdRequest) (*runtime.GetNextIdResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetNextId", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.GetNextIdResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetNextId indicates an expected call of GetNextId.
 func (mr *MockRuntimeServerMockRecorder) GetNextId(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetNextId", reflect.TypeOf((*MockRuntimeServer)(nil).GetNextId), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // GetState mocks base method.
 func (m *MockRuntimeServer) GetState(arg0 context.Context, arg1 *runtime.GetStateRequest) (*runtime.GetStateResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetState", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.GetStateResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // GetState indicates an expected call of GetState.
 func (mr *MockRuntimeServerMockRecorder) GetState(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetState", reflect.TypeOf((*MockRuntimeServer)(nil).GetState), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // InvokeBinding mocks base method.
 func (m *MockRuntimeServer) InvokeBinding(arg0 context.Context, arg1 *runtime.InvokeBindingRequest) (*runtime.InvokeBindingResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "InvokeBinding", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.InvokeBindingResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // InvokeBinding indicates an expected call of InvokeBinding.
 func (mr *MockRuntimeServerMockRecorder) InvokeBinding(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvokeBinding", reflect.TypeOf((*MockRuntimeServer)(nil).InvokeBinding), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // InvokeService mocks base method.
 func (m *MockRuntimeServer) InvokeService(arg0 context.Context, arg1 *runtime.InvokeServiceRequest) (*runtime.InvokeResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "InvokeService", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.InvokeResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // InvokeService indicates an expected call of InvokeService.
 func (mr *MockRuntimeServerMockRecorder) InvokeService(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvokeService", reflect.TypeOf((*MockRuntimeServer)(nil).InvokeService), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ListFile mocks base method.
 func (m *MockRuntimeServer) ListFile(arg0 context.Context, arg1 *runtime.ListFileRequest) (*runtime.ListFileResp, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListFile", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.ListFileResp)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ListFile indicates an expected call of ListFile.
 func (mr *MockRuntimeServerMockRecorder) ListFile(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListFile", reflect.TypeOf((*MockRuntimeServer)(nil).ListFile), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PublishEvent mocks base method.
 func (m *MockRuntimeServer) PublishEvent(arg0 context.Context, arg1 *runtime.PublishEventRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PublishEvent", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // PublishEvent indicates an expected call of PublishEvent.
 func (mr *MockRuntimeServerMockRecorder) PublishEvent(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PublishEvent", reflect.TypeOf((*MockRuntimeServer)(nil).PublishEvent), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutFile mocks base method.
 func (m *MockRuntimeServer) PutFile(arg0 runtime.Runtime_PutFileServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "PutFile", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // PutFile indicates an expected call of PutFile.
 func (mr *MockRuntimeServerMockRecorder) PutFile(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "PutFile", reflect.TypeOf((*MockRuntimeServer)(nil).PutFile), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SaveConfiguration mocks base method.
 func (m *MockRuntimeServer) SaveConfiguration(arg0 context.Context, arg1 *runtime.SaveConfigurationRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SaveConfiguration", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SaveConfiguration indicates an expected call of SaveConfiguration.
 func (mr *MockRuntimeServerMockRecorder) SaveConfiguration(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SaveConfiguration", reflect.TypeOf((*MockRuntimeServer)(nil).SaveConfiguration), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SaveState mocks base method.
 func (m *MockRuntimeServer) SaveState(arg0 context.Context, arg1 *runtime.SaveStateRequest) (*emptypb.Empty, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SaveState", arg0, arg1)
-	ret0, _ := ret[0].(*emptypb.Empty)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SaveState indicates an expected call of SaveState.
 func (mr *MockRuntimeServerMockRecorder) SaveState(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SaveState", reflect.TypeOf((*MockRuntimeServer)(nil).SaveState), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SayHello mocks base method.
 func (m *MockRuntimeServer) SayHello(arg0 context.Context, arg1 *runtime.SayHelloRequest) (*runtime.SayHelloResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SayHello", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.SayHelloResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SayHello indicates an expected call of SayHello.
 func (mr *MockRuntimeServerMockRecorder) SayHello(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SayHello", reflect.TypeOf((*MockRuntimeServer)(nil).SayHello), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SubscribeConfiguration mocks base method.
 func (m *MockRuntimeServer) SubscribeConfiguration(arg0 runtime.Runtime_SubscribeConfigurationServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SubscribeConfiguration", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SubscribeConfiguration indicates an expected call of SubscribeConfiguration.
 func (mr *MockRuntimeServerMockRecorder) SubscribeConfiguration(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SubscribeConfiguration", reflect.TypeOf((*MockRuntimeServer)(nil).SubscribeConfiguration), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // TryLock mocks base method.
 func (m *MockRuntimeServer) TryLock(arg0 context.Context, arg1 *runtime.TryLockRequest) (*runtime.TryLockResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "TryLock", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.TryLockResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // TryLock indicates an expected call of TryLock.
 func (mr *MockRuntimeServerMockRecorder) TryLock(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "TryLock", reflect.TypeOf((*MockRuntimeServer)(nil).TryLock), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Unlock mocks base method.
 func (m *MockRuntimeServer) Unlock(arg0 context.Context, arg1 *runtime.UnlockRequest) (*runtime.UnlockResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Unlock", arg0, arg1)
-	ret0, _ := ret[0].(*runtime.UnlockResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Unlock indicates an expected call of Unlock.
 func (mr *MockRuntimeServerMockRecorder) Unlock(arg0, arg1 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Unlock", reflect.TypeOf((*MockRuntimeServer)(nil).Unlock), arg0, arg1)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_SubscribeConfigurationServer is a mock of Runtime_SubscribeConfigurationServer interface.
@@ -1239,125 +946,111 @@ type MockRuntime_SubscribeConfigurationServerMockRecorder struct {
 
 // NewMockRuntime_SubscribeConfigurationServer creates a new mock instance.
 func NewMockRuntime_SubscribeConfigurationServer(ctrl *gomock.Controller) *MockRuntime_SubscribeConfigurationServer {
-	mock := &MockRuntime_SubscribeConfigurationServer{ctrl: ctrl}
-	mock.recorder = &MockRuntime_SubscribeConfigurationServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_SubscribeConfigurationServer) EXPECT() *MockRuntime_SubscribeConfigurationServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockRuntime_SubscribeConfigurationServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockRuntime_SubscribeConfigurationServer) Recv() (*runtime.SubscribeConfigurationRequest, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*runtime.SubscribeConfigurationRequest)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeConfigurationServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockRuntime_SubscribeConfigurationServer) Send(arg0 *runtime.SubscribeConfigurationResponse) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockRuntime_SubscribeConfigurationServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeConfigurationServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockRuntime_SubscribeConfigurationServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
 func (m *MockRuntime_SubscribeConfigurationServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockRuntime_SubscribeConfigurationServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockRuntime_SubscribeConfigurationServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_GetFileServer is a mock of Runtime_GetFileServer interface.
@@ -1373,110 +1066,96 @@ type MockRuntime_GetFileServerMockRecorder struct {
 
 // NewMockRuntime_GetFileServer creates a new mock instance.
 func NewMockRuntime_GetFileServer(ctrl *gomock.Controller) *MockRuntime_GetFileServer {
-	mock := &MockRuntime_GetFileServer{ctrl: ctrl}
-	mock.recorder = &MockRuntime_GetFileServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_GetFileServer) EXPECT() *MockRuntime_GetFileServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockRuntime_GetFileServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_GetFileServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_GetFileServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_GetFileServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockRuntime_GetFileServer) Send(arg0 *runtime.GetFileResponse) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockRuntime_GetFileServerMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockRuntime_GetFileServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockRuntime_GetFileServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_GetFileServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_GetFileServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockRuntime_GetFileServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockRuntime_GetFileServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
-func (m *MockRuntime_GetFileServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
-}
+func (m *MockRuntime_GetFileServer) SetTrailer(arg0 metadata.MD) { _ = "STUB: not implemented"; return }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockRuntime_GetFileServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockRuntime_GetFileServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_PutFileServer is a mock of Runtime_PutFileServer interface.
@@ -1492,145 +1171,120 @@ type MockRuntime_PutFileServerMockRecorder struct {
 
 // NewMockRuntime_PutFileServer creates a new mock instance.
 func NewMockRuntime_PutFileServer(ctrl *gomock.Controller) *MockRuntime_PutFileServer {
-	mock := &MockRuntime_PutFileServer{ctrl: ctrl}
-	mock.recorder = &MockRuntime_PutFileServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_PutFileServer) EXPECT() *MockRuntime_PutFileServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockRuntime_PutFileServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_PutFileServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockRuntime_PutFileServer) Recv() (*runtime.PutFileRequest, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*runtime.PutFileRequest)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockRuntime_PutFileServerMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_PutFileServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_PutFileServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose mocks base method.
 func (m *MockRuntime_PutFileServer) SendAndClose(arg0 *emptypb.Empty) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendAndClose", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendAndClose indicates an expected call of SendAndClose.
 func (mr *MockRuntime_PutFileServerMockRecorder) SendAndClose(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendAndClose", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).SendAndClose), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockRuntime_PutFileServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockRuntime_PutFileServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_PutFileServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_PutFileServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockRuntime_PutFileServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockRuntime_PutFileServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
-func (m *MockRuntime_PutFileServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
-}
+func (m *MockRuntime_PutFileServer) SetTrailer(arg0 metadata.MD) { _ = "STUB: not implemented"; return }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockRuntime_PutFileServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockRuntime_PutFileServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SubscribeTopicEvents mocks base method.
 func (m *MockRuntimeClient) SubscribeTopicEvents(ctx context.Context, opts ...grpc.CallOption) (runtime.Runtime_SubscribeTopicEventsClient, error) {
-	m.ctrl.T.Helper()
-	varargs := []interface{}{ctx}
-	for _, a := range opts {
-		varargs = append(varargs, a)
-	}
-	ret := m.ctrl.Call(m, "SubscribeTopicEvents", varargs...)
-	ret0, _ := ret[0].(runtime.Runtime_SubscribeTopicEventsClient)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(runtime.Runtime_SubscribeTopicEventsClient), nil
 }
 
 // SubscribeTopicEvents indicates an expected call of SubscribeTopicEvents.
 func (mr *MockRuntimeClientMockRecorder) SubscribeTopicEvents(ctx interface{}, opts ...interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	varargs := append([]interface{}{ctx}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SubscribeTopicEvents", reflect.TypeOf((*MockRuntimeClient)(nil).SubscribeTopicEvents), varargs...)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_SubscribeTopicEventsClient is a mock of Runtime_SubscribeTopicEventsClient interface.
@@ -1646,142 +1300,123 @@ type MockRuntime_SubscribeTopicEventsClientMockRecorder struct {
 
 // NewMockRuntime_SubscribeTopicEventsClient creates a new mock instance.
 func NewMockRuntime_SubscribeTopicEventsClient(ctrl *gomock.Controller) *MockRuntime_SubscribeTopicEventsClient {
-	mock := &MockRuntime_SubscribeTopicEventsClient{ctrl: ctrl}
-	mock.recorder = &MockRuntime_SubscribeTopicEventsClientMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_SubscribeTopicEventsClient) EXPECT() *MockRuntime_SubscribeTopicEventsClientMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// CloseSend mocks base method.
+	return nil
 }
 
-// CloseSend mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsClient) CloseSend() error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "CloseSend")
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // CloseSend indicates an expected call of CloseSend.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) CloseSend() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CloseSend", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).CloseSend))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Context mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsClient) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Header mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsClient) Header() (metadata.MD, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Header")
-	ret0, _ := ret[0].(metadata.MD)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return *new(metadata.MD), nil
 }
 
 // Header indicates an expected call of Header.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) Header() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Header", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).Header))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsClient) Recv() (*runtime.SubscribeTopicEventsResponse, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*runtime.SubscribeTopicEventsResponse)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeTopicEventsClient) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsClient) Send(arg0 *runtime.SubscribeTopicEventsRequest) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeTopicEventsClient) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "SendMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Trailer mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsClient) Trailer() metadata.MD {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Trailer")
-	ret0, _ := ret[0].(metadata.MD)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(metadata.MD)
 }
 
 // Trailer indicates an expected call of Trailer.
 func (mr *MockRuntime_SubscribeTopicEventsClientMockRecorder) Trailer() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Trailer", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsClient)(nil).Trailer))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SubscribeTopicEvents mocks base method.
 func (m *MockRuntimeServer) SubscribeTopicEvents(arg0 runtime.Runtime_SubscribeTopicEventsServer) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SubscribeTopicEvents", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SubscribeTopicEvents indicates an expected call of SubscribeTopicEvents.
 func (mr *MockRuntimeServerMockRecorder) SubscribeTopicEvents(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SubscribeTopicEvents", reflect.TypeOf((*MockRuntimeServer)(nil).SubscribeTopicEvents), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // MockRuntime_SubscribeTopicEventsServer is a mock of Runtime_SubscribeTopicEventsServer interface.
@@ -1797,123 +1432,109 @@ type MockRuntime_SubscribeTopicEventsServerMockRecorder struct {
 
 // NewMockRuntime_SubscribeTopicEventsServer creates a new mock instance.
 func NewMockRuntime_SubscribeTopicEventsServer(ctrl *gomock.Controller) *MockRuntime_SubscribeTopicEventsServer {
-	mock := &MockRuntime_SubscribeTopicEventsServer{ctrl: ctrl}
-	mock.recorder = &MockRuntime_SubscribeTopicEventsServerMockRecorder{mock}
-	return mock
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockRuntime_SubscribeTopicEventsServer) EXPECT() *MockRuntime_SubscribeTopicEventsServerMockRecorder {
-	return m.recorder
+	_ = "STUB: not implemented"
+
+	// Context mocks base method.
+	return nil
 }
 
-// Context mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsServer) Context() context.Context {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Context")
-	ret0, _ := ret[0].(context.Context)
-	return ret0
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 // Context indicates an expected call of Context.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) Context() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Context", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).Context))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Recv mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsServer) Recv() (*runtime.SubscribeTopicEventsRequest, error) {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Recv")
-	ret0, _ := ret[0].(*runtime.SubscribeTopicEventsRequest)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Recv indicates an expected call of Recv.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) Recv() *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Recv", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).Recv))
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeTopicEventsServer) RecvMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "RecvMsg", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // RecvMsg indicates an expected call of RecvMsg.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) RecvMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RecvMsg", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).RecvMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsServer) Send(arg0 *runtime.SubscribeTopicEventsResponse) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Send", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Send indicates an expected call of Send.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) Send(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Send", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).Send), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsServer) SendHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SendHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendHeader indicates an expected call of SendHeader.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) SendHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendHeader", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).SendHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg mocks base method.
 func (m_2 *MockRuntime_SubscribeTopicEventsServer) SendMsg(m interface{}) error {
-	m_2.ctrl.T.Helper()
-	ret := m_2.ctrl.Call(m_2, "Send", m)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SendMsg indicates an expected call of SendMsg.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) SendMsg(m interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SendMsg", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).SendMsg), m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsServer) SetHeader(arg0 metadata.MD) error {
-	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "SetHeader", arg0)
-	ret0, _ := ret[0].(error)
-	return ret0
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetHeader indicates an expected call of SetHeader.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) SetHeader(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetHeader", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).SetHeader), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetTrailer mocks base method.
 func (m *MockRuntime_SubscribeTopicEventsServer) SetTrailer(arg0 metadata.MD) {
-	m.ctrl.T.Helper()
-	m.ctrl.Call(m, "SetTrailer", arg0)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetTrailer indicates an expected call of SetTrailer.
 func (mr *MockRuntime_SubscribeTopicEventsServerMockRecorder) SetTrailer(arg0 interface{}) *gomock.Call {
-	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetTrailer", reflect.TypeOf((*MockRuntime_SubscribeTopicEventsServer)(nil).SetTrailer), arg0)
+	_ = "STUB: not implemented"
+	return nil
 }

@@ -24,43 +24,16 @@ import (
 )
 
 func (a *api) GetSecret(ctx context.Context, in *runtimev1pb.GetSecretRequest) (*runtimev1pb.GetSecretResponse, error) {
-	daprResp, err := a.daprAPI.GetSecret(ctx, &dapr_v1pb.GetSecretRequest{
-		StoreName: in.StoreName,
-		Key:       in.Key,
-		Metadata:  in.Metadata,
-	})
-	if err != nil {
-		return &runtimev1pb.GetSecretResponse{}, err
-	}
-	return &runtimev1pb.GetSecretResponse{Data: daprResp.Data}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (a *api) GetBulkSecret(ctx context.Context, in *runtimev1pb.GetBulkSecretRequest) (*runtimev1pb.GetBulkSecretResponse, error) {
-	daprResp, err := a.daprAPI.GetBulkSecret(ctx, &dapr_v1pb.GetBulkSecretRequest{
-		StoreName: in.StoreName,
-		Metadata:  in.Metadata,
-	})
-	if err != nil {
-		return &runtimev1pb.GetBulkSecretResponse{}, err
-	}
-	return &runtimev1pb.GetBulkSecretResponse{
-		Data: convertSecretResponseMap(daprResp.Data),
-	}, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func convertSecretResponseMap(data map[string]*dapr_v1pb.SecretResponse) map[string]*runtimev1pb.SecretResponse {
-	if data == nil {
-		return nil
-	}
-	result := make(map[string]*runtimev1pb.SecretResponse)
-	for k, v := range data {
-		var converted *runtimev1pb.SecretResponse
-		if v != nil {
-			converted = &runtimev1pb.SecretResponse{
-				Secrets: v.Secrets,
-			}
-		}
-		result[k] = converted
-	}
-	return result
+	_ = "STUB: not implemented"
+	return nil
 }

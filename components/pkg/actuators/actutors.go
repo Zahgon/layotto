@@ -43,19 +43,14 @@ type ComponentsIndicator struct {
 
 var componentsActutors sync.Map
 
-func GetIndicatorWithName(name string) *ComponentsIndicator {
-	if v, ok := componentsActutors.Load(name); ok {
-		return v.(*ComponentsIndicator)
-	}
-	return nil
-}
+func GetIndicatorWithName(name string) *ComponentsIndicator { _ = "STUB: not implemented"; return nil }
 
 func SetComponentsIndicator(name string, indicator *ComponentsIndicator) {
-	componentsActutors.Store(name, indicator)
+	_ = "STUB: not implemented"
+	return
 }
 
 func RangeAllIndicators(f func(key string, value *ComponentsIndicator) bool) {
-	componentsActutors.Range(func(k, v interface{}) bool {
-		return f(k.(string), v.(*ComponentsIndicator))
-	})
+	_ = "STUB: not implemented"
+	return
 }

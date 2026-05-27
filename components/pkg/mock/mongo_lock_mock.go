@@ -43,112 +43,100 @@ type MockMongoCollection struct {
 	DeleteResult     *mongo.DeleteResult
 }
 
-func NewMockMongoFactory() *MockMongoFactory {
-	return &MockMongoFactory{}
-}
+func NewMockMongoFactory() *MockMongoFactory { _ = "STUB: not implemented"; return nil }
 
-func NewMockMongoClient() *MockMongoClient {
-	return &MockMongoClient{}
-}
+func NewMockMongoClient() *MockMongoClient { _ = "STUB: not implemented"; return nil }
 
-func NewMockMongoCollection() *MockMongoCollection {
-	return &MockMongoCollection{}
-}
+func NewMockMongoCollection() *MockMongoCollection { _ = "STUB: not implemented"; return nil }
 
-func NewMockMongoSession() *MockMongoSession {
-	return &MockMongoSession{}
-}
+func NewMockMongoSession() *MockMongoSession { _ = "STUB: not implemented"; return nil }
 
 func (f *MockMongoFactory) NewMongoClient(m utils.MongoMetadata) (utils.MongoClient, error) {
-	return &MockMongoClient{}, nil
+	_ = "STUB: not implemented"
+	return *new(utils.MongoClient), nil
 }
 
 func (f *MockMongoFactory) NewMongoCollection(m *mongo.Database, collectionName string, opts *options.CollectionOptions) utils.MongoCollection {
-	return &MockMongoCollection{}
+	_ = "STUB: not implemented"
+	return *new(utils.MongoCollection)
 }
 
 func (f *MockMongoFactory) NewSingleResult(sr *mongo.SingleResult) utils.MongoSingleResult {
-	return nil
+	_ = "STUB: not implemented"
+	return *new(utils.MongoSingleResult)
 }
 
 func (mc *MockMongoCollection) FindOne(ctx context.Context, filter interface{}, opts ...*options.FindOneOptions) *mongo.SingleResult {
-	result := mongo.SingleResult{}
-	return &result
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (mc *MockMongoCollection) InsertOne(ctx context.Context, document interface{}, opts ...*options.InsertOneOptions) (*mongo.InsertOneResult, error) {
-	doc := document.(bson.M)
-	value := doc["_id"].(string)
-	if _, ok := mc.Result[value]; ok {
-		return nil, nil
-	} else {
-		// insert cache
-		mc.Result[value] = doc
-		mc.InsertOneResult.InsertedID = value
-		return mc.InsertOneResult, nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
+// insert cache
+
 func (mc *MockMongoCollection) DeleteOne(ctx context.Context, filter interface{}, opts ...*options.DeleteOptions) (*mongo.DeleteResult, error) {
-	res := &mongo.DeleteResult{}
-	doc := filter.(bson.M)
-	value := doc["_id"].(string)
-	if v, ok := mc.Result[value]; ok {
-		if v["LockOwner"] == doc["LockOwner"] {
-			delete(mc.Result, value)
-			res.DeletedCount = 1
-		}
-	}
-	return res, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (mc *MockMongoCollection) Find(ctx context.Context, filter interface{}, opts ...*options.FindOptions) (*mongo.Cursor, error) {
-	cursor := &mongo.Cursor{}
-	return cursor, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (mc *MockMongoCollection) Indexes() mongo.IndexView {
-	return mongo.IndexView{}
+	_ = "STUB: not implemented"
+	return *new(mongo.IndexView)
 }
 
 func (mc *MockMongoCollection) UpdateOne(ctx context.Context, filter interface{}, update interface{}, opts ...*options.UpdateOptions) (*mongo.UpdateResult, error) {
+	_ = "STUB: not implemented"
 	return nil, nil
 }
 
 func (mc *MockMongoCollection) FindOneAndUpdate(ctx context.Context, filter interface{}, update interface{}, opts ...*options.FindOneAndUpdateOptions) *mongo.SingleResult {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (c *MockMongoClient) StartSession(opts ...*options.SessionOptions) (mongo.Session, error) {
-	return &MockMongoSession{}, nil
+	_ = "STUB: not implemented"
+	return *new(mongo.Session), nil
 }
 
 func (c *MockMongoClient) Ping(ctx context.Context, rp *readpref.ReadPref) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (c *MockMongoClient) Database(name string, opts ...*options.DatabaseOptions) *mongo.Database {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (c *MockMongoClient) Disconnect(ctx context.Context) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (s *MockMongoSession) AbortTransaction(context.Context) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (s *MockMongoSession) CommitTransaction(context.Context) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (s *MockMongoSession) WithTransaction(ctx context.Context, fn func(sessCtx mongo.SessionContext) (interface{}, error),
 	opts ...*options.TransactionOptions) (interface{}, error) {
-	res, err := fn(s)
-	return res, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (s *MockMongoSession) EndSession(context.Context) {
-
-}
+func (s *MockMongoSession) EndSession(context.Context) { _ = "STUB: not implemented"; return }

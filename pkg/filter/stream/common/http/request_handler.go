@@ -18,8 +18,6 @@ package http
 
 import (
 	"context"
-	"encoding/json"
-	"errors"
 )
 
 type ContextKeyRequestData struct {
@@ -30,14 +28,6 @@ type RequestHandler interface {
 }
 
 func GetRequestData(ctx context.Context) (map[string]interface{}, error) {
-	requestData := ctx.Value(ContextKeyRequestData{})
-	if requestData == nil {
-		return nil, errors.New("invalid request body")
-	}
-	conf := make(map[string]interface{})
-	err := json.Unmarshal(requestData.([]byte), &conf)
-	if err != nil {
-		return nil, err
-	}
-	return conf, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }

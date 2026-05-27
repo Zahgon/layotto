@@ -14,7 +14,6 @@ package utils
 
 import (
 	"database/sql"
-	"fmt"
 )
 
 var (
@@ -40,41 +39,8 @@ type MySQLMetadata struct {
 }
 
 func ParseMySQLMetadata(properties map[string]string) (MySQLMetadata, error) {
-	m := MySQLMetadata{}
-
-	if val, ok := properties[defaultTableNameKey]; ok && val != "" {
-		m.TableName = val
-	}
-	if val, ok := properties[dataBaseName]; ok && val != "" {
-		m.DataBaseName = val
-	}
-	if val, ok := properties[userName]; ok && val != "" {
-		m.UserName = val
-	}
-	if val, ok := properties[defaultPassword]; ok && val != "" {
-		m.Password = val
-	}
-	if val, ok := properties[mysqlUrl]; ok && val != "" {
-		m.MysqlUrl = val
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return *new(MySQLMetadata), nil
 }
 
-func NewMySQLClient(meta MySQLMetadata) error {
-
-	val := meta
-	if val.TableName == "" {
-		val.TableName = defaultTableName
-	}
-	meta.Db.Begin()
-	createTable := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (
-			sequencer_key VARCHAR(255),
-			sequencer_value INT,
-			UNIQUE INDEX (sequencer_key));`, val.TableName)
-	_, err := meta.Db.Exec(createTable)
-	defer meta.Db.Close()
-	if err != nil {
-		return err
-	}
-	return nil
-}
+func NewMySQLClient(meta MySQLMetadata) error { _ = "STUB: not implemented"; return nil }

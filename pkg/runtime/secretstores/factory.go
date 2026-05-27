@@ -22,8 +22,6 @@ type Factory struct {
 }
 
 func NewFactory(compType string, f func() secretstores.SecretStore) *Factory {
-	return &Factory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

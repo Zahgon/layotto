@@ -17,8 +17,6 @@
 package oss
 
 import (
-	"fmt"
-
 	"mosn.io/layotto/components/pkg/info"
 )
 
@@ -32,37 +30,18 @@ type Factory struct {
 	FactoryMethod func() Oss
 }
 
-func NewFactory(compType string, f func() Oss) *Factory {
-	return &Factory{
-		CompType:      compType,
-		FactoryMethod: f,
-	}
-}
+func NewFactory(compType string, f func() Oss) *Factory { _ = "STUB: not implemented"; return nil }
 
 type registry struct {
 	oss  map[string]func() Oss
 	info *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(ServiceName)
-	return &registry{
-		oss:  make(map[string]func() Oss),
-		info: info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
-func (r *registry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.oss[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(ServiceName, f.CompType)
-	}
-}
+func (r *registry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 func (r *registry) Create(compType string) (Oss, error) {
-	if f, ok := r.oss[compType]; ok {
-		r.info.LoadComponent(ServiceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not registered", compType)
+	_ = "STUB: not implemented"
+	return *new(Oss), nil
 }

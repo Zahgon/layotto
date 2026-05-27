@@ -15,10 +15,7 @@ package zookeeper
 
 import (
 	"context"
-	"fmt"
 	"sync"
-
-	"github.com/go-zookeeper/zk"
 
 	"mosn.io/layotto/kit/logger"
 
@@ -54,108 +51,38 @@ type ZookeeperSequencer struct {
 }
 
 // NewZookeeperSequencer returns a new zookeeper sequencer
-func NewZookeeperSequencer() *ZookeeperSequencer {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	s := &ZookeeperSequencer{
-		logger: logger.NewLayottoLogger("sequencer/zookeeper"),
-	}
-
-	logger.RegisterComponentLoggerListener("sequencer/zookeeper", s)
-	return s
-}
+func NewZookeeperSequencer() *ZookeeperSequencer { _ = "STUB: not implemented"; return nil }
 
 func (s *ZookeeperSequencer) OnLogLevelChanged(level logger.LogLevel) {
-	s.logger.SetLogLevel(level)
+	_ = "STUB: not implemented"
+	return
 }
 
 func (s *ZookeeperSequencer) Init(config sequencer.Configuration) error {
-	m, err := utils.ParseZookeeperMetadata(config.Properties)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	//init
-	s.metadata = m
-	s.BiggerThan = config.BiggerThan
-	s.factory = &utils.ConnectionFactoryImpl{}
-	connection, err := s.factory.NewConnection(0, s.metadata)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	s.client = connection
-	s.ctx, s.cancel = context.WithCancel(context.Background())
-
-	//check biggerThan
-	for k, needV := range s.BiggerThan {
-		if needV <= 0 {
-			continue
-		}
-
-		if needV >= maxInt32 {
-			return fmt.Errorf("the maximum value of zookeeper version cannot exceed int32")
-		}
-		_, stat, err := s.client.Get("/" + k)
-		if err != nil {
-			//key not exist
-			if err == zk.ErrNoNode {
-				return fmt.Errorf("zookeeper sequencer error: can not satisfy biggerThan guarantee.key: %s, current key does not exist", k)
-			}
-			readinessIndicator.ReportError(err.Error())
-			livenessIndicator.ReportError(err.Error())
-			//other error
-			return err
-		}
-		realV := int64(stat.Version)
-
-		if realV < needV {
-			return fmt.Errorf("zookeeper sequencer error: can not satisfy biggerThan guarantee.key: %s,current id:%v", k, realV)
-		}
-
-	}
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	return err
-
-}
-
-func (s *ZookeeperSequencer) GetNextId(req *sequencer.GetNextIdRequest) (*sequencer.GetNextIdResponse, error) {
-
-	stat, err := s.client.Set("/"+req.Key, []byte(""), -1)
-
-	if err != nil {
-		if err == zk.ErrNoNode {
-			_, errCreate := s.client.Create("/"+req.Key, []byte(""), zk.FlagEphemeral, zk.WorldACL(zk.PermAll))
-			if errCreate != nil {
-				return nil, errCreate
-			}
-			return s.GetNextId(req)
-		}
-		return nil, err
-	}
-	// create node version=0, every time we set node  will result in version+1
-	// so if version=0, an overflow int32 has occurred
-	//but this time return error ,what to do next time ？
-	if stat.Version <= 0 {
-		s.logger.Errorf("an overflow int32 has occurred in zookeeper , the key is %s", req.Key)
-		return nil, fmt.Errorf("an overflow int32 has occurred in zookeeper, the key is %s", req.Key)
-	}
-
-	return &sequencer.GetNextIdResponse{
-		NextId: int64(stat.Version),
-	}, nil
-}
-
-func (s *ZookeeperSequencer) GetSegment(req *sequencer.GetSegmentRequest) (support bool, result *sequencer.GetSegmentResponse, err error) {
-	return false, nil, nil
-}
-func (s *ZookeeperSequencer) Close() error {
-	s.cancel()
-	s.client.Close()
+	_ = "STUB: not implemented"
 	return nil
 }
+
+//init
+
+//check biggerThan
+
+//key not exist
+
+//other error
+
+func (s *ZookeeperSequencer) GetNextId(req *sequencer.GetNextIdRequest) (*sequencer.GetNextIdResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+// create node version=0, every time we set node  will result in version+1
+// so if version=0, an overflow int32 has occurred
+//but this time return error ,what to do next time ？
+
+func (s *ZookeeperSequencer) GetSegment(req *sequencer.GetSegmentRequest) (support bool, result *sequencer.GetSegmentResponse, err error) {
+	_ = "STUB: not implemented"
+	return false, nil, nil
+}
+
+func (s *ZookeeperSequencer) Close() error { _ = "STUB: not implemented"; return nil }

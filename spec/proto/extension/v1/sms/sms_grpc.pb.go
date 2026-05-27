@@ -10,8 +10,6 @@ import (
 	context "context"
 
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -32,16 +30,13 @@ type smsServiceClient struct {
 }
 
 func NewSmsServiceClient(cc grpc.ClientConnInterface) SmsServiceClient {
-	return &smsServiceClient{cc}
+	_ = "STUB: not implemented"
+	return *new(SmsServiceClient)
 }
 
 func (c *smsServiceClient) SendSmsWithTemplate(ctx context.Context, in *SendSmsWithTemplateRequest, opts ...grpc.CallOption) (*SendSmsWithTemplateResponse, error) {
-	out := new(SendSmsWithTemplateResponse)
-	err := c.cc.Invoke(ctx, "/spec.proto.extension.v1.sms.SmsService/SendSmsWithTemplate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SmsServiceServer is the server API for SmsService service.
@@ -57,7 +52,8 @@ type UnimplementedSmsServiceServer struct {
 }
 
 func (UnimplementedSmsServiceServer) SendSmsWithTemplate(context.Context, *SendSmsWithTemplateRequest) (*SendSmsWithTemplateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SendSmsWithTemplate not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnsafeSmsServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -68,25 +64,13 @@ type UnsafeSmsServiceServer interface {
 }
 
 func RegisterSmsServiceServer(s grpc.ServiceRegistrar, srv SmsServiceServer) {
-	s.RegisterService(&SmsService_ServiceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _SmsService_SendSmsWithTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SendSmsWithTemplateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SmsServiceServer).SendSmsWithTemplate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/spec.proto.extension.v1.sms.SmsService/SendSmsWithTemplate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SmsServiceServer).SendSmsWithTemplate(ctx, req.(*SendSmsWithTemplateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SmsService_ServiceDesc is the grpc.ServiceDesc for SmsService service.

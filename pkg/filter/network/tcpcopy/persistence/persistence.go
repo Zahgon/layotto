@@ -19,14 +19,10 @@ package persistence
 import (
 	"os"
 	"sync"
-	"sync/atomic"
 
 	"mosn.io/layotto/pkg/common"
 	"mosn.io/layotto/pkg/filter/network/tcpcopy/model"
-	"mosn.io/layotto/pkg/filter/network/tcpcopy/strategy"
 
-	"mosn.io/mosn/pkg/configmanager"
-	"mosn.io/mosn/pkg/log"
 	rlog "mosn.io/pkg/log"
 )
 
@@ -58,134 +54,52 @@ var (
 	initLoggerOnce sync.Once
 )
 
-func getMemConfDumpFilePath() string {
-	InitLogger()
-	return memConfDumpFilePath
-}
+func getMemConfDumpFilePath() string { _ = "STUB: not implemented"; return "" }
 
-func GetTcpcopyLogger() rlog.ErrorLogger {
-	InitLogger()
-	return tcpcopyPersistence
-}
+func GetTcpcopyLogger() rlog.ErrorLogger { _ = "STUB: not implemented"; return *new(rlog.ErrorLogger) }
 
-func GetMemLogger() rlog.ErrorLogger {
-	InitLogger()
-	return memPersistence
-}
+func GetMemLogger() rlog.ErrorLogger { _ = "STUB: not implemented"; return *new(rlog.ErrorLogger) }
 
 func GetStaticConfLogger() rlog.ErrorLogger {
-	InitLogger()
-	return staticConfPersistence
+	_ = "STUB: not implemented"
+	return *new(rlog.ErrorLogger)
 }
 
 func GetPortraitDataLogger() rlog.ErrorLogger {
-	InitLogger()
-	return portraitDataPersistence
+	_ = "STUB: not implemented"
+	return *new(rlog.ErrorLogger)
 }
 
-func InitLogger() {
-	initLoggerOnce.Do(doInitLogger)
-}
+func InitLogger() { _ = "STUB: not implemented"; return }
+
 func doInitLogger() {
+	_ = "STUB: not implemented"
 	// local variable
-	tcpcopyDumpFilePath := getLogPath(tcpcopyDumpFile)
-	portraitDataDumpFilePath := getLogPath(portraitDataDumpFile)
-	staticConfDumpFilePath := getLogPath(staticConfDumpFile)
-	// write global variable
-	memConfDumpFilePath = getLogPath(memConfDumpFile)
-
-	// init logger using these path variables.
-	tcpcopyLogger, err1 := log.GetOrCreateDefaultErrorLogger(tcpcopyDumpFilePath, log.INFO)
-	if err1 != nil {
-		log.StartLogger.Errorf("%s init tcpcopy logger error, err=&s", model.LogDumpKey, err1.Error())
-	} else {
-		tcpcopyPersistence = tcpcopyLogger
-	}
-
-	memDumpLogger, err2 := log.GetOrCreateDefaultErrorLogger(memConfDumpFilePath, log.INFO)
-	if err2 != nil {
-		log.StartLogger.Errorf("%s init mem dump logger error, err=&s", model.LogDumpKey, err2.Error())
-	} else {
-		memPersistence = memDumpLogger
-	}
-
-	staticConfLogger, err3 := log.GetOrCreateDefaultErrorLogger(staticConfDumpFilePath, log.INFO)
-	if err3 != nil {
-		log.StartLogger.Errorf("%s init static config logger error, err=&s", model.LogDumpKey, err3.Error())
-	} else {
-		staticConfPersistence = staticConfLogger
-	}
-
-	portraitDataLogger, err4 := log.GetOrCreateDefaultErrorLogger(portraitDataDumpFilePath, log.INFO)
-	if err4 != nil {
-		log.StartLogger.Errorf("%s init portrait data logger error, err=&s", model.LogDumpKey, err4.Error())
-	} else {
-		portraitDataPersistence = portraitDataLogger
-	}
+	return
 }
+
+// write global variable
+
+// init logger using these path variables.
 
 func IsPersistence() bool {
+	_ = "STUB: not implemented"
 	// Determine the switch state
-	if !strategy.DumpSwitch {
-		if log.DefaultLogger.GetLogLevel() >= log.DEBUG {
-			log.DefaultLogger.Debugf("%s the dump switch is %t", model.LogDumpKey, strategy.DumpSwitch)
-		}
-		return false
-	}
-
-	// Determine whether it is within the sampling period
-	if atomic.LoadInt32(&strategy.DumpSampleFlag) == 0 {
-		if log.DefaultLogger.GetLogLevel() >= log.DEBUG {
-			log.DefaultLogger.Debugf("%s the dump sample flag is %d", model.LogDumpKey, strategy.DumpSampleFlag)
-		}
-		return false
-	}
-
-	// Determine whether it is fused
-	if !strategy.IsAvaliable() {
-		if log.DefaultLogger.GetLogLevel() >= log.DEBUG {
-			log.DefaultLogger.Debugf("%s the system usages are beyond max rate.", model.LogDumpKey)
-		}
-		return false
-	}
-
-	return true
+	return false
 }
+
+// Determine whether it is within the sampling period
+
+// Determine whether it is fused
 
 func persistence(config *model.DumpUploadDynamicConfig) {
+	_ = "STUB: not implemented"
 	// 1.Persist binary data
-	if config.Binary_flow_data != nil && config.Port != "" {
-		if GetTcpcopyLogger().GetLogLevel() >= log.INFO {
-			GetTcpcopyLogger().Infof("[%s][%s]% x", config.Unique_sample_window, config.Port, config.Binary_flow_data)
-		}
-	}
-	if config.Portrait_data != "" && config.BusinessType != "" {
-		// 2. Persistent user-defined data
-		if GetPortraitDataLogger().GetLogLevel() >= log.INFO {
-			GetPortraitDataLogger().Infof("[%s][%s][%s]%s", config.Unique_sample_window, config.BusinessType, config.Port, config.Portrait_data)
-		}
-
-		// 3. Persistent memory configuration data, only make incremental changes
-		buf, err := configmanager.DumpJSON()
-		if err != nil {
-			if log.DefaultLogger.GetLogLevel() >= log.DEBUG {
-				log.DefaultLogger.Debugf("[dump] Failed to load mosn config mem.")
-			}
-			return
-		}
-		// 3.1. dump if the data has been changed
-		tmpMd5ValueOfMemDump := common.CalculateMd5ForBytes(buf)
-		memLogger := GetMemLogger()
-		if tmpMd5ValueOfMemDump != md5ValueOfMemDump ||
-			(tmpMd5ValueOfMemDump == md5ValueOfMemDump && common.GetFileSize(getMemConfDumpFilePath()) <= 0) {
-			md5ValueOfMemDump = tmpMd5ValueOfMemDump
-			if memLogger.GetLogLevel() >= log.INFO {
-				memLogger.Infof("[%s]%s", config.Unique_sample_window, buf)
-			}
-		} else {
-			if memLogger.GetLogLevel() >= log.INFO {
-				memLogger.Infof("[%s]%+v", config.Unique_sample_window, incrementLog)
-			}
-		}
-	}
+	return
 }
+
+// 2. Persistent user-defined data
+
+// 3. Persistent memory configuration data, only make incremental changes
+
+// 3.1. dump if the data has been changed

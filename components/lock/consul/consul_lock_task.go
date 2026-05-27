@@ -18,16 +18,14 @@ package consul
 
 import (
 	"sync"
-	"time"
 )
 
 type task func()
 
 // generate a GC task which delete element in the map after specific ttl
 func generateGCTask(ttl int32, m *sync.Map, key string) task {
-	return func() {
-		time.Sleep(time.Second * time.Duration(ttl))
-		//may delete the second lock,but not affect the result
-		m.Delete(key)
-	}
+	_ = "STUB: not implemented"
+	return *new(task)
 }
+
+//may delete the second lock,but not affect the result

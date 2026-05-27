@@ -18,16 +18,10 @@ package wasm
 
 import (
 	"context"
-	"errors"
-
-	"mosn.io/mosn/pkg/wasm"
-	"mosn.io/pkg/utils"
 
 	"mosn.io/api"
 	v2 "mosn.io/mosn/pkg/config/v2"
-	"mosn.io/mosn/pkg/log"
 	"mosn.io/mosn/pkg/types"
-	"mosn.io/mosn/pkg/wasm/abi"
 )
 
 const LayottoWasm = "Layotto"
@@ -59,166 +53,44 @@ var factory = &FilterConfigFactory{
 var _ api.StreamFilterChainFactory = &FilterConfigFactory{}
 
 func GetFactory() *FilterConfigFactory {
-	return factory
+	_ = "STUB: not implemented"
+
+	// Create a proxy factory for WasmFilter
+	return nil
 }
 
-// Create a proxy factory for WasmFilter
 func createProxyWasmFilterFactory(confs map[string]interface{}) (api.StreamFilterChainFactory, error) {
-	for configID, confIf := range confs {
-		conf, ok := confIf.(map[string]interface{})
-		if !ok {
-			log.DefaultLogger.Errorf("[proxywasm][factory] createProxyWasmFilterFactory config not a map, configID: %s", configID)
-			return nil, errors.New("config not a map")
-		}
-		manager := wasm.GetWasmManager()
-		err := factory.Install(conf, manager)
-		if err != nil {
-			log.DefaultLogger.Errorf("[proxywasm][factory] createProxyWasmFilterFactory install error: %v", err)
-			return nil, err
-		}
-	}
-
-	return factory, nil
+	_ = "STUB: not implemented"
+	return *new(api.StreamFilterChainFactory), nil
 }
 
 // Create the FilterChain
 var filterChain *Filter
 
 func (f *FilterConfigFactory) CreateFilterChain(context context.Context, callbacks api.StreamFilterChainFactoryCallbacks) {
-	filterChain = NewFilter(context, f)
-	if filterChain == nil {
-		return
-	}
-
-	callbacks.AddStreamReceiverFilter(filterChain, api.BeforeRoute)
-	callbacks.AddStreamSenderFilter(filterChain, api.BeforeSend)
+	_ = "STUB: not implemented"
+	return
 }
 
-func (f *FilterConfigFactory) IsRegister(id string) bool {
-	plugin, err := f.router.GetRandomPluginByID(id)
-	return err == nil && plugin != nil
-}
+func (f *FilterConfigFactory) IsRegister(id string) bool { _ = "STUB: not implemented"; return false }
 
 func (f *FilterConfigFactory) Install(conf map[string]interface{}, manager types.WasmManager) error {
-	config, err := parseFilterConfigItem(conf)
-	if err != nil {
-		return err
-	}
-	var pluginName string
-	if config.FromWasmPlugin == "" {
-		pluginName = utils.GenerateUUID()
-		v2Config := v2.WasmPluginConfig{
-			PluginName:  pluginName,
-			VmConfig:    config.VmConfig,
-			InstanceNum: config.InstanceNum,
-		}
-		err = manager.AddOrUpdateWasm(v2Config)
-		if err != nil {
-			config.PluginName = pluginName
-			addWatchFile(config, f)
-			return nil
-		}
-		addWatchFile(config, f)
-	} else {
-		pluginName = config.FromWasmPlugin
-	}
-	config.PluginName = pluginName
-	pw := manager.GetWasmPluginWrapperByName(pluginName)
-	if pw == nil {
-		return errors.New("plugin not found")
-	}
-	config.VmConfig = pw.GetConfig().VmConfig
-	f.config = append(filter(f.config, func(item *filterConfigItem) bool {
-		return item.PluginName != config.PluginName
-	}).([]*filterConfigItem), config)
-	wasmPlugin := &WasmPlugin{
-		pluginName:    config.PluginName,
-		plugin:        pw.GetPlugin(),
-		rootContextID: config.RootContextID,
-		config:        config,
-	}
-	f.plugins[config.PluginName] = wasmPlugin
-	pw.RegisterPluginHandler(f)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (f *FilterConfigFactory) UpdateInstanceNum(id string, instanceNum int, manager types.WasmManager) error {
-	wasmPlugin, _ := f.router.GetRandomPluginByID(id)
-	if wasmPlugin == nil {
-		log.DefaultLogger.Errorf("[proxywasm][factory] GetRandomPluginByID id not registered, id: %s", id)
-		return errors.New(id + " is not registered")
-	}
-
-	var config *filterConfigItem
-	for _, item := range f.config {
-		if item.PluginName == wasmPlugin.pluginName {
-			config = item
-			break
-		}
-	}
-	if config == nil {
-		return errors.New("can't find config for " + id)
-	}
-
-	if config.InstanceNum == instanceNum {
-		return nil
-	}
-
-	config.InstanceNum = instanceNum
-	v2Config := v2.WasmPluginConfig{
-		PluginName:  config.PluginName,
-		VmConfig:    config.VmConfig,
-		InstanceNum: config.InstanceNum,
-	}
-	err := manager.AddOrUpdateWasm(v2Config)
-	if err != nil {
-		return err
-	}
-	pw := manager.GetWasmPluginWrapperByName(config.PluginName)
-	if pw == nil {
-		return errors.New("plugin not found")
-	}
-	f.plugins[config.PluginName] = &WasmPlugin{
-		pluginName:    config.PluginName,
-		plugin:        pw.GetPlugin(),
-		rootContextID: config.RootContextID,
-		config:        config,
-	}
-	pw.RegisterPluginHandler(f)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (f *FilterConfigFactory) UnInstall(id string, manager types.WasmManager) error {
-	wasmPlugin, _ := f.router.GetRandomPluginByID(id)
-	if wasmPlugin == nil {
-		log.DefaultLogger.Errorf("[proxywasm][factory] GetRandomPluginByID id not registered, id: %s", id)
-		return errors.New(id + " is not registered")
-	}
-	err := manager.UninstallWasmPluginByName(wasmPlugin.pluginName)
-	if err != nil {
-		return err
-	}
-
-	if filterChain != nil && filterChain.pluginUsed != nil && filterChain.pluginUsed.pluginName == wasmPlugin.pluginName {
-		err = filterChain.releaseUsedInstance()
-		if err != nil {
-			return err
-		}
-	}
-
-	f.config = filter(f.config, func(item *filterConfigItem) bool {
-		return item.PluginName != wasmPlugin.pluginName
-	}).([]*filterConfigItem)
-	delete(f.plugins, wasmPlugin.pluginName)
-	removeWatchFile(wasmPlugin.config)
-	f.router.RemoveRoute(id)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // GetRootContextID Get RootContext's ID
-func (f *FilterConfigFactory) GetRootContextID() int32 {
-	return f.RootContextID
-}
+func (f *FilterConfigFactory) GetRootContextID() int32 { _ = "STUB: not implemented"; return 0 }
 
 // FilterConfigFactory implement types.WasmPluginHandler
 // for `pw.RegisterPluginHandler(factory)`
@@ -226,72 +98,17 @@ var _ types.WasmPluginHandler = &FilterConfigFactory{}
 
 // OnConfigUpdate Update config of FilterConfigFactory
 func (f *FilterConfigFactory) OnConfigUpdate(config v2.WasmPluginConfig) {
-	for _, plugin := range f.config {
-		if plugin.PluginName == config.PluginName {
-			plugin.InstanceNum = config.InstanceNum
-			plugin.VmConfig = config.VmConfig
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 // OnPluginStart Execute the plugin of FilterConfigFactory
 func (f *FilterConfigFactory) OnPluginStart(plugin types.WasmPlugin) {
-	plugin.Exec(func(instance types.WasmInstance) bool {
-		wasmPlugin, ok := f.plugins[plugin.PluginName()]
-		if !ok {
-			log.DefaultLogger.Errorf("[proxywasm][factory] createProxyWasmFilterFactory fail to get wasm plugin, PluginName: %s",
-				plugin.PluginName())
-			return true
-		}
-
-		a := abi.GetABI(instance, AbiV2)
-		a.SetABIImports(f)
-		exports := a.GetABIExports().(Exports)
-		f.LayottoHandler.Instance = instance
-
-		instance.Lock(a)
-		defer instance.Unlock()
-
-		// get the ID of wasm, register route
-		id, err := exports.ProxyGetID()
-		if err != nil {
-			log.DefaultLogger.Errorf("[proxywasm][factory] createProxyWasmFilterFactory fail to get wasm id, PluginName: %s, err: %v",
-				plugin.PluginName(), err)
-			return true
-		}
-		f.router.RegisterRoute(id, wasmPlugin)
-
-		err = exports.ProxyOnContextCreate(f.RootContextID, 0)
-		if err != nil {
-			log.DefaultLogger.Errorf("[proxywasm][factory] OnPluginStart fail to create root context id, err: %v", err)
-			return true
-		}
-
-		vmConfigSize := 0
-		if vmConfigBytes := wasmPlugin.GetVmConfig(); vmConfigBytes != nil {
-			vmConfigSize = vmConfigBytes.Len()
-		}
-
-		_, err = exports.ProxyOnVmStart(f.RootContextID, int32(vmConfigSize))
-		if err != nil {
-			log.DefaultLogger.Errorf("[proxywasm][factory] OnPluginStart fail to create root context id, err: %v", err)
-			return true
-		}
-
-		pluginConfigSize := 0
-		if pluginConfigBytes := wasmPlugin.GetPluginConfig(); pluginConfigBytes != nil {
-			pluginConfigSize = pluginConfigBytes.Len()
-		}
-
-		_, err = exports.ProxyOnConfigure(f.RootContextID, int32(pluginConfigSize))
-		if err != nil {
-			log.DefaultLogger.Errorf("[proxywasm][factory] OnPluginStart fail to create root context id, err: %v", err)
-			return true
-		}
-
-		return true
-	})
+	_ = "STUB: not implemented"
+	return
 }
 
+// get the ID of wasm, register route
+
 // OnPluginDestroy Destroy the plugin of FilterConfigFactory
-func (f *FilterConfigFactory) OnPluginDestroy(types.WasmPlugin) {}
+func (f *FilterConfigFactory) OnPluginDestroy(types.WasmPlugin) { _ = "STUB: not implemented"; return }

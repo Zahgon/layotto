@@ -17,8 +17,6 @@
 package pubsub
 
 import (
-	"fmt"
-
 	dpubsub "github.com/dapr/components-contrib/pubsub"
 
 	"mosn.io/layotto/components/pkg/info"
@@ -37,25 +35,11 @@ type pubsubRegistry struct {
 	info   *info.RuntimeInfo
 }
 
-func NewRegistry(info *info.RuntimeInfo) Registry {
-	info.AddService(serviceName)
-	return &pubsubRegistry{
-		stores: make(map[string]func() dpubsub.PubSub),
-		info:   info,
-	}
-}
+func NewRegistry(info *info.RuntimeInfo) Registry { _ = "STUB: not implemented"; return *new(Registry) }
 
-func (r *pubsubRegistry) Register(fs ...*Factory) {
-	for _, f := range fs {
-		r.stores[f.CompType] = f.FactoryMethod
-		r.info.RegisterComponent(serviceName, f.CompType)
-	}
-}
+func (r *pubsubRegistry) Register(fs ...*Factory) { _ = "STUB: not implemented"; return }
 
 func (r *pubsubRegistry) Create(compType string) (dpubsub.PubSub, error) {
-	if f, ok := r.stores[compType]; ok {
-		r.info.LoadComponent(serviceName, compType)
-		return f(), nil
-	}
-	return nil, fmt.Errorf("service component %s is not registered", compType)
+	_ = "STUB: not implemented"
+	return *new(dpubsub.PubSub), nil
 }

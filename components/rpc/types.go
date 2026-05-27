@@ -19,7 +19,6 @@ package rpc
 import (
 	"context"
 	"encoding/json"
-	"strings"
 )
 
 const (
@@ -39,29 +38,10 @@ const (
 type RPCHeader map[string][]string
 
 // Range is handle RPCHeader info
-func (r RPCHeader) Range(f func(key string, value string) bool) {
-	if len(r) == 0 {
-		return
-	}
-
-	for k, values := range r {
-		if ok := f(k, strings.Join(values, ",")); !ok {
-			break
-		}
-	}
-}
+func (r RPCHeader) Range(f func(key string, value string) bool) { _ = "STUB: not implemented"; return }
 
 // Get is get RPCHeader info
-func (r RPCHeader) Get(key string) string {
-	if r == nil {
-		return ""
-	}
-	values, ok := r[key]
-	if !ok {
-		return ""
-	}
-	return strings.Join(values, ",")
-}
+func (r RPCHeader) Get(key string) string { _ = "STUB: not implemented"; return "" }
 
 // RPCRequest is request info
 type RPCRequest struct {

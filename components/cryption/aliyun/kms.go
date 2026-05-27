@@ -17,14 +17,11 @@ package aliyun
 
 import (
 	"context"
-	"fmt"
 	"sync"
 
 	"mosn.io/layotto/components/pkg/actuators"
 
-	openapi "github.com/alibabacloud-go/darabonba-openapi/v2/client"
 	kms20160120 "github.com/alibabacloud-go/kms-20160120/v3/client"
-	"github.com/alibabacloud-go/tea/tea"
 
 	log "mosn.io/layotto/kit/logger"
 
@@ -56,80 +53,30 @@ type cy struct {
 refer: https://help.aliyun.com/document_detail/611325.html
 */
 func NewCryption() cryption.CryptionService {
-	once.Do(func() {
-		indicators := &actuators.ComponentsIndicator{ReadinessIndicator: readinessIndicator, LivenessIndicator: livenessIndicator}
-		actuators.SetComponentsIndicator(componentName, indicators)
-	})
-	cryption := &cy{
-		log: log.NewLayottoLogger("cryption/aliyun"),
-	}
-	log.RegisterComponentLoggerListener("cryption/aliyun", cryption)
-	return cryption
+	_ = "STUB: not implemented"
+	return *new(cryption.CryptionService)
 }
 
-func (k *cy) OnLogLevelChanged(outputLevel log.LogLevel) {
-	k.log.SetLogLevel(outputLevel)
-}
+func (k *cy) OnLogLevelChanged(outputLevel log.LogLevel) { _ = "STUB: not implemented"; return }
 
 func (k *cy) Init(ctx context.Context, conf *cryption.Config) error {
-	accessKey := conf.Metadata[cryption.ClientKey]
-	secret := conf.Metadata[cryption.ClientSecret]
-	region := conf.Metadata[cryption.Region]
-	config := &openapi.Config{
-		// your AccessKey ID
-		AccessKeyId: tea.String(accessKey),
-		// your AccessKey Secret
-		AccessKeySecret: tea.String(secret),
-		// Endpoint refer: https://api.aliyun.com/product/Kms
-		RegionId: tea.String(region),
-	}
-
-	client, err := kms20160120.NewClient(config)
-	if err != nil {
-		readinessIndicator.ReportError(err.Error())
-		livenessIndicator.ReportError(err.Error())
-		return err
-	}
-	readinessIndicator.SetStarted()
-	livenessIndicator.SetStarted()
-	k.client = client
-	k.keyID = conf.Metadata[cryption.KeyID]
+	_ = "STUB: not implemented"
 	return nil
 }
 
+// your AccessKey ID
+
+// your AccessKey Secret
+
+// Endpoint refer: https://api.aliyun.com/product/Kms
+
 func (k *cy) Decrypt(ctx context.Context, request *cryption.DecryptRequest) (*cryption.DecryptResponse, error) {
-	decryptRequest := &kms20160120.DecryptRequest{
-		CiphertextBlob: tea.String(string(request.CipherText)),
-	}
-	decryptResp, err := k.client.Decrypt(decryptRequest)
-	if err != nil {
-		k.log.Errorf("fail decrypt data, err: %+v", err)
-		return nil, fmt.Errorf("fail decrypt data with error: %+v", err)
-	}
-	resp := &cryption.DecryptResponse{KeyId: *decryptResp.Body.KeyId, KeyVersionId: *decryptResp.Body.KeyVersionId,
-		RequestId: *decryptResp.Body.RequestId,
-		PlainText: []byte(*decryptResp.Body.Plaintext)}
-	return resp, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (k *cy) Encrypt(ctx context.Context, request *cryption.EncryptRequest) (*cryption.EncryptResponse, error) {
+	_ = "STUB: not implemented"
 	// if keyId specified, use request KeyId
-	keyId := k.keyID
-	if request.KeyId != "" {
-		keyId = request.KeyId
-	}
-	encryptRequest := &kms20160120.EncryptRequest{
-		KeyId:     tea.String(keyId),
-		Plaintext: tea.String(string(request.PlainText)),
-	}
-
-	encryptResp, err := k.client.Encrypt(encryptRequest)
-	if err != nil {
-		k.log.Errorf("fail encrypt data, err: %+v", err)
-		return nil, fmt.Errorf("fail encrypt data with error: %+v", err)
-	}
-	resp := &cryption.EncryptResponse{KeyId: *encryptResp.Body.KeyId, KeyVersionId: *encryptResp.Body.KeyVersionId,
-		RequestId:  *encryptResp.Body.RequestId,
-		CipherText: []byte(*encryptResp.Body.CiphertextBlob)}
-	return resp, nil
+	return nil, nil
 }

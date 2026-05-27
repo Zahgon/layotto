@@ -19,37 +19,21 @@ package grpc
 import (
 	"google.golang.org/grpc"
 	mgrpc "mosn.io/mosn/pkg/filter/network/grpc"
-
-	"mosn.io/layotto/diagnostics"
 )
 
 func NewGrpcServer(opts ...Option) (mgrpc.RegisteredServer, error) {
-	var o grpcOptions
-	for _, opt := range opts {
-		opt(&o)
-	}
-	srvMaker := NewDefaultServer
-	o.options = append(o.options, grpc.ChainUnaryInterceptor(diagnostics.UnaryInterceptorFilter))
-	o.options = append(o.options, grpc.ChainStreamInterceptor(diagnostics.StreamInterceptorFilter))
-	if o.maker != nil {
-		srvMaker = o.maker
-	}
-	return srvMaker(o.apis, o.options...)
+	_ = "STUB: not implemented"
+	return *new(mgrpc.RegisteredServer), nil
 }
 
 func NewDefaultServer(apis []GrpcAPI, opts ...grpc.ServerOption) (mgrpc.RegisteredServer, error) {
-	return NewRawGrpcServer(apis, opts...)
+	_ = "STUB: not implemented"
+	return *new(mgrpc.RegisteredServer), nil
 }
 
 func NewRawGrpcServer(apis []GrpcAPI, opts ...grpc.ServerOption) (*grpc.Server, error) {
-	s := grpc.NewServer(opts...)
-	var err error
-	// loop registering grpc api
-	for _, grpcAPI := range apis {
-		err = grpcAPI.Register(s)
-		if err != nil {
-			return s, err
-		}
-	}
-	return s, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// loop registering grpc api

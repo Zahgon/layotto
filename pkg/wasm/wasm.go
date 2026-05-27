@@ -28,36 +28,19 @@ type Wasm struct {
 }
 
 // New init a Wasm.
-func New() *Wasm {
-	wasm := &Wasm{
-		endpointRegistry: make(map[string]http.Endpoint),
-		Logger:           logger.NewLayottoLogger("wasm"),
-	}
-	logger.RegisterComponentLoggerListener("wasm", wasm)
-	return wasm
-}
+func New() *Wasm { _ = "STUB: not implemented"; return nil }
 
-func (wasm *Wasm) OnLogLevelChanged(outputLevel logger.LogLevel) {
-	wasm.Logger.SetLogLevel(outputLevel)
-}
+func (wasm *Wasm) OnLogLevelChanged(outputLevel logger.LogLevel) { _ = "STUB: not implemented"; return }
 
 // GetEndpoint get an Endpoint from Wasm with name.
 func (wasm *Wasm) GetEndpoint(name string) (endpoint http.Endpoint, ok bool) {
-	e, ok := wasm.endpointRegistry[name]
-	return e, ok
+	_ = "STUB: not implemented"
+	return *new(http.Endpoint), false
 }
 
 // AddEndpoint add an Endpoint to Wasm。
-func (wasm *Wasm) AddEndpoint(name string, ep http.Endpoint) {
-	_, ok := wasm.endpointRegistry[name]
-	if ok {
-		wasm.Logger.Warnf("Duplicate Endpoint name:  %v !", name)
-	}
-	wasm.endpointRegistry[name] = ep
-}
+func (wasm *Wasm) AddEndpoint(name string, ep http.Endpoint) { _ = "STUB: not implemented"; return }
 
 var singleton = New()
 
-func GetDefault() *Wasm {
-	return singleton
-}
+func GetDefault() *Wasm { _ = "STUB: not implemented"; return nil }

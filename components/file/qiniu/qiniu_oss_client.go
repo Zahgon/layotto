@@ -18,12 +18,7 @@ package qiniu
 
 import (
 	"context"
-	"errors"
-	"fmt"
 	"io"
-	"net/http"
-	"strings"
-	"time"
 
 	"github.com/qiniu/go-sdk/v7/auth/qbox"
 	"github.com/qiniu/go-sdk/v7/storage"
@@ -53,99 +48,38 @@ type BucketManager interface {
 }
 
 func newQiniuOSSClient(ak, sk, bucket, domain string, private bool, useHttps, userCdnDomains bool) *QiniuOSSClient {
-	cfg := storage.Config{
-		UseHTTPS:      useHttps,
-		UseCdnDomains: userCdnDomains,
-	}
-
-	mac := qbox.NewMac(ak, sk)
-	s := &QiniuOSSClient{
-		AccessKey: ak,
-		SecretKey: sk,
-		Bucket:    bucket,
-		fu:        storage.NewFormUploader(&cfg),
-		Domain:    domain,
-		Private:   private,
-		mac:       mac,
-		bm:        storage.NewBucketManager(mac, &cfg),
-	}
-	return s
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (s *QiniuOSSClient) put(ctx context.Context, fileName string, data io.Reader, dataSize int64) error {
-	if err := s.checkFileName(fileName); err != nil {
-		return err
-	}
-
-	putPolicy := storage.PutPolicy{
-		Scope: s.Bucket,
-	}
-
-	upToken := putPolicy.UploadToken(qbox.NewMac(s.AccessKey, s.SecretKey))
-
-	ret := storage.PutRet{}
-	err := s.fu.Put(ctx, &ret, upToken, fileName, data, dataSize, nil)
-
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (s *QiniuOSSClient) get(_ context.Context, fileName string) (io.ReadCloser, error) {
-	if err := s.checkFileName(fileName); err != nil {
-		return nil, err
-	}
-
-	var accessUrl string
-
-	if !s.Private {
-		accessUrl = storage.MakePublicURL(s.Domain, fileName)
-
-	} else {
-		deadline := time.Now().Add(time.Second * 60).Unix() //1小时有效期
-		accessUrl = storage.MakePrivateURL(s.mac, s.Domain, fileName, deadline)
-	}
-
-	resp, err := http.Get(accessUrl)
-	if err != nil {
-		return nil, err
-	}
-
-	return resp.Body, nil
+	_ = "STUB: not implemented"
+	return *new(io.ReadCloser), nil
 }
 
-func (s *QiniuOSSClient) stat(_ context.Context, fileName string) (*storage.FileInfo, error) {
-	if err := s.checkFileName(fileName); err != nil {
-		return nil, err
-	}
+//1小时有效期
 
-	resp, err := s.bm.Stat(s.Bucket, fileName)
-	return &resp, err
+func (s *QiniuOSSClient) stat(_ context.Context, fileName string) (*storage.FileInfo, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (s *QiniuOSSClient) del(_ context.Context, fileName string) error {
-	if err := s.checkFileName(fileName); err != nil {
-		return err
-	}
-
-	return s.bm.Delete(s.Bucket, fileName)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (s *QiniuOSSClient) list(_ context.Context, prefix string, limit int, marker string) (entries []storage.ListItem, commonPrefixes []string, nextMarker string, hasNext bool, err error) {
-	if limit > 1000 {
-		return nil, nil, "", false, errors.New("limit must be <=1000")
-	}
-
-	if limit <= 0 {
-		return nil, nil, "", false, errors.New("limit must be >0")
-	}
-
-	return s.bm.ListFiles(s.Bucket, prefix, "", marker, limit)
+	_ = "STUB: not implemented"
+	return nil, nil, "", false, nil
 }
 
 func (s *QiniuOSSClient) checkFileName(fileName string) error {
-	index := strings.Index(fileName, "/")
-	if index == 0 {
-		return fmt.Errorf("invalid fileName format")
-	}
-
+	_ = "STUB: not implemented"
 	return nil
 }

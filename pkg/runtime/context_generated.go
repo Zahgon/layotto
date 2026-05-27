@@ -20,25 +20,6 @@ import (
 )
 
 func newApplicationContext(m *MosnRuntime) *grpc.ApplicationContext {
-	return &grpc.ApplicationContext{
-		AppId:                 m.runtimeConfig.AppManagement.AppId,
-		Hellos:                m.hellos,
-		ConfigStores:          m.configStores,
-		Rpcs:                  m.rpcs,
-		PubSubs:               m.pubSubs,
-		StateStores:           m.states,
-		Files:                 m.files,
-		Oss:                   m.oss,
-		LockStores:            m.locks,
-		Sequencers:            m.sequencers,
-		SendToOutputBindingFn: m.sendToOutputBinding,
-		SecretStores:          m.secretStores,
-		DynamicComponents:     m.dynamicComponents,
-		CustomComponent:       m.customComponent,
-		CryptionService:       m.cryptionService,
-		EmailService:          m.emailService,
-		PhoneCallService:      m.phoneCallService,
-		SmsService:            m.smsService,
-		Extends:               m.runtimeConfig.Extends,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

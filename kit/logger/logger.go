@@ -17,8 +17,6 @@
 package logger
 
 import (
-	"fmt"
-	"strings"
 	"sync"
 
 	"mosn.io/pkg/log"
@@ -65,36 +63,18 @@ type ComponentLoggerListener interface {
 
 // RegisterComponentLoggerListener registers a logger for a component logger listener.
 func RegisterComponentLoggerListener(componentName string, logger ComponentLoggerListener) {
-	loggerListeners.Store(componentName, logger)
+	_ = "STUB: not implemented"
+	return
 }
 
 // SetComponentLoggerLevel sets the log level for a component.
-func SetComponentLoggerLevel(componentName string, level string) {
-	logLevel := toLogLevel(level)
-	logger, ok := loggerListeners.Load(componentName)
-	if !ok {
-		log.DefaultLogger.Warnf("component logger for %s not found", componentName)
-	} else {
-		componentLoggerListener, ok := logger.(ComponentLoggerListener)
-		if !ok {
-			log.DefaultLogger.Warnf("component logger for %s is not ComponentLoggerListener", componentName)
-		} else {
-			componentLoggerListener.OnLogLevelChanged(logLevel)
-		}
-	}
-}
+func SetComponentLoggerLevel(componentName string, level string) { _ = "STUB: not implemented"; return }
 
 // SetDefaultLoggerLevel sets the default log output level.
-func SetDefaultLoggerLevel(level string) {
-	if level != "" {
-		defaultLoggerLevel = toLogLevel(level)
-	}
-}
+func SetDefaultLoggerLevel(level string) { _ = "STUB: not implemented"; return }
 
 // SetDefaultLoggerFilePath sets the default log file path.
-func SetDefaultLoggerFilePath(filePath string) {
-	defaultLogFilePath = filePath
-}
+func SetDefaultLoggerFilePath(filePath string) { _ = "STUB: not implemented"; return }
 
 // layottoLogger is the implementation for layotto.
 type layottoLogger struct {
@@ -139,193 +119,89 @@ type Logger interface {
 }
 
 // toLogLevel converts to LogLevel.
-func toLogLevel(level string) LogLevel {
-	switch strings.ToLower(level) {
-	case "trace":
-		return TraceLevel
-	case "debug":
-		return DebugLevel
-	case "info":
-		return InfoLevel
-	case "warn":
-		return WarnLevel
-	case "error":
-		return ErrorLevel
-	case "fatal":
-		return FatalLevel
-	}
-	// unsupported log level
-	return UndefinedLevel
-}
+func toLogLevel(level string) LogLevel { _ = "STUB: not implemented"; return *new(LogLevel) }
+
+// unsupported log level
 
 // ToLogPriority converts to Logger priority.
-func ToLogPriority(level LogLevel) int {
-	switch level {
-	case TraceLevel:
-		return 1
-	case DebugLevel:
-		return 2
-	case InfoLevel:
-		return 3
-	case WarnLevel:
-		return 4
-	case ErrorLevel:
-		return 5
-	case FatalLevel:
-		return 6
-	}
-	return 0
-}
+func ToLogPriority(level LogLevel) int { _ = "STUB: not implemented"; return 0 }
 
 // NewLayottoLogger creates new Logger instance.
-func NewLayottoLogger(name string) Logger {
-	ll := &layottoLogger{
-		name:     name,
-		logLevel: defaultLoggerLevel,
-		loggers:  make(map[string]log.ErrorLogger),
-	}
-
-	dMosnLogger, err := log.GetOrCreateLogger(defaultLogFilePath+fileNameDebug, nil)
-
-	dLogger := &log.SimpleErrorLog{
-		Logger: dMosnLogger,
-		Level:  log.DEBUG,
-	}
-	if err != nil {
-		ll.loggers[logKeyDebug] = log.DefaultLogger
-		log.DefaultLogger.Errorf("Failed to create mosn logger: %v", err)
-	} else {
-		dLogger.SetLogLevel(toMosnLoggerLevel(defaultLoggerLevel))
-		ll.loggers[logKeyDebug] = dLogger
-	}
-
-	aMosnLogger, err := log.GetOrCreateLogger(defaultLogFilePath+fileNameAccess, nil)
-
-	aLogger := &log.SimpleErrorLog{
-		Logger: aMosnLogger,
-		Level:  log.INFO,
-	}
-	if err != nil {
-		ll.loggers[logKeyAccess] = log.DefaultLogger
-		log.DefaultLogger.Errorf("Failed to create mosn logger: %v", err)
-	} else {
-		aLogger.SetLogLevel(toMosnLoggerLevel(defaultLoggerLevel))
-		ll.loggers[logKeyAccess] = aLogger
-	}
-
-	eMosnLogger, err := log.GetOrCreateLogger(defaultLogFilePath+fileNameError, nil)
-
-	eLogger := &log.SimpleErrorLog{
-		Logger: eMosnLogger,
-		Level:  log.ERROR,
-	}
-	if err != nil {
-		ll.loggers[logKeyError] = log.DefaultLogger
-		log.DefaultLogger.Errorf("Failed to create mosn logger: %v", err)
-	} else {
-		eLogger.SetLogLevel(toMosnLoggerLevel(defaultLoggerLevel))
-		ll.loggers[logKeyError] = eLogger
-	}
-	return ll
-}
+func NewLayottoLogger(name string) Logger { _ = "STUB: not implemented"; return *new(Logger) }
 
 // Tracef logs a message at level Trace.
 func (l *layottoLogger) Tracef(format string, args ...interface{}) {
-	l.loggers[logKeyDebug].Tracef("[%s] %s", l.name, fmt.Sprintf(format, args...))
+	_ = "STUB: not implemented"
+	return
 }
 
 // Trace logs a message at level Trace.
-func (l *layottoLogger) Trace(args ...interface{}) {
-	l.loggers[logKeyDebug].Tracef("%s", args...)
-}
+func (l *layottoLogger) Trace(args ...interface{}) { _ = "STUB: not implemented"; return }
 
 // Debugf logs a message at level Debug.
 func (l *layottoLogger) Debugf(format string, args ...interface{}) {
-	l.loggers[logKeyDebug].Debugf("[%s] %s", l.name, fmt.Sprintf(format, args...))
+	_ = "STUB: not implemented"
+	return
 }
 
 // Debug logs a message at level Debug.
-func (l *layottoLogger) Debug(args ...interface{}) {
-	l.loggers[logKeyDebug].Debugf("%s", args...)
-}
+func (l *layottoLogger) Debug(args ...interface{}) { _ = "STUB: not implemented"; return }
 
 // Infof logs a message at level Info.
 func (l *layottoLogger) Infof(format string, args ...interface{}) {
-	l.loggers[logKeyAccess].Infof("[%s] %s", l.name, fmt.Sprintf(format, args...))
+	_ = "STUB: not implemented"
+	return
 }
 
 // Info logs a message at level Info.
-func (l *layottoLogger) Info(args ...interface{}) {
-	l.loggers[logKeyAccess].Infof("%s", args...)
-}
+func (l *layottoLogger) Info(args ...interface{}) { _ = "STUB: not implemented"; return }
 
 // Warnf logs a message at level Warn.
 func (l *layottoLogger) Warnf(format string, args ...interface{}) {
-	l.loggers[logKeyAccess].Warnf("[%s] %s", l.name, fmt.Sprintf(format, args...))
+	_ = "STUB: not implemented"
+	return
 }
 
 // Warn logs a message at level Warn.
-func (l *layottoLogger) Warn(args ...interface{}) {
-	l.loggers[logKeyAccess].Warnf("%s", args...)
-}
+func (l *layottoLogger) Warn(args ...interface{}) { _ = "STUB: not implemented"; return }
 
 // Errorf logs a message at level Error.
 func (l *layottoLogger) Errorf(format string, args ...interface{}) {
-	l.loggers[logKeyError].Errorf("[%s] %s", l.name, fmt.Sprintf(format, args...))
+	_ = "STUB: not implemented"
+	return
 }
 
 // Error logs a message at level Error.
-func (l *layottoLogger) Error(args ...interface{}) {
-	l.loggers[logKeyError].Errorf("%s", args...)
-}
+func (l *layottoLogger) Error(args ...interface{}) { _ = "STUB: not implemented"; return }
 
 // Fatalf logs a message at level Fatal.
 func (l *layottoLogger) Fatalf(format string, args ...interface{}) {
-	l.loggers[logKeyError].Fatalf("[%s] %s", l.name, fmt.Sprintf(format, args...))
+	_ = "STUB: not implemented"
+	return
 }
 
 // Fatal logs a message at level Fatal.
-func (l *layottoLogger) Fatal(args ...interface{}) {
-	l.loggers[logKeyError].Fatalf("%s", args...)
-}
+func (l *layottoLogger) Fatal(args ...interface{}) { _ = "STUB: not implemented"; return }
 
 // GetLogLevel gets the log output level.
 func (l *layottoLogger) GetLogLevel() LogLevel {
-	return l.logLevel
+	_ = "STUB: not implemented"
+
+	// toMosnLoggerLevel converts to logrus.Level.
+	return *new(LogLevel)
 }
 
-// toMosnLoggerLevel converts to logrus.Level.
 func toMosnLoggerLevel(lvl LogLevel) log.Level {
+	_ = "STUB: not implemented"
 	// ignore error because it will never happen
-	l, _ := parseLevel(string(lvl))
-	return l
+	return *new(log.Level)
 }
 
 // parseLevel takes a string level and returns the Mosn logger level constant.
 func parseLevel(lvl string) (log.Level, error) {
-	switch strings.ToLower(lvl) {
-	case "fatal":
-		return log.FATAL, nil
-	case "error":
-		return log.ERROR, nil
-	case "warn", "warning":
-		return log.WARN, nil
-	case "info":
-		return log.INFO, nil
-	case "debug":
-		return log.DEBUG, nil
-	case "trace":
-		return log.TRACE, nil
-	}
-
-	var l log.Level
-	return l, fmt.Errorf("not a valid mosn Level: %q", lvl)
+	_ = "STUB: not implemented"
+	return *new(log.Level), nil
 }
 
 // SetLogLevel sets log output level.
-func (l *layottoLogger) SetLogLevel(outputLevel LogLevel) {
-	l.logLevel = outputLevel
-	l.loggers[logKeyDebug].SetLogLevel(toMosnLoggerLevel(outputLevel))
-	l.loggers[logKeyAccess].SetLogLevel(toMosnLoggerLevel(outputLevel))
-	l.loggers[logKeyError].SetLogLevel(toMosnLoggerLevel(outputLevel))
-}
+func (l *layottoLogger) SetLogLevel(outputLevel LogLevel) { _ = "STUB: not implemented"; return }
